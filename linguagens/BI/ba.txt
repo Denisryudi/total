@@ -1,0 +1,40 @@
+O que é BI(business intelligence)?
+
+Analisar os dados da empresa para a tomada de decisões
+
+Trazer informações espalhadas pela empresa, organizar, juntar as informações e criar
+análises e relatórios que vão ajudar a empresa a tomar decisão baseada em dados
+
+Ex:
+Vendas: Oscilações, aumento ou diminuição. O que podemos fazer para continuar
+crescendo/ evitar essa queda nas vendas?
+
+Qual o perfil do cliente que mais compra nossos produtos? direcionar para o publico certo
+
+
+Rh: rotatividade dos colaboradores 
+alta ou baixa? reter mais os funcionarios/evitar desligamentos
+
+SAC: tempo médio dos chamados/atendimentos? porque aumentou tanto? o que fazer para reduzir o tempo
+e aumentar a eficiência.
+
+Processo BI
+
+-:>ETL(extract, transform, load) > Transformação dos Dados
+extrair, transformar e carregar
+
+-:>Criação dos relacionamentos
+
+Várias tabelas dentro do bi, e faz se necessário organiza-las
+Modelagem de dados
+
+-:>Cálculos/análises > Análises com fórmulas DAX
+
+-:>Criação dos relatórios /Dashboards
+
+-:>Compartilhamento dos relatórios online
+
+
+
+
+

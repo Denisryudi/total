@@ -1,0 +1,110 @@
+
+
+
+SELECT
+    sysdate hoje,
+    TO_CHAR(sysdate, 'YYYY') ano,
+    TO_CHAR(sysdate, 'MM') num_mes,
+    TO_CHAR(sysdate, 'MONTH') nome_mes,
+    TO_CHAR(sysdate, 'MON') mes_abreviado,
+    TO_CHAR(sysdate, 'DAY') nome_dia,
+    TO_CHAR(sysdate, 'DD') num_dia,
+    TO_CHAR(sysdate, 'DY') dia_abreviado,
+    TO_CHAR(sysdate, 'HH12') hora_12,
+    TO_CHAR(sysdate, 'HH24') hora_24,
+    TO_CHAR(sysdate, 'MI') minutos,
+    TO_CHAR(sysdate, 'SS') segundos,
+    TO_CHAR(sysdate, 'DAY, DD "de" MONTH "de" YYYY') hora_24
+FROM dual;
+
+=
+
+19/03/24	2024	03	MARÇO    	MAR	TERÇA-FEIRA  	19	TER	04	16	43	41	TERÇA-FEIRA  , 19 de MARÇO     de 2024
+
+
+SELECT
+    first_name,
+    salary,
+    TO_CHAR(salary, '999G999D99') numero_sem_zeros,  --      1.000
+    TO_CHAR(salary, '000G000D00') numero_com_zeros,  --    001.000,00
+    TO_CHAR(salary, 'L999G999D99') moeda
+FROM employees;
+
+=                 numero_sem_zeros    COM zeros                 moeda
+Steven	24000	  24.000,00	             024.000,00	          R$24.000,00
+Neena	17000	  17.000,00	 017.000,00	          R$17.000,00
+Lex	17000	  17.000,00	 017.000,00	          R$17.000,00
+
+
+
+
+SELECT
+    TO_NUMBER('234,44')
+FROM dual;
+
+=234,44
+
+converter o texto em número
+
+
+
+SELECT
+    TO_DATE('10/05/2022', 'DD/MM/YYYY')
+FROM dual;
+
+converter o texto em data
+10/05/22
+
+
+
+-- II. Fun��es NULL: NVL, NVL2, COALESCE, NULLIF
+-- 1. NVL: Permite substituir o valor (null) por um outro valor.
+
+
+SELECT
+    first_name,
+    commission_pct,
+    NVL(commission_pct, 0)
+FROM employees
+ORDER BY commission_pct ASC;
+
+=Karen		0
+Matthew		0
+
+SEM NUMEROS NULOS
+
+
+
+-- 2. COALESCE: Recebe uma lista de argumentos o primeiro valor NAo nulo.
+
+SELECT
+    COALESCE(NULL, NULL, NULL, NULL, 'Hashtag', NULL, 'SQL')
+FROM dual;
+
+= Hashtag
+
+
+
+
+-- 3. NVL2: � uma extens�o do NVL. Se o primeiro argumento n�o for null, retorna o segundo argumento.
+-- Se o primeiro argumento for null, retorna o terceiro.
+
+SELECT
+    first_name,
+    commission_pct,
+    NVL2(commission_pct, 0.5, 0)
+FROM employees;
+                NVL2(commission_pct,      0.5,                   0)
+CASO commission_pct SEJA <> DE NULO, VAI APARECER 0.5 CASO SEJA NULO VAI APARECER 0
+
+
+
+-- 4. NULLIF: Recebe dois argumentos. Se os dois forem iguais, retorna nulo, se n�o retorna o 1�.
+
+SELECT
+    NULLIF(10, 10),
+    NULLIF(10, 5)
+FROM dual;
+   NULLIF(10, 10),  NULLIF(10, 5)
+	= 	NULL ,           10
+

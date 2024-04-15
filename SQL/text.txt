@@ -1,0 +1,1 @@
+backup + Oracle Data Guard = standby database sincronizado

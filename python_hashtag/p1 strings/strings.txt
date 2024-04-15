@@ -1,0 +1,118 @@
+email = 'lira@gmail.com'
+nome = 'João Lira'
+
+print(len(email))
+email[0]
+
+=14
+|
+
+email = 'lira@gmail.com'
+print(email[5:])
+print(email[:5])
+print(email[-1])
+print(email[5:8])
+
+= 
+gmail.com
+lira@
+m
+gma
+|
+
+faturamento = 1000
+custo = 600
+lucro = faturamento - custo
+
+print('O faturamento da loja foi de: {0}. O custo foi {1} e o lucro foi {2}. Lebrando o faturamento foi {0}'.format(faturamento, custo, lucro))
+= O faturamento da loja foi de: 1000. O custo foi 600 e o lucro foi 400. Lebrando o faturamento foi 1000
+
+print('O faturamento foi de: %d. O custo foi de %d e o lucro foi de %d' %(faturamento, custo, lucro))
+= O faturamento foi de: 1000. O custo foi de 600 e o lucro foi de 400
+
+|
+|
+
+print('@' in 'lira@gmail.com')
+print('@' in 'lira.gmail.com')
+= True
+False
+
+|
+|
+
+faturamento = 1000
+custo = 1500
+lucro = faturamento - custo
+print('Faturamento foi {:+} e lucro foi {:+}'.format(faturamento,lucro))
+Faturamento foi +1000 e lucro foi -500
+|
+|
+faturamento = 1000
+custo = 1500
+lucro = faturamento - custo
+print('Faturamento foi {:+,} e lucro foi {:+,}'.format(faturamento,lucro))
+|
+|
+faturamento = 1000
+custo = 1500
+lucro = faturamento - custo
+print('Faturamento foi {:+,} e lucro foi {:+,}'.format(faturamento,lucro))
+Faturamento foi +1,000 e lucro foi -500
+|
+|
+faturamento = 1000
+custo = 1500
+lucro = faturamento - custo
+print('Faturamento foi {:.1f} e lucro foi {:.3f}'.format(faturamento,lucro))
+|
+|
+faturamento = 1000
+custo = 1500
+lucro = faturamento - custo
+print('Faturamento foi {:.1f} e lucro foi {:.3f}'.format(faturamento,lucro))
+Faturamento foi 1000.0 e lucro foi -500.000
+|
+|
+faturamento = 1000
+custo = 1500
+lucro = faturamento - custo
+print('Faturamento foi {:.1%} e lucro foi {:.3%}'.format(faturamento,lucro))
+|
+|
+faturamento = 1000
+custo = 1500
+lucro = faturamento - custo
+print('Faturamento foi {:.1%} e lucro foi {:.3%}'.format(faturamento,lucro))
+Faturamento foi 100000.0% e lucro foi -50000.000%
+|
+|
+R$
+faturamento = 27000
+custo = 5000
+lucro = faturamento - custo
+print('Faturamento foi R${:,.2f} e lucro foi R${:,.2f}'.format(faturamento,lucro))
+Faturamento foi 27,000.00 e lucro foi 22,000.00
+|
+|
+faturamento = 27000
+custo = 5000
+lucro = faturamento - custo
+print('Faturamento foi {:,.2f} e lucro foi {:,.2f}'.format(faturamento,lucro))
+​|
+|
+lucro_texto = 'R${:_.2f}'.format(lucro)
+print(lucro_texto.replace('.', ',').replace('_', '.'))
+Faturamento foi 27,000.00 e lucro foi 22,000.00
+R$22.000,00
+|
+|
+imposto = 0.15758
+preco = 100
+valor_imposto = round(preco * imposto, 1)
+print('Imposto sobre o preço é de {}'.format(valor_imposto))
+Imposto sobre o preço é de 15.8
+
+
+não pode alterar o valor de uma lista de strings
+ja de int pode

@@ -1,0 +1,19 @@
+
+A herança múltipla é um conceito da POO que permite que uma classe herde características
+de mais de uma classe. Por ser múltipla, isso significa que uma subclasse vai herdar
+ mais de uma característica (atributos e métodos) de uma superclasse, proporcionando
+  assim flexibilidade e reutilização de código.
+
+A representação de herança múltipla em um modelo de classes geralmente envolve um
+diagrama onde a subclasse é conectada por linhas a mais de uma superclasse.
+ Podemos representar isso em um diagrama UML.
+
+Poderíamos modelar um Cliente Pessoa Física da seguinte forma: criando uma classe
+ Cliente e uma classe Pessoa Física, e com isso ligá-las na subclasse Cliente
+  Pessoa Física, que irá herdar seus atributos e métodos. Supondo que Cliente
+   tenha nome e endereço, e Pessoa Física tenha CPF, a subclasse Cliente
+   Pessoa Física irá herdar nome, endereço e CPF.
+
+UNIVERSIDADE FEDERAL DO RIO GRANDE DO NORTE. Instituto Metrópole Digital. Herança Múltipla. Disponível em: https://materialpublic.imd.ufrn.br/curso/disciplina/5/8/7/9. Acesso em: 10 abr. 2024.
+
+MANSSOUR, Isabel Harb. Herança Múltipla em C++. Porto Alegre: PUCRS, 2008. Disponível em: https://www.inf.pucrs.br/manssour/LinguagemC++/HerancaMultipla.pdf. Acesso em: 10 abr. 2024.

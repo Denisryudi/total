@@ -1,0 +1,312 @@
+Equipe ágil
+
+Qual alternativa melhor define uma equipe ágil?
+
+
+Uma equipe ágil é um grupo de pessoas com todos os conhecimentos necessários para produzir algo.
+
+Exatamente. Em um time ágil o conhecimento necessário para atendimento aos objetivos centrais do projeto está contido na multidisciplinaridade da equipe.
+
+auto-organização
+objetivo compartilhado
+time-box
+restrições
+
+...auto-organização
+
+Quais são os 3 elementos mínimos necessários para que um time possa ser auto organizável?
+
+Objetivos compartilhados, timebox e restrições.
+
+
+Exatamente. Sabendo para onde o time precisa ir (os objetivos), até quando ele precisa chegar (timebox) e quais os limites que ele possui (restrições) o time pode se auto organizar para conseguir alcançar esse objetivo.
+
+***
+Nessa aula aprendemos que as premissas básicas e essenciais para uma equipe ser auto organizável é ter:
+
+Objetivo compartilhado: defina o objetivo no qual todos da equipe participarão do desenvolvimento do projeto de forma compartilhada.
+
+Timebox: espaço de tempo necessário para que a auto organização funcione.
+
+Restrições: o que não deve ser feito no desenvolvimento do projeto.
+
+
+...equipes ageis
+
+De acordo com os três tipos de equipes que atuam em ambientes ágeis, temos:
+
+A equipe que foca em maximizar o valor na entrega de uma feature;
+A equipe que foca em grupos que possui comportamentos similares;
+A equipe que tem como foco otimizar apenas um elemento.
+
+Funcionalidade, jornada do cliente e componente.
+
+***
+Nesta aula aprendemos três principais tipos de equipes ágeis que se auto organizam:
+
+Funcionalidades: essa equipe se organiza em torno de uma funcionalidade e se preocupa em maximizar o valor na entrega ao usuário para uma melhor experiência possível. A equipe precisa ser multidisciplinar, já que ela precisa trabalhar em diversos pontos no código.
+
+Componente: essa equipe funciona muito bem para fazer otimizações locais, porém pode ser crítico mexer em um componente já que ele é usado em diversas funcionalidades, além de garantir a sincronização dos componentes que foram alterados.
+
+Jornada do cliente: essa equipe foca em grupos de clientes que possui comportamentos ou necessidades semelhantes.
+
+
+
+
+Scrum Team
+
+Product Owner -> priorização de demandas
+
+Dev Team -> Da maneira correta, melhoria contínua
+
+Scrum Master -> No tempo correto, remoção de impedimentos
+
+...importantes papéis no scrum
+
+De acordo com o que aprendemos durante essa aula, há três papéis importantes que compõem o Scrum Team.
+
+Quais são eles?
+
+Dev Team (qualidade), Scrum Master (eficiência), Product Owner (eficácia). Esses 3 papéis juntos compõem um Scrum Team e vamos entendê-los mais a fundo nas próximas aulas
+
+***
+Aprendemos que o Scrum team é um conjunto de pessoas que tem o objetivo de fazer produtos excepcionais, e para isso acontecer, são necessárias 3 responsabilidades:
+
+Negócio: responsabilidade em garantir que o produto a ser desenvolvido faça sentido para o mercado. 
+Não adianta você produzir o melhor produto, se não tem cliente para o mesmo.
+
+Tecnológica: responsabilidade em garantir que o produto produzido esteja correto para aquele mercado em específico e público-alvo.
+
+Eficiência: responsabilidade em garantir que o time opere com a melhor qualidade possível.
+
+Ou seja, nessa aula aprendemos que um time ágil é organizado de forma que possua pessoas que fiquem responsáveis por garantir que o produto a ser
+desenvolvido esteja alinhado com o que o mercado espera, que a qualidade e tecnologias empregadas estão sendo as adequadas e também por pessoas
+responsáveis por garantir que a equipe opere de uma forma eficiente, sem gargalos.
+
+Product Owner
+
+Foco produto
+Maximizar valor de negócio
+
+-operacional - reuniões, coleta de feedback
+-tático > priorização do backlog 
+-estratégico > visão do produto
+
+sprint 
+	passado		     presente 		     futuro	
+feedback e relatórios   dúvidas e reuniões  refinamento e priorização
+
+conseguir falar não, em relação as prioridades
+
+...papel Product Owner
+
+Qual o objetivo da pessoa que possui o papel de Product Owner em um projeto?
+
+Encontrar maneiras de maximizar o valor que aquele produto gera para o negócio.
+
+
+Para isso, essa pessoa precisa de algumas habilidades como senso de dono, foco e conhecimento profundo do negócio.
+
+artigo
+
+Rafael Vieira, Product Owner dentro da empresa em que trabalha, escreveu um artigo esclarecendo o que é e como é ser um Product Owner, ele escreve sobre o dia a dia, os desafios e as responsabilidades de um PO dentro da empresa.
+
+https://medium.com/produto-di%C3%A1rio/o-que-%C3%A9-um-product-owner-c44bb29a9f66
+
+
+***
+O que é Product Owner?
+Nessa aula aprendemos que a pessoa responsável pelo papel de Product Owner tem o desafio de conseguir maximizar o valor que aquele produto irá gerar para o negócio.
+
+Para isso, o PO, além de precisar ter um foco alto e senso de dono, precisará conversar frequentemente com as outras áreas 
+que fazem parte da empresa, para entender quais são os pontos-chave que remetem a dor dos clientes, e conhecer a fundo o 
+produto e mercado em que a empresa está inserida.
+
+Como é o dia a dia de um PO?
+No seu dia a dia, o PO terá que descrever o que precisa ser feito, e para isso, é necessário conversar com outras áreas 
+para entender as necessidades e também o que pode ou não ser feito. Além de priorizar o que precisa 
+ser construído, muitas vezes o PO terá que dizer não para funcionalidades que agregam menos valor
+ para o negócio/projeto naquele momento.
+
+Dev Team
+
+Equipe de desenvolvimento
+
+equipe não muito grande
+recomenda de 3 a 9 pessoas(scrum guide)
+todos no mesmo barco
+Conseguir levar a idéia ao "pronto"
+
+Perfil T = conhecimentos de cada membro/especialistas de cada linguagem
+funcionalidade, truck factor= quantas pessoas de uma determinada equipe
+precisam ser atropeladas para a equipe travar.
+
+
+...Development Team qualidades
+
+De acordo com o que aprendemos nessa aula, um Development Team é composto por pessoas que podem ser:
+
+Especialista: alguém com profundidade de conhecimento em algum assunto;
+
+Generalista: pessoa que sabe um pouco de cada coisa, mas não tem nenhum conteúdo muito aprofundado;
+
+T-shaped: alguém com especialidade em algo, mas com um conhecimento generalizado em outras coisas;
+
+Já sabemos os tipos de profissionais no Development Team, mas qual é o papel de um development team em uma equipe ágil?
+
+Construir, validar e integrar o incremento de um produto.
+Exatamente. Uma equipe de desenvolvimento é a responsável por executar o que foi definido, validando para garantir que está adequado.
+
+Ex:
+Considere que uma nova área de vendas está sendo criada na sua empresa e foi mapeado que é preciso contratar 12 novas
+pessoas para essa área entre coordenação, vendas e pré-vendas.
+
+A Product Owner identificou toda a necessidade, conheceu bem os produtos que essas pessoas irão trabalhar e mapeou 
+bem as características que serão buscadas nessas pessoas.
+
+A equipe que executará o trabalho, ou seja, a Development Team, irá fazer as entrevistas, negociação de salários,
+integração e avaliação da performance das pessoas especialistas em diferentes temas, como processos seletivos,
+vendas, liderança, psicologia e negociação, mas elas fazem parte de um único time: nesse
+ caso, o time de "recrutamento da nova equipe de vendas".
+
+
+***
+Aprendemos que uma equipe de desenvolvimento é responsável por construir, validar e integrar o incremento de um produto.
+
+Além disso, essa equipe é composta por pessoas que não possuem títulos, todos são "membros" daquele time.
+
+E uma das características mais interessantes para a pessoa fazer parte de uma Development Team ou até mesmo de uma equipe ágil é ela ser T-shaped, ou seja, 
+além dela ter pelo menos uma expertise na qual ela é especialista, ela também consegue ser generalista, podendo atuar com tranquilidade em diferentes papéis e assuntos.
+
+Scrum Master
+
+Lider Servidor
+
+Detem conhecimento sobre Scrum
+Voluntariosa, disposto a servir
+Contam com a pessoa
+Coach - perguntas certas para a organização criar as próprias soluções
+Professor
+Dominar e transmitir conteúdo
+Expert em Scrum
+
+
+...papel scrum Master
+
+Além da capacidade que um Scrum Master tem de ser um Líder Servidor, que tem como principal objetivo ajudar o próximo para que 
+atinjam o resultado almejado, um Scrum Master tem muitas outras capacidades.
+
+Qual dessas características abaixo NÃO representam uma pessoa com papel de Scrum Master?
+
+Alternativa correta
+Promove melhorias na organização
+Faz parte de ser um agente de mudanças.
+
+Alternativa correta
+Remove impedimentos
+É uma das habilidades principais de um Scrum Master.
+
+
+Prioriza o que será feito
+Esse é um papel de Product Owner e não de Scrum Master
+
+Alternativa correta
+Organiza o trabalho
+Faz parte de ser um facilitador.
+
+Alternativa correta
+Negociação
+Negociação é um skill social muito importante para Scrum Masters.
+
+Alternativa correta
+Coach
+Ele consegue fazer perguntas que geram reflexões
+
+***
+
+Aprendemos que a pessoa no papel de Scrum Master é responsável por maximizar a eficiência do Scrum Team, promovendo e 
+suportando o Scrum e ajudando a melhorar as interações existentes.
+
+Essa pessoa possui algumas características principais:
+
+Líder servidor: tem como principal objetivo fazer com que as outras pessoas tenham sucesso.
+
+Coach: uma pessoa que consegue fazer perguntas que gerem reflexão.
+
+Facilitador: consegue organizar o trabalho.
+
+Professor: consegue ensinar para a equipe.
+
+Remove impedimentos.
+
+Expert em scrum.
+
+Possui Social Skills: capacidade de conseguir conversar e interagir com outras pessoas.
+
+Agente de mudanças: tem o objetivo de melhorar a organização, não apenas o scrum team.
+
+
+
+Times Kanbam
+
+Visualizar o fluxo do trabalho
+
+Limitar o Wip
+trabalho em andamento
+
+ajudar a formar multidisciplinaridade
+e auto-organização
+sdm
+
+srm
+
+comece com o que vc tem, e a medida vamos evoluindo
+
+---imgKanbam
+
+Kanban é uma evolução de como organizar o trabalho de um Scrum Team, sem possuir alguns dos papéis obrigatórios de Scrum 
+e com um foco grande em garantir a capacidade de trabalho.
+
+É uma ferramenta interessante de se conhecer e explorar com mais detalhes para ver se sua aplicação é interessante para 
+o seu ambiente organizacional.
+
+O método Kanban é constituído por tarefas e é dividido em 5 etapas: documentação, prototipação, codificação, teste e entrega.
+Em cada uma das etapas são afixados post-its, que costumam conter uma breve explicação da tarefa. Um determinado grupo de 
+pessoas atuam em cada etapa, podendo ser uma, duas, ou até mais.
+
+Temos os papéis opcionais dentro da ferramenta Kanban que são:
+
+Service Delivery Manager: é a pessoa que garante que os itens não fiquem parados, tem papel de facilitador no fluxo de mudanças e melhorias.
+Service Request Manager: tem como papel principal fazer a ordenação e papel dos itens, qual item terá maior impacto e retorno de investimento.
+
+
+---
+
+Quando vamos para o framework do scrum, você tem três papeis ali básicos, que são o time, o PO e o scrum master. A gente aqui, até pelo nível de maturidade
+ousamos sair desse modelo, então temos uma composição mais híbrida, até nesse formato de squad que a gente trabalha. Você tem múltiplas perfis
+que garantam que você tenha uma entrega sem depender de outras áreas.
+
+Temos o dev team, o QA, o PO, o profissional de UX. Dependendo da squad você tem especialistas de negócios, para apoiar o PO. 
+Temos a figura do agile coach. Não temos aqui a divisão entre scrum master e agile coach. O agile coach atua em um nível de squad. 
+Em grande parte do mercado a figura do agile coach é algo mais cross.
+
+Pelo nível de responsabilidade da squad, e o mercado colocou um pouco essa hierarquia, hoje os scrum master tem um conhecimento menor do que o agile coach,
+então consideramos que as squads precisariam ter um agile coach, que o scrum master seria pouco para o nível de exigência. Nós temos então só agile coachs 
+que atuam no nível de squad e no nível cross.
+
+O PO tem a responsabilidade da direção, de ser uma figura visionária, que crie metas que o time fale “que legal fazer isso. Estou engajado, 
+motivado de fazer”. Nem sempre é fácil, mas essa é a ideia. E que traga números também para embasar. Que problemas queremos resolver?
+Qual o impacto disso? Quantos usuários são atingidos? Quantas ligações recebemos por conta disso?
+
+
+O restante do squad é o dev team, tem uma responsabilidade grande, porque como temos um nível de autonomia muito grande, a partir do momento em que o
+PO der a direção em conjunto toma-se uma decisão do que precisa ser feito. Não é algo também que ele impõe. A responsabilidade é “pensei nisso. O 
+que vocês acham?”, “e se a gente fizesse assim, não assim?”. O agile coach facilita essa discussão, essa conversa. Ele dá a última palavra como PO,
+mas isso é feito de forma muito colaborativa e construtiva.
+
+Times de squad acabam com o problema da dependencia de um setor 
+
+cross-polymization
+
+pessoas com diversos backgrounds trabalhando na mesma coisa
+

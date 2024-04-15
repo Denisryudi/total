@@ -1,0 +1,110 @@
+Objetivos
+
+Inovações Tecnológicas
+
+Coleta e tratamento da informação em grande volume e em velocidade imensurável
+
+Proteção dos diretos fundamentais: saúde, educação, lazer
+não violar diretórios
+
+-proteção da privacidade
+Imprescindível
+
+fundamentos
+princípios
+caract do tratamento de dados
+riscos da sua não implementação.
+
+
+
+o que é?
+
+Lei nº 13.709/2018
+
+Viabilizar segurança jurídica e estabelecer diretrizes para promover a proteção de dados pessoais das pessoas naturais.
+- tratamento de dados pessoais
+- Meios digitais
+
+Proteger os diretos fundamentais de liberdade e de privacidade
+
+Livre desenvolvimento da personalidade da pessoa natural
+
+.Fundamentos legais
+-respeito à privacidade;
+-autodeterminação informativa;
+-Liberdade de expressão, de informação, de comunicação e de opinião;
+-inviolabilidade da intimidade, da honra e da imagem;
+-Desenvolvimento econômico e tecnológico e a inovação
+-Livre iniciativa, livre concorrência e a defesa do consumidor; e 
+-Direitos humanos, livre desenvolvimento da personalidade, a dignidade e o exercício da cidadania pelas pessoas naturais.
+
+.Abrangência
+-Atividades que envolvem o tratamento de dados
+-Meios analógicos
+-Pessoas físicas e jurídicas
+-Consideram-se coletados no território nacional os dados pessoais cujo titular nele se encontre no momento da coleta
+Geolocalização
+
+Hipóteses de não aplicação
+Dados pessoais quando realizado por pessoa natural
+
+Tratamento para a finalidade de segurança publica e do estado, defesa nacional e repressão às infrações penais, provenientes de fora
+do território nacional/sem compartilhamento interno
+
+
+.Encarregado de Dados(DPO)
+
+Canal de comunicação entre o controlador, os titulares dos dados e a Autoridade Nacional de Proteção de Dados(ANPD)
+
+Indicado pelo controlador
+-Reclamações, realiza comunicações dos titulares, emite orientações e esclarecimentos e adota providências
+
+dpo qualquer pessoa, coleta e repassa dados
+
+
+
+ex:
+
+Imagine-se situação na qual uma determinada empresa oferte, por meio de seu website, um processo de candidatura global para determinada 
+vaga de trabalho. Ciente da notícia, uma pessoa, localizada em território brasileiro, resolve acessar o site da empresa e preencher 
+formulário de candidatura ao emprego. O candidato ao emprego, titular dos dados que estão sendo coletados, percebe que o 
+formulário exige como condição de candidatura dados flagrantemente desnecessários, à luz da LGPD.
+
+Elaborado pela professora, 2022.
+
+r: 
+Essa será uma situação típica do chamado Direito do Trabalho Digital, que se caracteriza pelo impacto da internet 
+e da inteligência artificial em conformidade e no redimensionamento das relações trabalhistas.
+
+
+A Lei Geral de Proteção de Dados (LGPD) tem como foco regular a relação entre os agentes de tratamento e os titulares dos dados pessoais, já que esta nem sempre se dava de maneira justa e equilibrada. Desta maneira, trouxe mudanças significativas aos titulares dos dados pessoais no que se refere à privacidade e ao tratamento de dados, garantindo-se maior transparência e certos direitos.
+
+Elaborado pela professora, 2022.
+
+De acordo com este contexto, analise as afirmativas seguintes:
+
+I. O titular dos dados pessoais poderá solicitar a eliminação de dados desnecessários ou que tenham sido coletados em desconformidade com a lei.
+
+II. A portabilidade dos dados a outro fornecedor de serviço ou produto é um direito do titular, que deverá solicitar por requisição expressa.
+
+III. O titular de dados pessoais tem o direito à confirmação da existência de tratamento por parte do controlador.
+
+IV. O titular tem o direito de saber com quais entidades o controlador realizou uso compartilhado de dados.
+
+Todas corretas (a confirmar)
+
+
+
+
+
+
+..Alternativa 3: Anonimização.
+
+A anonimização é uma técnica de tratamento de dados que busca tornar os dados pessoais irreversivelmente anônimos, 
+de modo que não seja possível identificar o titular dos dados, nem direta nem indiretamente. Isso é feito para
+proteger a privacidade dos indivíduos e permitir o uso dos dados para fins estatísticos, de pesquisa e análise
+de forma mais segura, em conformidade com as regulamentações de proteção de dados, como a Lei Geral de 
+Proteção de Dados (LGPD)
+
+
+A Autoridade Nacional de Proteção de Dados (ANPD) possui autonomia técnica e decisória.

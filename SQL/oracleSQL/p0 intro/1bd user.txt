@@ -1,0 +1,10 @@
+sys admin, pode fazer qualquer coisa
+
+GRANT concede privilegios
+REMOKE retirar
+
+Criar usuario > admin>outros usuarios>criar
+conexao> + conexoes>link user
+excluir > em Cascata> plicar
+
+XEPDB1

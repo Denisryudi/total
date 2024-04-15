@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Variables</title>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="./reset.css"/>
+    <link rel="stylesheet" href="./style.css"/>
+</head>
+<body>
+    <div class="container">
+    <div class="header">
+        <h1>Hello Css Variables!</h1>
+        <hr/>
+        <p>CSS variables allow you to create custom properties
+            which you can use to reduce duplication and have a common place
+            for the common values such as colors, spacins etc.</p>
+        <p>          
+            <button onclick="document.body.classList.remove('dark-mode')">Light Mode</button>
+            <button onclick="document.body.classList.add('dark-mode')">Dark Mode</button>  
+        </p>
+        </div>
+
+        <div class="notes">
+            <p>Css Variables are case-sensitive</p>
+            <p>For invalid variables, the var substituion or initial value is used</p>
+            <p>All the major browsers support Css Variables(except IE-11)</p>
+        </div>
+        </div>
+</body>
+</html>

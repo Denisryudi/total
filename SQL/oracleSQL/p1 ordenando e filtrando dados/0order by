@@ -1,0 +1,304 @@
+ORDER BY coluna1 [ASC/DESC]
+
+SELECT * FROM
+    EMPLOYEES
+ORDER BY salary ASC; OU DESC
+
+SELECT * FROM
+    EMPLOYEES
+ORDER BY salary ASC, first_name ASC;
+
+
+NULOS
+
+
+SELECT
+    *
+FROM departments
+ORDER BY manager_id ASC NULLS LAST; OU NULLS FIRST
+
+---FETCH NEXT
+Escolher a quantidade de linhas para retornar
+
+
+SELECT
+    *
+FROM departments
+ORDER BY manager_id NULLS LAST
+FETCH NEXT 10 ROWS ONLY;
+
+10 LINHAS
+
+
+SELECT
+    *
+FROM departments
+ORDER BY manager_id NULLS LAST
+FETCH NEXT 10 ROWS WITH TIES;
+
+COM EMPATES
+
+
+SELECT
+    *
+FROM departments
+ORDER BY manager_id NULLS LAST
+FETCH NEXT 10 PERCENT ROWS ONLY; OR WITH TIES
+
+COM PORCENTAGEM
+
+
+SELECT *
+FROM employees
+ORDER BY salary ASC
+OFFSET 5 ROWS
+FETCH NEXT 10 PERCENT ROWS WITH TIES;
+
+PULAR LINHAS OFFSET
+
+
+
+SELECT * FROM jobs
+WHERE min_salary > 6000
+ORDER BY min_salary ASC;
+
+
+COM condição
+
+SELECT * FROM
+    employees
+WHERE job_id = 'ST_MAN';
+
+CASE SENSITIVE <> maiusculo e minusculo
+
+SELECT * FROM
+    employees
+WHERE HIRE_DATE > '01/01/2000'
+ORDER BY HIRE_DATE ASC;
+
+COM DATA
+
+
+SELECT * FROM
+    employees
+WHERE JOB_ID = 'IT_PROG' AND SALARY > 5000; OU OR
+
+COM CONDICIONAL OR OU AND
+
+
+SELECT * FROM
+    employees
+WHERE department_id = 90 OR department_id = 100;
+
+COM CONDICIONAL OR OU AND IGUAIS
+
+
+
+
+SELECT * FROM
+    employees
+WHERE NOT department_id = 90;
+
+COM NOT
+
+
+SELECT * FROM
+    employees
+WHERE first_name LIKE '_lexander'
+ORDER BY department_id ASC;
+=115	Alexander	Khoo	AKHOO
+
+
+LIKE
+--------------------------------------------
+'a%' começam com 'a'
+'%a' terminando com 'a'
+'%ao%' tem 'ao' em qualquer posição
+'_a%' tem a letra 'a' na segunda posi e começam com uma letra qualquer
+'a_%' começam com 'a'  e tem 2 caracteres
+'a__%' começam com 'a' e tem pelo menos 3 caracteres
+'a%o' começam com 'a' e terminam com a letra 'o'
+
+
+
+--------------------------------------------
+
+
+SELECT * FROM
+    employees
+WHERE job_id LIKE 'ST%';
+
+COMEÇA COM ST
+
+
+
+SELECT * FROM
+    employees
+WHERE job_id LIKE '%MAN';
+
+TERMINA COM MAN
+
+
+
+SELECT * FROM
+    employees
+WHERE phone_number LIKE '%___123____%';
+=515.123.4567
+
+NO MEIO 123
+
+
+SELECT * FROM
+    employees
+WHERE NOT phone_number LIKE '%___123____%';
+
+NOT NEGAÇÃO
+
+
+
+
+SELECT * FROM
+    employees
+WHERE first_name BETWEEN 'A' AND 'D'
+ORDER BY FIRST_NAME ASC;
+
+NOMES COMÇANDO COM A LETRA 'A' ATÉ A 'D'  Douglas nao entra pois é maior que D
+
+
+SELECT * FROM
+    employees
+WHERE salary BETWEEN 10000 AND 30000
+ORDER BY SALARY ASC;
+
+BETWEEN
+
+
+SELECT * FROM
+    employees
+WHERE HIRE_DATE BETWEEN '01/01/99' AND '31/12/00'
+ORDER BY HIRE_DATE ASC;
+
+BETWEEN DATES
+
+
+SELECT * FROM
+    employees
+WHERE HIRE_DATE NOT BETWEEN '01/01/99' AND '31/12/00'
+ORDER BY HIRE_DATE ASC;
+
+NOT BETWEEN
+
+SELECT * FROM
+    employees
+WHERE department_id IN (30, 50 ,90)
+ORDER BY department_id ASC;
+
+IN - MULTIPLOS INT
+
+SELECT * FROM
+    employees
+WHERE department_id IN (30, 50 ,90)
+ORDER BY department_id ASC;
+
+
+SELECT * FROM
+    employees
+WHERE job_id IN ('ST_CLERK', 'AD_VP', 'AD_PRES')
+ORDER BY job_id ASC;
+
+
+IN STRING
+
+
+
+SELECT * FROM
+    employees
+WHERE job_id NOT IN ('ST_CLERK', 'AD_VP', 'AD_PRES')
+ORDER BY job_id ASC;
+
+NOT IN
+
+
+
+
+
+
+SELECT first_name, job_id, salary
+FROM employees
+WHERE job_id = 'IT_PROG' OR job_id = 'ST_MAN' AND salary > 5000
+ORDER BY salary ASC;
+
+name    job     salary
+= Diana	IT_PROG	4200
+David	IT_PROG	4800
+Valli	IT_PROG	4800
+Kevin	ST_MAN	5800
+Bruce	IT_PROG	6000
+Shanta	ST_MAN	6500
+Payam	ST_MAN	7900
+Matthew	ST_MAN	8000
+Adam	ST_MAN	8200
+Alexander	IT_PROG	9000
+
+PRIMEIRO O AND E DEPOIS O OR
+
+
+PRECEDENCIA
+
+SELECT first_name, job_id, salary
+FROM employees
+WHERE (job_id = 'IT_PROG' OR job_id = 'ST_MAN') AND salary > 5000
+ORDER BY salary ASC;
+=
+Kevin	ST_MAN	5800
+Bruce	IT_PROG	6000
+Shanta	ST_MAN	6500
+Payam	ST_MAN	7900
+Matthew	ST_MAN	8000
+Adam	ST_MAN	8200
+Alexander	IT_PROG	9000
+
+
+ENTRE ASPAS
+
+
+
+
+SELECT * FROM
+    employees
+WHERE employee_id = &employee_id;
+= input
+INT
+variável de SUBSTITUIÇÃO
+
+
+SELECT * FROM
+    departments
+WHERE department_name = '&department_name';
+
+STRINGS = aspas - case sensitive
+
+
+
+SELECT * FROM
+    employees
+WHERE salary BETWEEN &salary AND &salary
+ORDER BY salary ASC;
+
+=132	TJ	Olson	TJOLSON	650.124.8234	10/04/99	ST_CLERK	2100
+128	Steven	Markle	SMARKLE	650.124.1434	08/03/00	ST_CLERK	2200
+136	Hazel	Philtanker	HPHILTAN	650.127.1634	06/02/00	ST_CLERK	2200
+135	Ki	Gee	KGEE	650.127.1734	12/12/99	ST_CLERK	2400
+127	James	Landry	JLANDRY	650.124.1334	14/01/99	ST_CLERK	2400
+140	Joshua	Patel	JPATEL	650.121.1834	06/04/98	ST_CLERK	2500
+182	Martha	Sullivan	MSULLIVA	650.507.9878	21/06/99	SH_CLERK	2500
+131	James	Marlow	JAMRLOW	650.124.7234	16/02/97	ST_CLERK	2500
+191	Randall	Perkins	RPERKINS	650.505.4876	19/12/99	SH_CLERK	2500
+119	Karen	Colmenares	KCOLMENA	515.127.4566	10/08/99	PU_CLERK	2500
+
+
+BETWEEN + INPUT + AND
+
+
+
+

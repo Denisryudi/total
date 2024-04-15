@@ -1,0 +1,436 @@
+Intranet = Redes de computadores internas, acessadas pelos colaboradores por questão de segurança.
+
+extranet = rede externa, acesso pela internet. duas redes conectadas entre elas. 2 intranet
+
+
+Lan = alta taxa de transferência, Protocolos TCP/IP, ETHERNET, Ponto a ponto ou cliente servidor
+
+Man = rede Lan com alcance metropolitano , internet, fibra, rádio 
+Wan = rede de longa distancia ultrapassa a barreira  de cidades
+WPAN BLUETOOTH redes pessoas de curta distancia sem fio
+
+Padrão IEEE802.3
+HALF DUPLEx = os 2 mandam e recebem mas um de cada vez
+FULL DUPLEX = 2 Fios um envia e outro recebe informação ao mesmo tempo
+
+HUB interligar fisicamente os dispositivos da rede
+Desuso pois envia um pacote por vez , não tem controle de fluxo.
+Broadcast = uma porta envia a informação para todos os dispositivos sempre 
+
+Switch = Controle de tráfego 
+Busca a melhor rota 
+Ao invés de enviar para todas as rotas, ele e envia para todas na primeira vez por broadcast, mas após a primeria conexão ele seleciona as portas corretas sem precisar enviar para
+todos os dispositivos
+
+Roteador = mais técnica, pode conectar diversas redes e de diverentes tipos
+Definição de IP 
+Roteador/modem/wifi 
+
+Meios de transmissão
+
+Meio físico = Coaxial, par trançado, fibra - Guiados 
+Não guiados = rádio, infravermelho, sem fio entre outros
+Através de Topologias 
+
+Coaxial = placas 10mbs, Padrão 10 base 5, expansão de 500m
+Padrão 10 base 2 = expansão de 185m (mais barato)
+
+Isento de interferências electromagneticas
+
+Camadas
+Jaqueta(proteção)> malha de metal(proteção contra interferências)> Isolamento interno (proteção isolante)> Fio de cobre 
+
+
+
+Cabo Par Trançado (ETHERNET)
+
+Base 10
+4 pares de cores diferentes
+trançados auxiliar na montagem e capa vinil para proteger do campo electromagnetico externo
+
+Cabo FTP = FOILED TWISTED PAIR = blindagem simples > folha de aço > envolve todos os pares de cabos> protegendo-os contra interferências externas.
+
+Cabo STP = SHIELDED TWISTED PAIR = Blindagem individual para cada par de cabos> melhora a tolerância do cabo com relação a distância.
+
+Cabo SSTP = SCREENED SHIELDED TWISTED PAIR = Combina a blindagem para cada par com a segunda blindagem externa >envolvendo todos os pares >especialmente resistentes  a interferências
+externas.
+
+
+Fibra ótica = sinais luminosos > Camadas de núcleo > filamento de vidro > Revestimento(isolante elétrico) 
+Monomodo transportado de forma direta no núcleo do cabo
+Multimodo = Feixe de luz viaja fazendo refrações nas paredes
+
+Topologia de rede = a estrutura lógica da rede, como a informação trafega dentro da minha rede, como recebo ou envio a informação. 
+
+Ponto a ponto: peer to peer, interliga dois computadores
+Barramento: Todos os comp se comunicam por um barramento central, o mesmo pacote passará pra todas as máquinas. mais de 1 pacote ao mesmo tempo = colisão 
+Anel: Dispositivos conectados em série; circuito fechado; única direção. desvantagem: rede extensa demora na chegada da inf. ex: a,b,c,d,e,f para a > f = Tempo longo
+Se qualquer computador falhar pode causar uma interferência no envio da informação. 
+Estrela: Ponto central que faz o intermédio do envio da informação ex: a    hub, switch, cabos de par trançados
+                                                                    b  h  c
+                                                                       d
+                                                                h = central que envia para abcd 
+
+ Dial-up discada 
+ modem
+ 56kbps
+ Instável
+ custos
+ Bloqueio da linha
+ Ainda existe
+
+ ADSL
+
+ asymmetric Digital Subscriberline
+
+ 1989
+ alta vel
+ linha tel.
+ modem
+ Possui canal de voz, upload, download.
+
+ CATV
+
+ tv a cabo
+ alta vel
+ Canal de vídeo, downstream, upstream
+
+ Elétrica
+
+ PCL 
+
+ Power line communication
+
+ Barata e rápida podem de facil interferência
+
+
+ Rádio 
+
+ Antena, ondas
+Transfere dados cliente/usuário
+grandes distancias
+grande vel
+suscetível a interferência
+
+infravermelho
+WPAN 
+curta
+Aparelhos eletronicos 
+
+Radio curto alcance
+10m de alcance
+
+
+Remota
+Auxílio de reparos
+instalações
+VPN
+teamviewer.
+
+
+TCP/IP
+
+Transmission Control Protocolos
+
+Robusto, controle de fluxo(melhor caminho), conexões lógicas, full-duplex
+
+Informação timer
+
+UDP 
+
+User Datagram Protocol 
+= envia a informação sem controle de fluxo
+visualização de videos 
+escolha para enviar dados em tempo realizado
+
+DHCP
+
+Dynamic Host Configuration Protocol
+Protocolo de config dinâmica de endereços de rede
+solicita uma requisição ao servidor DHCP 
+
+da um endereço de IP para o dispositivo 
+
+transmissão em serial > que paralela
+
+LTE Long term evolution.
+
+
+
+
+Modelo OSI
+É o primero modelo padrão de comunicação entre sistemas de computadores e redes, ele faz uso de sete camadas para garantir essa conversa
+Base para o TCP/IP 
+Encapsulamento 
+
+1º Aplicação quer conversar - modelo pilha
+2º apresentação
+Formato de dados
+Criptografica
+Compactação
+
+3ºsessão 
+
+sincronia 
+início e fim da conexão 
+
+aplicação> codificar> estabelecer conexão> conversar de maneira estruturada
+4ªtransporte
+
+cliente servidor
+
+identificação por porta,
+segmentação de dados, reconstrução de segmentos, controle de fluxo, controle de erros> retransmissão 
+
+5º rede
+
+roteamento entre redes diferentes
+Melhor caminho
+empacotamento
+
+6ª enlace de dados
+Ponto a ponto
+intra-rede
+controle de fluxo de erros
+
+7ªfisica
+
+Transmissão de bits
+convenção de sinais
+Dispositivos físicos e conexões
+
+Equivalência de pilhas
+OSI - Open System Interconection
+TCP/IP Protocolo de internet 
+
+Ou seja
+
+Aplicação> Representação dos dados
+Transporte> Comunicação entre os dispositivos
+Internet> Melhor caminho pela rede
+Acesso à rede> Controle de hardware e conexões ponto-a-ponto
+
+
+Cliente servidor web limita a velocidade dependendo da largura da banda.
+Com 500g/s se a largura da banda do site não for alta não adianta nada.
+Afinal mesmo tendo uma velocidade alta, o site não comporta rodar em tamanha velocidade
+
+Largura de banda: capacidade x tráfego. muita capacidade com muito tráfego = lentidâo.
+Latência tempo de resposta rtt round Trip  time 
+
+Throughtput = medida utilizada para mensurar a taxa em que os dados são transmitidos com êxito, de um lugar para o outro, em um determinado período de tempo 
+
+protocolos = padrões que permitam a comunicação entre diversos modelos
+protocolos estão sempre ligadas à uma RFC = Request for comments > publicadas pela IETF > Internet Engineering Task Force> cisco . 
+
+
+Entrega de dados pelo "melhor esforço" = priorizar a saída da voz, nisso  a imagem reduz a qualidade
+
+UDP = videos
+TCP/IP Bancos confiável fim a fim 
+
+Redes = conjunto de módulos processadores interligados por um sistema de comunicação capazes de trocar informações e compartilhar recursos. 
+
+Sistema de comunicação = Arranjo topológico que interliga os módulos processadores através de enlaces(links, cabo de fibra ótica que vem do isp)
+e regras(protocolos) para organizar essa comunicação 
+
+peer to peer = comunicação entre clientes(torrent0) cada um tem um pedaço e passa para o outro por upload. baixar pedaços simultaneamente 
+TCP faz o ajuste na resposta da comunicação entre os 2
+
+DHCP = Protocolo que solicita uma requisição ao servidor, e o servidor retorna dando um ip ao dispositivo
+
+FTP = File Transfer Protocol, transferência de arquivos 
+acesso a arquivos remotos 
+
+HTTP = Hyper Text Transfer Protocol, Camada de aplicação, trocam msg por HTTP, Browsers, tratativa de erros (404)
+
+SSL = Security Sochets Layer, criptografia, HTTPS, Compras em cartões
+
+SSH = Security Shell, protocolo para login remoto, comunicação segura.
+
+DNS = Domain Name System, endereço do site, atribuição de nome
+
+IP estatico = fixo
+Dinâmico = semelhante ao DHCP, ao entrar na rede recebe um endereço de ip, e quando sair da rede esse mesmo endereço sera liberado e fornecido ao próximo dispositivo
+
+TCP/IP 4 Camadas
+Cama de aplicação = mais próxima do usuário
+FTP, DNS, HTTP, SSH, DHCP
+
+Camada de transporte = Separar os dados da forma que eles serão trafegados e verificar como ocorrerá isso.
+Controle de fluxo da rede 
+Controle de erros 
+TCP, UDP
+
+Camada inter-Redes
+
+ Função fazer com que os hosts adicionem pacotes em qualquer rede e garantir que eles trafegarão independentemente 
+ ex: Dividir uma informação em diferentes pacotes e fazê-los trafegar independentemente um do outro
+
+Camada host/rede
+
+detectar e corrigir possíveis erros no nível físico e controle de fluxo
+nível hardware
+comunicação entre camada inferior e superior
+
+
+---OSI
+
+Enlace = técnica de detecção> verificação de paridade, método de soma de verificação 
+e verificação de redundancia cíclica. quadros
+
+Camada de rede 
+Frames
+Caminhos apropriados
+
+Roteamento, endereçamento e sub-rede
+
+CAMADA de sessão
+
+abre uma sessão especif entre 2 pcs
+controlar a sessão entre 2 elementos dessa rede
+
+CAMADA apresentação
+
+responsável por transformar os dados da camada de aplicação/interface pra camada de transporte 
+converter de letras pra 0 e 1 como o contrário 
+compacta os dados reduzindo os bits a serem transmitidos na rede e realiza a criptografia(diferença de sintaxe)
+
+
+
+
+
+
+----->
+Camada física = responsável pelos dados físicos da transmissão de bits.
+
+Camada de enlace de dados = Enquadramentos, controle de fluxo e correção/verificação de erros.
+
+Camada de rede = responsável pelo roteamento, endereçamento e gerenciamento de sub-redes
+
+Camada de transporte = controle de fluxo, garantir que a informação venha de um lado para o outro 
+
+Camada de sessão = Abre subsessões entre 2 indivíduos
+
+Camada de apresentação = Parte de igualdade de sintaxe entre o transmissor e o receptor 
+
+Cama de aplicação = Interface com o usuário 
+
+
+
+
+A camada que implementa o protocolo Internet (IP) faz a função de roteamento de dados.
+Sim, isso está correto. A camada do protocolo Internet (IP) é responsável pelo roteamento dos pacotes de dados através da rede, garantindo 
+que eles cheguem ao destino correto. Essa camada é responsável por endereçar, encapsular e enviar os pacotes de dados através da rede, 
+utilizando um sistema de endereçamento único e global (endereços IP). O roteamento é feito através de tabelas de roteamento que indicam 
+qual é o próximo salto (roteador) para encaminhar o pacote em direção ao seu destino.
+
+
+----------------\
+
+
+função da soma de verificação (checksum)
+
+A função da soma de verificação (checksum) é um método de detecção de erros usado para garantir que os dados transmitidos em uma rede sejam recebidos corretamente.
+A ideia é simples: somar todos os valores dos bytes de um pacote de dados e adicionar um valor de verificação ao final do pacote. O receptor, por sua vez, calcula
+a soma dos bytes recebidos e compara com o valor de verificação para verificar se há erros na transmissão.
+
+Para calcular a soma de verificação, o emissor do pacote percorre todos os bytes que serão enviados e soma seus valores, gerando um resultado único. 
+Este resultado é então adicionado ao final do pacote, para que o receptor possa verificar se o pacote foi recebido corretamente.
+
+Ao receber o pacote, o receptor recalcula a soma de verificação, somando os valores dos bytes recebidos e verificando se o resultado é igual ao valor de 
+verificação enviado pelo emissor. Se houver discrepância, isso indica que houve erro na transmissão do pacote e o receptor pode solicitar que o pacote
+seja reenviado.
+
+A função de soma de verificação é usada em muitos protocolos de rede, incluindo o TCP e o UDP, para garantir que os dados transmitidos sejam recebidos sem erros.
+
+
+PPP (Point-to-Point Protocol) é um protocolo de rede de comunicação ponto a ponto que permite a transferência de dados entre dois dispositivos em uma rede.
+ Ele é utilizado para estabelecer conexões entre computadores, roteadores ou outros dispositivos de rede em uma rede IP (Internet Protocol). O PPP é uma 
+ das várias tecnologias usadas para fornecer acesso à internet em todo o mundo, sendo amplamente utilizado em conexões dial-up, linhas privadas, redes 
+ de área local (LAN) e redes de longa distância (WAN). Ele faz parte da arquitetura TCP/IP porque é um protocolo de camada de enlace, que permite a 
+ transmissão de dados entre a camada de rede e a camada física da rede.
+
+
+
+Para começarmos a entender o funcionamento da arquitetura web, considerando o procolo HTTP, é necessário entendermos como funciona o protocolo HTTP: É o protocolo padrão utilizado para o funcionamento de toda WEB, encontra-se na camada de aplicação e é implementada por dois programas: um cliente e outro servidor que conversam por trocas de mensagens HTTP. Este utiliza o protocolo TCP como protocolo de transporte, realizado através de softwares chamados de Browsers (navegadores) (ROSS; KUROSE, 2013).
+A arquitetura web construída com base no protocolo HTTP funciona através de uma estratégia de troca de informações entre cliente e servidor, na qual o cliente, geralmente um navegador, realiza pedidos ao servidor a fim de acessar o conteúdo. O protocolo HTTP, por sua vez, apresenta um conjunto de técnicas que o cliente pode empregar para interagir com o servidor, como por exemplo os métodos GET, POST, PUT e DELETE. Esses métodos são conhecidos como operações CRUD, que nada mais são do que os processos de Criação, Leitura, Atualização e Remoção de informações.
+Como funcionam esses métodos: O GET : Recupera uma representação de um recursos da web, ou seja permite o acesso às paginas. POST, enviar informações ao servidor, como o envio de dados de um formulário ao servidor. O método PUT é uma forma de atualizar informações já existentes no servidor. E o método DELETE é usado para excluir um recurso específico no servidor.
+Segue os tipos de resposta à requisição HTTP:
+1xx informação
+2xx Sucesso
+3xx Redirecionamento
+4xx Erro no cliente
+5xx Erro no servidor 
+
+
+
+
+
+
+
+
+
+SOFTWARE, INFRAESTRUTURA E PLATAFORMA
+COMO SERVIÇO
+
+Como estudamos no tópico anterior, a computação em nuvem surge da necessidade
+de construir infraestruturas de TI complexas, em que os usuários não
+têm que realizar instalação, configuração e atualização de softwares. Além disso,
+recursos de computação e hardware são propensos a ficarem obsoletos rapidamente.
+Existem diversos serviços que são atrelados ao conceito e que podem trazer
+benefícios à operação das empresas, uma vez que podem ser adquiridos na
+quantidade necessária para cada caso (MOTAHARI-NEZHAD et al., 2009)2.
+PaaS (Platform as a Service): Esse tipo de serviço tem como função fornecer
+suporte a todo o ciclo de vida de desenvolvimento de aplicações, desde a sua
+concepção, execução, debug, teste, implantação, operação e apoio às aplicações
+Web. Esse serviço também facilita o desenvolvimento de aplicações destinadas
+aos usuários de uma nuvem, a partir de uma plataforma e uma infraestrutura
+de alto nível de integração, que possibilita a implementação e os testes de aplicações
+na nuvem.
+
+DaaS (Database as a Service): Esse tipo de serviço fornece recursos de banco
+de dados para as aplicações das empresas, sejam internas ou rodando nas nuvens.
+De acordo com Taurion (2009, p. 128-129), o provedor da nuvem mantém todo
+serviço de SGDB e o cliente paga somente pelo volume de dados armazenados
+e transferidos de e para a nuvem.
+
+Taurion (2009, p. 130), sugere alguns usos iniciais para DaaS:
+■ Ambiente de desenvolvimento e testes. Os desenvolvedores podem testar
+suas aplicações exaustivamente no momento em que precisam, sem a
+burocracia para ter ambientes disponibilizados.
+
+■ Data archiving. Sabendo que apenas 20% das informações das empresas
+estão ativas e, por aderência à legislação, a grande maioria das informações
+é armazenada em fitas após um período de inatividade. Por meio
+do DaaS há uma nova alternativa com custos menores para armazenar
+essas informações inativas.
+CLOUD COMPUTING E VIRTUALIZAÇÃO
+Reprodução proibida. Art. 184 do Código Penal e Lei 9.610 de 19 de fevereiro de 1998.
+194 U N I D A D E V
+
+■ Backup. O DaaS permite armazenamento de informações com custos
+menores que em discos próprios, além de fornecer ferramentas para automatizar
+os backups.
+
+IaaS (Infrastructure as a Service): o IaaS traz os serviços oferecidos na camada
+de infraestrutura, nesses serviços podemos incluir servidores, roteadores, sistemas
+de armazenamento e outros recursos de computação tais como recursos de
+hardware, espaço para armazenamento de dados e capacidade de processamento.
+O IaaS é baseado em técnicas de virtualização de recursos de computação. Tal
+recurso promove certa economia, pois não será necessário a aquisição de novos
+servidores e equipamentos de rede para a ampliação de serviços.
+
+SaaS (Software as a Service): são aplicações de software oferecidas como serviços
+na Internet. Nesse caso, a distribuição de software é free e este não precisa
+ser instalado localmente, mas sim liberado apenas o acesso ao serviço oferecido
+por este software, sendo este licenciado para a utilização por meio da internet.
+Os prestadores de serviços disponibilizam o SaaS na camada de aplicação, o que
+leva a rodar inteiramente na nuvem, trazendo a redução de custos e dispensando
+a aquisição de licença de softwares.
+No modelo tradicional, o cliente deveria adquirir hardware, licenças e realizar
+a instalação e a manutenção das aplicações em todos os seus equipamentos.
+Agora com o recurso de Computação em Nuvem, tudo fica disposto na nuvem,
+ou seja, você não precisa mais adquirir licenças, servidores e manutenção, aqui ela
+está disponível por meio de um navegador, em qualquer lugar e a qualquer hora.
+SUA

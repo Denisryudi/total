@@ -1,0 +1,42 @@
+package lojavirtual;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class ConnectionFactory {
+
+		public Connection recuperarConexao() throws SQLException {
+			return DriverManager
+				.getConnection("jdbc:mysql://localhost:3306/loja_virtual?useTimezone=true&serverTimezone=UTC", "root", "");
+		
+	}
+
+}
+
+
+
+Qual a vantagem de utilizar uma ConnectionFactory na nossa aplicação?
+
+r:
+Fornecer uma maneira mais simples para criar um objeto
+Criamos objetos sem expor a lógica ou as configurações de criação ao cliente. Além disso, 
+podemos nos referir ao objeto recém-criado usando uma interface (usando uma abstração), desacoplando a implementação.
+
+
+...ResultSet
+
+Como funciona o retorno do método execute, da interface java.sql.Statement?
+r:
+O método devolve true quando o seu resultado é um java.sql.ResultSet e false caso contrário (update, delete, etc)
+
+
+***
+Nesta aula, aprendemos que:
+
+Para simplificar e encapsular a criação da conexão, devemos usar uma classe ConnectionFactory
+A classe ConnectionFactory segue o padrão de criação Factory Method
+O Factory Method encapsula a criação de um objeto
+Para executar um comando SQL, podemos usar a interface java.sql.Statement
+O método execute envia o comando para o banco de dados
+Dependendo do comando SQL, podemos recuperar a chave primária ou os registros selecionados

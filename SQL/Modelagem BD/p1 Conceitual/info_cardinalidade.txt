@@ -1,0 +1,64 @@
+Um projeto de bd começa pelo modelo conceitual.
+descrever de forma resumida os requisitos de daedos dos usuários, ou seja a forma como os usuarios pretendem
+guardar seus dados
+
+E para realizar essa descrição resumida, precisaremosw aprender o MER
+
+Modelo Entidade Relacionamento
+
+Modelo ER será descrito atraves de um Diagrama Entidade Relacionamento que terá uma simbologia própria
+
+
+
+MER = modelo concitual a partir do qual o nosso banco de dados pode ser modelado.
+representamos esse modelo por um DIR = DIagama entidade relacionaento.
+no diagrama ER utilizados simbolos graficos para representar os requisitos dos usuarios
+
+
+
+Diagrama ER= a forma pela qual um projetista de bd descreve os requisitos levantados para os clientes
+Entidade, atributo e relacionamento
+
+Entidade = elemento da realidade que será observada e modelada.
+geralmente executa uma ação ou recebe uma ação
+''pessoas'' carros''
+
+Entidade = retângulo
+
+pessoa = entidade
+varias pessoas = ocorrencia ou instãncia da entidade pessoa
+
+
+Atributos = Pessoa com Cpf (bola preta chave primaria), nome, sexo
+caracteristicas
+
+
+
+atributo composto = endereço
+
+multivalorado = telefone, zap e telefone
+
+casa e cel
+
+
+chave = chave
+
+
+diferença da tabela pra relação seria a de que uma relação não aceita uma coluna com multi valores. Ex. telefones
+
+cardinalidade = grau de relação entre duas entidades ou tabelas
+um pra um
+um pra muitos
+muitos para muitos
+1:1 1:N  N:N
+
+o que define a cardinalidade são as regras de negocio
+
+cardinalidade mínima = 0
+máxima = N
+= (0,N)
+
+carros 0,N -----  0,N PESSOAS
+        Relação (N,N)
+                max
+

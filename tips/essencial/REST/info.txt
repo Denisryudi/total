@@ -1,0 +1,32 @@
+https://medium.com/desenvolvendo-com-paixao/o-que-%C3%A9-solid-o-guia-completo-para-voc%C3%AA-entender-os-5-princ%C3%ADpios-da-poo-2b937b3fc530
+
+S.O.L.I.D: Os 5 princípios da POO
+S — Single Responsiblity Principle (Princípio da responsabilidade única)
+O — Open-Closed Principle (Princípio Aberto-Fechado)
+L — Liskov Substitution Principle (Princípio da substituição de Liskov)
+I — Interface Segregation Principle (Princípio da Segregação da Interface)
+D — Dependency Inversion Principle (Princípio da inversão da dependência)
+
+
+S — Single Responsiblity Principle (Princípio da responsabilidade única)
+:
+
+A violação do Single Responsibility Principle pode gerar alguns problemas, sendo eles:
+
+Falta de coesão — uma classe não deve assumir responsabilidades que não são suas;
+Alto acoplamento — Mais responsabilidades geram um maior nível de dependências, deixando o sistema engessado e frágil para alterações;
+Dificuldades na implementação de testes automatizados — É difícil de “mockar” esse tipo de classe;
+Dificuldades para reaproveitar o código;
+
+
+O — Open-Closed Principle (Princípio Aberto-Fechado)
+:
+Objetos ou entidades devem estar abertos para extensão, mas fechados para modificação
+
+alterar algo que esta funcionando
+podem causar bugs
+
+ex: bd em versões
+
+L 
+polimorfismo

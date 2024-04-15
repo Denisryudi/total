@@ -1,0 +1,180 @@
+
+Consultar uma API REST através de um WebSocket e o uso de long polling são abordagens diferentes para a comunicação assíncrona
+em aplicações web. Vamos abordar cada uma delas:
+
+WebSocket:
+Conexão Bidirecional:
+
+Os WebSockets proporcionam uma comunicação bidirecional em tempo real entre o cliente e o servidor.
+
+Baixa Latência:
+Como a conexão WebSocket é persistente, não há overhead de abrir e fechar conexões repetidamente, resultando 
+em menor latência em comparação com outras técnicas.
+
+Push de Dados:
+O servidor pode enviar dados para o cliente assim que estiverem disponíveis, sem a necessidade de uma solicitação específica.
+Comunicação Contínua:
+
+A conexão WebSocket permanece aberta durante toda a sessão, permitindo uma comunicação contínua entre o cliente e o servidor.
+
+
+Long Polling:
+Método de Polling Assíncrono:
+
+No long polling, o cliente faz uma solicitação ao servidor e mantém essa solicitação aberta até que novos dados estejam
+disponíveis ou um determinado período de tempo tenha passado.
+
+Notificação Assíncrona:
+Quando há dados disponíveis, o servidor responde à solicitação do cliente. Caso contrário, a resposta pode ser adiada até que novos dados estejam prontos.
+Fechamento e Reabertura Constantes:
+
+Após cada resposta, o cliente precisa abrir uma nova solicitação para manter a comunicação assíncrona.
+Compatibilidade com Infraestruturas Antigas:
+
+O long polling é uma técnica mais antiga e pode ser útil em ambientes onde WebSockets não são suportados ou quando é necessário ser compatível com navegadores mais antigos.
+Escolha entre WebSockets e Long Polling:
+
+WebSockets: É geralmente a escolha preferida para aplicações que exigem comunicação em tempo real, como salas de bate-papo, 
+atualizações ao vivo, jogos online, entre outros.
+
+Long Polling: Pode ser uma escolha viável em ambientes onde WebSockets não estão disponíveis ou são impraticáveis, mas pode
+não fornecer a mesma eficiência em termos de latência e comunicação em tempo real.
+
+A escolha entre WebSockets e Long Polling depende dos requisitos específicos da sua aplicação, das capacidades dos seus clientes 
+e servidores, e da necessidade de comunicação em tempo real.
+
+User
+
+Frequentemente os WebSockets são usados em implementações de suporte por chat em tempo real. A natureza bidirecional dos WebSockets
+permite uma comunicação eficiente e em tempo real entre o cliente (navegador do usuário) e o servidor, o que é crucial para sistemas
+de chat onde as mensagens devem ser entregues e exibidas instantaneamente.
+
+Aqui está um fluxo básico de como um sistema de chat usando WebSockets pode funcionar:
+
+
+
+Estabelecimento da Conexão:
+
+Quando um usuário inicia uma sessão de chat, o navegador estabelece uma conexão WebSocket com o servidor.
+Comunicação Bidirecional:
+
+O servidor pode enviar mensagens para o cliente assim que elas estiverem disponíveis, e vice-versa. Isso cria uma comunicação bidirecional instantânea.
+Notificações em Tempo Real:
+
+Quando uma nova mensagem é enviada por um usuário, o servidor a transmite instantaneamente para os outros participantes da conversa, garantindo notificações em tempo real.
+Atualizações de Status:
+
+O servidor pode enviar atualizações em tempo real sobre o status do usuário (online, offline, digitando, etc.).
+Eficiência de Recursos:
+
+A conexão persistente dos WebSockets reduz o overhead em comparação com abordagens de polling frequentes, proporcionando uma experiência de chat mais responsiva e eficiente em termos de recursos.
+Embora os WebSockets sejam uma escolha comum para implementações de chat em tempo real, outras tecnologias, como o Server-Sent Events (SSE), também podem ser utilizadas dependendo dos requisitos específicos do sistema e do suporte oferecido pelos navegadores e servidores.
+
+
+Um sistema de suporte por chat usando long polling teria um fluxo de comunicação um pouco diferente em comparação com WebSockets.
+Aqui está um esboço básico de como um sistema de chat com long polling pode funcionar:
+
+Cliente Inicia Solicitação:
+
+O cliente (navegador do usuário) faz uma solicitação HTTP para o servidor pedindo novas mensagens ou atualizações.
+Servidor Aguarda Mensagens:
+
+Se não houver mensagens disponíveis, o servidor mantém a solicitação do cliente aberta, aguardando até que novas mensagens estejam prontas ou um determinado período de tempo tenha passado.
+Resposta do Servidor:
+
+Quando há uma nova mensagem disponível ou quando o tempo limite é atingido, o servidor responde à solicitação do cliente com as mensagens ou uma resposta indicando que não há novas mensagens.
+Cliente Inicia Nova Solicitação:
+
+Após receber a resposta do servidor, o cliente inicia imediatamente uma nova solicitação para aguardar mais atualizações.
+Repetição do Processo:
+
+O processo de long polling é repetido continuamente, permitindo que o cliente receba atualizações em tempo real.
+A principal diferença entre WebSockets e long polling é que, com long polling, o cliente precisa iniciar uma nova solicitação cada vez que
+deseja receber atualizações. Isso contrasta com os WebSockets, onde a conexão permanece aberta e o servidor pode enviar atualizações
+assim que estiverem disponíveis.
+
+Apesar de long polling ser uma técnica mais antiga e menos eficiente em alguns casos, ela ainda é usada em cenários onde WebSockets 
+podem não ser uma opção viável (por exemplo, devido a restrições de firewall) ou quando a infraestrutura existente favorece long polling.
+
+
+
+
+Resumo das diferenças fundamentais entre WebSockets e Long Polling no contexto de um sistema de chat:
+
+WebSocket:
+Conexão Persistente:
+
+A conexão WebSocket é estabelecida e permanece aberta independentemente do tempo. Ela é mantida ativa durante toda a sessão do chat.
+Comunicação Bidirecional em Tempo Real:
+
+Os dados podem ser enviados instantaneamente em ambas as direções (cliente para servidor e vice-versa) sem a necessidade de abrir e fechar conexões repetidamente.
+Baixa Latência:
+
+Geralmente oferece menor latência em comparação com Long Polling, pois não há necessidade de esperar por novas solicitações.
+Long Polling:
+Solicitações Repetidas:
+
+O cliente faz solicitações repetidas ao servidor para verificar se há novas mensagens ou atualizações.
+Conexão Recriada:
+
+Após cada resposta do servidor, uma nova solicitação precisa ser iniciada. A conexão não é persistente e é recriada a cada ciclo de solicitação e resposta.
+Tempo Limite:
+
+Em alguns casos, pode haver um tempo limite na solicitação do cliente. Se não houver novas mensagens antes desse tempo limite, a resposta do servidor é enviada mesmo assim, e o cliente inicia uma nova solicitação.
+Eficiência Dependente do Ciclo de Polling:
+
+A eficiência do long polling depende do intervalo de polling escolhido. Se o intervalo for muito curto, pode haver um alto número de solicitações,
+ aumentando a carga no servidor. Se for muito longo, a latência pode aumentar.
+Em resumo, WebSockets oferecem uma comunicação persistente e bidirecional em tempo real, enquanto o Long Polling baseia-se em solicitações 
+e respostas repetidas, criando uma abordagem mais orientada a eventos, mas com a desvantagem de conexões sendo recriadas continuamente.
+ A escolha entre eles depende das necessidades específicas da aplicação e das considerações de infraestrutura.
+
+
+
+
+Be A Better Dev yt
+LONG Polling
+LOW TRAFFIC and high traffic works very well
+
+web WebSockets
+específicas
+low latency between your client and your resource
+ou algo como um web chat application with many users in a chat room 
+and you need to push a message from your resource server to multi 
+clients, that would be a perfect use case to use
+
+
+
+
+
+
+
+@VasQuezadilla
+há 1 ano
+An advantage for short polling is that the server can remain stateless. 
+Both long polling and web sockets needs to keep a directory of which server contains the connection to the client, which is used to 
+send data to the client whenever it's ready
+
+
+
+
+@workingTchr
+
+I've used short polling with much success. The load(carga) on the server is a lot less than with long polling or WebSockets
+or server sent events, which you didn't mention).  You can have the client check for the mere existence of a
+particular file on the server, and take no action if it's not found.  If you're using shared web hosting 
+and have more than a few clients, short polling is your only practical option.  Also, if your users are
+in a protected network (school, corporation) that wants to inspect packets coming through, you won't
+be able to establish a websockets (or server sent events) connection.  So, short polling isn't a bad as it seems. 
+I know, it sounds horrible sending out Ajax requests every 0.5 seconds, but in the real world, it works pretty good.
+
+
+Be A Better Dev
+
+@BeABetterDev
+
+Hey Dennis, I totally agree with you that often short polling is the most practical solution (especially for web applications). 
+I do think there is a performance benefit to be had though if one is willing to go through the extra effort. 
+
+I think at scale is where short polling starts to fall apart. You may find that you're spending a 
+lot of $$$ on resources that are serving empty poll requests.

@@ -1,0 +1,80 @@
+<meta charset="UTF-8">
+
+<input/>
+<button>Compare com o meu segredo</button>
+
+<script>
+
+
+       function sorteios() {
+       
+              return Math.round(Math.random() * 10);
+       }
+
+
+       function sorteiaNumeros(quantidade) {
+
+              var segredos = [];
+
+              var numero = 1;
+
+              while(numero <= quantidade ) {
+                     segredos.push(sorteios());
+                     numero++;
+              }
+              return segredos;
+
+       }
+
+
+       var segredos = sorteiaNumeros(3);
+
+
+    //função sorteios para não poluir muito.
+
+//     segredos.push(5)); joga o 5 dentro do []
+//     segredos.push(Math.round(Math.random() * 10));  push = métodos de adicionar uma variável em um array.
+
+//criada a função segredos = sorteiaNumeros(); para não precisar repetirar varias vezes o "segredos.push(sorteios());"
+
+    var input = document.querySelector("input");
+    input.focus();
+
+    function verifica() {
+
+       var achou = false;
+
+       for(var posicao = 0; posicao < segredos.length; posicao++) {
+
+              if(input.value == segredos[posicao]) {
+
+                     alert("Você ACERTOU!");
+                     achou = true;
+                     break;
+              } 
+       }
+
+       if(achou == false) {
+
+              alert("Você ERROU!");
+       }
+
+       input.value = "";
+       input.focus();
+
+       var input = document.querySelector("input");
+
+       input.addEventListener("keydown", function(event) {
+       if (event.key === "Enter") {
+              verifica();
+              }
+       });
+
+    }
+
+    var button = document.querySelector("button");
+
+    button.onclick = verifica;
+
+</script>
+

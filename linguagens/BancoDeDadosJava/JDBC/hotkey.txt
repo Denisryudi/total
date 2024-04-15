@@ -1,0 +1,10 @@
+ctrl + 3
+extract method
+
+Generate Constructor
+
+
+ctrl + shift + f = formatar
+
+ctrl +d 
+delete line

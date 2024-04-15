@@ -1,0 +1,27 @@
+Para começarmos a entender o funcionamento da arquitetura web, considerando o protocolo HTTP, é necessário entender como funciona o protocolo HTTP. 
+Este é o protocolo padrão utilizado para o funcionamento de toda a WEB, encontra-se na camada de aplicação e é implementado por dois programas: um 
+cliente e outro servidor que conversam por meio de trocas de mensagens HTTP. Ele utiliza o protocolo TCP como protocolo de transporte, e é realizado 
+por meio de softwares chamados de Browsers (navegadores) (ROSS; KUROSE, 2013).
+
+A arquitetura web construída com base no protocolo HTTP funciona através de uma estratégia de troca de informações entre cliente e servidor, na qual 
+o cliente, geralmente um navegador, realiza pedidos ao servidor a fim de acessar o conteúdo. O protocolo HTTP, por sua vez, apresenta um conjunto de 
+técnicas que o cliente pode empregar para interagir com o servidor, como, por exemplo, os métodos GET, POST, PUT e DELETE. Esses métodos são conhecidos 
+como operações CRUD, que nada mais são do que os processos de Criação, Leitura, Atualização e Remoção de informações.
+
+Como funcionam esses métodos: o GET recupera uma representação de um recurso da web, ou seja, permite o acesso às páginas. Já o POST é utilizado para 
+enviar informações ao servidor, como o envio de dados de um formulário. O método PUT é uma forma de atualizar informações já existentes no servidor, 
+enquanto o método DELETE é usado para excluir um recurso específico no servidor.
+
+Segue os tipos de resposta à requisição HTTP:
+
+1xx - informação
+2xx - sucesso
+3xx - redirecionamento
+4xx - erro no cliente
+5xx - erro no servidor
+
+
+ALMEIDA, Marcelo. Aula 06 - HTTP. Marcos Almeida. Publicado em 2019. Disponível em: https://www.youtube.com/watch?v=LdUugRFDQOQ. Acesso em: 24/04/2023.
+SANTOS, Roger. Entendendo o protocolo HTTP - HTTP. Refatorando. Publicado em 2021. Disponível em: https://www.youtube.com/watch?v=PcHbyGVoqZk&t=134s. Acesso em: 24/04/2023.
+
+UNICESUMAR. Núcleo de Educação a Distância. FLORINDO, Rafael Alves; VANSO, Rafael Maltempe da. Fundamentos de Redes de Computadores. Maringá-Pr.: UniCesumar, 2022. 217 p. ISBN 978-85-459-0344-4.

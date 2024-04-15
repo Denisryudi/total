@@ -1,0 +1,7 @@
+Entender os serviços core dos principais players do mercado
+
+Entrega recurso computacional 
+Banco de dados
+Storage armazenamento
+Redes
+

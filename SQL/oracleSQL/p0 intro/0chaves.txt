@@ -1,0 +1,54 @@
+ID unico - primaria -----> usada para se relacionar com uma chave estrangeira
+pl proceduraL
+
+MER modelo entidade relacionamento - descreve como vai se dar o relacionamento entre cada entidade(tabela)
+ou seja como uma entidade Produto se relaciona com uma entidade Venda
+
+DER Diagrama entidade relacionamento é uma representação grafica do MER
+
+SGBDR sistema de gerenciamento de banco de dados relacional  - programa para acessar, guardar, criar e gerenciar os BDR
+por meio da linguagem SQL
+
+RDBMS EN-US
+
+T SQL transac0sql
+PL-SQL Procedural language - oracle
+
+PL/PGSQL procedural language - postgree
+
+DBA administrador de CB- database administrator
+
+CRUD create read update delete
+
+ACID - atomicidade, consistencia, isolamento e durabilidade. propriedades das transações em bd(como insert update e delete)
+transações em bd
+
+DML Manipulation -conjunto de comandos para manipular dados armazenados dentro das tabelas em um banco de dados:
+ insert, update e delete
+DDL Definition - linguagem de definição de dados é usada para criar e modificar a estrutura dos objetivos armazenados
+ em um banco de dados:  alter create, drop
+DQL  Query comandos de cosulta aos dados armazenados em um banco de dados
+SELECT consultas
+em alguns lugares esta agrupado com DML
+DCL Control grant revoke e deny controle de dados é usada para controle de acesso
+TCL Gerenciar mudanças feitas pelo comando dml : Commit, rollback e savepoint
+
+
+atomicidade, consistencia, isolamento e durabilidade
+
+
+config usuario
+
+Para acessar um bd
+
+>criar user e fornecer privilegios
+
+conexoes +
+ADMIN
+*******
+**********
+sysdba
+
+XEPDB1
+
+Criar conexao > dp de criado > + conexoes = 

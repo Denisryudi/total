@@ -1,0 +1,120 @@
+
+
+<!-- 
+
+
+NORMAL SEM ARRAY.
+
+<meta charset="UTF-8">
+
+<input/>
+<button>Compare com o meu segredo</button>
+
+<script>
+
+    var segredo1 = 5;
+        var segredo2 = 6;
+        var segredo3 = 7;
+
+    var segredo = Math.round(Math.random() * 10);
+
+    var input = document.querySelector("input");
+        input.focus();
+
+    function verifica() {
+
+                if(input.value == segredo1) {
+
+        alert("Você ACERTOU!");
+        } else {
+
+        alert("Você ERROU!!!!!!!!");
+        }
+
+                if(input.value == segredo2) {
+
+        alert("Você ACERTOU!");
+        } else {
+
+        alert("Você ERROU!!!!!!!!");
+        }
+
+                if(input.value == segredo3) {
+
+        alert("Você ACERTOU!");
+        } else {
+
+        alert("Você ERROU!!!!!!!!");
+        }
+
+                input.value = "";
+                input.focus();
+
+    }
+
+    var button = document.querySelector("button");
+
+    button.onclick = verifica;
+
+</script> -->
+
+
+
+
+
+
+<meta charset="UTF-8">
+
+<input/>
+<button>Compare com o meu segredo</button>
+
+<script>
+//Queremos que "segredo" guarde mais de 1 valor, para isso usaremos o array e transformamos segredo = 1 em segredo = [4,2,4,2](números desejados)
+    var segredos = [5,7,10,2,3];
+
+    var input = document.querySelector("input");
+        input.focus();
+
+        input.addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+            verifica();
+        }
+        });
+    
+
+
+
+
+
+
+    function verifica() {
+
+    var achou = false;
+    
+
+    for(var posicao = 0; posicao < segredos.length; posicao++) { //Length de um array retorna a quantidade de elementos que ele tem.
+
+        if(input.value == segredos[posicao]) {
+
+            alert("Você ACERTOU!");
+            achou = true;
+            break;
+        }
+    }
+
+    if(achou == false) {
+        alert("Você ERROU!");
+    }
+
+    input.value = "";
+    input.focus();
+
+    }
+
+    
+
+    var button = document.querySelector("button");
+
+    button.onclick = verifica;
+
+</script>

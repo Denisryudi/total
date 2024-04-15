@@ -1,0 +1,11 @@
+Terraform funciona isolado, sem precisar depender de uma arquitetura com outros componentes
+buckets S3 = pasta virtual, armazenar arquivos de forma segura
+
+terraform init 
+terraform plan
+
+terraform apply consumar a criação/remoção
+yes
+
+//terraform destroy apagar a infra
+

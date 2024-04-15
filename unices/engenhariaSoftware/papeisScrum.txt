@@ -1,0 +1,7 @@
+O SCRUM é uma metodologia ágil amplamente utilizada no desenvolvimento de software. Ele é
+baseado em princípios de transparência, inspeção e adaptação, e busca promover a colaboração e a 
+entrega contínua de valor ao cliente. O SCRUM é composto por papéis, eventos e artefatos que são fundamentais 
+para o seu funcionamento efetivo.
+
+Nesse sentido, descreva os principais papéis envolvidos em uma equipe SCRUM e suas responsabilidades.
+

@@ -1,0 +1,92 @@
+três modelos
+
+conceitual: definir as entidades e os relacionamentos por meio de diagramas
+
+lógico: definir como serão as tabelas
+
+físico: criação das tabelas dentro do software de banco de dados
+
+
+Foi representado por Edgar Frank Codd em 1970. Representa os dados em um banco de
+dados como uma coleção de relações(tabelas)
+
+cada linha de uma tabela é denominada registro(ou tupla)
+
+Cada coluna de uma tabela é denominada atributo (ou campo)
+
+Por fim uma tabela é chamada de relação
+
+Mdelo relacional é composto pelas
+Tabelas com colunas: atributos(campos)
+colunas: com linhas: Registros(Tuplas)
+
+e Chaves
+Candidatas
+Primárias
+alternadas ou alternativas
+estrangeiras
+
+Cada ocorrência de PESSOA sera chamado de registros(linhas)
+colunas com atributos
+
+Chaves candidatas, chaves que poderiam e podem identificar de forma unica
+
+primária, unicos, nao nulos e irredutiveis
+
+
+Chaves candidatas que nao forem eleitas como primárias, serão reconhecidas como Chaves alteranas ou
+alternativas
+
+na imagem chaves_alternadas.png veremos que a cnh não foi eleita.
+
+restrição de integridade
+constraint
+preço negativo
+carro sem placa
+
+Fatores que afetam a integridade de um banco
+
+Erros humanos
+
+Erros de transferencia
+Bug e Vírus
+
+restrições:
+Dominio
+Vazio
+Chave
+Referencia
+Entidade
+Definida pelo Usuario
+
+Entidade associativa e relacionamento ternário
+
+
+
+
+
+
+PESSOA  1,1       0,N  DIRIGE 0         1,N CARRO
+
+                    concessionaria
+                        1, N
+
+
+
+
+    DICIONARIO DE DADOS
+
+
+INFO SOBRE CONTEUDO, FORMATO E ESTRUTUra de um bd
+assim como relacionamento entre os seus elementos
+
+minimizar erros ao criar a estrutura fisica do bd e tb permitir documentar a logica por tras do projeto de bd
+
+documentar
+manutenção
+junit
+fiz 
+
+
+
+

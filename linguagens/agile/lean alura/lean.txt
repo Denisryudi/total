@@ -1,0 +1,395 @@
+early adopters:
+
+utilização prática
+interesse no produto
+precisam
+feedback
+
+validação:
+<> construir <> medir <> aprender <>
+
+mvp
+interesse
+
+...
+Early Adopters são os primeiros usuários que experimentam o seu produto. A partir da experiência e o feedback desses usuários, temos informações para modelar ou descontinuar o nosso produto.
+...
+A partir do momento que temos nossos Early Adopters, vamos construir uma hipótese e oferecer ao nossos Early Adopters, e vamos medir o resultado para aprendermos com os resultados. Esse processo tem 3 passos : construir, medir e aprender.
+
+data freak
+
+
+.validou
+publico alvo
+problema solucionar
+uma solução para oferecer
+ser claro nas três
+
+produto final mvp 
+
+https://cursos.alura.com.br/course/lean/task/10931
+
+***
+Capítulo 3 - Benefícios e recomendações. Erros e mitos
+Veremos nesta aula benefícios, recomendações, erros e mitos sobre a Lean Startup. Porque vale a pena empreender utilizando a Startup Enxuta.
+
+Economia de tempo: não podemos trabalhar em uma solução que ninguém comprará e que fará começarmos o trabalho do zero. Vimos o caso da grande falha e perda de tempo que foi o Google Wave. O conjunto de técnicas vistas na última aula e outras que veremos mais para frente nos permitirão economizar esse tempo.
+Maior empreendedorismo: trabalharemos com produtos que possuem um mercado. Precisamos lidar com mais data e menos feeling, não podemos depender do próprio instinto. Este é importante no começo, mas a partir da elaboração do produto, nos modelamos a partir do mercado. Sejamos Data Freaks! Busquemos validações de dados entre os usuários e suas experiências.
+Lean também é para grandes empresas: o ciclo de validação pode ser levado para empresas de maior porte se o produto for para o mercado, e não sob demanda. Existe essa diferença: para o mercado, o produto precisará passar pelo ciclo de validação. Para um cliente específico, a demanda é dele e ele dita as regras. Também existe a diferença entre uma Startup e uma Spin-off.
+Uma Startup trabalha com um novo negócio que possui escala. É construído um produto que é distribuído para todos os clientes, não necessariamente o produto é de tecnologia (primeiro mito). Já uma Spin-off - ou derivagem - nasceu de outra empresa por meio de um grupo de pesquisa se alimentando dos recursos da empresa-mãe por meio de uma incubadora.
+
+Um outro mito é que a Startup, por ser Lean, possui investimentos. Podemos começar uma sem um real no bolso, apenas com o conhecimento, disposição e trabalho.
+
+O Lean nos oferece respostas rápidas: quando fazemos a validação, recebemos uma resposta rápida que, por sua vez, nos permite agir rapidamente para melhorar o produto.
+Não pare de fazer: coloque em prática rapidamente aquilo que começou e aquilo que aprendeu por meio das validações. No fim desse processo teremos um produto vendável com demanda. Mas não podemos esquecer que ele possui um ciclo de vida, com crescimento, maturidade e declínio. Ao estarmos atingindo o momento de maturidade é a hora de aplicarmos novamente o Lean, remontando a operação de negócio e, assim, rever o produto antigo e quem sabe criar novos.
+O que queremos com o processo de Lean
+Vejamos mais um exemplo de Lean Startup, o do Dropbox. A sua equipe criou um MVP , abreviação para Minimum Viable Product , que traduzido para o português significa Mínimo Produto Viável. O MVP criado era um vídeo que continha um link para a página da empresa, na qual era possível contratar seus serviços. Foi um grande sucesso! A partir da métrica que eles haviam estabelecido (acessos e número de cliques), perceberam que atingiram um público suficiente para continuar o desenvolvimento do software e buscar investimento. É assim que devemos trabalhar.
+
+Com isto, fazemos a seguinte pergunta: o que buscamos com esse processo de Lean? E a resposta é:
+
+Atender um problema. Ter um cliente em vista. Buscar uma solução.
+
+O Lean não vai nos permitir criar dez soluções para dez problemas, considerando dez tipos diferentes de clientes. Para isto acontecer, teríamos que passar por dez processos diferentes. Quando começarmos a validar nossas hipóteses a partir do processo de validação, construirmos o MVP e encontrarmos os Early Adopters, devemos ter em mente que buscamos atingir apenas um público alvo, solucionar apenas um problema e oferecer apenas uma solução. Montamos um negócio de cada vez. Obviamente, isso não significa que o nosso negócio não possa ser uma plataforma de soluções.
+
+Definições
+Devemos ter definições claras daquilo que queremos oferecer e para quem queremos oferecer. Se não conseguimos responder rapidamente que "nosso público alvo são pessoas que querem resolver seus problemas com armazenamento de arquivos e sua pluralidade de locais para os mesmos e querem um lugar apenas para isso, e que este seja compatível com todos os sistemas operacionais" - caso do Dropbox -, então não sabemos o que queremos. Claramente essas são pessoas que trabalham com mais de um computador em ambientes diferentes e muitas vezes em mais de um tipo de OS.
+
+Precisamos ser claros na hora de definir o público alvo, o problema e a solução que queremos oferecer.
+
+Afinal, buscaremos investidores, parceiros e apoiadores. E, para eles, se as ideias não forem claras, o produto não é bom.
+
+Evolução do MVP
+Durante o processo, nosso MVP irá evoluir e essa evolução precisa ser documentada, armazenada. Podemos utilizar desde caixas de sapato com anotações até um Javelin Board. É o que chamamos de Repositório de validações.
+
+Nestas anotações é uma boa prática incluir:
+
+Quais eram as primeiras e próximas features do MVP;
+Quem foi o primeiro e próximo Early Adopters e o que aceitaram ou não como preço e solução.
+Devemos ter em mente que o resultado final é o MVP, que representa o interesse de nosso cliente em resolver um problema e pelo qual ele tem interesse em pagar.
+
+
+...mvp
+
+O que representa todo o modelo de negócio que foi atingindo após o conhecimento gerado durante todo o processo Lean?
+
+O MVP representa o modelo de negócio que foi gerado durante todo o processo Lean.
+
+LEAN é um processo para estabelecimento de um cliente, um problema, uma solução, riscos e premissas gerais relacionados ao problema e a solução.
+
+
+estágios mvp
+
+perguntas certas
+
+
+early adopter diálogo
+
+
+mpv validou: publico, problema e a pseudo solução  \/
+>publico>validação entrevista> validou possível solução> concier
+
+.estruturação produto vendável 
+
+>precificação top down - publico acomoda o preço
+-negociação
+>inovação
+-aplicativo
+>beta
+.modelagem junto à early adopters
+.validar modelo de negocio
+-vendendo
+-dando certo
+.produto
+.Concierge simular o funcionamento do sistema(manualmente)
+-antes de sair desenvolvendo
+
+***
+Capítulo 4 - Estágios do MVP
+Nesta aula estaremos focados no MVP e veremos seus diversos estágios. Partiremos de uma hipótese validada até um produto final vendável. Não podemos confundir o MVP com esse produto final. O MVP é muito mais simples, MVP é conhecimento validado.
+
+Voltando ao exemplo do Dropbox, a empresa criou e lançou um vídeo no Youtube para deixar as pessoas interessadas em comprar o produto, bastava clicar no link disponível que elas iriam para a página da empresa. O vídeo e a página são MVP, pois já havia pessoas interessadas antes mesmo do produto existir. Perceba a economia de tempo: antes mesmo de se criar um produto vendável e validado, o Dropbox já tinha clientes. Exatamente o oposto do caso do Google Wave.
+
+Vejamos agora os três estágios do MVP.
+
+1. Exploração do problema:
+O problema que queremos resolver deve ser ambientado, ou seja, é problema de quem? Quem é esse público? É necessária a elaboração de uma persona, o perfil de nosso público-alvo. Veja o exemplo da empresa Easy Taxi: a princípio pode parecer que o público-alvo seja os passageiros, mas na verdade são os taxistas, uma vez que são estes que pagam pelo serviço.
+
+O presidente da Easy Taxi foi às ruas conversar com os taxistas para saber quais eram seus problemas e o que poderia facilitar suas vidas como profissionais. Esta é o que chamamos de Entrevista Exploratória.
+
+A entrevista exploratória: Cuidado! Não chegue com uma solução pronta para o público. Obviamente qualquer um irá responder que gostaria de qualquer que seja essa solução. No lugar, pergunte quais os problemas que elas encontram no seu dia-a-dia. As perguntas da entrevista exploratória vão ao encontro das causas e dos problemas, não da opinião dos entrevistados:
+
+"Você já viveu ou teve "tal" problema?"
+
+"Conte um caso relacionado com esse problema."
+
+"Qual seria a solução ideal para esse problema?"
+
+Muitas vezes o público já dá a ideia de produto que irá solucionar seu problema. Outra abordagem interessante é contar uma história com a qual o entrevistado se identifique.
+
+Validação da solução: após a conversa, o entendimento do problema e a construção de uma possível solução, vem a validação da mesma. Através de telas (ou vídeos, ou modelos) que simulem o produto, apresentamos a solução para os nossos Early Adopters para eles aprovarem ou não.
+2. Estruturação do produto vendável:
+Existem três etapas dentro da fase de estruturação:
+
+Precificação top-down: está na hora de vender nosso produto. As pessoas podem até querer nosso serviço, mas elas terão que pagar, o que pode causar impedimentos. Precisamos buscar uma forma de vender definindo um modelo de negócio. Veremos agora como fazemos para precificar o produto.
+
+Nunca começamos a precificar de baixo para cima. O cliente pode estar disposto a pagar mais caro do que imaginamos. Então estipulamos um valor alto para, assim, negociá-lo e o público acomodar esse valor. Por isso, top-down.
+
+Inovação: nós teremos concorrentes. Tanto aqueles que já existem como aqueles que virão. E um fator que nos destacará no mercado e nos colocará à frente é a inovação. O que podemos oferecer e que ninguém ainda ofereceu?
+Beta: é a primeira versão do produto. A versão Beta é a fase de modelação, é aqui que ocorrem a maioria das mudanças. Os Early Adopters também são chamados de "Usuários Beta" para nós, eles são parceiros nessa construção.
+3. Recepção:
+A fase de recepção, ou concierge, é a de validação do modelo de negócio por meio de uma simulação manual do mesmo sem correr grandes riscos. Antes de automatizar seu negócio, faça um teste com seus Early Adopters se utilizando de meios baratos e de rápida resposta.
+
+...mvp
+
+O que é um MVP ?
+
+O Mínimo Produto Viável é o conhecimento validado no processo do Lean.
+
+...estagio mvp
+
+De acordo com o Lean, qual das opções abaixo não faz parte do estágio do MVP ?
+
+Alternativa correta
+Estruturação do produto vendável
+
+Alternativa errada
+Estágio do planejamento
+
+Alternativa correta
+Recepção
+
+Alternativa correta
+Exploração do problema.
+
+O Planejamento não faz parte de nenhum estágio do MVP.
+
+...precificação
+
+Na etapa de precificação, da estruturação do produto vendável, qual das opções abaixo está correta:
+
+Alternativa correta
+A precificação deve ser de acordo com o custo unitário do produto
+
+Alternativa correta
+A precificação deve ser top-down
+
+Alternativa correta
+A precificação deve ser de acordo com a disponibilidade do cliente
+
+Alternativa correta
+A precificação deve ser bottom up
+
+A precificação deve ser top-down
+
+
+...estruturação produto vendável
+
+Qual das opções abaixo NÃO é uma etapa dentro da fase de estruturação do produto vendável:
+
+Alternativa correta
+Beta
+
+Alternativa correta
+Inovação
+
+Alternativa errada
+Early Adopters
+
+Alternativa correta
+Precificação top-down
+
+O Early adopters não fazem parte da fase de estruturação.
+
+...validação negocio modelo
+
+Qual das opções abaixo é a última etapa do MVP?
+
+Alternativa errada
+Validar a solução
+
+Alternativa errada
+Validar o cliente
+
+Alternativa correta
+Validar o modelo de negócios
+
+Alternativa errada
+Validar o problema
+
+Validar o modelo de negócios é a última etapa!
+
+pivos:
+.São mudanças na essência da solução que impactam o modelo de negócios
+
+Se voce decidir vender um produto e perceber que não pode vender caro, mas consegue vender barato, isto significa que vc trabalha com volume e não com preço e precisará "pivotar" seu modelo e sua solução, iniciando assim um novo ciclo iterativo(validação, mvp).
+
+pivotou se cria um novo mvp
+
+zoom in e zoom out
+
+segmentação
+
+zoom-in = outras formas de uso/capitalizar um produto ja em funcionamento. abordagem incremental
+
+em uma venda de hotdogs o vendedor escolhe vender somente a salsicha
+
+ex: Zoom-in" é uma abordagem estratégica na qual você foca em explorar outras formas de uso ou oportunidades de capitalização de um produto ou serviço que já está em funcionamento. Essa abordagem é uma maneira de expandir e aprofundar o alcance de um produto ou serviço existente, buscando novos mercados, segmentos de clientes ou casos de uso.
+
+Por exemplo, se você possui um aplicativo de entrega de comida, o "zoom-in" poderia envolver a identificação de outras necessidades relacionadas que seus clientes têm e que poderiam ser atendidas pelo mesmo aplicativo. Isso poderia incluir serviços de entrega de produtos de mercearia, itens farmacêuticos ou até mesmo produtos de cuidados pessoais.
+
+O "zoom-in" é uma abordagem que pode gerar inovação incremental, pois se baseia em uma base sólida já existente, mas também pode levar a descobertas inovadoras que podem transformar a forma como as pessoas usam e interagem com o produto ou serviço. É uma estratégia eficaz para maximizar o potencial de produtos ou serviços estabelecidos.
+
+
+zoom-out = surge de um produto ja em funcionamento um novo produto.
+salsichas. 
+em uma venda de salsichas o dono escolhe vender a salsicha+pao 
+
+ex:
+"Zoom out" é uma abordagem estratégica que envolve a criação de um novo produto ou serviço a partir de uma base existente, muitas vezes aproveitando a expertise, tecnologias ou recursos já em funcionamento. É uma forma de expansão que busca explorar oportunidades adjacentes ou tangenciais ao produto original, mas que podem atender a necessidades diferentes ou segmentos de mercado distintos.
+
+Por exemplo, se você possui uma plataforma de streaming de música, um "zoom out" poderia envolver a criação de uma plataforma adicional de streaming de vídeo ou de conteúdo educacional, aproveitando a infraestrutura e o conhecimento que você já tem no mercado de streaming.
+
+A abordagem de "zoom out" permite diversificar a oferta e explorar novas áreas de negócios sem partir do zero. No entanto, requer uma análise cuidadosa do mercado, dos recursos disponíveis e da capacidade da empresa de gerenciar a expansão para um novo segmento ou área de atuação.
+
+.Pivotagem plataforma e produto
+
+
+***
+Capítulo 5 - Mudanças e Pivôs
+Estamos chegando ao fim do curso de Lean para Startups. Nesta aula veremos, primeiramente o que são Pivôs neste contexto:
+
+Pivôs são mudanças na essência da solução que impactam o modelo de negócios.
+
+Se decidirmos vender um produto e percebermos que não é possível vendê-lo num preço elevado, mas sim abaixo da expectativa, isso significará que trabalhamos com volume e não com preço e precisaremos "pivotar" o modelo e a solução iniciando, assim, um novo ciclo iterativo. Resumindo: pivô é toda mudança que precisaremos fazer no nosso MVP. A partir do pivotamento, surge um novo MVP.
+
+Vejamos alguns tipos de pivotagem:
+
+Zoom-in e Zoom-out: são pivotagens que comprimem (in) ou expandem (out) um negócio. Imaginemos um projeto de produto que apresente diversas features e seus desenvolvedores notam que será melhor focar em apenas uma delas. Eles fizeram um Zoom-in e transformaram tal feature no próprio produto. Um bom exemplo é o caso do Flickr que, de um jogo com uma feature de compartilhamento de imagens, se modificou para oferecer apenas esta feature. O Zoom-out é o inverso: percebemos que será necessário agregar mais features no produto, expandimos o negócio. Um exemplo de Zoom-out é o caso do GetResponse, que começou com um serviço de e-mails e hoje em dia tem muitas outras features.
+Segmentação: oferecemos o mesmo produto para todos os clientes, porém dando a eles opções. Um bom exemplo, que pode ser considerado o primeiro caso de pivotagem da história, é a opção de cores diferentes para carros oferecida pela Chevrolet.
+Geração de receita
+Não podemos nos esquecer de que forma iremos cobrar nosso público-alvo. Precisamos garantir que quando nosso produto for para o mercado ele possui o canal adequado de cobrança de acordo com o modelo de negócio. Outro questionamento é se o produto é vendido caro para poucos ou barato para muitos. Se o Google Wave tivesse se focado em grandes corporações, talvez ele tivesse vingado. Precisamos saber qual o tamanho do nosso mercado e qual sua disposição para pagar pelo serviço.
+
+
+...pivos
+
+O que são os Pivôs de acordo com o Lean?
+
+Pivôs são as mudanças na essência da solução que impactam o modelo de negócios
+
+
+O que é gerado a cada pivotagem ?
+
+
+
+Alternativa correta
+MVP
+
+Alternativa errada
+Produto
+
+Alternativa errada
+Solução
+
+Alternativa errada
+Matriz de custos
+
+A cada pivotagem sempre é gerado um novo MVP
+
+
+...pivô
+
+Qual das opções abaixo não é um tipo de pivô?
+
+Alternativa errada
+Validação
+
+Alternativa correta
+Zoom-out
+
+Alternativa correta
+Volume ou Preço
+
+Alternativa correta
+Zoom-in
+
+Validação não é um tipo de pivô.
+
+
+https://cursos.alura.com.br/course/lean/task/10948
+
+
+...validar hipótese
+
+Como podemos validar uma hipótese de negócio?
+
+Alternativa correta
+Através de uma entrevista
+
+Alternativa correta
+Através de um formulário enviado por e-mail
+
+Alternativa correta
+Todas as respostas estão corretas
+
+Alternativa correta
+Através de uma Landing Page
+
+Validamos uma hipótese de negócio com uma Landing Page, entrevistas, formulários e etc.
+
+
+...validação hipo
+
+Quando devemos validar uma hipótese de negócio segundo LEAN?
+
+Alternativa errada
+Quando a equipe acreditar que tem a produto certo
+
+Alternativa correta
+Antes mesmo de desenvolver o produto
+
+Alternativa errada
+Nenhuma das respostas acima
+
+Alternativa errada
+No momento em que o produto estiver pronto para a venda
+
+Antes mesmo de desenvolver o produto
+
+
+...validação sucesso
+
+Qual das opções abaixo é um exemplo de taxa de sucesso para uma Landing Page?
+
+Alternativa correta
+10.000 acessos/mês
+
+Alternativa correta
+70 clientes convertidos a cada 100 acessos (No caso, 70% de conversão)
+
+Alternativa correta
+15 clientes convertidos a cada 100 acessos (No caso, 15% de conversão)
+
+Alternativa correta
+Todas as opções acima
+
+Como não foi apresentada a métrica para validação de uma hipótese e/ou negócio todas as opções citadas são aceitas como taxas de sucesso de uma landing page!
+
+
+...teste A/B
+
+
+Qual é o objetivo de realizarmos um teste A/B
+
+Alternativa correta
+Comparar o desempenho de duas ou mais versões de uma página ou elemento específico
+
+
+Alternativa errada
+Substituir entrevistas presenciais
+
+Alternativa errada
+Criar várias Landing Pages
+
+Comparar o desempenho de duas ou mais versões de uma página ou elemento específico
+
+

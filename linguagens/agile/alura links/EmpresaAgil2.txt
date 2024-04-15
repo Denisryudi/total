@@ -1,0 +1,99 @@
+Business agility
+
+feedback rápido
+
+mapear a organização
+e localizar áreas que estao atrasando a entrega do desenvolvimento
+
+VUCA
+
+O mercado mudar rapidamente é algo bom, ou algo ruim?
+se sim precisa.
+
+...business agility
+
+Qual é o propósito final do Business Agility?
+
+Fazer com que "Resposta à mudança" se torne um diferencial competitivo da empresa.
+A partir do momento em que é construído esse diferencial competitivo de "resposta a mudanças", a empresa tem a possibilidade de se adaptar a qualquer nova estratégia que surgir. E como vivemos em um ambiente onde tudo muda muito rapidamente, esse diferencial competitivo passa a ser fundamental para o sucesso da organização.
+
+***
+Nessa aula você aprendeu o que é Business Agility, como mapear as burocracias entre as áreas e como removê-las e quais são os benefícios desta prática para as empresas.
+
+Remover burocracias desnecessárias nos processos tornará possível uma organização mais adaptável às mudanças, uma vez que, na medida em que uma alteração for necessária, consequentemente, ela será menos traumática e haverá menor impedimento para adoção de novos costumes.
+
+Quando falamos sobre agilidade, o que visamos é, a melhor adaptabilidade às mudanças e não tornar um ambiente mais rápido.
+
+***
+Como apresentado nesta aula, temos algumas formas de identificar a complexidade da sua empresa, entre elas:
+
+Através do quão perecível é sua informação,
+Se as informações do negócio são subjetivas ou intelectivas.
+Mas, considerando diferentes contextos no ambiente de trabalho, como identificar e lidar com eles?
+
+Para saber mais, você pode conferir o artigo “Como usar o Cynefin na adoção de Business Agility” e entender como o framework Cynefin pode ajudar na análise de complexidade da sua empresa!
+
+link: https://www.alura.com.br/empresas/artigos/como-usar-cynefin-na-adocao-business-agility?_gl=1*18ww8d2*_ga*MTk4MzE1NDg4Ny4xNjkwMTM2MDg2*_ga_59FP0KYKSM*MTY5MTM0NjQ1My42LjEuMTY5MTM0Nzg0OC4wLjAuMA..*_fplc*N0xrNTlmY09Da0h2Q01LJTJGOUsxSEZzWlBBJTJGN3RDRmxVUkNTSHhwWWpIeTZUeHQ3T1BrUzklMkYyRWlsRm5BcGFDWiUyRmw1RkZHQzRYSURmRkxZJTJGU1RpUzQ0YmhDTnd4aU41ZWtYZUVlUVBvNFZmc2pwWCUyQmVpdSUyQkpod1ZiOTlFSEElM0QlM0Q.*_ga_1EPWSW3PCS*MTY5MTM0NjQ1NC43LjEuMTY5MTM0Nzg0OS4wLjAuMA..
+
+
+Estrutura organizacional
+
+hierarquica- ele promove maior controle dos processos.
+
+Hierarquia em camadas, pois reduzindo a distância entre o topo e a base temos menos burocracia.
+
+
+Unidades de negócio estratégicas, ela dá autonomia para grupos e produtos agirem por conta própria.
+
+auto organização
+
+
+holocracia:ela favorece um ambiente onde a empresa é totalmente auto organizável.
+
+
+...estruturas organizacionais
+é possível ser um ambiente ágil em qualquer uma das estruturas organizacionais
+
+O que vai determinar se uma empresa é ágil ou não é a sua habilidade para reagir à mudanças e para isso, ela pode ter qualquer estrutura. Cada uma delas traz vantagens e desvantagens, ou seja, nenhuma é perfeita e possui seus efeitos colaterais.
+
+Escolher qual metodologia usar na sua empresa requer um estudo e análise cuidadosa dos impactos nas pessoas e a cultura organizacional.
+
+...reduzir silos organizacionais
+
+O primeiro passo possível para reduzir silos organizacionais é através da co-criação de processos entre as áreas que dependem umas das outras. Para guiar um bom resultado para o negócio e facilitar essa caminhada, é importante fazer:
+
+Simplificar processos e ter uma meta compartilhada entre as áreas, que vai fazer com que o compromisso entre essas áreas fique mais evidente.
+
+O foco do Business Agility é reduzir burocracias, mas para quebrar silos entre áreas, é preciso que as áreas envolvidas estejam realmente comprometidas. Isso pode ser feito justamente através da simplificação de processos que vão reduzir burocracias e fazendo com que ambas as áreas compartilhem metas de resultados e sejam cobradas por essas metas.
+
+***
+Quando estamos buscando um ambiente mais ágil para a nossa corporação, um dos principais desafios que encontramos é reduzir os silos existentes entre as áreas.
+
+Silos são aquelas áreas que funcionam de forma independente umas das outras e que muitas vezes geram desalinhamento no negócio, não havendo colaboração entre times de desenvolvimentos.
+
+Aprendemos que para reduzir esses silos, precisamos fazer com que essas áreas comecem a integrar seus processos gerando um comprometimento entre elas, reduzindo burocracias e através de metas compartilhadas.
+
+Por fim, é possível quebrar esses silos criando estruturas multidisciplinares que fazem com que as burocracias sejam simplificadas, fazendo com que as áreas se conheçam mais ainda e, consequentemente, possam ser mais ágeis.
+
+...menor unidade de valor
+
+Qual definição descreve melhor o conceito de menor unidade de valor?
+
+Alternativa correta
+Um conjunto de funções e atividades, que agrupados são minimamente suficientes para que uma determinada operação possa ser realizada gerando valor para o negócio.
+
+Quando encontramos a menor unidade de valor, temos mapeado exatamente tudo o que é necessário para que aquela operação, seja a criação de um produto novo ou de uma nova unidade de negócio, minimamente possa existir e gerar valor para o negócio.
+
+
+***
+
+Nessa aula aprendemos que empresas ágeis possuem um foco muito forte na geração de valor para o negócio.
+
+Uma maneira de mapear dentro da organização quais são as unidades geradoras de valor é identificar as menores unidades de valor, ou seja, um grupo mínimo de funções e iniciativas que trabalhando em conjunto conseguem fazer com que um produto ou iniciativa gere um resultado para o negócio.
+
+Esse mapeamento é importante para encontrar os possíveis silos existentes e mapear quais pontos de integração entre as áreas podem ocasionar gargalos que impedem uma empresa de ser realmente Ágil.
+
+...agil
+Na ordem correta, quais etapas envolvem o processo para uma empresa poder ser ágil?
+
+Entender, Problematizar, Pesquisar, Conectar, Praticar, Compartilhar (e repete)

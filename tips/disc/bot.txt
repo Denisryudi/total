@@ -1,0 +1,39 @@
+import discord
+from discord.ext import commands
+import os
+
+intents = discord.Intents.default()
+intents.message_content = True
+
+bot = commands.Bot(command_prefix='/', intents=intents)
+
+my_secret = os.environ['DISCORD_TOKEN']
+
+
+@bot.command()
+async def inverse(ctx, message):
+  await ctx.send(message[::-1])
+
+
+@bot.command()
+async def cadastroCpf(ctx):
+  mensagem = """```python
+    cadastro_cpf = input('Insira seu CPF: ')
+
+    # Tratar CPF
+    # Tirar espaços inicio e final
+    cadastro_cpf = cadastro_cpf.strip()
+    # Tirar pontos
+    cadastro_cpf = cadastro_cpf.replace('.', '')
+    # Tirar traços
+    cadastro_cpf = cadastro_cpf.replace('-', '')
+
+    if len(cadastro_cpf) == 11 and cadastro_cpf.isnumeric():
+        print('CPF de número: ' + cadastro_cpf)
+    else:
+        print('Digite seu CPF corretamente e digite apenas números')
+    ```"""
+  await ctx.send(mensagem)
+
+
+bot.run(my_secret)

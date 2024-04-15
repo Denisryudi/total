@@ -1,0 +1,114 @@
+facilitar entrega de dados para APIs, no lado cliente
+respeitando ordem na requisição
+
+Ela fornece uma maneira mais eficiente e poderosa para os clientes solicitarem 
+dados do servidor em comparação com abordagens tradicionais como REST.
+
+
+Runtime
+type Project {
+	name: String
+	tagline: String
+	contributors:[User] 
+}
+{
+	project(name:"GraphQL") {
+		tagline
+	}
+}
+
+	"project":{
+		"tagline":"A query language for APIs"
+	}
+
+
+url rest = complexa
+overfetching, muitos dados n necessários
+requisições + 
+
+GraphQL = mutations
+
+documentação
+
+
+@rotognin
+há 2 anos
+Vejo isso quando o cliente está com um smartphone na rede de dados (3G, 4G, etc...) e faz com que sejam economizados os dados a serem devolvidos para a aplicação 
+nesse caso. Economiza banda.
+
+
+
+1. Consulta Básica:
+
+Exemplo:
+graphql
+
+query {
+  user(id: 1) {
+    name
+    email
+  }
+}
+Significado: Solicita ao servidor o nome e o e-mail do usuário com ID 1.
+2. Consultas Aninhadas:
+
+Exemplo:
+graphql
+
+query {
+  user(id: 1) {
+    name
+    posts {
+      title
+      body
+    }
+  }
+}
+Significado: Solicita o nome do usuário com ID 1 e os títulos e corpos de todos os seus posts.
+3. Alias:
+
+Exemplo:
+graphql
+
+query {
+  userOne: user(id: 1) {
+    name
+  }
+  userTwo: user(id: 2) {
+    name
+  }
+}
+Significado: Usa alias para renomear campos e obter dados de diferentes usuários na mesma consulta.
+4. Argumentos em Consultas:
+
+Exemplo:
+graphql
+
+query {
+  users(limit: 5) {
+    name
+    email
+  }
+}
+Significado: Limita a consulta para retornar apenas os nomes e e-mails dos primeiros 5 usuários.
+5. Mutação (para alterar dados):
+
+Exemplo:
+graphql
+
+mutation {
+  createUser(name: "John Doe", email: "john@example.com") {
+    id
+    name
+    email
+  }
+}
+
+Significado: Utiliza uma mutação para criar um novo usuário com nome "John Doe" e e-mail "john@example.com".
+O GraphQL permite que você solicite exatamente os dados de que precisa de maneira eficiente,
+facilitando o desenvolvimento de APIs flexíveis e eficientes para suas aplicações. 
+
+parse xml e json. 2  paradigmas de programação, poo,
+declarativo como funciona. sql e no sql
+
+

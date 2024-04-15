@@ -1,0 +1,529 @@
+sistemas críticos cascade
+
+três tipos
+
+reuso
+incremental
+cascata
+
+Especificação tem que ser muito bem feita
+
+--
+
+modelo Xp 
+>qualidade
+>mais rapidez
+>simples
+
+De acordo com Martins a XP dá preferência ao desenvolvimento OO 
+e permite trabalhar com pequenas equipes de até 12 desenvolvedores
+modelo incremental que conforme o sistema é utilizado
+novas melhorias ou mudanças podem ser implementadas
+
+Scrum
+
+Framework para desenvolver e manter produtos complexos.
+Uma metodologia agil de software que concentra as suas 
+atenções no produto final, com rápido desenvolvimento,
+e nas interações dos indivíduos.
+
+cerimônia de planejamento - sprint plan
+cerimônia de review -apresentação do incremento de software para o cliente
+crescimento de retrospectiva - o que foi bom e o que foi ruim durante a sprint(container que contem todos esses eventos) 
+daily reunião diária - impedimento, o que falta, o que precisa.
+
+
+
+
+---
+requisitos:
+>Definição detalhada e formal de uma função do sistema
+>As descrições do que o sistema deve fazer, os serviços
+ que oferece e as restrições a seu funcionamento
+ex: Realizar um saque, depósito, transferência no banco
+
+Req funcionais:
+Definem as funções que o sistema deve fornecer, sobre como o sistema 
+deve reagir a entradas específicas e sobrecomo se comportar em 
+determinadas situações, podendo também declarar o que o 
+sistema não deve fazer. 
+ex:transferir, depositar dinheiro. Funções básicas do sistema
+
+req não funcionais
+requisitos relacionados com a utilização do software em termos de desempenho,
+confiabilidade, segurança, usabilidade e portabilidade, entre outros.
+
+ex: transferir em 5seg, funções de menor importância em relação aos
+funcionais, essenciais, mas não tanto quando as básicas de um sistema
+
+
+---casos de uso
+uml - entender diagramas
+extend opcional
+include obrigatorio
+
+casos de uso = realizar depósito. registrar movimento
+
+agentes: cliente, banco
+
+
+
+Para relacionamentos entre atores e casos de uso: somente associação.
+■ Para relacionamentos de atores entre si: somente generalização.
+■ Para relacionamentos de casos de uso entre si: generalização, extensão
+e inclusão.
+
+
+
+.>Associação = relação entre o ator e o caso de uso <---- ou ------- ou ------>
+
+.>Generaçozaçãp = herança, generalização entre casos de uso pode ocorrer quando
+existirem dois ou mais casos de usos com características semelhantes, apresentando
+pequenas diferenças entre si.
+
+              Abrir conta poupança
+ Abrir conta/
+   comum    \  
+              Abrir conta especial   
+
+Ambas usam a superclasse mãe
+
+.> Include = relacionamento entre casos, Um relacionamento de inclusão entre casos de uso significa que o caso de
+uso base incorpora explicitamente o comportamento de outro  cadastro ----> validar conta------------biometria   obrigatorio
+
+Nesse exemplo, sempre que
+um saque ou depósito ocorrer,
+ele deve ser registrado
+para fins de histórico bancário.
+Como as rotinas para
+registro de um saque
+         /> Realizar depósito                             \
+ Cliente --- <Include> Registrar movimento <Include>  ---   Banco
+         \> Realizar saque                                /
+
+um caso que chama outro caso, como ao realizar um saque e registrar na log
+
+.> extensão (extend)           banco    <----- emitir extrato   .opcional
+
+
+
+...software
+
+Além disso, segundo Sommerville (2011), o software é composto não somente
+pelos programas, mas também pela documentação associada a esses programas.
+Para Pressman e Maxim (2016), o software possui, pelo menos, três características
+que o diferenciam do hardware, a saber:
+
+O software é desenvolvido ou passa por um processo de engenharia, não
+sendo fabricado no sentido clássico.
+
+Software não se desgasta.
+
+não há como, simplesmente, trocar o componente,
+pois quando um erro acontece no software, pode ser de projeto ou
+de requisito mal definido, o que leva o software a sofrer manutenção, a qual
+pode ser considerada mais complexa do que a do hardware.
+
+Embora a indústria caminhe para a construção com base em componentes,
+a maioria dos softwares continua a ser construída de forma personalizada
+(sob encomenda).
+
+
+
+...caixa preta
+
+Testes funcionais: garantem o atendimento
+aos requisitos do sistema, ou seja, que os requisitos
+estão corretamente codificados. São conhecidos
+como testes de caixa preta:
+
+Para Bastos et al. (2007), os testes funcionais ou de caixa preta são projetados
+para garantir que os requisitos e as especificações do sistema tenham sido atendidos.
+Para tanto, eles utilizam as especificações do documento de análise de
+requisitos e de projetos para definir os testes a serem realizados. Assim, no teste
+funcional, o componente de software a ser testado é abordado como se fosse uma
+caixa preta, sem considerar o seu comportamento interno.
+Além disso, os testes de caixa preta não verificam como ocorre o processamento,
+mas apenas os resultados produzidos. Bastos et al. (2007) explanam, ainda,
+que esse teste pode encontrar funções incorretas ou que estejam faltando, erros
+de interface, erros em estruturas de dados ou acesso a bases de dados externas,
+erros de comportamento ou de desempenho e, por último, erros de inicialização
+e término.
+
+
+Testes estruturais: garantem que os sistemas
+sejam estruturalmente sólidos e que funcionem
+no contexto técnico em que serão instalados. São
+conhecidos como testes de caixa branca:
+
+Para Pressman e Maxim (2016) essa técnica não é desenhada para garantir que
+o sistema esteja funcionalmente correto, mas para que ele seja estruturalmente
+robusto. Os testes estruturais ou de caixa branca estabelecem os objetivos do
+teste com base em uma determinada implementação, analisando os detalhes do
+código fonte. Assim, todas as variações originadas por estruturas de condições/
+repetições do código são testadas.
+Portanto, os testes de caixa branca podem, segundo Pressman e Maxim
+(2016), garantir que todos os caminhos independentes de um módulo sejam
+executados pelo menos uma vez, exercitando todas as decisões lógicas nos seus
+estados verdadeiro e falso, executando todos os ciclos em seus limites e dentro
+de suas fronteiras operacionais e, por último, exercitando estruturas de dados
+internas para assegurar a sua validade.
+
+
+
+Teste de Unidade = Teste em um nível de componente ou classe. É o teste
+cujo objetivo é um “pedaço do código”.
+
+Teste de Integração = Garante que um ou mais componentes combinados (ou
+unidades) funcionam. Podemos dizer que um teste de
+integração é composto por diversos testes de unidade.
+
+Teste Positivo-Negativo = Garante que a aplicação vai funcionar no “caminho feliz”
+de sua execução e funcionará no seu fluxo de exceção.
+
+Fonte: Pressman e Maxim (2016, p. 471).
+
+Teste de Interface = Verifica se a navegabilidade e os objetivos da tela funcionam
+assim como foram especificados e se atendem da melhor forma ao usuário.
+
+Teste de Aceitação do Usuário = Testa se a solução será bem vista pelo usuário. 
+Ex: caso exista um botão pequeno demais para executar uma função, isso deve ser 
+criticado em fase de testes (aqui, cabem quesitos fora da interface também).
+
+Teste de Volume = Testa a quantidade de dados envolvidos (pode ser pouca,
+normal, grande ou além de grande).
+
+Testes de Configuração = Testa se a aplicação funciona corretamente em diferentes
+ambientes de hardware ou de software.
+
+Testes de Instalação = Testa se a instalação da aplicação foi bem sucedida.
+
+Teste de Sistemas = Testa a execução do sistema como um todo, a fim de validar
+a exatidão e perfeição na execução de suas funções.
+
+Teste de Usabilidade = Testa e simula as condições de utilização do software sob
+a perspectiva do usuário final. Esses testes focalizam a facilidade de navegação
+entre as telas, clareza dos textos e as mensagens que são apresentadas aos 
+usuários, dentre outros aspectos da interface do sistema.
+
+Testes de Progressão = Testa apenas as funcionalidades (ou requisitos não
+funcionais) especificadas para a versão.
+
+Teste de Fumaça = Teste o qual acontece rapidamente, executando as
+principais funcionalidades do sistema sem se preocupar com as
+ condições de erro. É o mesmo que o teste do “caminho feliz”.
+
+
+ ESPECIFICAÇÃO DE SOFTWARE > PROJETO E IMPLEMENTAÇÃO DE SOFTWARE > VALIDAÇÃO DE SOFTWARE > EVOLUÇÃO DE SOFTWARE
+1. Estudo de viabilidade > 2. Levantamento e análise de requisitos > 3. Especificação de requisitos > Validação de requisitos
+A especificação de software ou de engenharia de requisitos é a primeira atividade
+básica de um processo de software e tem, como objetivo, definir quais funções
+são requeridas pelo sistema e identificar as restrições sobre a operação e o desenvolvimento
+desse sistema. Essa atividade é muito importante e crítica, pois, se a
+definição dos requisitos não for bem realizada, com certeza, problemas posteriores
+no projeto e na implementação do sistema irão acontecer.
+
+Segundo Sommerville (2011, p. 24), “o processo de engenharia de requisitos
+tem como objetivo produzir um documento de requisitos acordados que
+especifica um sistema que satisfaz os requisitos dos stakeholders”. Além disso, é
+composto por quatro fases, conforme descreve Sommerville (2011):
+
+1. Estudo de viabilidade: uma avaliação é realizada para verificar se as
+necessidades dos usuários podem ser atendidas com base nas atuais tecnologias
+de software e hardware disponíveis na empresa. Esse estudo deve
+indicar se o sistema proposto será viável, do ponto de vista comercial, e se
+poderá ser desenvolvido considerando as restrições orçamentárias, caso
+existam. Um estudo de viabilidade não deve ser caro e demorado, pois
+é a partir do seu resultado que a decisão de prosseguir com uma análise
+mais detalhada deve ser tomada.
+
+2. Levantamento e análise de requisitos: nesta fase, é necessário levantar os
+requisitos do sistema, mediante a observação de sistemas já existentes, pela
+conversa com usuários e compradores em potencial, pela análise de tarefas
+etc. Além disso, essa fase pode envolver o desenvolvimento de um ou
+mais diferentes modelos e protótipos de sistema, a fim de ajudar a equipe
+de desenvolvimento a compreender melhor o sistema a ser especificado.
+
+3. Especificação de requisitos: é a atividade de traduzir as informações coletadas
+durante a fase anterior em um documento que define um conjunto de
+requisitos. Tanto os requisitos dos usuários quanto os requisitos de sistema
+podem ser incluídos nesse documento. De acordo com Sommerville (2011,
+p. 25), “os requisitos dos usuários são declarações abstratas dos requisitos
+do sistema para o cliente e usuário final do sistema; requisitos de sistema
+são uma descrição mais detalhada da funcionalidade a ser provida”.
+
+4. Validação de requisitos: essa atividade verifica os requisitos quanto a
+sua pertinência, consistência e integralidade. Durante o processo de validação,
+os requisitos que apresentarem problemas devem ser corrigidos,
+para que a documentação de requisitos fique correta.
+As atividades de análise, definição e especificação de requisitos são intercaladas.
+Em outras palavras, elas não são realizadas seguindo uma sequência rigorosa,
+pois, com certeza, novos requisitos surgem ao longo do processo.
+
+Segundo Sommerville (2011, p. 25), “o estágio de implementação do desenvolvimento
+de software e o processo de conversão de uma especificação do sistema em
+um sistema executável”. Essa etapa sempre envolve processos de projeto e programação
+de software, porém, se uma abordagem incremental de desenvolvimento
+for utilizada, poderá, também, envolver o aperfeiçoamento da especificação de
+software em que os requisitos foram definidos.
+Para Pressman (2011, p. 205), o projeto de software “cria uma representação
+ou modelo do software, [...] fornecendo detalhes sobre a arquitetura do software,
+estruturas de dados, interfaces e componentes fundamentais para implementar
+o sistema”. Diante disso, o projeto de software é aplicado independentemente do
+modelo de processo de software que está sendo utilizado, ou seja, se está sendo
+utilizado o modelo em cascata ou a abordagem incremental.
+
+O início do projeto ocorre assim que os requisitos tiverem sido analisados
+e modelados, ou seja, no momento em que a modelagem do sistema tiver sido
+realizada. Com base no documento de requisitos, o engenheiro de software, na
+fase de modelagem do sistema, deverá elaborar os diagramas da UML – Unified
+Modeling Language –, como o diagrama de caso de uso e o diagrama de classes,
+por exemplo.
+
+Na fase de projeto do sistema, o engenheiro de software deverá: i) definir
+o diagrama geral do sistema; ii) elaborar as interfaces com o usuário (telas e
+relatórios); e iii) desenvolver um conjunto de especificações de casos de uso. É
+necessário reforçar que essas especificações devem conter detalhes suficientes
+para permitir a sua codificação.
+Geralmente, durante o projeto, o analista de sistemas deve definir cada componente
+do sistema ao nível de detalhamento que se fizer necessário para a sua
+implementação em uma determinada linguagem de programação.
+A programação, a qual também é chamada de fase de implementação de
+um projeto típico, normalmente, começa quando termina a atividade de projeto.
+Ela envolve a escrita de instruções em Java, C++, C# ou em alguma outra
+linguagem de programação, a fim de implementar o que o analista de sistemas
+modelou na etapa de projeto. Sendo uma atividade pessoal, não existe um processo
+geral que seja normalmente seguido durante a programação do sistema.
+Alguns programadores começam com os componentes que eles compreendem
+melhor, passando, depois, para os mais complexos. Outros preferem deixar
+os componentes mais fáceis para o fim, porque sabem como desenvolvê-los. Já
+alguns desenvolvedores gostam de definir os dados no início do processo e, então,
+utilizam esses dados para dirigir o desenvolvimento do programa; outros deixam
+os dados sem especificação, enquanto for possível.
+De acordo com Sommerville (2011), normalmente, os programadores testam
+os códigos fontes que eles mesmos desenvolveram, a fim de descobrirem defeitos
+que devem ser removidos. Esse processo é chamado de depuração. O teste e
+a depuração dos defeitos são processos diferentes. O teste estabelece a existência
+de defeitos, enquanto a depuração se ocupa em localizar e corrigir esses defeitos.
+Em um processo de depuração, os defeitos no código devem ser localizados
+e o código precisa ser corrigido, a fim de se cumprir os requisitos. Para que se
+possa garantir que a mudança foi realizada corretamente, os testes deverão ser
+repetidos. Portanto, o processo de depuração é parte tanto do desenvolvimento
+quanto do teste do software.
+
+VALIDAÇÃO DE SOFTWARE
+A validação de software se dedica em mostrar que um sistema atende tanto as
+especificações relacionadas no documento de requisitos quanto às expectativas
+dos seus usuários. A principal técnica de validação, segundo Sommerville
+(2011), é o teste de programa, em que o sistema é executado com dados de testes
+simulados. Os testes somente podem ser realizados enquanto unidade isolada
+se o sistema for pequeno. Caso contrário, se o sistema for grande e constituído a
+partir de subsistemas, os quais são construídos partindo-se de módulos, o processo
+de testes deve evoluir em estágios, ou seja, devem ser realizados de forma
+incremental, iterativa.
+Sommerville (2011) propõe um processo de teste em três estágios. O primeiro
+é o teste de componente. Em seguida, tem-se o sistema integrado e testado
+e, por fim, o sistema é testado com dados reais, ou seja, com dados do próprio
+cliente. Idealmente, os defeitos de componentes são descobertos no início do
+processo, enquanto os problemas de interface são encontrados quando o sistema
+é integrado.
+Os estágios do processo de testes, de acordo com Sommerville (2011), são:
+1. Testes de desenvolvimento: para garantir que os componentes individuais
+estão operando corretamente, é necessário testá-los de forma independente
+dos outros componentes do sistema.
+
+2. Testes de sistema: os componentes são integrados para constituírem o
+sistema. Esse processo se dedica a encontrar erros que resultem de interações
+não previstas entre os componentes e de problemas com a interface
+do componente. O teste de sistema também é utilizado para validar que
+o sistema atende aos requisitos funcionais e não funcionais definidos no
+documento de requisitos.
+
+3. Teste de aceitação: nesse estágio, o sistema é testado com dados reais
+fornecidos pelo cliente. Aqui, há a possibilidade de se mostrar falhas na
+definição de requisitos, pois os dados reais podem exercitar o sistema de
+modo diferente dos dados de teste.
+
+EVOLUÇÃO DE SOFTWARE
+Depois que um software é colocado em funcionamento, ou seja, depois que é
+implantado, com certeza, ocorrerão mudanças que levarão à alteração desse software.
+Essas mudanças podem ser, de acordo com Pressman (2011), para correção
+de erros não detectados durante a etapa de validação do software, quando há
+adaptação a um novo ambiente, quando o cliente solicita novas características
+ou funções, ou ainda, quando a aplicação passa por um processo de reengenharia,
+a fim de proporcionar benefício em um contexto moderno.
+
+Sommerville (2011) sustenta que, historicamente, sempre houve uma fronteira
+entre o processo de desenvolvimento de software e o seu processo de evolução
+(manutenção de software). O desenvolvimento de software é visto como uma
+atividade criativa, em que o software é desenvolvido a partir de um conceito inicial,
+até chegar ao sistema em operação.
+
+Depois que esse sistema entra em operação, inicia-se a manutenção de
+software, no qual ele é modificado. Normalmente, os custos de manutenção
+são maiores do que os custos de desenvolvimento inicial, mas os processos de
+manutenção são considerados menos desafiadores do que o desenvolvimento
+de software original, ainda que tenha um custo mais elevado.
+Todavia, atualmente, os estágios de desenvolvimento e de manutenção têm
+sido considerados integrados e contínuos, em vez de dois processos separados.
+Assim, tem sido mais realista pensar na engenharia de software enquanto um
+processo evolucionário, em que o software é sempre mudado ao longo de seu
+período de vida, em resposta aos requisitos que estão em constante modificação
+e às necessidades do cliente.
+
+
+Diagrama de classes é uma representação gráfica que descreve a estrutura das classes incluindo os atributos, métodos e relacionamentos
+
+Entry = momento de entrada do estados
+
+exit = momento de saida
+
+do = entre o entry e o exit, em atividade
+
+SCM
+software configuration management
+
+
+SCM é uma atividade do tipo “guarda-chuva”, aplicada no decorrer de toda
+a gestão de qualidade. As mudanças podem ocorrer em qualquer instante, por
+isso, as atividades de SCM são desenvolvidas para:
+■■ Identificar a alteração feita.
+■■ Controlar a alteração que está sendo feita.
+■■ Assegurar que a alteração esteja sendo implementada corretamente no
+software.
+■■ Relatar as alterações aos membros da equipe.
+
+
+Segundo Pressman e Maxim (2016, p. 624), “os itens que compõem todas as
+informações produzidas como parte do processo de software são chamados
+coletivamente de configuração de software”. Além disso, conforme se avança no
+desenvolvimento do software, cria-se uma hierarquia dos itens de configuração
+de software, a qual corresponde a um elemento de informação que contém um
+nome que pode ser pequeno, como um diagrama UML, ou grande, como um
+documento de projeto de software completo.
+Todavia, um dos problemas do gerenciamento de configurações, de acordo
+com Sommerville (2011, p. 476), «é que diferentes empresas falam sobre os mesmos
+conceitos usando termos diferentes». A seguir, apresentamos um quadro
+com algumas das terminologias usadas no SCM:
+
+
+Para finalizar, é importante que tenhamos em mente que a SCM é uma atividade
+abrangente e aplicada em todo o processo de software. Ela identifica, controla, realiza
+auditoria e relata modificações que podem ocorrer invariavelmente enquanto
+o software está sendo desenvolvido e até mesmo depois que está sendo usado
+pelo cliente. Todos os artefatos criados como parte do processo de desenvolvimento
+tornam-se parte de uma configuração de software.
+
+
+Os três tipos diferentes de manutenção de software são:
+■■ Manutenção para reparo de defeitos de software.
+■■ Manutenção para adaptar o software a um ambiente operacional diferente.
+■■ Manutenção para adicionar funcionalidade ao sistema ou modificá-la.
+
+Não é possível testar um programa completamente.
+Teste de software é um exercício baseado em risco.
+Teste não mostra que bugs não existem, mas sim, o contrário.
+
+
+
+DIAGRAMA DE SEQUÊNCIA
+Segundo Guedes (2011, p. 192), “o diagrama de sequência procura determinar
+a sequência de eventos que ocorrem em um determinado processo, identificando
+quais mensagens devem ser disparadas entre os elementos envolvidos e
+em que ordem”.
+A criação do diagrama
+
+
+Mensagens assíncronas
+As mensagens assíncronas são utilizadas para indicar que a execução ocorre em
+paralelo aos outros processos e que ela pode ter um processamento contínuo, o que
+retira a necessidade de aguardar por uma resposta para que o processo continue.
+
+
+Estereótipo <<control>>
+O estereótipo <<control>> trata-se de uma classe intermediária entre as classes
+<<boundary>> e as demais. Seu objetivo é o de realizar uma interpretação de eventos
+realizados pelo objeto <<boundary>>, como as ações do mouse e a execução de
+botões, por exemplo, o que permite retransmitir ações aos demais objetos do sistema
+(GUEDES, 2011):
+
+
+
+
+
+DIAGRAMA DE CLASSES
+O diagrama de classes tem, como objetivo, permitir a visualização das classes
+utilizadas pelo sistema e como elas se relacionam, apresentando uma visão
+estática de como estão organizadas, preocupando-se apenas em definir sua estrutura
+lógica (GUEDES, 2007). Ainda, de acordo com o estudioso, um diagrama
+de classes pode ser utilizado para modelar o modelo lógico de um banco de
+dados, parecendo-se, nesse caso, com o diagrama de entidade-relacionamento
+(o modelo entidade-relacionamento o qual você estuda na disciplina de banco
+de dados). No entanto, deve ficar bem claro que o diagrama de classes não é utilizado
+unicamente para essa finalidade e que uma classe não necessariamente
+corresponde a uma tabela.
+Uma classe pode representar o repositório lógico dos atributos de uma tabela,
+mas a classe não é a tabela. Isso se deve, uma vez que os atributos de seus objetos
+são armazenados em memória, enquanto uma tabela armazena seus registros
+fisicamente em disco. Além disso, uma classe possui métodos que não existem
+em uma tabela.
+
+CLASSE ASSOCIATIVA
+Quando um relacionamento possui multiplicidade, ou seja, muitos (*) em suas
+duas extremidades, é necessário criar uma classe associativa para guardar os objetos
+envolvidos nessa associação. Na classe associativa, são definidos o conjunto de
+
+MULTIPLICIDADE
+De acordo com Guedes (2007), a multiplicidade determina o número mínimo
+e máximo de instâncias envolvidas em cada uma das extremidades da associação,
+permitindo, também, especificar o nível de dependência de um objeto com
+os outros. Quando não existe multiplicidade explícita, entende-se que a multiplicidade
+é “1..1”, o que significa que somente uma instância dessa extremidadeda associação 
+relaciona-se com as instâncias da outra extremidade. A tabela aseguir demonstra 
+alguns dos diversos valores de multiplicidade que podem ser utilizados
+em uma associação:
+
+
+
+
+Algumas técnicas de validação de requisitos podem ser utilizadas em conjunto
+ou individualmente. A seguir, são mostradas algumas delas:
+
+1. Revisões de requisitos: os requisitos são analisados sistematicamente
+por uma equipe de revisores, a fim de eliminar erros e inconsistências.
+
+2. Prototipação: nessa abordagem de validação, um modelo executável
+do sistema é mostrado aos usuários finais e clientes, possibilitando que
+eles experimentem o modelo para verificar se atende às necessidades da
+empresa.
+
+3. Geração de casos de teste: como modelo ideal, os requisitos deveriam
+ser testáveis. Se os testes para os requisitos são criados como parte do
+processo de validação revelam problemas com os requisitos. Se um teste
+é difícil ou impossível de ser projetado, significa, muitas vezes, que os
+requisitos serão de difícil implementação e devem ser reconsiderados.
+O desenvolvimento de testes a partir dos requisitos de usuário, antes da
+implementação do sistema, é uma parte integrante da Extreme Programming.
+
+As dificuldades da validação de requisitos não devem ser subestimadas, pois é
+muito difícil demonstrar que um conjunto de requisitos atende às necessidades
+de um usuário. Os usuários devem pensar no sistema em operação e imaginar
+como esse sistema se adequaria ao seu trabalho. Não é fácil para profissionais
+habilitados em computação conseguirem realizar esse tipo de análise abstrata,
+imagine o quão difícil é para os usuários de sistema. Dessa forma, a validação
+de requisitos não consegue descobrir todos os problemas com os requisitos,
+implicando em modificações para corrigir essas omissões e falhas de compreensão
+depois que o documento de requisitos foi aceito (SOMMERVILLE, 2011).
+
+Requisitos>
+
+
+Contudo, a diferenciação entre esses dois tipos de requisitos não é tão clara como
+sugerem as definições apresentadas. Um requisito referente à proteção pode parecer
+um requisito não funcional, mas, quando desenvolvido com mais detalhes,
+pode levar a outros requisitos que são claramente funcionais, como a necessidade
+de incluir recursos de autorização de usuários no sistema, por exemplo
+(SOMMERVILLE, 2011).
+Portanto, embora seja interessante dividir os requisitos em funcionais e não
+funcionais, devemos lembrar que essa é, na verdade, uma distinção artificial. O
+mais importante é que os requis

@@ -1,0 +1,38 @@
+Na evolução dos dispositivos computadores de redes, particularmente nas topologias de estrela e similares, encontramos o hub e seu sucessor direto, o
+switch. O primeiro tem limitações significativas quando comparado ao segundo, pois somente faz transmissões em broadcast, ocupando o meio a cada 
+quadro transmitido. No caso do switch, cada quadro é transmitido somente do host origem até o host destino, sem ser entregue a nenhum outro dispositivo
+conectado, o que libera os outros canais do meio físico. Neste caso, várias comunicações “cruzadas” podem ocorrer ao mesmo tempo, sem que ocorra
+impedimento entre elas.
+
+Pensando em termos funcionais, como um switch pode fazer isso? Indique com suas palavras quais informações o switch precisa armazenar para promover a 
+comunicação entre dois dispositivos conectados a ele. Fale também de que forma o switch pode obter tais informações quando novos dispositivos forem 
+conectados à rede.
+
+
+
+
+
+
+O switch é capaz de promover várias comunicações ao mesmo tempo sem que ocorra impedimento entre elas, por conta do Packet Switching, que é uma técnica de transmissão de dados 
+usada em redes de computadores. Nessa técnica, os dados são divididos em pacotes e enviados pela rede de forma independente, ou seja, cada pacote é roteado pela rede e entregue 
+individualmente ao seu destino final.
+As informações que o switch precisa armazenar para promover a comunicação entre dois dispositivos conectados a ele são referentes aos endereços MAC dos dispositivos. Quando um 
+dispositivo se conecta pela primeira vez no switch, ele envia um pacote contendo seu endereço MAC, que é uma lista que relaciona cada endereço MAC com o número da porta do switch 
+que o dispositivo está conectado. Dessa forma, o switch sabe por qual porta enviar um pacote destinado a um determinado dispositivo, o que evita a sobrecarga da rede e a lentidão 
+da internet.
+Quando um switch recebe um pacote, ele verifica o endereço MAC de destino no cabeçalho do quadro. Se o endereço MAC de destino já estiver na tabela de endereços MAC do switch, 
+ele encaminha o quadro diretamente para a porta correspondente ao dispositivo de destino. Mas se o endereço MAC de destino não estiver na tabela de endereços MAC do switch, o 
+switch usará o encaminhamento broadcast para aprender o endereço MAC correto.
+
+
+
+https://www.dlink.com.br/voce-sabe-como-os-switches-funcionam-e-qual-o-poder-deles/#:~:text=Um%20switch%20%C3%A9%20um%20dispositivo,tipos%20dispositivos%20possam%20se%20comunicar.
+
+https://www.juniper.net/br/pt/research-topics/what-is-a-network-switch.html
+
+https://www.juniper.net/br/pt/research-topics/what-is-a-network-
+
+
+
+
+

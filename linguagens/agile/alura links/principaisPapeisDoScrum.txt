@@ -1,0 +1,74 @@
+O SCRUM é uma metodologia ágil amplamente utilizada no desenvolvimento de software. 
+Ele é baseado em princípios de transparência, inspeção e adaptação, e busca promover
+a colaboração e a entrega contínua de valor ao cliente. O SCRUM é composto por papéis,
+eventos e artefatos que são fundamentais para o seu funcionamento efetivo.
+
+Nesse sentido, descreva os principais papéis envolvidos em uma equipe SCRUM e suas responsabilidades.
+
+
+Dev Team (qualidade), Scrum Master (eficiência), Product Owner (eficácia). Esses 3 papéis juntos compõem um Scrum Team 
+
+Vamos agora abordar as responsabilidades do Development Team. Este time é encarregado de construir, validar e integrar o incremento do produto,
+sempre com foco na qualidade e na busca pela melhoria contínua.
+
+Quanto ao scrum master além da capacidade de ser um Líder Servidor, que tem como principal objetivo ajudar o próximo para que 
+atinjam o resultado almejado, um Scrum Master precisa promover melhorias na organização(agente de mudanças), remover impedimentos,
+Organizar o trabalho(facilitador), negociação e coach( perguntas que geram reflexões).
+Scrum Master é responsável por maximizar a eficiência do Scrum Team, promovendo e 
+suportando o Scrum e ajudando a melhorar as interações existentes.
+
+E o Product Owner tem o desafio de conseguir maximizar o valor que aquele produto irá gerar para o negócio.
+Para isso, o PO, além de precisar ter um foco alto e senso de dono, precisará conversar frequentemente com as outras áreas 
+que fazem parte da empresa, para entender quais são os pontos-chave que remetem a dor dos clientes, e conhecer a fundo o 
+produto e mercado em que a empresa está inserida.
+
+Uma equipe Scrum é organizada de forma a garantir que haja pessoas responsáveis por alinhar o produto com as expectativas do mercado,
+garantir a qualidade e as tecnologias adequadas, e também pessoas responsáveis por garantir que a equipe opere de maneira eficiente,
+sem gargalos.
+
+
+O Scrum tem o seu funcionamento estruturado por ciclos(sprints) que representam iterações de trabalho com duração variável. As atividades
+executadas em um sprint são ajustadas pela equipe Scrum para atender às necessidades específicas do problema em questão. Elas são executadas 
+em um período de tempo relativamente curto durante o projeto em desenvolvimento. Estudiosos sustentam que 
+não pode ocorrer nenhuma mudança durante uma sprint, pois o produto é projetado, codificado e testado nesse momento.
+
+Além disso, o Scrum estipula um conjunto de práticas e regras que devem
+ser seguidas pela equipe. Nele, também temos três papéis importantes(já citados anteriormente): Product
+Owner, Scrummaster e Team (BROD, 2013), bem como ocorrem as cerimônias,
+as quais são divididas em quatro: Daily Meeting ou Daily Scrum, a Sprint
+Review, o Sprint Planning e o Sprint Retrospective.
+
+A sequência das cerimônias e dos artefatos correspondentes é a seguinte: Sprint Planning > Daily Meeting > Sprint Review;
+Product Backlog > Sprint Backlog > Sprint Retrospective > Burndown Chart.
+
+Para explicar com mais detalhes, o Sprint Planning, como mencionado por Sbrocco e Macedo (2012, p. 165), 
+é o ponto de partida do projeto, exigindo a participação de todos os envolvidos. Essa reunião 
+não deve durar mais de 8 horas e é o momento em que o Product Owner estabelece e organiza as
+prioridades do projeto.
+
+A Daily Meeting, por outro lado, é uma reunião diária em que cada membro da equipe relata o que já fez, seus planos futuros
+e se enfrenta algum obstáculo que esteja impedindo o progresso das tarefas. Essa reunião é projetada para ser rápida, 
+com duração máxima de 15 minutos, e envolve os membros da equipe e o Scrum Master.
+
+Na Sprint Review, avaliamos o que foi realizado durante uma iteração. Nessa reunião, a equipe apresenta ao Product Owner e a outros 
+convidados apenas os elementos que foram completamente finalizados na iteração.
+
+Já a Sprint Retrospective tem como objetivo analisar o que funcionou bem e o que pode ser aprimorado na iteração anterior.
+De acordo com Brod (2013), essa reunião é uma oportunidade para identificar problemas e áreas que precisam de
+ajustes nas iterações, com o objetivo de melhorar continuamente o processo.
+
+Finalmente, os artefatos incluem o Product Backlog, que é uma lista de prioridades de requisitos ou funcionalidades para o projeto,
+ com estimativas de custos, riscos e definições de recursos e datas de entrega. O Sprint Backlog é uma lista de tarefas específicas
+a serem realizadas durante o próximo sprint, juntamente com a atribuição de responsabilidades individuais. O Sprint Review 
+apresenta os resultados esperados, enquanto o Burndown Chart é um gráfico que representa o progresso real, atualizado diariamente
+durante o sprint, à medida que as tarefas são concluídas.
+
+O Scrum se baseia no princípio fundamental de que os clientes podem alterar seus requisitos ao longo do desenvolvimento do projeto,
+adotando assim uma abordagem empírica que reconhece que a compreensão completa do problema do cliente pode não estar clara desde
+o início.
+
+MELO, Mario. Organização de Equipes Ágeis: os papéis existentes em uma equipe. Curso T5 - ONE, [2023].
+
+PASCUTTI, Márcia Cristina Dadalto; FREITAS, Janaina Aparecida de; GASPAROTTI, Talita Tonsic; PEDROSO, Victor de Marqui. Engenharia de Software. Márcia Cristina Dadalto Pascutti; Janaina Aparecida de Freitas; Talita Tonsic Gasparotti; Victor de Marqui Pedroso. Maringá-PR: Unicesumar, 2019. 232 p. "Graduação - EaD". ISBN (978-85-459-1969-8).
+
+SBROCCO, José Henrique Teixeira de Carvalho; MACEDO, Paulo Cesar de. Metodologias Ágeis: Engenharia de Software Sob Medida. São Paulo-SP: Érica, 2012. 256p. ISBN 853650398X.

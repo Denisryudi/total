@@ -1,0 +1,48 @@
+
+eclipse 
+ passo descriptografar 
+eclip
+ Processamento de Linguagem Natural. O processamento de linguagem natural envolve a capacidade de converter a fala em texto ou comandos através 
+ de técnicas de análise e compreensão da linguagem humana.
+
+
+Os três níveis de reconhecimento na técnica de Processamento de Linguagem Natural seriam:
+
+Comandos: Nesse nível, o sistema é capaz de reconhecer um conjunto específico de comandos ou palavras-chave, geralmente de dezenas a centenas de palavras. 
+Por exemplo, reconhecer comandos como "abrir", "fechar", "ligar", "desligar", etc.
+
+Discreto: Nesse nível, o sistema é capaz de reconhecer fala ditada com pausas entre as palavras. Ele realiza a discretização das palavras no ciclo da fala,
+ identificando as unidades individuais de fala.
+
+Contínuo: Nesse nível, o sistema é capaz de reconhecer a fala natural, sem pausas entre as palavras. Ele reconhece a natureza contínua da fala, levando 
+em consideração as variações e entonações naturais.
+
+Portanto, os três níveis de reconhecimento no Processamento de Linguagem Natural são Comandos, Discreto e Contínuo.
+
+nick of time
+---------livro: Becoming a better programmer
+
+Informações públicas antes das info privadas.
+Blocos menores de códigos. Não criar uma função com cinco parágrafos, separá-la em cinvo funções, cada qual com um nome bem definido.
+Escreva códigos usando as mesmas convenções de layout usadas pelo restante de sua equipe.
+
+Jamais altere a apresentação e o comportamento ao mesmo tempo. Faça com que sejam alterações separadas no sistema de controle de versões.
+Menos código pode significar mais software.
+
+Mais códigos significam mais lugares para os bugs se esconderem. 
+
+Refatorar não muda o comportamento exibido, transformação no código-fonte em que o comportamento seja preservado.
+Uma melhora que altere o modo como o programa reage não será uma refatoração será uma melhoria/reorganização.
+
+Refatoramosnpara deixar o código mais legível, melhorar sua estrutura interna, facilitar a manutenção do código e - com maos frequência - preparar
+o código para o acréscimo de funcionalidades no futuro. 
+
+Não copie seções de código. fatore-as em uma função comum. Utilize parametros para expressar qualquer diferença.
+
+DRY = Don't Repeat Yourself! 
+Sem redundância desnecessária, no entanto saiba que fatorar um código semelhante em uma função compartilhada
+introduz um alto acoplamento entre essas seções de código. Ou seja ambos os códigos agora dependem de uma interface
+compartilhada. Se ela for alterada ambas as seções devem de código deverão ser ajustadas.
+Duplicação pode ocorrer por acidente ou por conta de alguma reinvenção da roda. Aproveite das bibliotecas 
+
+Remover duplicação de código 

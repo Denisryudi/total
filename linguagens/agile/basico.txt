@@ -1,0 +1,67 @@
+No Waterfall, quando dividimos o modelo em etapas, a primeira etapa se direciona para a segunda e esta se movimenta para a terceira e assim por diante. 
+Com isso, o impacto de um melhor feedback do projeto diminui, porque além do resultado ser visto só no final do processo, as fases não podem ser retrocedidas,
+ excluindo a possibilidade de alguma alteração.
+
+Outro problema que podemos observar é que um projeto definido hoje pode não ter o mesmo sentido daqui 6 meses, porque há muita volatilidade no mundo,
+ as coisas evoluem rapidamente, principalmente a tecnologia.
+
+
+Agile
+
+Definir prioridades
+Utilizando a matriz Eisenhower
+A ideia é que todas as suas tarefas possam ser distribuídas em quadrantes, divididas em dois eixos: Importância e Urgência. 
+Esses quadrantes recebem um valor de 1 a 4 baseado em sua prioridade.
+
+Cada quadrante corresponde às tarefas:
+
+De muita importância e muita urgência: Crises.
+De muita importância, mas pouca urgência: Metas e planejamentos.
+De pouca importância, mas muita urgência: Interrupções.
+De pouco importância e pouca urgência: Distrações.
+Defina suas tarefas dentro de cada quadrante:
+
+Crises: não há tempo a perder, coloque no topo das suas tarefas.
+Metas e planos: programe-se para fazer, e tente reservar um tempo para isso.
+Interrupções: delegue ou faça apenas o que não for atrapalhar seu trabalho.
+Distrações: ignore.
+
+
+Definir fluxo
+-Dividir em vários pedaços 
+
+Feedback
+
+Com essa reação do cliente (feedback) é possível fazer alterações no fluxo ou até eliminar tarefas que não sejam mais necessárias.
+Detalhes e acontecimentos que somente olhando a planta não é possível de resolver
+altera a priorização/fluxo
+
+
+Priorizar tarefas, mudanças de fluxos conforme as tarefas são priorizadas e feedbacks de clientes durante a finalização de cada uma dessas tarefas.
+
+Ser ágil é entregar valor rapidamente, reduzindo os custos de mudança e de incertezas.
+
+
+Ser ágil significa entregar valor rapidamente, ter uma abordagem com foco naquilo que gera mais valor para o cliente e empresa, 
+ou seja, quando algum cliente apresenta um problema, devemos oferecer a ele entregas parciais de acordo com a necessidade desse cliente.
+
+Esses ciclos rápidos de entrega fazem com que os fluxos e feedbacks sejam constantes e o aprimoramento do serviço/produto seja cada 
+vez melhor, alcançando melhores resultados no final do processo.
+
+
+--manifesto.img
+
+O primeiro valor diz que as interações entre os indivíduos são mais importantes que os processos e as ferramentas, ou seja, a maneira como a equipe 
+trabalha impacta diretamente no desenvolvimento do que será produzido.
+
+O segundo valor diz que ter um software funcionando é mais importante do que uma documentação detalhada e compreensiva, ou seja, devemos trabalhar 
+para desenvolver um projeto para ele funcionar.
+
+O terceiro valor diz que a colaboração do cliente é mais importante que a negociação de contrato, ou seja, a proximidade com o cliente é essencial 
+para que o feedback tenha valor e fazer com que isso tenha impacto no fluxo de trabalho.
+
+O quarto e último valor diz que responder às mudanças é mais importante do que seguir o plano, ou seja, a mudança é algo natural e, se batermos de 
+frente com essa situação, teremos um cliente insatisfeito.
+
+
+https://agilemanifesto.org/iso/ptbr/manifesto.html

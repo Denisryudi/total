@@ -1,0 +1,88 @@
+cap1
+
+obs: utilizando teclado bluetooth batizado em viagem
+
+O código:
+A respeito da substituição dos seres humanos por máquinas: dificilmente ocorreria essa substituição por conta de que elas
+terão de ser capazes de nos entender nos mínimos detalhes a ponto de fazerem a tradução das nossas exig˜encias vagamente
+especificadas em programas executáveis perfeitos para satisfazerem nossas necessidades.
+
+ex: chatgpt
+
+LeBlanc: mais tarde é igual à nunca.
+códigos confusos reduzem a produtividade de uma equipe a ponto de chegar em zero.
+Por conta de serem “exponenciais“ ex: como uma equipe esta demorando demais e não estão conseguindo dar continuidade em
+um projeto, se faz necessário aumentar o número de funcionários, esses mesmos não entendem direito os códigos e acabam 
+aumentando a confusão a ponto de se fazer necessário à substitução dessa versão por outra.
+Essa nova versão começa à entrar declínio por conta novamente do aumento dos códigos ruins, que estão gerando confusão.
+No fim após 10 anos dando continuidade na nova versão, se faz necessário a mudança par uma nova versão (como novamente
+se embananaram devido às práticas ruins de um código sujo.
+
+À única maneira de ir mais rápido e cumprir prazos é comm um código limpo.
+
+Um programador que escreve um código limpo, é um artista que pode transformar uma tela em branco e
+submet˜ela sob uma série de transformações até que se torne em um sistema graciosamente programado.
+
+Bjarne = gosto de um código elegante e efici˜ente
+Para dificultar o encobrimento de bugs, as depend˜encias mínimas para facilitar a manutenção, o tratamento de erro
+completo de acordo com uma estratégia clara e o desempenho próximo do mais efici˜ente de modo a não incitar as pessoas
+a tornarem o código confuso com otimizações sorrateiras.
+
+Dave = Testes unitários e de aceitação, nomes significativos; ele oferece apenas uma maneira e não várias de se fazer uma 
+tarefa
+Um código sem testes não esta limpo.
+Quanto menor o código melhor.
+
+Michael Feathers = Se importar com o código, um código limpo sempre parece ser escrito por alguém que se importa com ele.
+
+Ron Jeffries = Efetue todos os testes; sem duplicação de código; Expressa todas as idéias que estão no sistema; minimiza
+o número de entidades, com classes, métodos, funções e outras do tipo.
+Foco mais na duplicação, algo feito repetidas vezes é sinal de que uma idéia não esta bem representada.
+img++
+
+Ward Cunningham = Voc˜e sabe que esta criando um código limpo, quando cada rotina que vc l˜e se mostra como o esperado.
+Um código belo é aquele que faz parecer que a linguagem foi feita para o problema.
+um código bom é aquele em que não se nota, tal como um sistema operacional. 
+
+Escoteiro = troque o nome de uma variável por um melhor, divida uma função que esteja grande demais, elimine um pouco de 
+repetição de código, reduza uma instrução if aninhada.
+
+cap2
+
+Não se refira a um grupo de contas como accontList, a menos que seja uma List. A palavra list significa algo específico
+para programadores. Se o que armazena as contas não for uma List de verdade, poderá onfundir os outros.
+Ou seja ccountGroup, bunchOfaccounts ou paenas ccounts seria melhor!
+
+Usar nomes passíveis de busca, facilitar a localização.
+Nomes longos se sobressaem  aos curtos, e qualquer nome passível de busca se sobressai a uma constante no código.
+
+Nomes de classes:
+Devem ter nomes com substantivos, como Customer, WikiPage, Account e AdressParser.
+Evite palavras como gerente, Processadir, dados ou Info no nome dde uma classe, que também nào deve ser um verbo.
+
+Nomes de métodos devem ter verbos, como Post, Payment, Delete Page ou Save. 
+Devem se nomear métodos de acesso, alteração e autenticação segundo seus valores e adicionar os prefixos get, set ou is de acordo com
+o padrão javabean.
+		string game = employee.getname();
+		customer.setName("mike");
+		if (paycheck.isPosted())...
+
+Quando os contrutores estiverem sobrecarregados, use métodos de fábrica(factory methody) estáticos com nomes que descreva os
+parãmetros.
+
+evitar brincadeiras nos nomes, selecionar uma palavra por conceito, sem trocadilhos.
+Tomar cuidado com um método add. (contando que as listas e paràmetros e os valores retornados dos diversos
+métodos add. sejam semanticamente equivalentes tudo bem.
+
+Problemas ocorrem quando no add. quando:
+Muitas classes nas quais add criará um novo valor por meio da adição e concatenação de dois valores existentes.
+
+Ao criar uma nova classe que possua um método que coloque seu único parametro em uma coleção, devemos tomar cuidado
+ao chamar esse método de add (caso haja outros métodos) pois caso a semantica seja diferente deve ser usado no lugar
+um nome como o insert, ou append, com isso chamá-lo de add. pode ser um trocadilho.
+
+Use nomes a partir do Domínio da soluçào
+AccountVisitor, JobQueue
+
+Rever página 28 ˜ 34
+

@@ -1,0 +1,92 @@
+
+  Socket = destino de um fluxo de dados
+  destino dessa conexão entre o meu navegador e o servidor desejado: alura
+  ip de origem para o ip de destino 
+
+
+
+
+O processo ocorre na comunicação entre um cliente e um servidor em uma rede. O cliente cria um socket de conexão com o endereço ip e porta do servidor 
+para estabelecer a conexão. Com o socket de conexão, é possível estabelecer contato com o socket de escuta do servidor e enviar uma requisição ao servidor 
+usando o socket de conexão.
+Um exemplo de uso de socket baseado no protocolo TCP é a transferência de arquivos entre um cliente e um servidor. O cliente faz uma solicitação para 
+transferir um arquivo para o servidor e, com isso, envia o arquivo para o cliente por meio de uma conexão TCP estabelecida por meio de um socket.
+https://www.youtube.com/watch?v=SMU92puJxdU
+
+comprimento em três etapas ou 
+
+TCP handshake 
+slciente = syn e o servidor pacote syn, act
+ack = servidor 
+syn = ack
+tcp flag
+
+
+O processo de estabelecimento de uma conexão TCP envolve um procedimento conhecido como "Three-way Handshake", que consiste em três passos. 
+Primeiramente, o cliente envia uma mensagem SYN para o servidor solicitando uma conexão e informando um número de sequência inicial. 
+Em seguida, o servidor responde com uma mensagem SYN-ACK, confirmando o recebimento, informando o número de sequência inicial e confirmando
+ o número de sequência do cliente acrescido de um. Finalmente, o cliente envia uma mensagem ACK confirmando a solicitação de conexão e 
+ informando o número de sequência do próximo pacote que o servidor deve esperar. Após essa troca de mensagens, a conexão é estabelecida 
+ e os dados podem ser transmitidos de forma confiável entre o cliente e o servidor.
+
+ https://www.youtube.com/watch?v=uRvjPlbJ_98
+
+ TCP
+ conexão
+ confiabilidade = número de verificação
+ full duplex = comunicação bilateral cliente servidor e vice-versa 
+ entrega ordenada = verificação sequêncial, remontado na mesma sequência garantindo que a informação chege no destino 
+ controle de fluxo = comunicação a respeito da veracidade das informações entregues 
+
+ UDP
+
+ SEM conexão
+ N confiavel
+ 1->n 
+Pode enviar dados para diversas máquinas 
+nao tem checagem 
+perda de pacotes
+
+
+O protocolo TCP utiliza números de sequência, checksums e retransmissão de pacotes para garantir a confiabilidade da transmissão de dados
+ e detectar erros que possam ocorrer na rede.
+
+A detecção de erros em pacotes TCP por meio de números de sequência ocorre por meio da indicação da posição do primeiro byte do pacote na sequência de dados 
+a ser enviada. Esse número de sequência é utilizado para verificar a integridade da transmissão e detectar a perda de pacotes durante a 
+comunicação. Ao receber um pacote, o receptor confere o número de sequência para garantir que esteja na ordem correta. Se o número não 
+corresponder ao esperado, significa que um ou mais pacotes foram perdidos, e o receptor solicita que o remetente retransmita os dados faltantes.
+
+Já utilizando a função de soma de verificação (checksum), o método de detecção de erros é usado para garantir que os dados transmitidos
+ em uma rede sejam recebidos corretamente. A ideia é simples: somar todos os valores dos bytes de um pacote de dados e adicionar um valor 
+ de verificação ao final do pacote. O receptor, por sua vez, calcula a soma dos bytes recebidos e compara com o valor de verificação para 
+ verificar se há erros na transmissão. Para calcular a soma de verificação, o emissor do pacote percorre todos os bytes que serão enviados 
+ e soma seus valores, gerando um resultado único. Este resultado é adicionado ao final do pacote, para que o receptor possa verificar se o
+  pacote foi recebido corretamente. Ao receber o pacote, o receptor recalcula a soma de verificação, somando os valores dos bytes recebidos 
+  e verificando se o resultado é igual ao valor de verificação enviado pelo emissor. Se houver discrepância, isso indica que houve erro na
+   transmissão do pacote, e o receptor pode solicitar que o pacote seja reenviado.
+
+De modo a assegurar a confiabilidade da transmissão, o protocolo TCP utiliza o processo de retransmissão de pacotes quando ocorre perda ou
+ corrupção de um pacote. Quando o receptor detecta a perda de um pacote, ele solicita a retransmissão desse pacote ao remetente. O remetente,
+  por sua vez, retransmite o pacote e prossegue com a transmissão dos pacotes subsequentes.
+
+
+
+
+
+O protocolo TCP é mais adequado para aplicações que exigem entrega confiável de dados (Three-way Handshake), com verificação de erros, 
+retransmissões(números de sequência, checksums e retransmissão de pacotes) e controle de fluxo(janela deslizante). Exemplos de aplicativos que utilizam TCP: transferência de arquivos, e-mail,
+navegação web, aplicativo de mensagens, etc
+
+Já o protocolo UDP é mais adequado para aplicativos que exigem menor latência e alta velocidade, e não exigem confiabilidade na entrega ou verificação de erros.
+Exemplos de aplicativos que usam UDP: transmissão de vídeo/áudio, voIP e jogos online.
+
+Uns exemplos de aplicativos que utilizam o protocolo TCP é a navegação web; aplicativo de mensagens, onde é necessário garantir que os pacotes sejam entregues corretamente 
+e que não haja perda de dados. Já um exemplo de aplicativo que utiliza o protocolo UDP seria um aplicativo de streaming, em que necessita de uma alta velocidade, e mesmo se houver 
+perda de pacotes não vai impactar tanto na experiência do usuário, quanto impactaria se fosse em um aplicativo de mensagens. 
+
+
+
+RODRIGUES, Marcelo. O que são portas TCP e UDP?. YouTube, 2019. Disponível em: https://www.youtube.com/watch?v=SMU92puJxdU. Acesso em: 25/04/2023.
+KRETCHEU, Paulo. Protocolos TCP e UDP. YouTube, 2013. Disponível em: https://www.youtube.com/watch?v=uRvjPlbJ_98. Acesso em: 25/04/2023.
+SILVA, Helcio. Controle de Erros TCP. YouTube, 2019. Disponível em: https://www.youtube.com/watch?v=ywEtJlZY-Z8. Acesso em: 25/04/2023.
+Nascimento, Pedro Arthur de Melo. "Protocolo de redes 1". Unicesumar, 2021.

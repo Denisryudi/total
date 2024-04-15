@@ -1,0 +1,27 @@
+ecli
+
+main + ctrl + space
+
+sysout + ctrl space
+
+ctrl + shift + f
+
+ctrl + mouse por cima = atalho link
+
+ctrl + o = outline
+ctrl+ shift+ c = comentar varias linhas
+
+ctrl + shift + o = import 
+
+main + ctrl + espaço
+para gerar o método main
+ctrl + shift + f
+para formatar o código fonte
+
+ctrl + shift + w = fechar tudo
+sysout + ctrl + espaço
+para gerar a instrução System.out.println()
+
+ctrl + shift + t = atalho achar comandos
+
+ctrl + shoft + f = formatar

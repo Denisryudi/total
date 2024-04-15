@@ -1,0 +1,56 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    pincel.fillStyle = 'lightgray';
+    pincel.fillRect(0, 0, 600, 400);
+
+    var raio = 10;
+
+    function desenhaCirculo(x, y, raio, cor) {
+
+        pincel.fillStyle = cor;
+        pincel.beginPath();
+        pincel.arc(x, y, raio, 0, 2 * Math.PI);
+        pincel.fill();
+    }
+
+    desenhaCirculo(300,200, raio + 20, 'red');
+    desenhaCirculo(300,200, raio + 10, 'white');
+    desenhaCirculo(300,200, raio, 'red');
+
+    function dispara(evento) {
+
+        var x = evento.pageX - tela.offsetLeft;
+        var y = evento.pageY - tela.offsetTop;
+
+
+        if (x > 300 - raio 
+            && x < 300 + raio
+                && y > 200 - raio 
+                    && y < 200 + raio) {
+
+            alert('Acertou');
+        }
+    }
+
+    tela.onclick = dispara;
+// x > 300 - raio: isso verifica se a coordenada X do clique do mouse está à direita do limite esquerdo do círculo. A coordenada X do centro do círculo é 300, e 
+// raio é a distância do centro do círculo até a borda. Então, 300 - raio representa o limite esquerdo do círculo. Se a coordenada X do clique do mouse for maior 
+// que esse limite, o clique está dentro do círculo horizontalmente à direita do centro.
+
+// x < 300 + raio: semelhante à primeira parte, mas verifica se a coordenada X do clique do mouse está à esquerda do limite direito do círculo. O limite direito 
+// é calculado adicionando o raio ao centro, 300 + raio. Se a coordenada X do clique do mouse for menor que esse limite, o clique está dentro do círculo horizontalmente
+//  à esquerda do centro.
+
+// y > 200 - raio: isso verifica se a coordenada Y do clique do mouse está abaixo do limite superior do círculo. A coordenada Y do centro do círculo é 200, e raio 
+// é a distância do centro do círculo até a borda. Então, 200 - raio representa o limite superior do círculo. Se a coordenada Y do clique do mouse for maior que 
+// esse limite, o clique está dentro do círculo verticalmente abaixo do centro.
+
+// y < 200 + raio: semelhante à terceira parte, mas verifica se a coordenada Y do clique do mouse está acima do limite inferior do círculo. O limite inferior é 
+// calculado adicionando o raio ao centro, 200 + raio. Se a coordenada Y do clique do mouse for menor que esse limite, o clique está dentro do círculo 
+// verticalmente acima do centro.
+</script>

@@ -1,0 +1,12 @@
+ARP = ADRESS RESOLUTION PROTOCOL > assim não precisando executar o broadcast
+
+
+Uma das formas para se desenvolver um sistema distribuído é utilizando sockets. Através dele é possível 
+fazer com que duas máquinas conversem entre si através de uma aplicação que monitora endereços
+IP e portas de rede. Com base em seu conhecimento sobre sockets
+
+
+O transistor é o componente da eletrônica que revolucionou a tecnologia envolvida nos processadores digitais atuais. 
+Através desse componente é possível dar origem às portas lógicas que, por sua vez, dão a base para a confecção de 
+circuitos integrados, dispositivos de memóri
+

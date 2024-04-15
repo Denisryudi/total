@@ -1,0 +1,236 @@
+
+SELECT
+    first_name,
+    UPPER(first_name)
+FROM employees;
+
+    UPPER, OU LOWER
+
+
+
+SELECT
+    first_name,
+    INITCAP(first_name)
+FROM employees;
+
+
+    PRIMEIRA LETRA MAIUSCULA
+
+
+
+
+
+SELECT * FROM
+    employees
+WHERE LOWER(job_id) = 'st_man';                              ST_MAN < é upper e apareceu
+= 120	Matthew	Weiss	MWEISS	650.123.1234	18/07/96	ST_MAN	8000
+
+LOWER IN WHERE
+
+
+
+
+
+SELECT
+    first_name,
+    last_name,
+    CONCAT(first_name, CONCAT(' ', last_name)) nome_completo
+FROM employees;
+
+
+CONCATenação
+
+
+
+SELECT
+    job_id, (OBS: texto excolhido; apartir do caractere 4; quantos caracteres quero extrair(100 caracteres))
+    SUBSTR(job_id, 4, 100)
+FROM employees;
+
+EXTRAI PARTE DE UM TEXTO. SUBSTR
+
+
+
+SELECT
+    job_id,
+    INSTR(job_id, '_')
+FROM employees;
+= AC_ACCOUNT	3
+
+POSIÇÃO DO CARACTERE: 3, INSTR
+
+
+
+
+
+SELECT
+    job_id,
+    INSTR(job_id, 'MGR')
+FROM employees;
+
+AC_ACCOUNT	0
+AC_MGR	4                    <<
+
+
+SELECT
+    job_id,
+    LENGTH(job_id)
+FROM employees;
+=AC_ACCOUNT	10
+
+LENGTH  TAMANHO
+
+
+SELECT
+    job_id,
+    RPAD(job_id, 20, '*')
+FROM employees;
+
+
+
+SELECT
+    job_id,
+    RPAD(job_id, 20, '*')
+FROM employees;
+= AC_ACCOUNT	AC_ACCOUNT**********
+AC_MGR	AC_MGR**************
+AD_ASST	AD_ASST*************
+AD_PRES	AD_PRES*************
+AD_VP	AD_VP***************
+
+
+ALINHAMENTO DIRETO COM CARACTERE ESPECIFICADO
+
+
+
+
+
+SELECT
+    job_id,
+    REPLACE(job_id, 'PROG', 'PR')
+FROM employees;
+=HR_REP	HR_REP
+IT_PROG	IT_PR
+IT_PROG	IT_PR
+IT_PROG	IT_PR
+IT_PROG	IT_PR
+IT_PROG	IT_PR
+
+REPLACE - SUBSTITUIU IT PROG POR IT PR
+
+
+
+SELECT
+    ROUND(37.548, 2) duas_casas,
+    ROUND(37.548, 0) zero_casas
+FROM dual;
+= 37,55   	38
+
+arredonDAMENTO
+
+
+
+
+SELECT
+    TRUNC(37.548, 2) duas_casas,
+    TRUNC(37.548, 1) uma_casa,
+    TRUNC(37.548, 0) zero_casas
+FROM dual;
+=37,54       	37,5	    37
+
+CORTA  == :.2D
+
+
+
+SELECT
+    MOD(10, 4) resto
+FROM dual;
+=2
+RESTO 2
+
+SELECT sysdate
+FROM dual;
+
+DATA ATUAL DO SISTEMA
+
+
+
+SELECT
+    first_name,
+    hire_date,
+    MONTHS_BETWEEN(sysdate, hire_date) meses_ativo
+FROM employees;
+=Steven	17/06/87	440,899630376344086021505376344086021505
+Neena	21/09/89	413,770598118279569892473118279569892473
+Lex	13/01/93	374
+Alexander	03/01/90	410,351243279569892473118279569892473118
+
+
+MONTHS_BETWEEN MESES ENTRE A DATA DE ATUAL DO SISTEMA E A DATA DE CONTRATAÇÃO
+
+
+SELECT
+    first_name,
+    hire_date,
+    TRUNC(MONTHS_BETWEEN(sysdate, hire_date), 0) meses_ativo
+FROM employees;
+
+
+TRUNCAR 0
+
+
+
+SELECT
+    sysdate,
+    ADD_MONTHS(sysdate, 3)
+FROM DUAL;
+
+ADICIONAR 3 DIAS
+
+            SELECT * FROM V$NLS_PARAMETERS;
+
+            ALTER SESSION SET NLS_LANGUAGE = 'ENGLISH';
+
+        TROCAR IDIOMA
+
+
+
+SELECT
+    sysdate,
+    NEXT_DAY(sysdate, 'domingo')
+FROM dual;
+
+ou
+
+
+SELECT
+    sysdate,
+    NEXT_DAY(sysdate, 'sunday')
+FROM dual;
+
+em ingles
+
+
+
+SELECT
+    sysdate,
+    LAST_DAY(sysdate)
+FROM dual;
+
+ULTIMO DIA DO MÊS
+
+13/03/24	31/03/24
+
+
+
+
+SELECT
+    sysdate data_atual,
+    EXTRACT(YEAR FROM sysdate) ano,
+    EXTRACT(MONTH FROM sysdate) mes,
+    EXTRACT(DAY FROM sysdate) dia
+FROM dual;
+
+= 13/03/24	2024	3	13
+
+EXTRAIR INFORMAÇÕES DE UMA DATA

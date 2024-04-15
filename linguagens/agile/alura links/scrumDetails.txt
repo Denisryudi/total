@@ -1,0 +1,138 @@
+De acordo com Sbrocco e Macedo (2012, p. 161), o Scrum é “conhecido pelo
+fato de estruturar seu funcionamento por ciclos, chamados de sprints que representam
+iterações de trabalho com duração variável”. As tarefas desenvolvidas
+dentro de um sprint são adaptadas ao problema pela equipe scrum e são realizadas
+em um período curto de tempo durante o desenvolvimento do projeto. Os
+estudiosos ainda sustentam que não pode ocorrer nenhuma mudança durante
+uma sprint, pois o produto é projetado, codificado e testado nesse momento
+
+Além disso, o Scrum estipula um conjunto de práticas e regras que devem
+ser seguidas pela equipe. Nele, também temos três papéis importantes: Product
+Owner, Scrummaster e Team (BROD, 2013), bem como ocorrem as cerimônias,
+as quais são divididas em quatro, a saber: Daily Meeting ou Daily Scrum, a Sprint
+Review, o Sprint Planning e o Sprint Retrospective.
+
+Segundo Sbrocco e Macedo (2012, p. 165), Sprint Planning ou Planejamento
+da Sprint “é a primeira reunião do projeto e todos precisam participar; deve ter
+uma duração de no máximo 8 horas. Essa é a reunião em que o Product Owner
+planeja e elabora a lista de prioridades”. Na Daily Meeting ou Daily Scrum, ou,
+ainda, Reunião Diária, “cada membro do time deve responder sobre o que já fez,
+sobre o que pretende fazer e se há algum impedimento para a conclusão da(s)
+tarefa(s)” (SBROCCO; MACEDO, 2012, p. 166). É uma reunião que ocorre
+diariamente e deve ser rápida, com duração de, no máximo, 15 minutos, tendo
+participantes do time e o Scrum Master.
+
+
+
+Na reunião Sprint Review ou Revisão da Sprint, é feito um balanço sobre tudo
+o que foi feito durante uma sprint. Nela, o time deve mostrar apenas os resultados
+concluídos da sprint para o Product Owner e seus convidados. Já a reunião
+Sprint Retrospective ou Retrospectiva da Sprint tem, por objetivo, verificar o que
+foi bom e o que pode ser melhorado na sprint. Para Brod (2013), é uma reunião
+em que “se lava a roupa suja”, ou seja, procura-se entender o que deu errado e o
+que pode ser ajustado nas sprints, a fim de melhorá-las.
+A partir dessas cerimônias, são gerados os artefatos, que são os documentos
+Product Backlog, Sprint Backlog e o Burndown Chart (SBROCCO; MACEDO, 2012).
+O Scrum reconhece, enquanto princípio básico, o fato de que os clientes
+podem mudar de ideia durante o desenvolvimento do projeto e, por isso, adota
+uma abordagem empírica. Em outras palavras, aceita-se que o problema do cliente
+pode não ser totalmente entendido (SBROCCO; MACEDO, 2012).
+
+Tudo se inicia com o Product Backlog (Backlog do Produto), que é uma lista
+de prioridades dos requisitos ou de funcionalidades para o projeto. O termo backlog
+é um histórico (log) de trabalhos realizados em um determinado período de
+tempo. Também são estimados os custos e riscos, bem como são definidas as
+ferramentas de desenvolvimento, a equipe e as datas de entrega para os resultados
+(SBROCCO; MACEDO, 2012).
+
+Após o product backlog ser definido, segundo Sbrocco e Macedo (2012), a
+equipe passa a realizar a Sprint Backlog. Ela é uma lista de funcionalidades que
+serão realizadas no próximo sprint, onde também são definidas as funções de
+cada membro da equipe.
+
+Quando falamos de sprint, pensamos em planejamento e em itens do product
+backlog, que são os requisitos do projeto e serão transformados em funcionalidade
+dentro da próxima Sprint, para entrega ao cliente. Contudo, antes disso,
+é necessário se preparar para a sprint, pois para se trabalhar nos itens é preciso
+fazer o levantamento junto ao cliente e depois, analisá-los e procurar entendê-
+-los, além de fazer o detalhamento desses itens.
+
+Após o final de cada sprint, um incremento do produto é apresentado ao
+cliente e, caso surjam defeitos, eles devem ser incluídos ao backlog do produto.
+Conforme o ciclo de desenvolvimento ocorre, são adotados os mecanismos de
+controle do Scrum. São exemplos: controle de funcionalidades que não foram
+entregues, mudanças que podem ocorrer devido a defeitos corrigidos, problemas
+técnicos e controle de riscos (SBROCCO; MACEDO, 2012).
+
+Product Backlog > Sprint Backlog > Sptrint planning > Daily Meeting > Sprint Review > Sprint Retrospective > Burndown Chart
+                                                                                                             (shows the amount of work that has been 
+                                                                                                             completed in an epic or sprint, and the 
+                                                                                                             total work remaining)
+
+
+
+
+Exemplo:
+Para explicar melhor o funcionamento do Scrum, vamos apresentar um exemplo
+de estudo de caso. Imagine uma empresa chamada TempoSite, a qual tem um
+cliente chamado Sr. Dobro, que quer lançar um site para a sua empresa. Assim,
+o gerente de projetos (Product Owner) faz um briefing e levanta, junto ao Sr.
+Dobro, todas as necessidades que ele precisa para o site, por meio da criação da
+Users Stories – estórias de usuário –, uma curta e simples descrição das necessidades
+do usuário do produto.
+
+O gerente se reúne (Reunião de Planejamento) com a equipe de desenvolvimento
+(designers, front-end e back-end), para que, juntos, definam todas as
+tarefas necessárias para produzir o projeto e formalizar tudo em uma lista de
+tarefas (Product Backlog - exemplificado na Tabela 1).
+Imagine que você é o Scrum Master, o qual é encarregado de facilitar e organizar
+as reuniões, a fim de garantir que todos entendam as atividades a serem
+desempenhadas. Para cumprir as metas estabelecidas, a equipe decide que vai
+entregar a página inicial do site pronta (objetivo da reunião) até o final da semana
+(sprint) (GUERRATO, 2013, on-line)¹.
+
+Backlog do Sprint:
+Funcionalidade(s)
+atribuída(s) ao
+sprint
+Itens pedentes
+do backlog
+expandidos
+pela equipe
+a cada
+24 horas
+30 dias
+Backlog do produto:
+Priorização das funcionalidades do produto desejadas pelo cliente
+Scrum: reuniões diárias de 15 minutos.
+Os membros da equipre respondem às
+questões básicas:
+1) O que você realizou desde a
+última Scrum?
+2) Você está tendo alguma diculdade?
+3) O que você vai fazer antes da
+próxima reunião?
+A nova funcionalidade
+é demonstrada no
+nal do sprint
+
+Após isso, a equipe passa a dividir o objetivo do que será desenvolvido em tarefas
+menores (Sprint Backlog – exemplificado na Tabela 2) para criar o layout, como
+desenvolver os códigos e implantar um sistema de administração de conteúdo. Depois
+dessas ações, testa-se tudo em diversos browsers, para que não haja erros.
+Assim, cada um da equipe escolhe as tarefas que irá realizar, definindo um
+prazo de duração em horas para cada tarefa. Diariamente, a equipe se reúne
+durante 15 minutos para acompanhar o andamento do projeto (Daily Meeting
+ou Daily Scrum ou Reunião Diária).
+
+No fim da semana, a equipe apresenta o resultado esperado (Sprint Review
+ou Revisão da Sprint). Com base nos resultados apresentados, todos passam a
+refletir sobre as dificuldades encontradas e quais são as possíveis soluções que
+podem ser feitas para a próxima semana (Sprint Retrospective ou Retrospectiva
+da Sprint), desenvolvendo o Burndown Chart (GUERRATO, 2013, on-line)¹.
+Ao final, o mais importante é que seja entregue ao cliente uma funcionalidade
+ou produto parcial (incremento) funcional. Dessa forma, a partir do feedback
+do cliente, a equipe pode decidir a próxima tarefa a ser executada na próxima
+semana (GUERRATO, 2013, on-line)¹, recomeçando, assim, o ciclo do Scrum.
+Tabela 1 - Exemplo de Product Backlog
+

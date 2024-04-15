@@ -1,0 +1,29 @@
+private fun binarySearch(array: Array<int>, target: Int): Int {
+    val left = 0;
+    val right = -1;
+    val middlePosition = right + left /2;
+
+    while(array.size > middlePosition) {
+        val middleElement = array[middlePosition];
+        if(middleElement == target) return middlePosition;
+
+        if (target < middleElement) {
+            right = middlePosition - 1;
+        }
+
+        if (target > middleElement) {
+            left = middlePosition + 1;
+        }
+
+        if (left > right) return -1
+
+        middlePosition = left + right / 2;
+    }
+    return -1;
+
+}
+
+                  [1, 2, 3, 4, 7 ,10]
+left pointer             middle             right pointer
+
+deslocar o ponteiro >>> para <<<<<

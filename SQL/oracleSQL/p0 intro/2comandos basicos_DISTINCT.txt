@@ -1,0 +1,93 @@
+ctrl + enter
+SELECT * FROM employees;
+DESCRIBE employees; OU DESC
+
+
+-- Selecione a coluna DEPARTMENT_NAME da tabELa DEPARTMENTS
+
+SELECT * FROM departments;
+
+SELECT DEPARTMENT_NAME, DEPARTMENT_ID FROM departments;
+
+------ Selecione apenas as colunas FIRST_NAME, EMAIL E SALARY da tabela EMPLOYEES
+
+SELECT * FROM EMPLOYEES;
+
+SELECT
+    FIRST_NAME,
+    EMAIL,
+    SALARY
+FROM EMPLOYEES;
+no oracle é possivel arrastar--> table para dentro da query
+
+--alias
+na frente ou entre aspas" "
+SELECT
+        first_name primeiro_nome,
+        email email,
+        salary salario
+FROM employees;
+
+concatenar:
+
+SELECT * FROM employees;
+
+SELECT
+    first_name,
+    last_name,  espaço entre concatenações
+    first_name || ' ' || last_name nome_completo
+FROM employees;
+
+
+SELECT
+    first_name,
+    last_name,
+    first_name || ' ' || last_name || '. Salário: R$' || salary salario
+    = Steven King. Salário: R$24000
+FROM employees;
+
+concatenação no meio:
+SELECT
+    first_name || q'[. Employee's manager id: ]' || manager_id "funcionário e Gerente"
+    = Neena. Employee's manager id: 100
+FROM employees;
+
+
+
+SELECT
+    first_name,
+    salary,
+    salary + 100 salario_com_bonus
+    = Steven	24000	24100
+FROM employees;
+
+CALCULOS =
+
+SELECT 2*2
+FROM DUAL;
+=4
+
+data do sistema = SELECT sysdate
+FROM DUAL;
+=11/03/24
+
+dual  = para manter sintaxe
+
+DISTINCT: valores nao se repetem
+
+
+
+SELECT * FROM employees;
+
+SELECT DISTINCT department_id FROM employees;
+
+SELECT
+    DISTINCT first_name
+FROM employees;
+
+
+
+SELECT
+    DISTINCT first_name, last_name
+FROM employees;
+

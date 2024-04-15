@@ -1,0 +1,70 @@
+Vale ressaltar que proteções utilizadas em ataques de força bruta podem
+ser utilizadas para ataques de negação de serviço (DoS). Em outras palavras,
+o atacante bloqueia de forma proposital usuários para impedir que eles acessem
+o sistema. Por esse motivo, alguns sistemas evitam bloquear usuários, e     <-----------------
+em vez disso estabelecem um tempo mínimo entre tentativas falhas de login.    ----------------
+Dessa forma, além de não abrir brecha para um ataque de negação de serviço,   ----------------<
+evita os de força bruta nos quais milhares de tentativas são feitas por segundo.
+Além desses ataques que exploramsua aplicação, também existem os que
+exploram o fator humano envolvido na utilização de seu sistema. Nesse caso,
+tenta-se adquirir a senha tentando se passar por uma pessoa ou um sistema,
+de forma a induzir o usuário a fornecê-la voluntariamente. A essa prática se
+dá o nome de engenharia social e a sua utilização se tornamais comuma cada
+dia. É frequente, por exemplo, receber um e-mail falso de alguém se passando
+por um banco, com um link que direciona a uma página que solicita a senha
+do usuário. Apesar de não estar no escopo deste artigo, esse tipo de ataque
+não poderia deixar de ser citado e o investimento na educação dos usuários é
+O exemplo apresentado faz distinção de usuário pelo IP do qual foi originada
+a requisição. Um filtro parecido poderia ser criado para realizar essa
+distinção pelo nome de login ou pela senha. Dessa forma, ficará realmente
+complicado de realizar um ataque de força bruta no sistema, mesmo se esse
+ataque for sofisticado e alterar maliciosamente o IP de origem da requisição.
+Além dessa proteção, existem algumas outras recomendações para dificultar
+ainda mais ataques desse tipo ao sistema:
+• Impor um número mínimo de caracteres na senha é uma boa prática,
+pois o número de possibilidades que precisamser testadas aumenta exponencialmente
+com o número de caracteres da senha.
+• Obrigar o usuário a possuir números, letras e caracteres especiais diminui
+a possibilidade de ele utilizar uma senha fraca, o que também
+reduz o risco de sucesso de um ataque do tipo dicionário.
+
+
+
+1.4. SQL Injection Casa do Código
+• Exigir trocas de senha regularmente faz com que o usuário acabe não
+utilizando a senha da sua aplicação para outros sistemas e reduz também
+o risco em ataques de dicionário.
+Vale ressaltar que proteções utilizadas em ataques de força bruta podem
+ser utilizadas para ataques de negação de serviço (DoS). Em outras palavras,
+o atacante bloqueia de forma proposital usuários para impedir que eles acessem
+o sistema. Por esse motivo, alguns sistemas evitam bloquear usuários, e
+em vez disso estabelecem um tempo mínimo entre tentativas falhas de login.
+Dessa forma, além de não abrir brecha para um ataque de negação de serviço,
+evita os de força bruta nos quais milhares de tentativas são feitas por segundo.
+Além desses ataques que exploramsua aplicação, também existem os que
+exploram o fator humano envolvido na utilização de seu sistema. Nesse caso,
+tenta-se adquirir a senha tentando se passar por uma pessoa ou um sistema,
+de forma a induzir o usuário a fornecê-la voluntariamente. A essa prática se
+dá o nome de engenharia social e a sua utilização se tornamais comuma cada
+dia. É frequente, por exemplo, receber um e-mail falso de alguém se passando
+por um banco, com um link que direciona a uma página que solicita a senha
+do usuário. Apesar de não estar no escopo deste artigo, esse tipo de ataque
+não poderia deixar de ser citado e o investimento na educação dos usuários é
+essencial para que o risco desse tipo de ataque diminua.
+1.4 SQL Injection
+Esse não é um ataque exclusivo de aplicações web, e qualquer aplicação na
+qual os comandos SQL são construídos comconcatenação de strings pode sofrer
+esse ataque. O SQL Injection consiste no envio de parâmetros de forma a
+alterar as instruções SQL, fazendo a aplicação se comportar de forma inesperada.
+Os parâmetros são enviados de forma que, ao serem concatenados com
+uma instrução SQL, resultem em um comando que irá executar uma instruçãomaliciosa
+no banco de dados. A figura 1.4 representa o funcionamento de
+uma aplicação que utiliza a concatenação de strings para a formação de um
+comando SQL para autenticação de um usuário. O container web recebe a
+requisição comos parâmetros, a aplicação os concatena coma instrução SQL
+e essa é enviada para execução no banco de dados. Na figura 1.5, tem-se o
+
+highlight:
+Por esse motivo, alguns sistemas evitam bloquear usuários, e
+em vez disso estabelecem um tempo mínimo entre tentativas falhas de login.
+Dessa forma, além de não abrir brecha para um ataque de negação de serviço,

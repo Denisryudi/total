@@ -1,0 +1,46 @@
+1º adicionar dependências de validação e persistencia
+spring init
+módulos springboot = web, validação, spring data JPA
+MySQL(driver) + Flyway(migrations)
+Lombok = getters e setters usando anotações
+ 
+Configurações de acesso ao banco de dados no application.properties
+ex: 
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.datasource.url=jdbc:mysql://localhost/vollmed_api
+spring.datasource.username= root
+spring.datasource.password=
+
+Migrations = controle do historico de evoluição do banco de dados
+API REST
+Com controllers 
+pom = adicionar dependências
+
+Adicionar classe controller 
+
+Repository
+Mapeamento JPA 
+
+controller
+
+
+pt.1:
+
+@RestController
+@RequestMapping("medicos")
+public class MedicoController {}
+
+
+    @Autowired
+    private MedicoRepository repository;  integração JPA
+
+
+domain
+
+infra
+
+resources
+>db.migration 
+>application.properties
+
+pom.xml

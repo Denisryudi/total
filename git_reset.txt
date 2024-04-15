@@ -1,0 +1,19 @@
+erro na versão atual:
+
+
+restore
+git reset --hard 33ccc342423423 (SHA) (SHA -> sha responsável pela versão anterior)
+
+git push -f origin main
+
+restore2
+
+branch nova, cópia do commit deploy inicial(antes da versão com erro)
+caso faça alterações
+continuar projeto apartir desse backup
+após corrigido>
+
+git reset --hard BranchDeployInicial
+
+
+git rm -r --cached [names)

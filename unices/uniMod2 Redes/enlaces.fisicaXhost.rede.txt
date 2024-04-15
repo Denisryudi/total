@@ -1,0 +1,26 @@
+No modelo de referência OSI, as camadas mais inferiores – a Física e a de Enlace de Dados – equivalem à Camada de Host/Rede da pilha de protocolos TCP/IP. 
+
+Como a pilha TCP/IP entrega os serviços e funcionalidades previstos nas duas camadas equivalentes usando somente uma camada? Fale sua opinião de 
+como isso é tratado e de que maneira afeta a comunicação dos diversos dispositivos.
+A pilha TCP/IP consegue entregar os serviços e funcionalidades previstos nas duas camadas equivalentes usando somente uma camada, primeiro por meio do roteamento de pacotes, 
+que fornece os serviços necessários para rotear e entregar pacotes de dados para seus destinos corretos. Segundo porque as redes em que o TCP/IP opera, já possuem padrões 
+bem estabelecidos para essas camadas.
+Uma das grandes vantagens do protocolo TCP/IP foi o seu desenvolvimento com a ideia de simplicidade e eficiência, e a funcionalidade de várias camadas do modelo OSI foi 
+incorporada em camadas mais amplas no TCP/IP. Com isso, a pilha de protocolos TCP/IP tem menos sobrecarga e pode ser implementada de forma mais eficiente em dispositivos
+com recursos limitados. Ou seja a pilha TCP/IP  é flexível e permite que diferentes tipos de dispositivos se comuniquem entre si, independentemente do sistema operacional 
+ou hardware utilizado. Além de ter uma compatibilidade com uma variedade de dispositivos e aplicativos, o que a torna uma escolha popular para a comunicação em rede.
+
+ex: O padrão Ethernet define aspectos físicos e de enlace de dados para a comunicação em rede.
+
+Fontes: UNICESUMAR. Redes de Computadores. Maringá: Unicesumar, 2023. e RNP. Arquitetura TCP/IP. Escola Superior de Redes, [S.l.], 2020. Disponível 
+em: https://esr.rnp.br/administracao-e-projeto-de-redes/arquitetura-tcp-ip/. Acesso em: 21 abr. 2023.
+
+correção 
+"A pilha TCP/IP consegue entregar os serviços e funcionalidades previstos nas duas camadas equivalentes do modelo OSI usando somente uma camada. 
+Isso ocorre porque, primeiro, o roteamento de pacotes fornece os serviços necessários para rotear e entregar pacotes de dados para seus destinos corretos.
+ E segundo, porque as redes em que o TCP/IP opera já possuem padrões bem estabelecidos para essas camadas.
+
+Uma das grandes vantagens do protocolo TCP/IP é a sua simplicidade e eficiência, que foram concebidas desde sua criação. A funcionalidade de várias
+ camadas do modelo OSI foi incorporada em camadas mais abrangentes no TCP/IP, reduzindo a sobrecarga da pilha de protocolos e permitindo sua implementação 
+ em dispositivos com recursos limitados. Essa flexibilidade permite que diferentes tipos de dispositivos se comuniquem entre si, independentemente 
+ do sistema operacional ou hardware utilizado, o que torna o TCP/IP uma escolha popular para a comunicação em rede."

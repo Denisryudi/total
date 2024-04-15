@@ -1,0 +1,13 @@
+boilerplates: uma estrutura padrão e comum em linguaguens de programação, seguindo a estrutura básica exigida pela linguagem.
+              essa estrutura pode ser considerada como uma estrutura padrão ou boilerplate 
+              Ela pode ser domesticada utilizando frameworks, linguagens mais otimizadas 
+              ex: public class HelloWorld {
+                      public static void main(String[] args) {
+                          System.out.println("Hello, World!");
+                  }
+}
+
+
+
+timezone
+https://www.youtube.com/watch?v=VNSNF8NbGHI&ab_channel=LucasMontano

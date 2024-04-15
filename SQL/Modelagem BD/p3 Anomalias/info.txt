@@ -1,0 +1,30 @@
+Anomalias de inserção
+>Ao inserir um dado, geramos inconsistência(!=)
+Anomalias de Exclusão
+>ao excluir um dado, geramos uma inconsistência no bd
+Anomalias de Atualização
+>ao atualizar um dado, geramos uma inconsistência no bd
+
+evitar redundâncias
+
+através da normalização das tabelas isso pode ser evitado
+
+Dependência funcional
+>CPF, pois pelo nome não da para ter uma resposta certeira
+
+Dependência funcional parcial
+>depende de 1 e não depende de mais integrantes.
+quando uma cluna depende de apenas parte da chave primária
+
+Dependência funcional transitiva
+> 1 ou mais campos e uma entidade nao sao dependentes diretamente da chave primária ou
+de parte dela, mas sim de outro campo da tabela.
+Ou seja quando tem colunas que dependem de outra coluna que não vai ser a chave primaria
+
+Atributos multivalorados
+mais de uma ocorrencia do mesmo atributo na minha mesma célulai:wq
+:wq
+
+
+
+

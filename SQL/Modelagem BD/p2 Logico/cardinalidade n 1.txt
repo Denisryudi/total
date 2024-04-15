@@ -1,0 +1,9 @@
+
+
+
+1:N iremos colocar uma coluna de chave estrangeira com ref a coluna cpf-primaria png.
+referencial
+
+
+
+n. n > PESSOA DIRIGE CARRO

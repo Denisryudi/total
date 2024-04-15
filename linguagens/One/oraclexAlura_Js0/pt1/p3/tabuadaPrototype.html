@@ -1,0 +1,38 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br>");
+        document.write("<br>");
+}
+
+    function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+}
+
+var tabuada = parseInt(prompt("Tabuada do?"))
+
+var multiplicador = 0
+
+
+while(tabuada <= 10) {
+    var multiplicador = 1
+    while(multiplicador <= 10) {
+        var resultado = multiplicador * tabuada
+        if (tabuada == 1) {
+            resultado = multiplicador * tabuada
+            multiplicador = multiplicador + 1
+        }else {
+            alert("tabuada de outro número");
+        }
+        
+
+    }
+    tabuada = tabuada + 1
+}
+alert("tabuada de outro número");
+</script>

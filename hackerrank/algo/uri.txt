@@ -1,0 +1,25 @@
+URI
+Uniform Resource Identifier
+
+HTTP verbs should be used instead of operation names in URIs.
+
+Isso está correto. De acordo com os princípios REST, os verbos HTTP (GET, POST, PUT, DELETE, etc.) devem s
+er usados para indicar a ação a ser executada em um recurso, em vez de incorporar nomes de operações nas URIs.
+Redirection must be used if a change in URI is required.
+
+Quando uma URI muda, é uma boa prática usar redirecionamentos (como o status HTTP 301 Moved Permanently)
+para garantir que os clientes e usuários possam encontrar o recurso mesmo após a alteração da URI. Isso
+ajuda a manter a continuidade e a acessibilidade dos recursos na web.
+As demais opções apresentam afirmações incorretas ou práticas não recomendadas em design de URI:
+
+URIs não precisam ser necessariamente curtas, mas devem ser concisas e tão breves quanto possível sem
+sacrificar a clareza.
+
+URIs geralmente não são case-sensitive, exceto para a parte que identifica o recurso (path).
+
+Não se deve usar espaços em URIs; eles devem ser codificados se necessário.
+
+Enquanto se espera que os URIs permaneçam estáveis, é reconhecido que, às vezes, as URIs precisam mudar.
+A estabilidade das URIs é uma questão de boa prática e gerenciamento cuidadoso, e não uma regra absoluta.
+Os URIs não são construídos pelo cliente; eles são definidos pelo servidor ou pela API. O cliente
+simplesmente utiliza os URIs fornecidos.

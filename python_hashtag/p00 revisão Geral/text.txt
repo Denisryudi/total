@@ -1,0 +1,24 @@
+n pode dar append em dict
+dictionary[item] = lista_resultado
+
+previsao = {}
+item = input('Informe o nome do produto: ')
+previsao[item] = float(input('Informe a previsão de vendas para o próximo mês: '))
+
+banana: 100
+
+for nome, vendas_proximo_mes in previsao.items():
+    print('A previsão de vendas do produto {}, no próximo mês, é de R${:.2f}'.format(nome, vendas_proximo_mes))
+
+dados_vendas.items():
+usar o.items
+
+erro sem o uso dele:
+
+
+
+O problema está no uso do loop for nome_vendedor, media_vendas in dados_vendas: dentro do loop while. Quando você tenta iterar sobre o
+dicionário dados_vendas, você está tentando desempacotar os valores diretamente, mas isso não é o que você quer nesse caso.
+
+A melhor abordagem seria usar o método items() ao iterar sobre o dicionário para obter tanto a chave quanto o valor. Além disso,
+mova a parte de impressão para fora do loop for para evitar a repetição desnecessária.

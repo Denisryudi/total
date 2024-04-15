@@ -1,0 +1,377 @@
+4
+Faça como eu fiz na aula
+PRÓXIMA ATIVIDADE
+
+De acordo com a ferramenta “Business Model You”, responda às seguintes questões:
+
+Quem te ajudou a ser quem você é hoje?
+O que você sabe fazer?
+O que você é, e o que você tem?
+Como você contribui para quem irá te contratar?
+Como você interage?
+Como as pessoas te conhecem?
+
+
+
+Diga quem te inspirou
+Pontue suas habilidades técnicas (Hard Skills)
+Pontue suas habilidades socioemocionais (Soft Skills)
+Diga quais foram as suas maiores contribuições para o mercado de trabalho
+Pontue suas habilidades de atuação em equipe
+Se alguém pudesse te definir em três palavras, quais seriam?,
+
+
+
+
+Lucas está fazendo um Pitch para o seu processo seletivo de Trainee, ele já respondeu às perguntas do “Business Model You” 
+e organizou todas as informações em forma de texto. Mas o seu roteiro não está exatamente como ele queria, ainda falta algo.
+
+Como Lucas pode aprimorar o seu roteiro com as informações já definidas anteriormente?
+
+r:
+Lucas deve organizar as informações que não estão grifadas de forma cronológica.
+Correto, dessa forma Lucas estará criando uma história/roteiro para o seu Pitch.
+Alternativa correta
+
+
+Lucas deve organizar as informações grifadas no primeiro parágrafo.
+Correto, assim Lucas estará priorizando suas informações mais importantes e impactantes nas suas primeiras falas do Pitch.
+
+Alternativa correta
+Com o texto em mãos, Lucas deve grifar as partes que considera mais importante.
+Correto, assim Lucas estará destacando suas informações mais importantes e impactantes.
+
+
+
+Patrícia deve ter o BMY como base para o seu roteiro, se preocupar com aparência e vestimenta,
+qualidade do vídeo em geral e falar com clareza e precisão.
+Correto, se a Patrícia colocar todos esses requisitos em prática, ela terá uma chance maior de passar da primeira fase do processo seletivo.
+
+
+Nessa aula podemos observar que, para cada perfil de pessoa, seja ela tímida ou descontraída, uma b
+oa gravação do Pitch exige que você siga um roteiro e treine diversas vezes diante a câmera.
+
+Dica da aluna Eliana:
+
+Importante que você conheça aquilo que você vai falar
+Siga uma ordem
+Faça uma história que faça sentido
+Pense no que o entrevistador quer ouvir
+Dica da aluna Beatriz:
+
+Importante seguir o roteiro do BMY
+Treine várias vezes na frente da câmera
+
+
+...canvas
+>>>
+
+
+Pesquisar sobre meus concorrentes e entender como eles trabalham e entender o que meus clientes procuram é a 
+melhor solução, pois podemos aprender muito com o que já existe no mercado e tem dado certo 
+e assim, perceber o que podemos fazer diferente deles também.
+
+>Validation
+
+
+Verificando ideias
+
+Após ter uma ideia de negócio, o que eu poderia fazer para verificar se os clientes teriam interesse no meu negócio?
+
+r:
+
+Verificar através de uma página web com uma breve descrição do meu produto, se existe interesse de 
+utilizar e/ou comprar através da solicitação de nome e email dos interessados.
+
+Verificar a viabilidade do negócio antes de sair prototipando é a melhor opção. Busque em sites como o
+Launch Rock, que citamos em aula, faça formulários no Google e disponibilize em grupos nas redes
+sociais, com amigos e conhecidos. Com certeza, isso te dará uma visão um pouco mais aprofundada
+do que a sua própria opinião.
+
+...Concorrentes
+
+
+Como eu poderia verificar como meus concorrentes trabalham?
+
+Alternativa correta
+Todas as alternativas.
+
+Alternativa correta
+Procurando as páginas dos concorrentes no Facebook e verificando o que os clientes dizem sobre eles.
+
+Alternativa correta
+Utilizando o produto dos meus concorrentes para entender o que eles fazem.
+
+Alternativa correta
+Fazendo um levantamento das minhas features, as dos concorrentes e verificando no que sou melhor.
+
+Alternativa correta
+Fazendo um levantamento das features dos concorrentes.
+
+
+...Assertividade na ideia de negócios
+
+Como eu posso ter certeza que estou pensando nos pontos principais sobre minha ideia de negócios?
+r:
+
+Seguir um modelo de negócios, pode nos levar a pontos que sozinhos, não iríamos deslumbrar como primordiais 
+ou importantes. Sem o entendimento por meio de pesquisas, podemos nos perder no que realmente se 
+espera de um negócio como o nosso, e principalmente, se estamos abrangendo tudo que uma empresa 
+tanto pequena quanto grande, precisam para ter uma estrutura para funcionar e performar da melhor
+maneira.
+
+
+
+...Modelo de negócios
+
+
+O que é um modelo de negócios?
+
+
+Alternativa correta
+Um guia para entender e pesquisar todos os pontos que podem verificar se uma ideia é viável ou não.
+
+Alternativa correta
+A forma que uma empresa cria valor para todos os seus clientes de interesse.
+
+Alternativa correta
+Todas as alternativas anteriores.
+
+Alternativa correta
+Um estruturador de negócio.
+
+Alternativa correta
+Uma forma de ver sua ideia estruturada e unificada em todos os pontos que ela pode conter.
+
+Com o modelo de negócios, as empresas conseguem criar valor para seus clientes e também ter um método que 
+as auxilia a estruturar diversos elementos chave que um negócio precisa ter em vista.
+
+
+...Áreas de um Modelo de Negócios
+
+
+Quais áreas principais de um modelo de negócios tradicional o Business Model Canvas cobre?
+r:
+
+Infraestrutura, clientes, viabilidade financeira e oferta.
+Os modelos de negócio tradicionais, são mais complexos para se pensar e modelos como o Business Model Canvas, 
+facilitam o entendimento e agilizam o processo da construção de um Business Model. Essas áreas 
+que o Busines Model Canvas cobrem de um modelo de negócios tradicional são: infraestrutura, 
+clientes, viabilidade financeira e oferta.
+
+
+sidra PEA IBGE
+
+
+
+...O que é o quadrante segmento de clientes do Business Model Canvas?
+r:
+Quadrante em que eu verifico/entendo para quem eu vou vender meu produto e/ou serviço.
+
+
+...Identificando o Segmento de Clientes
+
+Como eu posso identificar qual é o segmento de clientes correto para o meu negócio?
+r:
+
+Utilizando pesquisas prontas com dados de população (como os dados fornecidos pelo IBGE que são gratuitos para consultas online) 
+e criando um formulário online de pesquisa, perguntando idade e região que os respondentes moram, para então verificar 
+qual é o público que irei impactar e que tem interesse no meu negócio, além de consultar pesquisas e artigos
+científicos que falem sobre esse público que identifiquei.
+
+
+...Tipos de Segmentos de Clientes
+
+Quais são os tipos de segmentos de clientes que podemos ter?
+r:
+Mercados de massa, mercados de nicho, mercado diversificado, mercado segmentado, mercado multilateral.
+
+
+...Segmento de clientes com interesse em alimentação
+
+r:
+
+Mercado de massa.
+
+Quando falamos de mercado de massa, estamos pensando em um tipo de mercado que vários segmentos de clientes, 
+com características socioeconômicas e hábitos de consumo totalmente diferente, podem ter interesses 
+em comum, e esse interesse em comum, pode ser por exemplo escutar música. O caso do Spotify,
+por exemplo, é possível encontrar desde Funk até Heavy Metal, passando pelo Gospel e 
+Sertanejo, até o MPB de Elis Regina, ou seja, qualquer pessoa que tenha interesse em
+música, pode se cadastrar no Spotify e usufruir do estilo que lhe melhor servir. 
+Diferentemente do que aconteceria, se o Spotify focasse por exemplo apenas em
+música Gospel, pois apenas pessoas que escutam esse estilo estariam sendo 
+impactadas e previstas como segmento de clientes primário.
+
+
+Quando temos um negócio do qual os clientes são uma pequena parcela de pessoas que não teve suas 
+necessidades bem exploradas, qual é o nome desse tipo de segmento de clientes?
+r:
+
+Mercado de nicho.
+
+Quando falamos de mercado de nicho, ou seja, de segmentos de clientes de nicho, estamos pensando em clientes com necessidades 
+específicas que até então tinha sido pouco explorado. O caso do Tinder, já tinham outros Apps que se aventuraram a atender
+esse público, mas o Tinder foi tão "aderido" pelos consumidores porque tinha criado uma mecânica que até então não era o
+foco de seus antecessores e com isso, aquele mercado de clientes, tão específico, tão nichado, encontrou valor no App e
+o utilizou e utiliza com mais frequência do que os demais.
+
+
+
+Mercado segmentado.
+r:
+
+Quando temos um mercado segmentado, temos clientes com interesses e características diferentes, que são 
+atendidos por nosso negócio, mas cada um terá características diferentes nos 9 quadrantes do Canvas.
+
+
+...Proposta de valor
+r:
+
+Proposta de valor cria valor para um segmento de clientes com uma combinação de elementos direcionados 
+especificamente para as necessidades daquele segmento.
+
+
+...Os valores
+
+Em nossa aula, nós identificamos que valores podem ser:
+r:
+
+Qualitativos e Quantitativos.
+
+Quando pensamos em valores, temos que levar em consideração se podemos quantifica-los (valores quantitativos) ou 
+qualifica-los (valores qualitativos) e isso deve ser percebido por nossos segmentos de clientes, seja por 
+um preço mais em conta do que as demais propostas dos concorrentes (valores quantitativos) ou pelo design 
+do produto, por exemplo (valores qualitativos).
+
+...Redução de risco.
+r:
+
+A redução de risco, pode ser uma proposta de valor, que ajuda na hora de justificar o preço para os clientes, 
+por exemplo ou a falta de um item que o concorrente oferece e o produto e/ou serviço não oferece, mas que
+tendo esse risco reduzido, acaba se tornando fator determinante no ato da compra.
+
+
+...Conveniência/Usabilidade
+r:
+
+A Apple e empresas que tem a proposta de valor de facilitar ou deixar um produto mais conveniente de usar, 
+tem uma proposta de valor chamada Conveniência/Usabilidade.
+
+
+...valor
+
+Empresas que entregam a proposta de valor "fazendo o que deve ser feito" tem como foco o resultado, ou seja, 
+tem como objetivo permitir que o cliente cumpra determinada tarefa com êxito, ou seja, o funcionamento da 
+empresa no que diz respeito ao produto e/ou serviço, deve ser perfeito.
+
+
+...Caso Uber
+
+O exemplo do Uber que citamos em aula, sobre o seu serviço já existir e ele possibilitar que seus usuários escolham 
+qual o tipo de carro que desejam, baseado no preço e nas features que aquele valor contempla, enquadra a 
+proposta de valor do Uber em qual tipo?
+
+r:
+
+Personalização.
+Quando falamos da proposta de valor personalização, estamos colocando em pauta que iremos ter serviços e/ou 
+produtos que se adequam conforme a necessidade dos clientes, assim como o Uber aqui mencionado, 
+tem 3 opções de carros para seus usuários: Uber X, Uber Pool e Uber Black.
+
+Dentro de canais, temos dois tipos de canais: os canais parceiros indiretos e os canais particulares diretos.
+
+...Em nossos vídeos citamos que existem dois tipos de canais: os parceiros indiretos e os particulares diretos. 
+Quando falamos de canais particulares diretos, qual o significado deles?
+
+r:Canais particulares diretos são os canais que são meus, que o cliente tem contato direto comigo, diferentemente de 
+uma comunicação em televisão e rádio, já que não sou dono de um canal de TV ou de uma emissora 
+
+No setor fontes de receitas, nós conseguimos entender e identificar onde iremos obter dinheiro através de cada segmento de clientes, e daqui, serão subtraídos os custos.
+
+Diferentemente do que temos em taxa de assinatura, em taxa de uso, o usuário paga o quanto utilizar do serviço, ou seja, quanto mais
+o cliente utiliza o serviço e/ou produto, mais ele irá pagar.
+
+Quando falamos de fontes de receita do tipo Licenciamento, estamos levando em consideração que uma empresa que criou algo, está deixando ou 
+uma outra empresa ou um usuário comum, utilizar essa "propriedade intelectual" em troca de um valor e quando ele não é pago,
+o "comprador dessa licença" não pode mais utilizá-la.
+
+Quando uma empresa adota a fonte de receita do tipo Empréstimos/Aluguéis/Leasing, estamos levando em consideração que a empresa 
+irá permitir que um terceiro utilize o seu produto e/ou serviço por meio de pagamento periódico e por um período determinado.
+
+Quando citamos o Nubank, mencionamos que eles ganham dinheiro através da intermediação de compras entre comerciantes e compradores,
+cobrando uma taxa dos comerciantes por ter intermediado o processo. Qual o nome do tipo de fonte de receita que o Nubank
+e outras empresas que tem cartões de débito e crédito tem em seus negócios?
+
+r:
+
+Quando pensamos em empresas como o Nubank, que tem sua fonte de receita do tipo Taxa de Corretagem, pensamos em empresas
+que intermediam serviços entre duas ou mais partes e assim, recebem uma porcentagem em cima 
+de cada uma das transações feitas.
+
+Quais os tipos de recursos principais que vimos na aula?
+r:
+
+Recurso financeiro, intelectual, humano e físico.
+
+Em atividades-chave, verificamos quais são as atividades e processos mais importantes de se executar, para a empresa obter sucesso em sua operação.
+Em atividades-chave, verificamos as principais atividades que o negócio precisa cumprir para sua entrega ser boa e dentro dessas atividades 
+temos os seguintes tipos: produção, resolução de problemas e plataforma/rede.
+
+...Business Model Generation
+
+Aqui, nessa área do Canvas, entendemos e descrevemos os custos necessários para o
+funcionamento do negócio que estamos trabalhando.
+
+Os tipos de estruturas de custos que o Business Model Generation adota e que mencionamos em aula são:
+custo fixo, variável, economias de escopo, direcionada pelo valor, direcionada pelo custo e economias de escala.
+
+Custos variáveis recebem esse nome pois seus valores não são sempre os mesmos, variando de acordo com o volume
+
+O UberPool é um bom exemplo de estrutura de custo do tipo direcionada pelo custo, pois o consumidor consegue utilizar o 
+serviço do Uber que é o de transporte a um baixo custo, ou seja, empresas que tem essa iniciativa tem como objetivo 
+minimizar o custo sempre que possível, tanto para a empresa quanto para os clientes.
+
+Empresas com estruturas de custo direcionadas pelo valor, não se preocupam com o valor financeiro do serviço,
+tanto para a empresa quanto para o cliente; Eles se preocupam mesmo com a proposta de valor que irão 
+entregar e que com isso, justificam o preço do serviço e/ou produto.
+
+Quando pensamos em empresas como esta, cujo mote é a estrutura de custo do tipo economias de escala, estamos 
+observando uma empresa que lucra mais conforme a saída do produto e/ou serviço aumenta.
+
+Empresas que tem o tipo de estrutura de custo denominado economia de escopo, focam em ter uma operação que 
+atende uma demanda muito maior e mesmo assim consegue dar conta de atender essa demanda.
+
+
+...Conclusão do Canvas
+
+
+Quando terminamos de preencher o canvas o que podemos ter certeza?
+
+r:
+
+Podemos ter certeza que finalizamos por enquanto, mas que precisamos avaliar continuamente o negócio e refazer o processo quando for necessário.
+
+Quando terminamos de preencher o Canvas, podemos ter certeza que finalizamos por enquanto, mas que precisamos avaliar continuamente o 
+negócio e refazer o processo quando for necessário, pois as empresas e o mercado estão em constante mutação e evolução, 
+sendo assim, uma empresa que não se reinventa e não percebe as mudanças ao seu redor, não consegue performar bem por
+muito tempo. Fique atento a isso!
+
+Para receber um aporte financeiro, podemos ir até bancos e verificar se podem investir no meu negócio ou até mesmo ter uma carta de crédito 
+liberada para investirmos na nossa empresa, ou ir em rodadas de negócios de startups para encontrar investidores e incubadoras, 
+para não correr um risco de pegar um empréstimo e não conseguir gerenciar a empresa com a experiência que esses investidores e 
+incubadoras podem ter para auxiliar a startup.
+
+
+Toda empresa deve se avaliar continuamente, seja através do Business Model Canvas ou de outro modelo de negócios que eu acreditar 
+que é válido para o meu negócio e que pode me auxiliar a melhorar a minha ideia de negócios ou até mesmo verificar que minha
+ideia não é viável e que não existe mercado para minha nova empresa.
+
+O que devemos ter em mente ao utilizar o Business Model Canvas ou qualquer outro modelo de negócios é:
+
+Alternativa correta
+Com pesquisa, planejamento e construção de ideias, eu posso entender melhor o mercado e verificar a viabilidade do meu negócio.
+
+Com pesquisa, planejamento e construção de ideias, eu posso entender melhor o mercado e verificar a viabilidade do meu negócio e ter 
+uma ideia estruturada para conseguir trabalhar melhor a minha empresa ou até mesmo conseguir um aporte financeiro.
+

@@ -1,0 +1,261 @@
+mysql -u root -p (usuário)root -h (senha)localhost(local) loja_virtual(database) 
+= mysql -u root -p root -h localhost loja_virtual
+
+
+mysql> CREATE DATABASE loja_virtual;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> USE loja_virtual;
+Database changed
+
+mysql> CREATE TABLE PRODUTO (id INT AUTO_INCREMENT, nome VARCHAR(50) NOT NULL, descricao VARCHAR(255), PRIMARY KEY(id)) Engine = InnoDB;
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> INSERT INTO PRODUTO (nome, descricao) VALUES ('NOTEBOOK', 'NOTEBOOK SAMSUNG');
+Query OK, 1 row affected (0.01 sec)
+
+SELECT * FROM PRODUTO' at line 2
+mysql> SELECT * FROM PRODUTO;
++----+----------+------------------+
+| id | nome     | descricao        |
++----+----------+------------------+
+|  1 | NOTEBOOK | NOTEBOOK SAMSUNG |
++----+----------+------------------+
+1 row in set (0.00 sec)
+
+
+
+Aplicação java > biblioteca java JAR (driver MySql Java)> Mysql
+ex:
+Aplicação java > (driver Sql Server Java)> Mysql
+
+conexao con = MySqlConnector.getConnection(usuario, senha, db, servidor);
+
+conexao con = SqlServerConnectionProvider.connect(usuario, senha, db, servidor..);
+
+alteração de entradas.
+Como ajudar = JDBC 
+
+camada de abstração
+Aplicação Java > JDBC - Java Database Connectivity(java.sql.*) > (driver Sql Server Java) ou biblioteca java JAR (driver MySql Java) > MySql
+ Conection con = DriverManager.getConnection(UrlDeConexao); (UrlDeConexao) = usuario, senha, local, database
+
+ex:
+
+
+package lojavirtual;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class TestaConexao {
+
+	public static void main(String[] args) throws SQLException {
+		
+		Connection connection = DriverManager
+				.getConnection("jdbc:mysql://localhost:3306/loja_virtual?useTimezone=true&serverTimezone=UTC", "root", "senha");
+		
+		System.out.println("fechando conexão");
+		connection.close();
+		System.out.println("fechando conexão");
+	}
+
+}
+
+
+boolean  = se for uma lista
+
+se for String = void = não retorna nada (delete, insert, update)
+
+
+
+
+
+...JDBC
+
+Qual a vantagem de utilizar uma API como o JDBC, baseada em interfaces, para fazer a comunicação entre o seu código e um banco de dados relacional?
+
+r: 
+Facilidade ao trocar de um banco de dados para outro, sem muitas alterações
+Alternativa correta! Só é necessário trocar o driver JDBC (JAR) para o banco específico e o JDBC se encarregará do resto.
+
+
+***
+
+Nesta aula, aprendemos que:
+
+Para acessar o banco de dados, precisamos de um driver
+Um driver nada mais é do que uma biblioteca (JAR)
+JDBC significa Java DataBase Conectivity
+JDBC define uma camada de abstração entre a sua aplicação e o driver do banco de dados
+Essa camada possui, na sua grande maioria, interfaces que o driver implementa
+Para abrir uma conexão, devemos usar o método getConnection, da classe DriverManager
+O método getConnection recebe uma string de conexão JDBC, que define a URL, usuário, senha, etc
+.
+
+.
+
+...interfaces bd
+
+O que o java.sql.Connection, java.sql.Statement e java.sql.ResultSet possuem em comum?
+
+r:
+Alternativa correta! Connection, Statement e ResultSet são algumas das interface do pacote java.sql.
+
+
+...PreparedStatement
+
+Quais os riscos de utilizar um Statement, ao invés de um PreparedStatement?
+
+O Statement não mantém uma versão da consulta compilada no banco de dados
+
+r:
+Alternativa correta! O PreparedStatement mantém a consulta compilada no banco de dados,
+para o usuário que necessitar realizar a mesma consulta, diversas vezes, 
+com parâmetros diferentes.
+
+***
+
+Nesta aula, aprendemos que:
+
+Ao executar SQL como Statement, temos um risco de segurança, chamado de SQL Injection
+SQL Injection nada mais é do que passar um novo comando SQL como parâmetro
+Para evitar SQL Injection, devemos usar a interface PreparedStatement
+Diferentemente do Statement, o PreparedStatement trata (sanitiza) cada parâmetro do comando SQL
+
+
+...Auto-Commit
+
+Qual o padrão do JDBC (ou seja do driver) para lidar com transações e o banco de dados?
+r:
+
+Auto-Commit
+Esse é o padrão, que pode ser alterado pelo método setAutoCommit, da interface Connection.
+
+
+...Auto commit e ROLLBACK
+
+Renata decidiu que não queria mais que o JDBC controlasse as suas transações e por isso setou o Auto-Commit para false. 
+O que mais precisa ser feito para Renata ter o controle total de suas transações?
+
+r:
+É necessário explicitar o commit e o rollback
+
+Caso a transação não dê problema, Renata precisará commitá-la, explicitando o commit, 
+assim como em caso de erro, o rollback precisará estar explícito.
+
+
+...AutoCloseable
+
+Por que, ao utilizar o try-with-resources, não é mais necessário explicitar o close para fechar o statements (ResultSet, Connection, PreparedStatement)?
+r:
+Pelo fato dos statements estenderem AutoCloseable
+Estendendo o AutoCloseable, o try-with-resources executa o método close sem que precise estar explícito.
+
+***
+Nesta aula, aprendemos que:
+
+O banco de dados oferece um recurso chamado de transação, para juntar várias alterações como unidade de trabalho
+Se uma alteração falha, nenhuma alteração é aplicada (é feito um rollback da transação)
+Todas as alterações precisam funcionar para serem aceitas (é feito um commit)
+commit e rollback são operações clássicas de transações
+Para garantir o fechamento dos recursos, existe no Java uma cláusula try-with-resources
+O recurso em questão deve usar a interface Autoclosable
+
+
+...Conexões pool
+
+Em um cenário onde diversos clientes podem acessar uma mesma aplicação simultaneamente, qual a abordagem mais apropriada?
+
+
+Reciclar um conjunto de conexões de tamanho fixo ou dinâmico
+Alternativa correta! Essa é a abordagem do pool de conexão. Vamos abrir uma quantidade de conexões e reaproveitá-las.
+
+
+
+***
+
+Nesta aula, aprendemos que:
+
+É boa prática usar um pool de conexões
+Um pool de conexões administra/controla a quantidade de conexões abertas
+Normalmente tem um mínimo e máximo de conexões
+Como existe uma interface que representa a conexão (java.sql.Connection), também existe uma interface que representa o pool de conexões (javax.sql.DataSource)
+C3PO é uma implementação Java de um pool de conexão
+
+pool de conexões caso todas estejam cheias, o próximo usuário terá de esperar a liberação de alguma conexão
+
+O 10º usuário esperará alguma das 9 conexões ficar disponível
+Assim que for disponibilizada, o 10º cliente terá sua requisição processada.
+
+
+
+...DAO
+
+Quais as vantagens de se usar classes com o padrão DAO?
+
+Está ligada com a capacidade de isolar, em um único lugar, todo o código que acessa o seu repositório de dados
+Dessa forma, evitaremos códigos repetidos e os desenvolvedores mexem em um único lugar.
+
+
+
+***
+
+Nesta aula, aprendemos que:
+
+Para cada tabela de domínio, temos uma classe de domínio
+Por exemplo, a tabela produtos tem uma classe Produto associada
+Objetos dessa classe representa um registro na tabela
+Para acessar a tabela, usaremos um padrão chamado Data Access Object (DAO)
+Para cada classe de domínio, existe um DAO. Por exemplo, a classe Produto possui um ProdutoDao
+Todos os métodos JDBC relacionados com o produto devem estar encapsulados no ProdutoDao
+
+
+... N+1
+
+Qual é o problema das queries N + 1?
+r:
+
+Utilizam várias queries, aumentando a quantidade de acesso ao banco de dados
+
+Quando estamos falando de consultas simples, pode-se não ver o problema, mas conforme 
+a complexidade vai aumentando e precisa-se trazer informações de várias tabelas, o acesso aumenta 
+exponencialmente, atrapalhando a performance do banco de dados.
+
+
+
+SELECT * FROM CATEGORIA C INNER JOIN PRODUTO P ON C.ID = P.CADEGORIA_D;
+
+
+...INNER JOIN 
+
+José relacionou suas tabelas, no banco de dados, usando chave estrangeira. Sua dúvida agora é, o que precisa ser 
+feito para trazer as informações relacionadas das duas tabelas pela aplicação?
+r:
+José precisará utilizar o Inner Join
+Com Inner Join, José conseguirá trazer as informações, que se relacionam entre si, das duas tabelas.
+
+***
+
+Nesta aula, aprendemos:
+
+Que quando temos um relacionamento, é preciso ter cuidado para não cair no problema de queries N + 1
+N + 1 significa executar uma query e mais uma nova query (N) para cada relacionamento
+Queries N + 1 podem gerar um problema no desempenho
+Queries N + 1 podem ser evitadas através de joins no SQL
+A criar a nossa própria camada de persistência
+
+
+
+***
+
+Nessa aula aprendemos:
+
+uma aplicação é escrita em camadas
+camadas clássicas são view, controller, modelo e persistência
+o fluxo entre as camadas segue a ordem:
+view <--> controller <--> persistenciaCOPIAR CÓDIGO
+nesse curso focamos na camada de persistência
+uma camada não deve deixar "vazar" detalhes da implementação (por exemplo uma exceção como SQLException)
+em outras formações você aprenderá como criar a view ou front-end para Android (mobile) ou web (html)

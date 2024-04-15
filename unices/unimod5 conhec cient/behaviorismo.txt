@@ -1,0 +1,33 @@
+O behaviorismo, tem origem no inglês behavior (comportamento), podendo ser traduzido por comportamentalismo.
+Tem como seus representantes mais conhecidos, autores como  John Watson, Burrhus Skinner e Ivan Pavlov.
+Afim de explicar o comportamento humano com base apenas nos comportamentos observáveis, excluindo todo o mundo interno, como os pensamentos, sonhos e motivações. 
+
+“Os seres humanos aprendem sobre o mundo da mesma forma que os outros organismos, ou seja, reagindo a condições do ambiente que consideram bons, ruins ou ameaçadores” (BEM et al., 2019, p. 168). 
+
+Autores notáveis do behaviorismo, como John Watson, Burrhus Skinner e Ivan Pavlov, contribuíram com diferentes ideias.
+Um dos feitos mais notáveis de John Watson(conhecido por ser um dos fundadores do behaviorismo), realizou um experimento com o "Pequeno Albert". Nessa pesquisa, Watson e
+sua colega Rosalie Rayner evidenciaram que emoções, como o medo, poderiam ser criadas em um bebê por meio do condicionamento. Eles expuseram Albert(bebê) a um rato branco
+enquanto produziam um som alto e assustador ao mesmo tempo. Ao longo do tempo, Albert começou a associar o rato com o som assustador e passou a sentir medo dele. Esse 
+experimento mostrou como o medo poderia ser aprendido através de associações e ressaltou a influência poderosa da aprendizagem observável.
+Além disso, Watson argumentou que os comportamentos humanos eram largamente formados pelas experiências e pelo ambiente. Ele acreditava que, usando técnicas de condicionamento, 
+era possível modelar os comportamentos das pessoas, e até mesmo prever e controlar suas ações.
+Já, Ivan Pavlov é conhecido por suas contribuições para a compreensão do condicionamento clássico, também chamado de condicionamento pavloviano. Ele realizou uma série de 
+experimentos com cães para investigar como os animais associavam estímulos neutros a estímulos que naturalmente evocavam respostas específicas.
+Em seus experimentos mais famosos, Pavlov observou que os cães salivavam automaticamente quando viam comida, uma resposta natural. Ele então começou a tocar um sino (estímulo neutro)
+sempre antes de apresentar a comida aos cães. Com o tempo, os cães começaram a associar o som do sino com a comida e, eventualmente, começaram a salivar apenas com o som do sino, 
+mesmo na ausência de comida. Isso demonstrou que um estímulo neutro poderia se tornar um estímulo condicionado que provocava uma resposta condicionada, mesmo sem a presença do estímulo 
+original (a comida).
+Essa descoberta de Pavlov ilustrou como os organismos podem aprender a associar estímulos anteriormente neutros com estímulos significativos, levando a uma resposta condicionada. 
+Esse princípio de condicionamento clássico teve um impacto significativo na compreensão do comportamento aprendido e influenciou o desenvolvimento posterior da psicologia comportamental.
+Enquanto isso Burrhus Skinner, um psicólogo e proponente do behaviorismo, ganhou destaque por desenvolver a teoria do condicionamento operante. Essa teoria se concentra nos resultados 
+dos comportamentos para compreender como eles são adquiridos e mantidos. Skinner sustentava a ideia de que as ações humanas eram majoritariamente moldadas pelas recompensas e 
+punições decorrentes dessas ações.
+Skinner também criou o conceito da "caixa de Skinner", um ambiente onde animais eram treinados para executar ações específicas em troca de recompensas. Isso ajudou a investigar
+ como animais aprendem comportamentos complexos.
+Resumidamente, Burrhus Skinner é notável por sua influência no condicionamento operante e suas ideias sobre como recompensas e punições modelam o comportamento de seres humanos 
+e animais. Suas teorias desempenharam um papel significativo na formação da psicologia comportamental.
+Ou seja, de acordo com as teorias behavioristas, a concepção de que os seres humanos aprendem de forma específica enfocam no ambiente e nas conexões entre ações e consequências 
+como os principais fatores que moldam o aprendizado e o comportamento.
+
+Monique Arantes. O QUE É O BEHAVIORISMO?.Publicado em 2022. Disponível em: https://www.youtube.com/watch?v=YpXLxLWKeMM&ab_channel=MoniqueArantes. Acesso em: 07/08/2023
+RIBEIRO, Eduardo Werneck; SUHR, Inge Renate Frose; MITTMANN, Josane; SILVA, Patrícia Grasel da; DAROS, Thuinie Medeiros Vilela. Produção do Conhecimento Científico e Tecnologias Emergentes. Indaial, SC: Arqué, 2023.

@@ -1,0 +1,3 @@
+import pprint
+
+pprint.pprint(dic_requisicao)

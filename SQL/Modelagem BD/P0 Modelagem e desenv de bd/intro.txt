@@ -1,0 +1,38 @@
+melhorar comunicação interna e externa
+armazenamento de suas informações
+
+
+bd >> servidor >> usuario
+    <<          <<
+
+    modelagem > bd e tabelas > linguagem SQL
+
+DADO X INFORMAÇÃO
+
+Dados: cpf, nome e data de nascimento
+
+    Informação: dados organizados> dados de salarios ordenados
+
+        Banco de dados: coleção organizada de dados> modelar aspectos do mundo real> efetuar processamento que
+        gere informações relevantes
+
+
+        composto de diversos objs: tabelas, views, procedimentos, triggers
+
+        SQL (Relacional): utiliza tabelas, compostas por linhas e colunas, para representar e armazenar os dados.
+        possuem relação entre si
+
+        BD Orientado a objetos: organizado na forma de diferentes objetos
+
+        noSQL: Armazena os dados em formato de documentos e prioriza o armazenamento de grandes volumes de dados
+        em detrimento da manutenção da consistência
+
+MODELO DE DADOS: CONCEITUAL: Definir especificações, levantar requisitos, elementos importantes,
+ atributos, relacionamentos, representações visuais, MER E DER
+
+                  LÓGICO:Representa a estrutura de dados de um bd conforme vista pelo usuário SGBD
+                  Representamos entidades, atributos e relações em estruturas de tabelas
+
+                  FÍSICO: Esquema interno do dc, descrevendo os relacionamento entre elas.
+                  sua implementação acontece por meio da linguagem SQL, específica para criação de banco de dados
+

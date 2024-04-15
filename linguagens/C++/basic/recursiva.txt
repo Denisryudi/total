@@ -1,0 +1,45 @@
+Recursividade é um conceito na programação de computadores em que uma função 
+chama a si mesma durante a sua execução. Em outras palavras,
+uma função recursiva é uma função que se refere a si 
+mesma em seu próprio processo de definição. Isso
+geralmente é feito para resolver problemas que 
+podem ser quebrados em subproblemas semelhantes 
+ou idênticos, facilitando a implementação e
+compreensão do código.
+
+No caso da função fatorial que discutimos anteriormente, a recursividade
+é evidenciada pela chamada da própria função fat dentro do 
+corpo da função:
+
+c
+
+int fat(int n) {
+    if (n == 1)
+        return 1;
+    else
+        return n * fat(n - 1);
+}
+
+Aqui, a função fat chama a si mesma com um argumento reduzido (n - 1). 
+Isso continua até que o caso base n == 1 seja alcançado,
+momento em que a recursão termina e os resultados são
+combinados para fornecer o resultado final.
+
+A recursividade é uma ferramenta poderosa, mas deve ser 
+usada com cuidado para evitar casos de recursão infinita 
+ou ineficiência em determinadas situações.
+
+
+Passagem de parametro por referência cria uma vinculação direta do mesmo
+ espaço de memória do parametro de origem com o seu destino."
+
+
+
+II - Para envio de um parametro por valor para uma subrotina é necessário usar o caracter
+& antecedendo a variável enviada como parâmetro.
+
+III - Na linguagem C, um procedimento que recebe um parâmetro por referência, consegue 
+alterar o valor da variável em seu programa de origem.
+
+IV - Passagem de parametro por referência cria uma vinculação direta do memo espaço de memória
+do parametro de origem com o seu destino.

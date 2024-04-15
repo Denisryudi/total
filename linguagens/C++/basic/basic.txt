@@ -1,0 +1,289 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+void main() {
+	
+	int idade = 0;
+	setlocale(LC_ALL, "");
+	
+	printf("olá mundo\n");
+	
+	printf("Digite a sua idade \n");
+	/*Leitura variável idade */
+	scanf("%d", &idade);
+	
+	printf("A idade digitada foi %d\n", idade);
+	
+	if(idade >= 18 && idade <= 25) {
+		printf("Você é maior de idade, mas tem menos de 25 anos\n");
+	}else{
+		if(idade >= 25) {
+			printf("tem mais que 25 anos\n");
+		}else{
+			printf("Menor de idade\n");
+		}
+	}
+	
+	switch(idade) {
+		case 1:{
+			printf("idade é um");
+			break;
+		}
+		case 10:{
+			printf("idade é 10");
+			break;
+		}
+		case 30:{
+			printf("voce digitou 20");
+			break;
+		}
+		default:{
+			printf("valor invalido\n");
+			break;
+		}
+	}
+	
+}
+
+
+case = valores fixos 
+
+
+O processo de compilação analisa o código, do ponto de vista
+sintático, e o converte para um código - objeto, que é a versão em linguagem de
+máquina do programa. Se o programa possui chamada às funções de bibliotecas,
+o linker (ligador) reúne o programa - objeto com as bibliotecas referenciadas e
+gera o código executável (arquivo binário) (ROCHA, 2006).
+
+scanf("%d", &idade)  <input 
+
+stdio = prinf scanf
+
+
+codigo fonte > compilado > programa a nivel de maquina > linkeditor > .exe
+linkeditor = assimila a biblioteca ao projeto e criar executavel
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+int main() {   
+	
+	setlocale(LC_ALL, "");
+	
+	int idades[5];
+	
+	int i;
+	
+	for(i = 0; i < 5; i++) {
+		printf("Digite a idade da pessoa em número: %d\n", i);
+		scanf("%d", &idades[i]);		
+	}
+	
+	for(i = 0; i < 5; i++) {
+		printf("A idade da pessoa número: %d é: %d\n", i, idades[i]);
+		
+	}
+
+
+
+
+int idades[5]
+float precos[10]
+char nome[5] 
+string = vetor de char = char nome[5]
+
+struct = estrutura de dados heterogenea, armazenar diferentes tipos
+
+nome = char[30]; = geraldin de rivia
+
+scanf("%s", nome);
+printf("%s", nome);
+
+output = geraldin
+
+apenas a primeira palavra de uma frase é respondida
+já o gets 
+
+gets(nome);
+printf("%s", nome);
+
+output = geraldin de rivia
+
+a frase inteira é respondida.
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <string.h>
+
+int main() {
+	char nome[30];
+
+	printf("Digite seu nome\n");
+	fflush(stdin); #fazer a leitura do buffer antes
+
+	gets(nome);
+	printf("%s", nome);
+	
+	return 0;
+}
+""
+
+
+	if(strcmp(nome, "Joao") == 0){
+		printf(":O Usuário digitou o nome Joao");
+	}
+
+	strcmp = String Compare
+	Para atribur um valor a uma variável do tipo vetor de char na linguagem C utiliza-se a função "strcpy" 
+	da biblioteca "string.h".
+	Uma String na linguagem C é definida através de um vetor de char.
+
+	O modo de abertura "w" em arquivos possibilita a criação e escrita em arquivo de texto.
+
+
+strcpy(C, A);
+strcat(C, B);
+
+strcpy(C, A);: Isso copia o conteúdo da string A para a string C. strcpy significa "string copy" (cópia de string).
+Neste caso, copia os caracteres de A para C até encontrar o caractere nulo ('\0') em A. Portanto, após essa linha,
+C conterá a string "Pietro".
+
+strcat(C, B);: Isso anexa (concatena) o conteúdo da string B ao final da string C. strcat significa "string concatenate" 
+(concatenação de string). Após essa linha, C terá os caracteres de B adicionados ao final. Portanto, C agora conterá a 
+string "PietroMartins".
+
+{
+
+//MATRIZES
+	int notas[5][3];
+	int i,j;
+	int soma;
+	
+	for(i = 0; i < 5; i++){
+		soma = 0;
+		for(j = 0; j < 3; j++){
+			
+			printf("Digite a nota do aluno %d da prova %d: ", i+1, j+1);
+			
+			scanf("%d", &notas[i][j]);
+			soma += notas[i][j];
+		}
+		printf("A soma das notas do aluno %d é %d: ", i +1, soma);
+	}
+	
+	return 0;
+}
+
+
+
+//STRUCT - REGISTROS
+	
+	struct produto {
+	int codigo;
+	char nome[30];
+	float valorVenda;
+};
+
+	struct produto p;
+	printf("Cadastro de produto\n");
+	
+	printf("Digite o código: \n");
+	scanf("%d", &p.codigo);
+	
+	printf("Digite o nome \n");
+	fflush(stdin);
+	gets(p.nome);
+	
+	printf("Digite o valor de venda \n");
+	fflush(stdin);
+	scanf("%f", &p.valorVenda);
+	
+	printf("O produto de código número: %d, de nome: %s, de valor: %f, foi cadastrado com sucesso!\n", p.codigo, p.nome, p.valorVenda);
+	
+	return 0;
+}
+
+
+
+    struct produto p;
+    struct produto produtos[2];
+    int i;
+
+    printf("Cadastro de produto\n");
+
+    // Preencher o primeiro produto
+    printf("Digite o código: ");
+    scanf("%d", &p.codigo);
+
+    printf("Digite o nome: ");
+    scanf("%s", p.nome);
+
+    printf("Digite o valor de venda: ");
+    fflush(stdin);
+    scanf("%f", &p.valorVenda);
+
+    printf("O produto de código %d, de nome %s, de valor %f, foi cadastrado com sucesso!\n", p.codigo, p.nome, p.valorVenda);
+
+    // Preencher o array de produtos
+    for (i = 0; i < 2; i++) {
+        printf("\nCadastro do Produto %d\n", i + 1);
+
+        printf("Digite o código: ");
+        scanf("%d", &produtos[i].codigo);
+
+        printf("Digite o nome: ");
+        scanf("%s", produtos[i].nome);
+
+        printf("Digite o valor de venda: ");
+        scanf("%f", &produtos[i].valorVenda);
+
+        printf("O produto de código %d, de nome %s, de valor %f, foi cadastrado com sucesso!\n", produtos[i].codigo, produtos[i].nome, produtos[i].valorVenda);
+	}
+	
+
+
+
+
+
+fatorial
+
+int fat(int n){
+    if(n == 1)
+        return 1;
+    else
+        return n * fat(n-1);
+}
+
+int main() {
+	
+	setlocale(LC_ALL, "");
+	
+	
+    int num, res;
+    printf("Informe o número:\n");
+    scanf("%d", &num);
+    res = fat(num);
+    printf("O fatorial é: %d\n", res);
+    return 0;	
+	
+II. A chamada recursiva da função fat() depende do parâmetro n. A chamada
+recursiva é return n * fat(n-1);, onde n-1 é passado como argumento 
+para a próxima chamada recursiva.
+
+III. O caso base da função é atingido quando o parâmetro da função é 
+igual a 1, conforme indicado pela condição if(n == 1) na linha 04.
+ Esse é o ponto de parada da recursividade.
+
+
+
+
+
+ scanf = ("%d", &nome);

@@ -1,0 +1,40 @@
+:root {
+    --primary-color: blue;
+    --spacing-lg: 20px;
+    --spacing-md: 10px;
+    --spacing-sm: 5px;
+}
+
+.dark-mode {
+    --primary-color: #FFFFFF;
+    background: #000000;
+}
+
+hr{
+    border-color: var(--primary-color);
+    margin-bottom: var(--spacing-lg);
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+}
+
+p {
+    color: var(--primary-color);
+    line-height: 1.4;
+}
+
+.header p {
+    margin-bottom: var(--spacing-lg);
+}
+
+.notes p {
+    margin-bottom: var(--spacing-sm);
+}
+
+button + button {
+    margin-left: var(--spacing-md);
+}

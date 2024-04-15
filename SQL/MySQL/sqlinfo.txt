@@ -1,0 +1,738 @@
+anos final 80 e inicio 90
+ansi(American National Standards Institute) = SQL(Structured Query Language)
+                                            linguagem de consulta estruturada
+Obj = padronizar a forma como os dados são consultados nesses bancos de dados relacionais.
+
+Pros:
+Aprendizado
+Portabilidade
+Longetividade
+Comunicação
+Liberdade de escolha
+A linguagem SQL permite reduzir custos de treinamento
+Apresenta uma padronização entre os bancos de dados
+Fácil migração entre os bancos.
+
+
+Cons:
+Falta de criatividade
+Falta de estruturação
+
+ANSI
+DDL(Data definition language) = Manipulação das estruturas de um banco de dados
+DML(Data manipulation language)= Gerenciar os dados, consultas 
+DCL(Data control language)= Administrar o banco de dados, acesso, gerenciar usuario, política de crescimento, adm processos, logs. 
+
+inicio
+código livre -> MySQL -> mariaDB
+Escalabilidade robusta
+sun -> oracle 
+
+MySQL:
+
+Servidor
+Portabilidade
+Multithreads
+Formas de Armazenamento
+Velocidade
+Desempenho
+Capacidade
+Aplicabilidade
+logs
+
+repository que armazena dados
+Table
+>campo
+>registros
+
+na criação fazemos a definição
+do tipo e quantos campos
+relacional = relações entre as tabelas
+índice = where
+select 
+
+
+Procedures >
+Linguagens fora do padrão ansi
+permitem com comandos sql fazer
+lógicas estruturadas(if else, func)
+
+Numa tabela temos campos, registros, chaves primárias e estrangeiras
+
+Como podemos agrupar as tabelas?
+r: Em esquemas (Schema)
+
+CREATE SCHEMA 'test' DEFAULT CHARACTER SET utf8;
+
+DROP {DATABSE | SCHEMA} [IF EXISTS] db_name;
+
+conect = mysql -h localhost -u root -p
+
+use db_name; 
+
+float = 4 bytes
+double = 8 bytes
+
+SIGNED ou UNSIGNED = vai possuir ou não sinal no número
+
+ZEROFILL = preenche com zero os espaços
+ex:INT(4) = armazenar 5 = 0005 
+
+AUTO_INCREMENT = sequencia auto incr.
+
+OUT OF RANGE = estourar os limites
+
+DATE = 1000-01-01 até 9999-12-31
+
+DATETIME= 1000-01-01 00:00:00 até 9999-12-31 23:59:59
+
+TIMESTAMP = 1970-01-01 00:00:01 UTC até 2038-01-19 UTC   = fuso 
+
+TIME = 838:59:59 e 839:59:59
+
+YEAR = 1901-2155 formato 2 ou 4 digitos
+
+CHAR(4) = "aa" = "  aa"
+VARCHAR(4) = "aa" = "aa"
+
+BINARY (0 A 255) Fixo = o CHAR Mas = expresso em binário 
+VARBINAY (0 A 255) VARIADO = VARCHAR Mas = expresso em binário
+
+
+Strings
+BLOB = Binário longo
+
+TINYBLOB 
+BLOB
+MEDIUMBLOB
+LONGBLOB = salvar grande binário = bytes de uma foto dentro do banco de dados
+
+
+TEXT = Texto longo
+
+TINYTEXT
+TEXT
+MEDIUMTEXT
+LONGTEXT = Armazenar texto
+
+ENUM 
+Armazenar uma lista pré-definica de valores.
+ex: Size ENUM('x-small', 'small', 'medium', 'large', 'x-large')
+
+SET E COLLATE = tipo de caracteres que serão suportados
+
+Spacial:
+
+GEOMETRY áreas 
+POINT ponto
+LINESTRING LINHa
+POLYGON áreas 
+
+...
+
+CREATE DATABASE SUCOS;
+
+USE SUCOS;
+
+CREATE TABLE tbCliente 
+(CPF VARCHAR(11),
+NOME VARCHAR(100),
+ENDEREÇO1 VARCHAR(150),
+ENDEREÇO2 VARCHAR(150),
+BAIRRO VARCHAR(50),
+CIDADE VARCHAR(50),
+ESTADO VARCHAR(50),
+CEP VARCHAR(8),
+IDADE SMALLINT,
+SEXO VARCHAR(1),
+LIMITE_CREDITO FLOAT, POR conta de exibir com Procedures
+VOLUME_COMPRA FLOAT,
+PRIMEIRA_COMPRA BIT(1))
+
+
+CREATE TABLE tbProduto
+(CODIGO_PRODUTO VARCHAR(150) not null,
+NOME VARCHAR(150) not null,
+EMBALAGEM VARCHAR(50) not null,
+TAMANHO VARCHAR(50) not null,
+SABOR VARCHAR(50) not null,
+PRECO_LISTA FLOAT not null) ;
+
+
+INSERT INTO tbProduto (
+    PRODUTO,
+    NOME,
+    EMBALAGEM,
+    TAMANHO,
+    SABOR,
+    PRECO_LISTA) VALUES (
+        '1023213', 'Light - 350 ml - Melãncia', 'lata',
+        '350 ml', 'Melância', 4.56);
+
+SELECT * INTO tbProduto;
+
+
+UPDATE tbProduto SET EMBALAGEM = 'lata', PRECO_LISTA = 2.46
+WHERE PRODUTO = '1023213'; 
+
+DROP = COMPONENTES DO MYSQL. BANCO DE DADOS, TABLE, INDICES, CHAVES PRIMARIAS.
+
+DELETE = INFO DENTRO DA TABELA.
+
+DELETE FROM tbProduto WHERE PRODUTO = '1023213';
+
+ALTER TABLE tbProduto ADD PRIMARY KEY (PRODUTO);
+
+CONSTRAINT - PRIMARY KEY
+
+ALTER TABLE tbCliente ADD PRIMARY KEY (CPF);
+
+ALTER TABLE tbCliente ADD COLUMN (DATA_NASCIMENTO DATE);
+
+INSERT INTO tbcliente (
+CPF, NOME, ENDERECO1, ENDERECO2, 
+BAIRRO, CIDADE, ESTADO, 
+CEP, IDADE, SEXO, LIMITE_CREDITO, 
+VOLUME_COMPRA, PRIMEIRA_COMPRA, DATA_NASCIMENTO) 
+VALUES ('00388934505', 'João da Silva', 
+'Rua projetada A número 10', '', 'Vila Roman', 'CARATINGA', 'AM', 
+'2222222', 30, 'M', 10000.00, 2000, 0, '1989-10-05');
+
+
+SELECT * FROM tbcliente;
+
+SELECT CPF, ENDERECO1, ENDERECO2, BAIRRO, CIDADE, ESTADO, CEP, DATA_NASCIMENTO, IDADE, SEXO, LIMITE_CREDITO, VOLUME_COMPRA, PRIMEIRA_COMPRA FROM tbcliente;
+:
+CPF	NOME
+1471156710	Érica Carvalho
+19290992743	Fernando Cavalcante
+2600586709	César Teixeira
+3623344710	Marcos Nogueira
+492472718	Eduardo Jorge
+50534475787	Abel Silva
+5576228758	Petra Oliveira
+
+SELECT CPF, NOME FROM tbCliente LIMIT 5;
+: 
+CPF	NOME
+1471156710	Érica Carvalho
+19290992743	Fernando Cavalcante
+2600586709	César Teixeira
+3623344710	Marcos Nogueira
+492472718	Eduardo Jorge
+
+SELECT CPF, NOME FROM tbcliente;
+:
+CPF	NOME
+1471156710	Érica Carvalho
+19290992743	Fernando Cavalcante
+2600586709	César Teixeira
+3623344710	Marcos Nogueira
+492472718	Eduardo Jorge
+50534475787	Abel Silva
+5576228758	Petra Oliveira
+
+
+SELECT CPF AS CPF_CLIENTE, NOME AS NOME_CLIENTE FROM tbCliente LIMIT 5;
+AS = ALIASES
+
+
+CPF_CLIENTE	NOME_CLIENTE
+1471156710	Érica Carvalho
+19290992743	Fernando Cavalcante
+2600586709	César Teixeira
+3623344710	Marcos Nogueira
+492472718	Eduardo Jorge
+50534475787	Abel Silva
+5576228758	Petra Oliveira
+
+SELECT * FROM tbproduto WHERE PRODUTO = '544931';
+
+SELECT * FROM tbcliente WHERE CIDADE = 'Rio de Janeiro';
+
+SELECT * FROM tbproduto WHERE SABOR = 'Cítricos';
+
+UPDATE tbproduto SET SABOR = 'Cítricos' WHERE SABOR = 'Limão';
+:
+PRODUTO	NOME	EMBALAGEM	TAMANHO	SABOR	PRECO_LISTA
+1042712	Linha Citros - 700 ml - Limão	Garrafa	700 ml	Cítricos	4.904
+1051518	Frescor do Verão - 470 ml - Limão	Garrafa	470 ml	Cítricos	3.2995
+1088126	Linha Citros - 1 Litro - Limão	PET	1 Litro	Cítricos	7.004
+544931	Frescor do Verão - 350 ml - Limão	Lata	350 ml	Cítricos	2.4595
+
+
+SELECT * FROM tbcliente WHERE IDADE <> 22;
+exceto 22 anos.
+
+SELECT * FROM tbcliente WHERE NOME > ‘Fernando Cavalcante’;
+apenas acima de Fe = Fi Fo Fu 
+E > A . Então Fátima seria desconsiderada.
+
+
+SELECT * FROM tbproduto WHERE PRECO_LISTA = 16.008 o resultado é vazio, para pesquisar FLOAT
+é necessário usar outros filtros, como o BETWEEN
+
+SELECT * FROM tbproduto WHERE PRECO_LISTA BETWEEN 16.007 AND 16.009;
+
+
+SELECT * FROM tbcliente WHERE DATA_NASCIMENTO > '1995-01-13';
+
+SELECT * FROM tbcliente WHERE DATA_NASCIMENTO <= '1995-01-13';
+
+SELECT * FROM tbcliente WHERE YEAR(DATA_NASCIMENTO) = 1998;
+:
+1998-01-13
+1998-01-11
+1998-10-07
+
+SELECT * FROM tbcliente WHERE MONTH(DATA_NASCIMENTO) = 10;
+:
+1998-10-07
+1992-10-07
+
+
+SELECT * FROM tbproduto WHERE PRECO_LISTA >= 16.007 AND PRECO_LISTA <= 16.009;
+
+SELECT * FROM tbcliente WHERE IDADE >= 18 AND IDADE <= 22 AND SEXO = 'M';
+
+SELECT * FROM tbcliente WHERE cidade = 'Rio de Janeiro' OR BAIRRO = 'Jardins';
+
+SELECT * FROM tbcliente WHERE (IDADE >= 18 AND IDADE <= 22 AND SEXO = 'M') OR (cidade = 'Rio de Janeiro' OR BAIRRO = 'Jardins');
+
+----
+
+
+Por que devemos visualizar o esquema de dados? 
+: engenharia reversa
+Para poder executar os comandos SQL corretamente.
+Para determinar que consultas vou fazer é fundamental conhecer a estrutura do banco de dados.
+
+
+SELECT CPF as IDENTIFICADOR, NOME as CLIENTE FROM tabela_de_clientes; == SELECT CPF, NOME FROM tabela_de_clientes;
+
+
+
+SELECT * FROM tab where X = A 
+
+SELECT * FROM tab where X = A  OR Y = N
+
+SELECT * FROM tab where X = A AND Y = B
+
+(NOT ((3 > 2) OR (4 >= 5)) AND (5 > 4) ) OR (9 > 0)
+:
+
+(NOT ((3 > 2) OR (4 >= 5)) AND (5 > 4) ) OR (9 > 0)
+(NOT ((Verdadeiro) OR (Falso)) AND (Verdadeiro) ) OR (Verdadeiro)
+(NOT (Verdadeiro) AND (Verdadeiro) ) OR (Verdadeiro)
+(Falso AND Verdadeiro) OR (Verdadeiro)
+(Falso) OR (Verdadeiro)
+Verdadeiro
+
+SELECT * FROM tabela_de_produtos WHERE NOT (SABOR = 'Manga' OR TAMANHO = '470 ml');
+
+SELECT * FROM tabela_de_produtos WHERE SABOR = 'Manga' AND NOT (TAMANHO = '470 ml');
+
+SELECT * FROM tabela_de_produtos WHERE SABOR = 'Laranja' OR SABOR = 'Manga';
+
+SELECT * FROM tabela_de_clientes WHERE CIDADE IN ('Rio de Janeiro', 'São Paulo') AND (IDADE >= 20 AND IDADE <= 22);
+
+
+SELECT * FROM tab WHERE campo LIKE '%Soares%';
+:
+
+Nomes
+Pedro Almeida Soares
+Margarida Silva Soares
+Carlos Soares da Silva
+Antônio Almeida Soares
+Jonas Soares Filho
+Vitor Filho Soares
+
+
+
+SELECT * FROM tab WHERE campo LIKE '%Soares';
+:
+
+Nomes
+Pedro Almeida Soares
+Margarida Silva Soares
+Antônio Almeida Soares
+Vitor Filho Soares
+
+
+SELECT DISTINCT * FRM TABELA;
+Irá retornar linhas com valores diferentes
+
+combinações que não se repetem:
+
+
+
+SELECT DISTINCT EMBALAGEM, TAMANHO FROM tabela_de_produtos WHERE SABOR = 'Laranja';
+
+Nesse caso, o MySQL mostrará apenas os distincts com sabor laranja:
+Detalhes a respeito do sabor laranja, 
+
+EMBALAGEM	TAMANHO
+PET	2 Litros
+Garrafa	470 ml
+PET	1 Litro
+Lata	200 ml
+PET	1.5 Litros
+
+
+
+
+Quais são os bairros da cidade do Rio de Janeiro que possuem clientes?
+
+SELECT DISTINCT BAIRRO FROM tabela_de_clientes WHERE CIDADE = 'Rio de Janeiro
+:
+Obteremos 7 bairros listados.
+
+
+SELECT * FROM TABELA LIMIT 4;
+
+
+
+O número que colocamos depois de LIMITdirá quantas linhas serão exibidas. Para ver em um exemplo, considere a seguinte tabela:
+
+Nomes
+João da Silva Filho
+Pedro Almeida Soares
+Margarida Silva Soares
+José da Silva Almeida
+Carlos Soares da Silva
+Pedro Filho de Almeida
+Jorge da Silva Filho
+Antônio Almeida Soares
+Jonas Soares Filho
+Vitor Filho Soares
+E vamos imaginar que rodamos o código a seguir:
+
+
+SELECT * FROM tabela LIMIT 4;
+O resultado dessa consulta traria os quatro primeiros registros da tabela original:
+
+Nomes
+João da Silva Filho
+Pedro Almeida Soares
+Margarida Silva Soares
+José da Silva Almeida
+
+
+
+SELECT * FROM tabela_de_produtos LIMIT 2,3;
+Apartir do segundo os três próximos contando com o 2
+
+
+Queremos obter as 10 primeiras vendas do dia 01/01/2017. Qual seria o comando SQL para obter este resultado?
+:
+SELECT * FROM notas_fiscais  WHERE DATA_VENDA = '2017-01-01' limit 10
+
+
+
+
+Caso não seja especificado ASC ou DESC, o MySQL automaticamente optará pela ordem ascendente. - menor para o maior
+
+Além disso, também podemos escolher dois campos, ao mesmo tempo, como critério de seleção. Com esse intuito, 
+faríamos uma consulta com ORDER BY CAMPO1, CAMPO2 e o resultado seria algo parecido com o seguinte:
+
+CAMPO1	CAMPO2
+A	1
+A	2
+A	3
+B	1
+B	2
+B	3
+C	1
+C	2
+C	3
+
+
+
+SELECT * FROM tabela_de_produtos ORDER BY PRECO_DE_LISTA DESC;
+: 
+do maior para o menor
+
+
+
+SELECT * FROM tabela_de_produtos ORDER BY EMBALAGEM DESC, NOME_DO_PRODUTO ASC;
+: 
+Embalagem do maior para o menor
+E nome do menor para o maior
+
+
+Qual (ou quais) foi (foram) a(s) maior(es) venda(s) do produto “Linha Refrescante - 1 Litro - Morango/Limão”, em quantidade? (Obtenha este resultado usando 2 SQLs).
+
+
+Primeiro vamos buscar o código do produto “Linha Refrescante - 1 Litro - Morango/Limão”.
+
+SELECT * FROM tabela_de_produtos WHERE nome_do_produto = 'Linha Refrescante - 1 Litro - Morango/Limão'
+
+Com esta consulta obtemos o resultado do código deste produto: ‘1101035’ <----
+
+
+Com esta informação fazemos a consulta para achar a maior quantidade vendida deste produto.
+
+SELECT * FROM itens_notas_fiscais WHERE codigo_do_produto = '1101035' ORDER BY QUANTIDADE DESC;
+Veremos que a maior quantidade foi 99.
+
+
+Qual (ou quais) foi (foram) a(s) maior(es) venda(s) do produto “Linha Refrescante - 1 Litro - Morango/Limão”, em quantidade? (Obtenha este resultado usando 2 SQLs).
+
+SELECT * FROM tabela_de_produtos WHERE nome_do_produto = 'Linha Refrescante - 1 Litro - Morango/Limão'
+
+SELECT * FROM tabela_de_produtos WHERE '1101035' ORDER BY QUANTIDADE DESC;
+
+
+
+
+
+SELECT <campos> ALIASES FROM 'TAB' GROUP BY CAMPO
+
+PODEMOS usar:
+
+SUM: soma
+MAX: max
+ManipulaçãoAVG: Média
+COUNT:Cibta ocorrências
+
+SELECT ESTADO, SUM(LIMITE_CREDITO) AS LIMITE_TOTAL FROM tabela_de_clientes GROUP BY ESTADO;
+
+SELECT EMBALAGEM, PRECO_DE_LISTA FROM tabela_de_produtos;
+
+SELECT EMBALAGEM, PRECO_DE_LISTA FROM tabela_de_produtos;
+Mais caro pet, garrafa e lata?
+
+SELECT EMBALAGEM, MAX(PRECO_DE_LISTA) AS MAIOR_PRECO FROM tabela_de_produtos GROUP BY EMBALAGEM
+
+SELECT EMBALAGEM, COUNT(*) as CONTADOR FROM tabela_de_produtos GROUP BY EMBALAGEM;
+
+SELECT BAIRRO, SUM(LIMITE_CREDITO) AS LIMITE FROM tabela_de_clientes WHERE CIDADE = 'Rio De Janeiro', GROUP BY BAIRRO;
+
+
+SELECT ESTADO, BAIRRO, SUM(LIMITE_CREDITO) AS LIMITE FROM tabela_de_clientes 
+WHERE CIDADE = 'Rio De Janeiro', 
+GROUP BY ESTADO, BAIRRO;
+ORDER BY BAIRRO;
+
+quantos itens de venda existem para o produto '1101035' ?
+SELECT MAX('QUANTIDADE') AS 'MAIOR QUANTIDADE' FROM itens_notas_fiscais WHERE CODIGO_DO_PRODUTO = '1101035'
+
+SELECT COUNT(*) FROM notas_fiscais WHERE CODIGO_DO_PRODUTO = '1101035' AND QUANTIDADE = 99;
+
+
+
+
+Desse resultado, vamos supor que queremos apenas as linhas em que a soma de "Y" seja maior ou igual a 6. No caso, 
+seriam as letras B e C. Então, aplicaremos o HAVING depois do GROUP BY:
+
+SELECT X, SUM(Y) FROM tab GROUP BY X HAVING SUM(Y) >= 6;
+X	Y
+B	6
+C	8
+
+
+A solução será usar o HAVING, que virá depois do GROUP BY:
+
+SELECT ESTADO, SUM(LIMITE_DE_CREDITO) as SOMA_LIMITE FROM tabela_de_clientes
+GROUP BY ESTADO
+HAVING SUM(LIMITE_DE_CREDITO) > 900000;
+
+
+
+
+SELECT EMBALAGEM, MAX(PRECO_DE_LISTA) as MAIOR_PRECO, 
+MIN(PRECO_DE_LISTA) as MENOR_PRECO FROM tabela_de_produtos 
+GROUP BY EMBALAGEM
+HAVING SUM(PRECO_DE_LISTA) <= 80 AND MAX(PRECO_DE_LISTA) >= 5;
+
+    EMBALAGEM | MAIOR PREÇO | MENOR PREÇO
+:    Garrafa       13.23        3.768
+
+Embalagem = garrafa, maior preço e menor preço da tabela_de_produtos
+agrupados pela embalagem e devem ter na somatória total menor ou igual que 80 e máximo de preço deve ser maior ou igual que 5
+
+Quais foram os clientes que fizeram mais de 2000 compras em 2016?
+:
+SELECT CPF, COUNT(*) FROM notas_fiscais
+WHERE YEAR(DATA_VENDA) = 2016
+GROUP BY CPF 
+HAVING COUNT(*) > 2000;
+
+Quais foram os clientes que fizeram mais de 2000 compras em 2016?
+:
+SELECT CPF, COUNT(*) FR0M notas_fiscais
+WHERE YEAR(DATA_VENDA) = 2016
+GROUP BY CPF
+HAVING COUNT(*) > 2000;
+
+
+
+SELECT NOME_DO_PRODUTO, PRECO_LISTA,
+CASE 
+WHEN PRECO_DE_LISTA >= 12 THEN 'PRODUTO CARO'
+WHEN PRECO_DE_LISTA >=7 AND PRECO_DE_LISTA <12 THEN 'PRODUTO EM CONTA'
+ELSE 'PRODUTO BARATO' 
+END AS STATUS_PRECO, AVG(PRECO_DE_LISTA) AS PRECI_MEDIO  
+FROM tabela_de_produtos;
+WHERE sabor = 'manga'
+GROUP BY EMBALAGEM, 
+CASE 
+WHEN PRECO_DE_LISTA >= 12 THEN 'PRODUTO CARO'
+WHEN PRECO_DE_LISTA >=7 AND PRECO_DE_LISTA <12 THEN 'PRODUTO EM CONTA'
+ELSE 'PRODUTO BARATO' 
+END
+ORDER BY EMBALAGEM;
+
+
+
+Veja o ano de nascimento dos clientes e classifique-os como: Nascidos antes de 1990 são velhos, nascidos entre 1990 
+e 1995 são jovens e nascidos depois de 1995 são crianças. Liste o nome do cliente e esta classificação.
+:
+SELECT NOME,
+CASE WHEN YEAR(data_de_nascimento) < 1990 THEN 'Velho'
+WHEN YEAR(data_de_nascimento) >= 1990 AND
+YEAR(data_de_nascimento) <= 1995 THEN 'Jovens' 
+ELSE 'Crianças' 
+END  AS "CLASSIFICAÇÃO POR IDADE"
+FROM tabela_de_clientes;
+
+
+
+join
+
+INNER join = correspondentes
+LEFT join todo mundo da esquerda e somente os correspondentes da direita 
+RIGHT Todos da direita e somente os correspondentes da esquerda
+FULL JOIN TUDO
+CROSS JOIN que retorna o produto cartesiano das duas tabelas
+ON = em comum
+
+
+
+
+
+
+SELECT A.NOME, B.HOBBY FROM TABELA_ESQUERDA A RIGHT JOIN TABELA_DIREITA B
+ON A.IDENTIFICADOR = B.IDENTIFICADOR;
+
+todos elementos da tabela da direita se juntam com a tabela da esquerda
+
+
+
+
+INNER JOIN
+
+
+SELECT A.NOME, B.HOBBY FROM 
+TABELA_ESQUERDA A
+INNER JOIN TABELA_DIREITA B
+ON A.IDENTIFICADOR = B.IDENTIFICADOR;
+Nome	Hobby
+João	Praia
+Maria	Futebol
+
+
+Vamos entender por partes o que cada pedaço dessa consulta significa. Em TABELA_ESQUERDA A, estamos declarando "A" como o alias da
+ primeira tabela, à esquerda. Um processo semelhante é feito em TABELA_DIREITA B. Assim, quando escrevemos SELECT A.NOME, 
+ B.HOBBY, vamos selecionar o campo "NOME" da tabela A e o campo "HOBBY" da tabela B. Ao final, temos a expressão 
+ ON A.IDENTIFICADOR = B.IDENTIFICADOR, na qual especificamos qual é campo em comum dessas tabelas. E o comando 
+ INNER JOIN é responsável por retornar somente os registros que têm correspondência nas duas tabelas. Nesse caso,
+  são apenas João e Maria (identificadores 1 e 3).
+
+
+
+Outro tipo de comando JOIN é o LEFT JOIN:
+
+SELECT A.NOME, B.HOBBY FROM 
+TABELA_ESQUERDA A
+LEFT JOIN TABELA_DIREITA B
+ON A.IDENTIFICADOR = B.IDENTIFICADOR;COPIAR CÓDIGO
+Left, em inglês, significa "esquerda" e, no nosso contexto, representa a primeira tabela, à esquerda, a que vem antes 
+do comando JOIN. Com essa consulta, o MySQL trará todos os elementos da tabela A e somente os correspondentes da tabela B:
+
+Nome	Hobby
+João	Praia
+Maria	Futebol
+Pedro	NULL
+Cláudia	NULL
+
+
+RIGHT JOIN,
+
+Da mesma maneira que existe o LEFT JOIN, temos o RIGHT JOIN, que trará todos os elementos da tabela da direita 
+(ou seja, a que vem depois do comando JOIN) e somente os correspondentes da esquerda:
+
+SELECT A.NOME, B.HOBBY FROM 
+TABELA_ESQUERDA A
+RIGHT JOIN TABELA_DIREITA B
+ON A.IDENTIFICADOR = B.IDENTIFICADOR;COPIAR CÓDIGO
+Nome	Hobby
+João	Praia
+Maria	Futebol
+NULL	Fotografia
+NULL	Artesanato
+
+
+Além disso, existe também o FULL JOIN:
+
+SELECT A.NOME, B.HOBBY FROM 
+TABELA_ESQUERDA A
+FULL JOIN TABELA_DIREITA B
+ON A.IDENTIFICADOR = B.IDENTIFICADOR;COPIAR CÓDIGO
+Com esse comando, todos os elementos tanto de uma quanto da outra tabela aparecerão no resultado. Os registros que não tiverem correspondência, 
+apresentarão a coluna com valor nulo:
+
+Nome	Hobby
+João	Praia
+Maria	Futebol
+Pedro	NULL
+Cláudia	NULL
+NULL	Fotografia
+NULL	Artesanato
+
+
+CROSS JOIN 
+
+
+Por fim, temos o CROSS JOIN (junção cruzada), que retorna o produto cartesiano das duas tabelas. Ele tem uma estrutura 
+ligeiramente diferente das anteriores, sem nenhuma condição de união. Ou seja, quando não especificamos qual 
+é o campo que liga as tabelas, o MySQL fará o CROSS JOIN:
+
+SELECT A.NOME, B.HOBBY FROM
+TABELA_ESQUERDA A, TABELA-DIREITA B;COPIAR CÓDIGO
+Nome	Hobby
+João	Praia
+Maria	Praia
+Pedro	Praia
+Cláudia	Praia
+João	Futebol
+Maria	Futebol
+Pedro	Futebol
+Cláudia	Futebol
+...	...
+
+
+
+SELECT * FROM tabela_de_vendedores A
+INNER JOIN notas_fiscais B
+ON A.MATRICULA = B.MATRICULA;
+
+
+
+Os campos em comum usados no JOIN não precisam ter o mesmo nome. O importante é que tenham o mesmo conteúdo
+ para que a relação entre tabelas seja viável.
+
+O retorno mostrará todos os campos da tabela A e todos os campos da tabela B, unidos em um só resultado. 
+Será possível ver os dados de cada nota fiscal emitida, junto das informações do vendedor associado 
+a ela.
+
+Com essas duas tabelas, também podemos usar outros comandos com o JOIN, como o GROUP BY. Por exemplo, 
+se nossa meta for descobrir quantas notas fiscais cada vendedor emitiu:
+
+SELECT A.MATRICULA, A.NOME, COUNT(*) FROM
+tabela_de_vendedores A
+INNER JOIN notas_fiscais B
+ON A.MATRICULA = B.MATRICULA
+GROUP BY A.MATRICULA, A.NOME;
+

@@ -1,0 +1,62 @@
+
+@christophfischer2773
+há 3 meses (editado)
+Store the stream elements in an AVL-Tree. The median is at all times
+- root if balance = 0
+- (root+right)/2 at balance +1
+- (root+left)/2 at balance -1
+
+Edit: this allows you to find other percentiles as well btw. (25th, 12.5th, 6.25th, ... and any combination of the lot: 75th, 81.25th, ...)
+
+
+
+
+
+
+@Schnorzel1337
+
+Okay your solution boils down to:
+1. Store data in an tree
+2. Always keep the sorting up
+3. Calculate the median.
+
+Why is that not optimal?
+A good balanced tree implementation can rely on an array with arr[0] as the root, arr[1] is the left tree and arr[2] is the right tree.
+if not perfectly balanced arr[n] can be null, infinity, undefined. Using a node based approach is slower because of cache misses.
+Now that representation is completely equal to just storing the numbers in a sorted order, with extra steps.
+
+Keeping the array always sorted is in general slower than sorting it once at the end.
+
+And for this problem we are not asked to find any other quantile but the 0.5 so my proposal.
+
+Store the data in an array. Use a random pivot and sort everything less or greater like in quicksort. Repeat until you found the median element(s).
+ This way you can find your value without even sorting all the numbers.
+
+For example if you have an array of size n and by chance pick the pivot that 60% of values land on the left side, you could in theory
+ forget about 40% of your numbers. Because they can not be part of the median.
+
+The benefit you could store this somewhat sorted data and come back to it in the same way, to find your 0.25 quantil and so on.
+
+TLDR: You dont need to do a full balanced tree, when it is enough to only sort it partially. Only do what is asked not more. Only if
+ possible keep the option for more utility.
+
+
+@derickd6150
+há 3 semanas
+ @Schnorzel1337  I don't understand what you do before you have all the data. I understand you want to sort the data only at the end. 
+ While you are still receiving the data, you are only doing one operation which is sorting the data into one of two lists depending
+  on if it is greater or less than the pivot? Am I correct?
+
+
+
+Responder
+
+@derickd6150
+@derickd6150
+há 2 semanas (editado)
+ @Schnorzel1337  ahh so unfortunate. I really thought you might be saying something interesting, now I see it was just words
+
+ 
+@69k_gold
+há 3 semanas
+Better yet, we can use two heaps, easier to balance

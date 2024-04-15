@@ -1,0 +1,20 @@
+Proposição: é uma sentença declarativa que assume um valor lógico (verdadeiro ou falso)
+
+simples: p = joao é advogado
+         q= pedro é jornalista
+ou
+composta: P(p,q)
+-> conectivo:
+e, ou, ou...
+se... entao 
+
+simbologia dos conectivos:
+não = ~  - :negação
+e = ^  - :conjunção
+ou = v - :disjunção
+se... então = ->  - :condicional -> p->q   p=hipótese e q= conclusão  
+se, e somente se <->  - :bicondicional 
+
+Tautologia = final da tudo verdadeiro
+
+caminho critico = prazo máximo

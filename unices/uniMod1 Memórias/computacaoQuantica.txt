@@ -1,0 +1,18 @@
+É um tipo de computação em que as informações são processadas usando qubits em vez de bits. Os computadores clássicos armazenam e processam em bits, 
+enquanto os quânticos usam qubits para armazenar e processar informações. Ambos assumem valores de 0 e 1, mas o qubit pode estar em vários estados 
+ao mesmo tempo (0 e 1) devido à superposição de estados. Isso permite explorar mais de uma resposta e com o entrelaçamento, que é um efeito da mecânica 
+quântica que correlaciona o comportamento de dois objetos distintos. Quando dois qubits estão entrelaçados, as mudanças em um qubit afetam o outro diretamente. 
+Algoritmos quânticos utilizam esses relacionamentos para localizar soluções para problemas complexos, é possível escolhermos qual dos estados queremos.
+
+Um dos requisitos para o funcionamento do computador quântico é a estabilidade, por isso é necessário mantê-lo em uma temperatura estável. É refrigerado 
+a uma temperatura um pouco acima do zero absoluto para maximizar sua coerência e reduzir a interferência. São utilizados para estabilizar a temperatura:
+ nitrogênio, superfluidos, alguns compostos químicos ou câmara de vácuo, etc. que os protegem contra interferência externa.
+
+Suas grandes vantagens seriam a de que, enquanto computadores clássicos executam uma etapa de cada vez, os quânticos podem realizar diversos cálculos 
+simultaneamente, conseguindo assim analisar grandes quantidades de dados em uma velocidade e precisão muito maior do que a de um computador clássico. 
+É muito utilizada em áreas como IA, criptografia, busca em listas desordenadas.
+
+Fontes: https://aws.amazon.com/pt/what-is/quantum-computing/#:~:text=Computa%C3%A7%C3%A3o%20qu%C3%A2ntica%20%C3%A9%20um%20campo,do%20que%20em%20computadores%20tradicionais.;
+ https://www.ibm.com/br-pt/topics/quantum-computing; https://azure.microsoft.com/pt-br/resources/cloud-computing-dictionary/what-is-quantum-computing/#how-it-works"
+
+

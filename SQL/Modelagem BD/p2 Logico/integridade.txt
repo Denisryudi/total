@@ -1,0 +1,44 @@
+INtegridade de Dominio
+
+restrição: os valores inseridos em uma coluna devem sempre obedecer
+à definiçao dos valores permitidos para essa coluna. os valores do domínio
+
+char, int, date
+
+INtegridade de Vazio
+se é possivel nao inserir um valor em uma coluna
+
+não nulos
+
+null significa que não existem dados disp para o campo em particular
+!= zero, '', tabulação, que consistem em algo armazenado
+
+Integridade chave
+
+chave primária sempre unicos
+sem repetição
+e não nula
+sempre distintas
+
+INtegridade Referencial
+
+ID 987 -> precisa existir em uma tabela de clientes.
+Referencia
+
+não posso vender para o ID987 se ele não estiver na tabela de cliente
+e nem um produto não cadastrado
+
+
+INtegridade de entidade
+
+nenhum valor da chave primaria pode ser NULL, pois seu valor
+é utilizado para identificar tuplas individuais em uma relação tabela
+
+
+Integridade definida pelo usuario
+
+Regras de negocio especificas definidas pelo usuario do bd
+
+
+
+

@@ -1,0 +1,31 @@
+<script>
+
+    function pulaLinha() {
+    
+        document.write("<br>");
+        document.write("<br>");
+    
+    }
+    
+    function mostra(frase) {
+    
+        document.write(frase);
+        pulaLinha();
+    
+    }
+    
+    var totalRelatives = parseInt(prompt("Number of family members?"));
+    
+    var numero = 1;
+    var totalAge = 0;
+    while(number <= totalRelatives) {
+    
+        var age = parseInt(prompt("Inform the age of the family member"));
+        totalAge = totalAge + age;
+        number++;
+    
+    }
+    var averageAge = totalAge/totalRelatives
+    mostra("A média das idades dos familiares é " + averageAge);
+    mostra("End");
+    </script>

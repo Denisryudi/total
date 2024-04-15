@@ -1,0 +1,623 @@
+<a> = ancoragem, usado para fazer uma "âncora" criando uma função de acesso a determinado conteúdo
+Por exemplo para acessar do index para alguma pagina secundária.
+
+Para indicar o destino a que um link deve nos levar.
+Alternativa correta. Com o atributo href, teremos o endereço de destino de um link, podendo direcionar para e-mails, telefones, outros sites e abas
+Para marcar uma âncora para outro ponto na internet.
+
+configuração de block = não fica abaixo da imagem, e para alinhá-las é necessário usar alguns comandos
+display: inline]
+
+
+font-weight: bold; negrito
+font-size: 22px;
+text-decoration: none;  sem ele o texto fica sublinhado(após usar anchor)
+
+position: absolute; fica indepentente.
+Para mudar a posição do ponto inicial que ele se encontra
+
+nav {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+div pode ser usada para encapsular
+position: relative; para levantar, subir camada
+
+margin: a primeira é para cima, 
+
+
+
+
+padding espaçamento interno ex: 
+
+header {
+	background: #BBBBBB;
+	padding: 20px 0; 20px pra cima e pra baixo e 0 para direita e para a esquerda
+}
+ 
+
+
+Qual a melhor técnica para alinhar uma div ao centro?
+R: Usar o cálculo da margin automático
+
+HTML5 mudanças = header > <nav></nav>
+                 body > <main></main>
+
+                Por que devemos usar as tags semânticas, como a <main>?
+
+                Alternativa correta
+                Para deixar o código mais legível, tanto para nós, quanto para o navegador
+
+se o h1 ja esta sendo usado, logo o próximo sera o h2               
+
+margin: 0 auto; 0 = pra cima e pra baixo e o auto ref. a margem a direita e esquerda
+
+
+box-sizing: border-box; para permitir o espaçamento sem encavalar
+
+Qual o comportamento do elemento quando adiciono espaçamento interno, o padding?
+r: O elemento aumenta o seu tamanho
+
+bordas:	border: 4px solid #000000;   
+
+
+Quando adiciono a seguinte declaração de borda:
+
+border: 3px solid #000000;COPIAR CÓDIGO
+Qual o comportamento esperado?
+r: Uma borda solida, com 3 pixels de largura, entre o padding e a margin
+
+<border-radius>
+	usado para arredondar a borda
+</border-radius>
+
+hover quando o mouse esta por cima do elemento
+
+ex: nav a:hover {
+	color: #483D8B;
+}
+
+
+.produtos li:hover h2{    
+	font-size: 22px;
+}
+
+
+
+Quando podemos utilizar o comportamento do hover em um elemento?
+r: Quando queremos realçar alguma característica quando o mouse do usuário estiver por cima do elemento
+
+Algumas pseudo-classes CSS
+hover, quando o usuário passa o cursor sobre o elemento
+active, quando um elemento está sendo ativado pelo usuário
+
+footer {
+	
+	background: url("ev.png");
+}
+
+
+como faço para deixar a escrita no meio? 
+
+footer {
+  background: #BBBBBB;
+  padding-top: 2px;
+  display: flex; /* Define o container como um flex container */
+  justify-content: center; /* Centraliza o conteúdo horizontalmente */
+  align-items: center; /* Centraliza o conteúdo verticalmente */
+}
+
+
+Como adicionamos uma imagem de fundo em um elemento?
+r: Com o valor url no background do elemento
+
+copyright = 			<p class="copyright">&copy; Copyright Ev pinturas 1990 .      unicode &copy; 
+
+
+Que tipos de caracteres especiais podemos usar no nosso texto?
+r: Podemos usar qualquer caractere do Unicode
+
+Principais = header, nav, main, a, ul + li, ol +li, footer, 
+auto, 
+
+Para decidir quando devemos usar um formulário nas nossas páginas, alguns motivos podem ser analisados:
+
+1) Quando queremos enviar os dados para um servidor
+
+2) Quando queremos capturar informações que o usuário digitar
+
+3) Quando queremos enviar os dados para uma outra página
+
+Quais realmente podem ser levados em consideração?
+r: Todos os motivos podem ser levados em consideração
+
+Para criar formulário
+-> 		
+
+	<form>
+  <label for="nomesobrenome">Nome e sobrenome</label>          obs: for e id andam sempre juntos. "nomesobrenome"
+  <input type="text" id="nomesobrenome">
+</form>
+
+
+Para enviar formulário: 		<input type="submit" value="Enviar formulário">
+
+conteúdo inline ocupa todo o tamanho do conteúdo
+
+
+Qual propriedade devo alterar para que os meus <input> tenham um espaço entre a borda e o conteúdo?
+r: padding A propriedade padding serve para alterarmos o espaçamento interno, entre o conteúdo e a borda.
+
+área de texto: 			<textarea cols="30" rows="10"></textarea>
+                          colunas         linhas
+
+
+Para separar target radio 
+
+<label for="radio-email">Email</label>
+<input type="radio" value="email" id="radio-email">
+
+
+<label for="radio-telefone">Telefone</label>
+<input type="radio" value="telefone" id="radio-telefone"> 
+
+
+<label for="radio-whatsapp">Whatsapp</label>
+<input type="radio" value="whatsapp" id="radio-whatsapp"> 
+
+radio unico = name="contato" ex: 
+
+<label for="radio-whatsapp">Whatsapp</label>
+<input type="radio" name="contato" value="whatsapp" id="""
+
+Atalho input dentro da label: 
+<label><input type="checkbox">Gostaria de receber nossas novidades por e-mail?</label>
+
+
+
+Qual a propriedade de um input do tipo radio que preciso criar para que eles façam parte do mesmo grupo?
+
+r: name. A propriedade name só pode ser "preenchida" uma única vez, por isso que, quando eu seleciono um dos itens, ele desmarca o outro, mantendo somente um selecionado.
+
+----
+Qual a melhor abordagem quando temos uma configuração de CSS aplicada para um item e queremos replicar ela para um item parecido?
+
+r: Usar os seletores dos itens separados por vírgula. Essa é uma forma simples de fazermos a mesma configuração de CSS funcionar
+para os dois itens, sendo eles seletores dos elementos, de ids ou de classes.
+e
+Criar uma classe
+Quando temos um estilo que pode ser repetido, uma excelente estratégia é extrair isso para uma classe e usar a classe para aplicar esses estilos nos nossos elementos.
+
+
+
+
+
+
+
+
+
+
+
+
+<p class="paragrafo">
+
+  p {
+      color: blue;
+  }
+  
+  p.paragrafo {
+      color: red;
+  }
+  
+  .paragrafo {
+      color: purple;
+
+  Qual será a cor final do meu parágrafo?
+
+  r: red
+  
+  
+ O seletor p.paragrafo é o mais forte, e a cor aplicada é a vermelha (red).
+
+
+ Para uma seleção em uma caixinha
+
+ <select>
+  <option>Manhã</option>
+  <option>Tarde</option>
+  <option>Noite</option>
+</select>
+
+
+
+No último vídeo, foi vista a tag <option>. Qual a sua utilidade?
+
+  r: Para criarmos os itens selecionáveis de um <select>. A estrutura da tag <select> é composta de um ou mais <option>.
+
+
+<input type="text" id="nomesobrenome" class="input-padrao" required>  required = obrigatório ser preenchido se não o form não é enviado
+
+<input type="email" id="email"class="input-padrao"> 
+            type email = formato para facilitar a vida do usuário no celular. ex: type="password": aparece a senha em asteriscos mobile e no comp ajuda da forma de erro.
+Podendo acompanhar: required placeholder="DDD XXXX-XXXX">	
+
+
+
+
+<label for="radio-telefone"><input type="radio" name="contato" value="telefone" id="radio-telefone" checked>Telefone</label>
+                                                                                                    checked = a opção ja vem marcada. 
+
+                                  ------------------------------------------------------------------------------------------------------
+                                  Como transformamos um campo comum em um de preenchimento obrigatório?
+
+                                  Adicionando a propriedade required
+                                                                                                    
+                                                                                                    
+                                  Alternativa correta! Quando adicionamos a propriedade required, o navegador nos ajuda a validar se aquele campo está preenchido.
+
+tag fieldset = ref. a configuração daqueles campos ref. à um assunto específico
+título do <fieldset>
+            <legend>
+
+            </legend>
+          </fieldset>
+
+
+          <h1><img src="ev.png" alt="Logo da empresa ev pinturas"></h1> 
+          alt = alternativa caso a imagem não funcione
+
+
+
+          Qual tag usamos para marcar um título de um grupo de campos do formulário?
+
+          <legend>
+          Alternativa correta! É a tag <legend> que usamos para um título de um grupo de campos em qualquer formulário.
+
+Alguns tipos de inputs para celular: email, tel, number, password, date, datetime, month e search           
+
+
+Como configurar a transição visual de um elemento, que dure 3 segundos?
+
+transition: 3s;
+Alternativa correta! Utilizamos a propriedade transition para prover uma transição visual de um elemento.
+
+
+
+.enviar:hover	{
+	background: #9370DB;
+	transform: scale(1.1);
+}
+
+hover
+
+
+
+Qual propriedade do CSS usamos para aumentar um elemento proporcionalmente?
+
+
+transform: rotate()
+Alternativa errada! Utilizamos a propriedade transform: rotate() para "girar" um elemento em seu eixo.
+
+Alternativa correta
+transform: scale()
+Alternativa correta! Utilizamos a propriedade transform: scale() para aumentar um elemento proporcionalmente.
+
+
+<table>
+  tabela 
+</table>
+
+<table>
+  <tr>
+    <td>Dia</td>
+    <td>Horário</td>
+  </tr>
+  <tr>
+    <td>Segunda</td>
+    <td>8g ~ 20h</td>
+  </tr>
+  <tr>
+    <td>Quarta</td>
+    <td>8h ~ 20h</td>
+  </tr>
+  <tr>
+    <td>Sexta</td>
+    <td>8h ~ 20h</td>
+  </tr>
+</table>
+
+
+tr = linhas em uma tabela.
+
+Qual tag uso para criar linhas em uma tabela?
+
+<tr>
+Alternativa correta! Utilizamos a tag <tr> para marcar uma linha de uma tabela.
+
+<thead>
+    cabeçalho da tabela
+</thead>
+  <tbody>
+    Corpo do cabeçalho
+  </tbody>
+
+
+
+Como dividir uma tabela de forma mais semântica?
+
+Usando as tags <thead>, <tbody> e <tfoot>
+Alternativa correta! As tags <thead>, <tbody> e <tfoot> ajudam a deixar o conteúdo da tabela mais bem dividido e mais semântico.
+
+
+  As tabelas também nos oferecem a possibilidade de juntar células e montar um visual diferente. Por exemplo, 
+  quando uma linha, que deveria ter 5 células, passa a mostrar só "uma célula".
+
+  Esse efeito é conseguido através da propriedade colspan=X, onde X é o número de células que você quer agrupar.
+  
+  Portanto, em uma tabela de 5 colunas, para ter uma célula única na linha, usamos um código assim:
+  
+  <tr>
+      <td colspan="5">Rio de Janeiro</td> 
+  </tr>
+
+
+outra obs: 
+
+
+thead, th, td {
+	background: ;
+	color: black;
+	padding: 5px 5px 5px 5px;
+	border: 1px solid #000000;
+	border-radius: 3px;
+}
+
+
+
+Nesta aula, aprendemos:
+
+A criar uma tabela HTML
+A tag table, que representa a tabela
+A tag tr, que representa a linha da tabela
+A tag td, que representa a célula da tabela
+A tag thead, que representa o cabeçalho da tabela
+A tag tbody, que representa o corpo da tabela
+A tag th, que representa a célula do cabeçalho da tabela
+A tag tfoot, que representa o rodapé da tabela
+A estilizar a tabela
+
+section? conteúdo complexo
+enquanto a div é somente uma divisão
+
+
+
+Só devemos usar <section> quando o bloco for semântico
+Alternativa correta! Para um bloco onde o conteúdo tenha o mesmo significado, o mesmo sentido, usamos uma <section>.
+
+independente do tamanho da fonte base, a fonte do título sera o dobro da fonte base
+dobro da fonte base = 2em
+font-size: 2em;
+
+
+.titulo-principal {
+	text-align: center;
+	font-size: 2em;
+	margin: 0 0 1em;  < 1em standard espace
+}
+
+
+Ao criar um estilo qualquer, qual o melhor padrão para marcar o nosso conteúdo, ao criar uma classe?
+
+Alternativa correta
+Ser específico e genérico ao mesmo tempo
+Um balanço é a melhor alternativa. Nem tão específica, para poder repetir as classes, e nem tão genérica, para poder não precisar combinar classes.
+
+
+.titulo-principal {
+	text-align: center;
+	font-size: 2em;
+	margin: 0 0 1em;
+	background: #F5F5F5;
+  clear: left;
+}
+clear left limpa o float
+
+
+
+Para que serve a propriedade float?
+
+Descolar o elemento na lateral e deixar os outros elementos ao redor
+Alternativa correta! Tanto o float:left quanto o float: right servem para que o elemento se destaque na tela, deixe de ocupar o espaço em que estava, 
+para que os outros elementos possam se posicionar ao redor dele
+
+
+.itens:first-child {
+  font-weight: fold;
+} 
+.itens:last-child
+
+.itens:nth-child(3) #3 elemento da lista
+
+.itens:nth-child(2n) {
+  elementos pares 
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------// pseudo elementos
+
+pseudo elementos
+
+deixar a primeira letra em itálico: 
+
+.titulo-principal:first-letter {
+	font-weight: bold;
+}
+
+p:first-line {
+  content: " ["
+}
+deixa a primeira linha do texto com a qualidade
+
+unicode 
+.itens:before {
+	content: "✶";
+}
+
+
+Quando queremos criar um elemento na página, via CSS, antes do elemento do HTML, usamos a propriedade :before.
+
+
+main > p {         significa que a filha direta da main p vai ter a cor de fundo vermelha.
+  background: red;
+}
+
+img + p {  selecina um parágrafo dp do irmão do primeiro elemento
+	background: red;
+}
+
+img ~ p { seleciona todos os elementos dp do irmao do primeiro parágrafo obs:imagem primeiro irmão esta no rep
+
+}
+
+
+selecionar todos menos um parágrafo escolhido:
+
+.principal p:not(#missao) {
+  background: red;
+}
+
+exclusão
+
+
+ex: 
+
+<h2>
+  <section>
+      <h2>
+          <p>
+          </p>
+          <h2>
+
+  Como fazemos para selecionar o último <h2>?
+  
+    section > p + h2
+  
+  Alternativa correta! O último h2 é filho direto da section e irmão do p.
+
+
+
+
+  ------------------------------------------------------------------------------------------------------
+Como usar as medidas proporcionais para deixar um elemento de 100% de largura com o equivalente a um terço do elemento pai, menos 10px?
+
+Alternativa correta
+width: calc( 33% - 10px )
+
+Alternativa correta! Essa é a forma mais direta!
+
+e
+
+width: calc( (100% / 3) - 10px )
+
+Alternativa correta! Essa é uma forma mais complexa, não precisa dessa primeira conta!
+
+
+opacity: 0.7; vai deixando transparente de 0 a 1
+
+
+
+
+.imagem-beneficios {
+  width: 60%;
+  opacity: 0.3;
+  transition: 400ms;
+}
+
+.imagem-beneficios:hover {       = ao passar o mouse por cima a opacidade = 1 e sem = a 0.3 
+	opacity: 1;
+}
+
+alterar para rgba + opacidade
+
+color: rgba(0, 0, 0, 0.3);
+
+
+sombra no elemento:
+
+.imagem-beneficios {
+  width: 60%;
+  opacity: 1;
+  transition: 400ms;
+  box-shadow: 10px 10px #000000;  <----
+
+}                               \this/
+blur:      box-shadow: 10px 10px 5px #000000;
+
+                                    \this/
+sombra:    box-shadow: 10px 10px 5px 10px #000000;
+
+                                                            \    a segunda    / \           terceira            /
+mais de 1 sombra:    box-shadow: 10px 10px 5px 2px #000000, -10px -10px yellow, -20px 20px rgba(255, 0, 0, 0.5);
+
+box interna:     box-shadow: inset 0 0 30px #FF0000;
+                                X   y
+sombra em texto: 	text-shadow: 2px 2px #87CEEB;
+
+
+
+
+Como fazer uma sombra interna em um elemento?
+
+Alternativa correta
+box-shadow: inset 0 0 5px black;
+
+Alternativa correta! Sombra interna, preta, com 5px de espalhamento.
+
+
+
+Como marcar um elemento para que ele seja apresentado de outra forma, em uma tela de até 480px?
+
+Dentro do @media (max-width: 480px) {}
+
+Alternativa correta! É dentro dessa media query que criamos um estilo visual que compreenda telas de até 480px.
+
+ex: 
+
+@media screen and (max-width: 480px) {
+	body {
+		
+	}
+}
+
+
+ex: 
+
+@media screen and (max-width: 480px) {
+	.caixa, .principal, .conteudo-beneficios, .mapa-conteudo, .video{
+		width: auto;
+	}
+
+	h1 {
+		text-align: center;
+	}
+
+	nav {
+		position: static;
+	}
+
+	.lista-beneficios, .imagem-beneficios {
+		width: 100%;
+	}
+}
+
+
+Qual a principal tática para não perder muito tempo criando layouts responsivos?
+
+Alternativa correta
+Criar um layout fluido que se adapte sempre
+
+
+Alternativa correta
+Usar medidas proporcionais para tudo
+
+
+É hoje a melhor forma de criar qualquer conteúdo.

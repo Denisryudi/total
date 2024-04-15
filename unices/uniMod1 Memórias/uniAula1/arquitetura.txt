@@ -1,0 +1,275 @@
+A primeira seria o armazenamento de dados: Na arquitetura de Von-Neumann, os dados e o código são armazenados na mesma memória e acessados por meio de um único barramento, enquanto na arquitetura de Harvard, os dados e o código são armazenados em memórias separadas e acessados por barramentos diferentes.
+Segunda: Unidade de controle: Na arquitetura de Von-Neumann, a unidade de controle busca instruções e dados da memória em sequência ( memória programa  + dados), enquanto na arquitetura de Harvard, a unidade de controle pode buscar instruções e dados simultaneamente de suas memórias separadas.
+Ex: Von-Newmann : Calculadora, ela executa o cálculo e na sequência vem o resultado. já se for necessário algo mais complexo como o processamento de imagens, essa arquitetura pode se tornar um gargalo no desempenho devido à limitação do acesso sequencial à memória compartilhada. Nesses casos, a arquitetura de Harvard pode oferecer melhor desempenho, pois permite acesso simultâneo e independente a memórias separadas de instruções e dados.
+3ª seria a flexibilidade, na arquitetura de Von-Neumann, as instruções e dados são armazenados em uma única memória compartilhada, o que permite que as instruções sejam facilmente modificadas em tempo de execução pelo próprio programa, se necessário. Isso ocorre porque a unidade de controle pode acessar e modificar a memória de instruções da mesma forma que acessa e modifica a memória de dados. Por outro lado, na arquitetura de Harvard, as memórias de instruções e dados são separadas e não podem ser acessadas simultaneamente pela unidade de controle. Isso pode limitar a flexibilidade do programa em tempo de execução, tornando mais difícil modificar as instruções.
+
+geração 1
+Alan Tuting
+válvulas : Caros, pesados, quentes, grandes consumidores de energia, espaço e mão de obra e possuíam manutenção difícil
+Entrada por chaves, interruptores, soquetes, cabos(programação) e cartões perfurados(entrada de dados).
+Saída por cartôes perfurados
+Primeira ideia de "Bug"
+
+geração 2 1947: Bell Laboratories objetivo substituir as válvulas
+eram menores, geravam menos calor e eram mais baratos 
+transistores.
+IBM 1401 mais popular da 2ª geração
+Transistores principais (SSI E MSI)
+100X menores
+mais rápido e confiável o processamento
+Primeiras linguagens: Assembly, Cobol e Fortan
+
+terceira geração 1964-1977: circuitos integrados ----
+LSI: transistores menores 
+microeletronica/microchips
+ibm 360: 30,40,50,65,75
+Miniaturização e integração de transistores
+Baixíssimo consumo de energia
+Custo muito baixo 
+Multiprogramação
+Aumento da confiabilidade
+Primeiras ideias de chip
+
+
+quarta geração 1977-1991 ----
+computadores pessoais 
+appleII  
+VLSI: Very Large Scale Integration 
+
+1971: Intel 4004 - Primeiro processador em circuito integrado
+
+dezenas de milhares de transistores em um circuito integrado 
+
+1975: Processador intel 8080 
+Altair 8800
+Linguagem Basic (bill gates e paul allen)
+
+inicio da microsoft 
+
+1976: apple1
+1977 apple2
+
+Diversos circuitos integrados em um único chip
+Surgimento de SO voltados para usuários
+Popularização dos processador
+Criação das interfaces gráficas para os PCs.
+Início da popularização da internet
+Tempo de execução.
+Uso de memória auxiliar
+
+Nextstation monitor separado da cpu
+
+
+quinta geração ----
+
+1991~
+Passou do VLSI para o ULSI : ULTRA LARGE SCALE Integration
+Milhoes de circuitos por chip
+
+1991- world wide web
+1991-linux
+
+Hardware tudo que da pra ver. encherga de peças
+software não da pra ver
+
+
+------------------------
+
+0 e 1 
+
+tensões baixas e tensões altas
+
+burn cd = queima alguns pontos na trilha e tem essa informação onde esta queimando e onde não esta 0 e 1
+
+1byte é um agrupamento de 8 bits
+
+2^8 - 2bits = 2^16 - 4 bits = 2^32
+
+-----
+cálculo binário 
+                base binária: 2          3   2   1   0                                    
+Seguir imagem calculo binário ->número=  1   1   0   0
+                                        2^3 2^2 2^1 2^0 = 0*(2^0 = 1) = 0| 0*(2^1 = 2) = 0 | 1*(2^2 = 4) = 4 (2 elevado a 2 deu 4 e multiplicado por 1 deu 4) | 1*2^3 = 8 = 8;
+                                         8   4   0   0
+                Pega a base e multiplica pela posição depois fazemos a soma de todos os valores
+
+                ada lovelace
+
+
+
+
+Arquitetura de Von Neumann 
+gabinete/ desktop + CPU (parte lógica do computador onde se localiza a unidade de controle e unidade de lógica aritmética) estão em constante comunicação com a unidade de 
+memória = computador 
+                              <-
+Entrada -> Unidade de memória -> unidade de controle(UC) + unidade lógica e aritmetica(ULA) -> saída
+
+-A unidade lógica e aritmética é a parte do computador onde são feitas as operações aritméticas e lógicas com os dados.
+-O tipo de operação a ser executado é determinado por sinais vindos da unidade de controle.
+-A memória é conde ficam armazenados os dados e instruções que vão ser utilizados pela ULA e pela unidade de controle.
+-Os dados a serem operados são lidos dos dispositivos de entrada para a memória
+-Os resultados obtidos são enviados para a memória e dáí para os dispositivos de saída de dados.
+-A Unidade Central de Processamento - UCP (CPU - Central Processing Unity) é a responsável pelo processamento e execução dos programas armazenados na MP(Memória principal)
+
+UC Unidade de Controle: tem por função a vusca, interpretação e controle de execução das instruções,
+e o controle dos demais componentes do computador.
+
+ULA: Unidade Lógica e aritmetica - tem por função a efetiva execução das instruções.
+
+Para a comunicação entre os elementos:
+Barramento: Assim a UC e ULA se comunicam com a unidade de memória 
+
+É um refinamento do modelo de Von Neumann e possui o processador, memória e unidade de entrada/saída.
+Sendo um conjunto de fios que atuam como caminho de dados comum, porém compartilhado, para conectar
+vários subsistemas dentro do sistema.
+
+Barramento de dados: um barramento bidirecional para a transferência de informação entre a CPU e a memória principal.
+Barramento de endereços: permite a transferência de bits que representam um determinado endereço na memória. É unidirecional, pois somente a CPU aciona a memória.
+Barramento de controle: possibilita a passagem de sinais de controle entre a CPU e a memória principal de forma bidirecional.
+
+memória não volátil, não se apaga até que o usuário apague.
+memória volátil, memória ran, memória cache, registradores, etc...
+
+
+
+Pipelining
+Já vimos que o ciclo de instrução pode ser dividido nas etapas de busca e execução. A fase de busca costuma ser o gargalo na velocidade de execução de 
+instruções. Para resolver o problema, os fabricantes incluíram, nos processadores, a capacidade de buscar as instruções de forma antecipada, armazenando a 
+em registradores (prefetch bufers) (TANENBAUM, 2013).
+O conceito de pipelining consiste em dividir o ciclo de instrução em várias 
+etapas menores, cada parte é tratada por partes diferentes do hardware, de forma 
+a executar partes de instruções diferentes de forma simultânea. O conceito ica 
+um pouco mais claro na imagem a seguir, na qual temos uma representação de 
+um pipelining de 4 estágios.
+
+
+
+
+
+
+
+
+
+
+INTERFACES PARA PERIFÉRICOS
+Sabemos que os periféricos são componentes externos ao computador e que 
+precisam ser conectados de alguma forma. Cada periférico tem as suas particularidades, por isso, a forma de conexão pode ser diferente. Percebe-se isso 
+ao olhar um computador por trás e ver a quantidade de conectores diferentes.
+Em geral, essas interfaces podem ser de forma serial ou paralela. A diferenciação de ambas é simples. Uma interface paralela é uma interface que possui uma 
+ligação por meio de várias linhas, que transmitem os bits em paralelo. A quantidade de linhas varia de acordo com o tamanho de palavra que a interface transfere.
+Já a interface serial utiliza apenas uma linha e os bits são transferidos de 
+forma serial, ou seja, um depois do outro (STALLINGS, 2010).
+
+Em geral, as interfaces paralelas eram mais utilizadas para dispositivos que precisavam de uma transferência de dados mais rápida, porém com o avanço das interfaces
+seriais de alta velocidade, as interfaces paralelas foram sendo deixadas de lado.
+
+
+
+Em 1993, representantes de sete empresas (Compaq, DEC, IBM, Intel, 
+Microsot, NEC e Northem Telecom) se reuniram para buscar a melhor 
+maneira de anexar dispositivos de E/S a um computador. Desde então, 
+centenas de outras empresas se juntaram a elas. O padrão resultante, 
+lançado oicialmente em 1998, é denominado USB (Universal Serial 
+Bus — barramento serial universal), e é amplamente executado em 
+computadores pessoais.
+Alguns dos objetivos das empresas que conceberam o USB original e 
+iniciaram o projeto eram os seguintes:
+1. Usuários não terão de ajustar comutadores ou pontes em placas ou 
+dispositivos.
+2. Usuários não terão de abrir a torre para instalar novos dispositivos 
+de E/S.
+3. Haverá apenas um tipo de cabo, que servirá para conectar todos os 
+dispositivos.
+4. A energia para os dispositivos de E/S deve ser fornecida por esse 
+cabo.
+5. Até 127 dispositivos poderão ser ligados a um único computador.
+6. O sistema deve suportar dispositivos de tempo real (por exemplo, 
+som, telefone).
+7. Os dispositivos poderão ser instalados com o computador em funcionamento.
+8. Não será preciso reiniciar o computador após a instalação do dispositivo.
+9. O custo de produção do novo barramento e de seus dispositivos de 
+E/S não deve ser alto (TANENBAUM, 2013, p. 180)
+
+Nesse ponto é que entram as interrupções, que são os mecanismos que o 
+processador usa para tratar eventos de E/S. “Essencialmente, as interrupções permitem que os dispositivos solicitem que o processador pare o que está fazendo 
+no momento e execute um sotware para processar a solicitação do dispositivo” 
+(CARTER, 2003, p. 204). Esse processo é parecido com uma chamada de procedimento de sotware, mas iniciada pelo dispositivo externo.
+
+
+Os elementos que compõem um sistema de E/S (Entrada/Saída) em um computador incluem:
+
+Dispositivos de Entrada: São os componentes que permitem que o usuário forneça informações para o computador, como teclado, mouse, scanner, leitor de código de barras, etc.
+
+Controlador de E/S: É o componente responsável por gerenciar a comunicação entre o dispositivo de E/S e o processador. Ele controla o fluxo de dados de entrada e saída, e 
+executa funções como conversão de dados, 
+temporização, interrupções, etc.
+
+Barramento: É a via de comunicação entre os dispositivos de E/S e o processador. Ele permite a transferência de dados e comandos entre eles. O barramento é dividido em 
+barramento de dados, barramento de endereço e barramento de controle.
+
+Dispositivos de Saída: São os componentes que permitem que o computador forneça informações ao usuário, como monitor, impressora, alto-falantes, etc.
+
+Interface de E/S: É o circuito que conecta o dispositivo de E/S ao controlador de E/S. Ele realiza a conversão de sinais elétricos do dispositivo de E/S em sinais que 
+possam ser entendidos pelo controlador de E/S e vice-versa.
+
+Drivers de Dispositivos: São programas que permitem que o sistema operacional se comunique com os dispositivos de E/S, permitindo que o sistema operacional reconheça o 
+dispositivo, controle suas funções e obtenha informações dele.
+
+Um processador é um circuito integrado que possui muitos transistores.
+slot = socket 
+
+unidade de controle, unidade de logica aritmetica e unidade de 
+
+
+2BC HEXADECIMAL
+
+Cada dígito em um número hexadecimal representa um valor em base 16, que é uma notação posicional em que cada posição tem um valor que é uma potência de 16. A 
+base 16 utiliza os dígitos de 0 a 9 e as letras A, B, C, D, E e F para representar os valores de 10 a 15, respectivamente.
+
+No caso do número hexadecimal 2BC, o dígito "2" representa 2 x 16^2 (ou 2 x 256), o dígito "B" representa 11 x 16^1 (ou 11 x 16) e o dígito "C" representa 12 x 16^0 (ou 12 x 1).
+
+Portanto, o número hexadecimal 2BC é igual a:
+
+2 x 16^2 + 11 x 16^1 + 12 x 16^0 = 512 + 176 + 12 = 700
+
+Assim, o valor decimal correspondente ao número hexadecimal 2BC é 700.
+
+Para converter um número hexadecimal em binário, é necessário converter cada dígito hexadecimal em um conjunto de quatro dígitos binários, de acordo com a seguinte tabela:
+
+Hexadecimal	Binário
+0	0000
+1	0001
+2	0010
+3	0011
+4	0100
+5	0101
+6	0110
+7	0111
+8	1000
+9	1001
+A	1010
+B	1011
+C	1100
+D	1101
+E	1110
+F	1111
+Assim, para converter o número hexadecimal 2BC em binário, devemos substituir cada dígito por seu equivalente em binário:
+
+2 = 0010
+B = 1011
+C = 1100
+
+ram memory is more expensive and has a smaller storage capacity.
+in evolution is more easy to upgrate a Hard Drive than RAM 
+or
+In the evolution of computers, it is easier to improve a hard disk drive (HDD) than to improve the Random Access Memory (RAM), and similar things.
+
+Interrupts are signals sent by hardware or software to the CPU of a computer to request its attention. When an interrupt is received, the CPU 
+stops what it is doing and directs its attention to the interrupt request
+
+interrupções =  when you request something from the computer and it stops what it's doing to attend to your request.
+
+Polling is a computer programming technique where a program or system regularly checks for updates or changes in data 
+instead of waiting for notifications or interrupts. The statement you provided is referring to the concept of interrupts, 
+where the computer stops what it's doing to attend to a request or event.
+

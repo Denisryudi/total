@@ -1,0 +1,1860 @@
+intelij
+
+alt+ insert = criar classe
+
+shift + shift = settings =  ctrl + alt + s
+
+alt + enter = atalho create record/class
+utilizar o https://start.spring.io/ para configurar
+
+...Mapeando requisições com Spring Boot
+
+
+Você está trabalhando no desenvolvimento de uma API Rest para uma aplicação de um e-commerce, utilizando o Spring Boot, e cria uma classe Controller da seguinte maneira:
+
+@RequestMapping("/produtos")
+public class ProdutoController {
+
+    @GetMapping
+    public String produtosEmEstoque() {
+        return "Produtos em estoque...";
+    }
+}
+Mas ao executar a aplicação e entrar no endereço http://localhost:8080/produtos, você recebe um erro 404 - Not Found. Por que esse erro ocorreu?
+
+r:
+A classe Controller não foi mapeada corretamente.
+Para que o Spring reconheça a classe como um Controller, ela deve ser anotada com @Controller ou com @RestController.
+
+
+***
+Nessa aula, você aprendeu como:
+Criar um projeto Spring Boot utilizando o site do Spring Initializr;
+Importar o projeto no IntelliJ e executar uma aplicação Spring Boot pela classe contendo o método main;
+Criar uma classe Controller e mapear uma URL nela utilizando as anotações @RestController e @RequestMapping;
+Realizar uma requisição de teste no browser acessando a URL mapeada no Controller.
+
+...CORS
+
+CorsConfiguration
+
+
+@Configuration
+public class CorsConfiguration implements WebMvcConfigurer {
+
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**")
+            .allowedOrigins("http://localhost:3000")
+            .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD", "TRACE", "CONNECT");
+    }
+}
+
+
+DTO = DATA TRANSFER OBJECT = Para representar os dados que chegam e devolvem na API
+
+
+...Request Body
+
+Em uma classe Controller existe o seguinte método declarado:
+
+@PostMapping
+public void cadastrar(DadosCadastroProduto dados) {
+    System.out.println(dados);
+}
+E nesse projeto foi criado também o DTO DadosCadastroProduto:
+
+public record DadosCadastroProduto(String nome, String descricao, BigDecimal preco){}COPIAR CÓDIGO
+Você dispara uma requisição POST, enviando no corpo dela o seguinte JSON:
+
+{
+    "preco" : 399.99,
+    "descricao" : "Wireless. Cor: branca",
+    "nome" : "Fone de ouvido"
+}
+Mas, ao verificar o console da IDE, percebe que os dados estão chegando todos como null.
+
+Escolha a alternativa CORRETA que indica o porquê os dados estão retornado como nulos:
+
+r:
+
+
+Faltou anotar o parâmetro dados, recebido no método cadastrar do Controller, com @RequestBody.
+Sem essa anotação o Spring não vai ler o corpo da requisição e mapear os campos dele para o DTO recebido como parâmetro.
+
+
+
+***
+
+Nessa aula, você aprendeu como:
+Mapear requisições POST em uma classe Controller;
+Enviar requisições POST para a API utilizando o Insomnia;
+Enviar dados para API no formato JSON;
+Utilizar a anotação @RequestBody para receber os dados do corpo da requisição em um parâmetro no Controller;
+Utilizar o padrão DTO (Data Transfer Object), via Java Records, para representar os dados recebidos em uma requisição POST.
+
+...caso nao encontre 
+
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+
+...Mudança do MySQL no Maven
+
+
+Houve uma mudança no Maven em relação à dependência do MySQL, na qual o group-id e o artifact-id foram alterados.
+
+A partir de agora, você deve adicionar a dependência do driver MySQL no arquivo pom.xml da seguinte maneira:
+
+<dependency>
+    <groupId>com.mysql</groupId>
+    <artifactId>mysql-connector-j</artifactId>
+    <scope>runtime</scope>
+</dependency>
+Além disso, pode acontecer do Spring Boot não encontrar automaticamente o driver do MySQL no projeto, sendo recomendado que você adicione mais uma propriedade no arquivo application.properties:
+
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+...YAML
+.yml
+
+
+
+YAML Configuration
+YAML é um outro formato bastante utilizado para definir dados de configuração hierárquica, como é feito no Spring Boot.
+
+Pegando o mesmo exemplo do nosso arquivo application.properties, podemos convertê-lo para YAML alterando seu nome para application.yml e modificando seu conteúdo para:
+
+
+spring:
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/clinica
+        username: root
+        password: root
+
+
+Com YAML, a configuração se tornou mais legível, pois não contém prefixos repetidos. Além de legibilidade e redução de 
+repetição, o uso de YAML facilita o armazenamento de variáveis de configuração de ambiente, conforme recomenda o 12
+ Factor App, uma metodologia bastante conhecida e utilizada que define 12 boas práticas para criar uma aplicação
+  moderna, escalável e de manutenção simples.
+
+Mas afinal, qual formato usar?
+Apesar dos benefícios que os arquivos YAML nos trazem em comparação ao arquivo properties, a decisão de escolher 
+um ou outro é de gosto pessoal. Além disso, não é recomendável ter ao mesmo tempo os dois tipos de arquivo em um 
+mesmo projeto, pois isso pode levar a problemas inesperados na aplicação.
+
+Caso opte por utilizar YAML, fique atento, pois escrevê-lo no início pode ser um pouco trabalhoso devido às suas 
+regras de indentação.
+
+
+...Embeddable
+
+package med.voll.api.endereco;
+
+import jakarta.persistence.Embeddable;
+
+@Embeddable
+public class Endereco {
+    private String logradouro;
+    private String bairro;
+    private String cep;
+    private String numero;
+    private String complemento;
+    private String cidade;
+    private String uf;
+
+
+}
+
+
+
+package med.voll.api.medico;
+
+import jakarta.persistence.*;
+
+import med.voll.api.endereco.Endereco;
+@Table(name = "medicos")
+@Entity(name = "medico")
+public class Medico {
+
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    private String nome;
+    private String email;
+    private String crm;
+
+    @Enumerated(EnumType.STRING)
+    private Especialidade especialidade;
+
+    @Embedded                                        <<<Embedded
+    private Endereco endereco;
+}
+
+...Interface = Repository
+
+package med.voll.api.medico;
+
+public interface MedicoRepository {
+}
+
+
+
+stopar ao mexer em db ou adicionar dependencias
+
+
+
+mysql> use vollmed_api                                                        
+Database changed
+mysql> show tables;
++-----------------------+
+| Tables_in_vollmed_api |
++-----------------------+
+| flyway_schema_history |
+| medicos               |
++-----------------------+
+2 rows in set (0.01 sec)
+
+mysql> desc medicos;
++---------------+--------------+------+-----+---------+----------------+
+| Field         | Type         | Null | Key | Default | Extra          |
++---------------+--------------+------+-----+---------+----------------+
+| id            | bigint       | NO   | PRI | NULL    | auto_increment |
+| nome          | varchar(100) | NO   |     | NULL    |                |
+| email         | varchar(100) | NO   | UNI | NULL    |                |
+| crm           | varchar(6)   | NO   | UNI | NULL    |                |
+| especialidade | varchar(100) | NO   |     | NULL    |                |
+| logradouro    | varchar(100) | NO   |     | NULL    |                |
+| bairro        | varchar(100) | NO   |     | NULL    |                |
+| cep           | varchar(9)   | NO   |     | NULL    |                |
+| complemento   | varchar(100) | YES  |     | NULL    |                |
+| numero        | varchar(20)  | YES  |     | NULL    |                |
+| uf            | char(2)      | NO   |     | NULL    |                |
+| cidade        | varchar(100) | NO   |     | NULL    |                |
++---------------+--------------+------+-----+---------+----------------+
+12 rows in set (0.01 sec)
+
+ 
+
+
+ --- @RestController
+@RequestMapping("medicos")
+public class MedicoController {
+
+    @Autowired
+    private MedicoRepository repository;
+
+    @PostMapping
+    @Transactional                <-----spring
+    public void cadastrar(@RequestBody DadosCadastroMedico dadosMedicos) {
+        repository.save(new Medico(dadosMedicos));
+    }
+
+}
+
+
+mysql> select * from medicos;
++----+------------------+---------------------------+--------+---------------+------------+--------+----------+-------------+--------+----+----------+
+| id | nome             | email                     | crm    | especialidade | logradouro | bairro | cep      | complemento | numero | uf | cidade   |
++----+------------------+---------------------------+--------+---------------+------------+--------+----------+-------------+--------+----+----------+
+|  1 | Rodrigo Ferreira | rodrigo.ferreira@voll.med | 123456 | ORTOPEDIA     | rua 1      | bairro | 12345678 | NULL        | 1      | DF | Brasilia |
++----+------------------+---------------------------+--------+---------------+------------+--------+----------+-------------+--------+----+----------+
+1 row in set (0.00 sec)
+
+mysql>
+
+
+...BeanValidation
+
+
+  @NotBlank nao é nulo nem vazio e para String
+
+  NotNull Enum
+
+  @Valid = validar DTO herdada
+
+  ...Validando dados   @Valid
+
+
+
+
+Você está trabalhando em um projeto que utiliza o Bean Validation, entretanto, as validações não estão sendo realizadas e as informações
+ estão chegando ao banco de dados de maneira inválida.
+
+Analise os seguintes trechos de códigos desse projeto:
+
+
+
+@PostMapping
+public void cadastrar(@RequestBody DadosCadastroProduto dados) {
+    repository.save(new Produto(dados));
+}COPIAR CÓDIGO
+public record DadosCadastroProduto(
+        @NotBlank String nome,
+        @NotBlank String descricao,
+        @NotNull @DecimalMin(“1.00”) BigDecimal preco
+) {
+}
+
+
+
+Escolha a alternativa CORRETA que identifica o problema mencionado:
+
+
+Faltou anotar o parâmetro dados, recebido no método cadastrar do Controller, com @Valid.
+Sem essa anotação o Spring não vai disparar o processo de validação do Bean Validation.
+
+
+------------------------/
+
+...CORREÇÃO NON STOP MIGRATION
+
+Para saber mais: Erro na migration
+
+
+Conforme orientado ao longo dessa aula é importante sempre parar o projeto ao criar os arquivos de migrations, 
+para evitar que o Flyway os execute antes da hora, com o código ainda incompleto, causando com isso problemas.
+
+Entretanto, eventualmente pode acontecer de esquecermos de parar o projeto e algum erro acontecer ao tentar 
+inicializar a aplicação. Nesse caso será exibido o seguinte erro ao tentar inicializar a aplicação:
+
+Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: 
+Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Validate failed: Migrations have failed validationCOPIAR CÓDIGO
+Perceba na mensagem de erro que é indicado que alguma migration falhou, impedindo assim que o projeto seja inicializado corretamente. 
+Esse erro também pode acontecer se o código da migration estiver inválido, contendo algum trecho de SQL digitado de maneira incorreta.
+
+Para resolver esse problema será necessário acessar o banco de dados da aplicação e executar o seguinte comando sql:
+
+delete from flyway_schema_history where success = 0;
+
+O comando anterior serve para apagar na tabela do Flyway todas as migrations cuja execução falhou. Após isso,
+ basta corrigir o código da migration e executar novamente o projeto.
+
+Obs: Pode acontecer de alguma migration ter criado uma tabela e/ou colunas e com isso o problema vai persistir, 
+pois o flyway não vai apagar as tabelas/colunas criadas em migrations que falharam.
+ Nesse caso você pode apagar o banco de dados e criá-lo novamente:
+
+drop database vollmed_api;
+create database vollmed_api;
+
+
+------------------/
+
+***
+
+Nessa aula, você aprendeu como:
+Adicionar novas dependências no projeto;
+Mapear uma entidade JPA e criar uma interface Repository para ela;
+Utilizar o Flyway como ferramenta de Migrations do projeto;
+Realizar validações com Bean Validation utilizando algumas de suas anotações, como a @NotBlank.
+
+
+<<<<<Não vai precisar do @Transactional, pois é um método de leitura, apenas carregando registros do banco de dados
+não estamos salvando, atualizando nem excluindo informações do banco de dados, não precisa ter uma transação ativa.
+
+...DTO
+
+
+Para saber mais: DTOs ou entidades?
+
+
+
+Estamos utilizando DTOs para representar os dados que recebemos e devolvemos pela API, mas você provavelmente deve estar se perguntando
+ “Por que ao invés de criar um DTO não devolvemos diretamente a entidade JPA no Controller?”. Para fazer isso,
+  bastaria alterar o método listar no Controller para:
+
+@GetMapping
+public List<Medico> listar() {
+    return repository.findAll();
+}
+
+Desse jeito o código ficaria mais enxuto e não precisaríamos criar o DTO no projeto. Mas, será que isso realmente é uma boa ideia?
+
+Os problemas de receber/devolver entidades JPA
+De fato é muito mais simples e cômodo não utilizar DTOs e sim lidar diretamente com as entidades JPA nos controllers.
+Porém, essa abordagem tem algumas desvantagens, inclusive causando vulnerabilidade na aplicação para
+ataques do tipo Mass Assignment.
+
+Um dos problemas consiste no fato de que, ao retornar uma entidade JPA em um método de um Controller, 
+o Spring vai gerar o JSON contendo todos os atributos dela, sendo que nem sempre esse
+é o comportamento que desejamos.
+
+Eventualmente podemos ter atributos que não desejamos que sejam devolvidos no JSON, seja por motivos de segurança,
+no caso de dados sensíveis, ou mesmo por não serem utilizados pelos clientes da API.
+
+Utilização da anotação @JsonIgnore
+Nessa situação, poderíamos utilizar a anotação @JsonIgnore, que nos ajuda a ignorar certas
+propriedades de uma classe Java quando ela for serializada para um objeto JSON.
+
+Sua utilização consiste em adicionar a anotação nos atributos que desejamos ignorar quando o JSON for gerado. Por exemplo, 
+suponha que em um projeto exista uma entidade JPA Funcionario, na qual desejamos ignorar o atributo salario:
+
+@Getter
+@NoArgsConstructor
+@EqualsAndHashCode(of = "id")
+@Entity(name = "Funcionario")
+@Table(name = "funcionarios")
+public class Funcionario {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String nome;
+    private String email;
+
+    @JsonIgnore
+    private BigDecimal salario;
+
+    //restante do código omitido…
+}
+
+
+No exemplo anterior, o atributo salario da classe Funcionario não será exibido nas respostas JSON e o problema estaria solucionado.
+
+Entretanto, pode acontecer de existir algum outro endpoint da API na qual precisamos enviar no 
+JSON o salário dos funcionários, sendo que nesse caso teríamos problemas, pois com a anotação
+@JsonIgnore tal atributo nunca será enviado no JSON, e ao remover a anotação o atributo 
+sempre será enviado. Perdemos, com isso, a flexibilidade de controlar quando determinados
+atributos devem ser enviados no JSON e quando não.
+
+DTO
+O padrão DTO (Data Transfer Object) é um padrão de arquitetura que era bastante utilizado antigamente em aplicações 
+Java distribuídas (arquitetura cliente/servidor) para representar os dados que eram enviados e recebidos entre
+as aplicações cliente e servidor.
+
+O padrão DTO pode (e deve) ser utilizado quando não queremos expor todos os atributos de alguma entidade do nosso projeto,
+situação igual a dos salários dos funcionários mostrado no exemplo de código anterior. Além disso, com a flexibilidade 
+e a opção de filtrar quais dados serão transmitidos, podemos poupar tempo de processamento.
+
+Loop infinito causando StackOverflowError
+Outro problema muito recorrente ao se trabalhar diretamente com entidades JPA acontece quando uma entidade possui
+algum autorrelacionamento ou relacionamento bidirecional. Por exemplo, considere as seguintes entidades JPA:
+
+@Getter
+@NoArgsConstructor
+@EqualsAndHashCode(of = "id")
+@Entity(name = "Produto")
+@Table(name = "produtos")
+public class Produto {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String nome;
+    private String descricao;
+    private BigDecimal preco;
+
+    @ManyToOne
+    @JoinColumn(name = “id_categoria”)
+    private Categoria categoria;
+
+    //restante do código omitido…
+}
+
+
+
+@Getter
+@NoArgsConstructor
+@EqualsAndHashCode(of = "id")
+@Entity(name = "Categoria")
+@Table(name = "categorias")
+public class Categoria {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String nome;
+
+    @OneToMany(mappedBy = “categoria”)
+    private List<Produto> produtos = new ArrayList<>();
+
+    //restante do código omitido…
+}
+Ao retornar um objeto do tipo Produto no Controller, o Spring teria problemas para gerar o JSON desse objeto, causando 
+uma exception do tipo StackOverflowError. Esse problema ocorre porque o objeto produto tem um atributo do tipo Categoria,
+que por sua vez tem um atributo do tipo List<Produto>, causando assim um loop infinito no processo de serialização para JSON.
+
+Tal problema pode ser resolvido com a utilização da anotação @JsonIgnore ou com a utilização das anotações @JsonBackReference
+e @JsonManagedReference, mas também poderia ser evitado com a utilização de um DTO que representa apenas os dados que devem
+ ser devolvidos no JSON.
+
+
+Mass Assignment: Ruby on Rails, NodeJS.
+Autobinding: Spring MVC, ASP NET MVC.
+Object injection: PHP.
+
+
+http://localhost:8080/medicos?size=1&page=1 
+
+size=1&
+page=1 
+
+sort=nome
+sort=nome&size=1&page=1
+
+
+...Paginação
+
+Para saber mais: parâmetros de paginação
+
+
+Conforme aprendemos nos vídeos anteriores, por padrão, os parâmetros utilizados para realizar a paginação e a 
+ordenação devem se chamar page, size e sort. Entretanto, o Spring Boot permite que os nomes 
+de tais parâmetros sejam modificados via configuração no arquivo application.properties.
+
+Por exemplo, poderíamos traduzir para português os nomes desses parâmetros com as seguintes propriedades:
+
+spring.data.web.pageable.page-parameter=pagina
+spring.data.web.pageable.size-parameter=tamanho
+spring.data.web.sort.sort-parameter=ordem
+
+
+Com isso, nas requisições que utilizam paginação, devemos utilizar esses nomes que foram definidos.
+ Por exemplo, para listar os médicos de nossa API trazendo apenas 5 registros da página 2, 
+ ordenados pelo e-mail e de maneira decrescente, a URL da requisição deve ser:
+
+http://localhost:8080/medicos?tamanho=5&pagina=1&ordem=email,desc
+
+
+---
+
+...Paginação ex
+
+Um colega de trabalho está tendo dificuldades em utilizar o recurso de
+ paginação do Spring Boot e pediu sua ajuda.
+
+Ao analisar a classe Controller que ele criou, você identificou o seguinte método:
+
+
+@GetMapping
+public void carregarProdutosCadastrados(Pageable paginacao) {
+    repository.findAll().stream().map(DadosListagemProduto::new);
+}
+
+
+Quais problemas no código anterior você identifica? Selecione até duas alternativas.
+
+r:
+
+O parâmetro paginação não está sendo utilizado.
+O parâmetro paginação foi declarado corretamente no método do Controller, entretanto, ele não foi utilizado na chamada ao método do repository.
+
+
+O retorno do método está como void.
+Para devolver as informações da API, o método não pode ter void como retorno.
+
+DTO = 
+
+
+package med.voll.api.medico;
+
+
+public record DadosListagemMedico(String nome, String email, String crm, Especialidade especialidade) {
+
+    public DadosListagemMedico(Medico medico) {
+        this(medico.getNome(), medico.getEmail(), medico.getCrm(), medico.getEspecialidade());
+    }
+}
+
+
+***
+
+Nessa aula, você aprendeu como:
+Utilizar a anotação @GetMapping para mapear métodos em Controllers que produzem dados;
+Utilizar a interface Pageable do Spring para realizar consultas com paginação;
+Controlar a paginação e a ordenação dos dados devolvidos pela API com os parâmetros page, size e sort;
+Configurar o projeto para que os comandos SQL sejam exibidos no console.
+
+
+EX: ja feito
+
+
+Você precisará adicionar um novo método no Controller de paciente:
+
+@GetMapping
+public Page<DadosListagemPaciente> listar(@PageableDefault(page = 0, size = 10, sort = {"nome"}) Pageable paginacao) {
+    return repository.findAll(paginacao).map(DadosListagemPaciente::new);
+}
+
+
+Também precisará criar o DTO DadosListagemPaciente:
+
+public record DadosListagemPaciente(String nome, String email, String cpf) {
+    public DadosListagemPaciente(Paciente paciente) {
+        this(paciente.getNome(), paciente.getEmail(), paciente.getCpf());
+    }
+}
+
+
+
+E, caso queira ver os comandos SQL disparados no banco de dados, vai precisar adicionar as seguintes propriedades no arquivo application.properties:
+
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+
+
+
+
+...PATCH OU PUT
+
+Para saber mais: PUT ou PATCH?
+
+
+Escolher entre o método HTTP PUT ou PATCH é uma dúvida comum que surge quando estamos desenvolvendo APIs e precisamos criar 
+um endpoint para atualização de recursos. Vamos entender as diferenças entre as duas opções e quando utilizar cada uma.
+
+PUT
+O método PUT substitui todos os atuais dados de um recurso pelos dados passados na requisição, ou seja, estamos falando 
+de uma atualização integral. Então, com ele, fazemos a atualização total de um recurso em apenas uma requisição.
+
+
+PATCH = ATT PARCIAL
+O método PATCH, por sua vez, aplica modificações parciais em um recurso. Logo, é possível modificar apenas uma parte
+ de um recurso. Com o PATCH, então, realizamos atualizações parciais, o que torna as opções de atualização mais flexíveis.
+
+Qual escolher?
+Na prática, é difícil saber qual método utilizar, pois nem sempre saberemos se um recurso será atualizado parcialmente 
+ou totalmente em uma requisição - a não ser que realizemos uma verificação quanto a isso, algo que não é recomendado.
+
+O mais comum então nas aplicações é utilizar o método PUT para requisições de atualização de recursos em uma API,
+ sendo essa a nossa escolha no projeto utilizado ao longo deste curso.
+
+ Exclusão lógica = torna inativo
+
+ ...Parâmetros dinâmicos
+
+ Parâmetros dinâmicos
+PRÓXIMA ATIVIDADE
+
+Você está trabalhando em uma aplicação com Spring Boot e se depara com o seguinte método:
+
+@DeleteMapping(“/id”)
+public void apagar(@PathVariable Long id) {
+    repository.deleteById(id);
+}
+
+Considerando que a classe Controller a qual esse método pertence está anotada com @RequestMapping(“/produtos”), o que
+ acontecerá se uma requisição DELETE for disparada para a API com a url /produtos/0?
+
+ r:
+
+ Ocorrerá um erro 404 - not found.
+
+
+O parâmetro dinâmico id, adicionado na anotação @DeleteMapping, foi declarado sem estar entre chaves({}). Com isso, 
+o Spring vai considerar que a URL para chamar esse método deve ser /produtos/id, ou seja, ele vai considerar
+ que a palavra id faz parte da URL, e não que se trata de um parâmetro dinâmico.
+
+
+ ***
+
+Nessa aula, você aprendeu como:
+Mapear requisições PUT com a anotação @PutMapping;
+Escrever um código para atualizar informações de um registro no banco de dados;
+Mapear requisições DELETE com a anotação @DeleteMapping;
+Mapear parâmetros dinâmicos em URL com a anotação @PathVariable;
+Implementar o conceito de exclusão lógica com o uso de um atributo booleano.
+
+...URI
+
+
+Header Location
+
+
+Você se depara com o seguinte método, em uma classe Controller:
+
+@PostMapping
+@Transactional
+public ResponseEntity cadastrar(@RequestBody @Valid DadosCadastroProduto dados) {
+    var produto = new Produto(dados);
+    repository.save(produto);
+
+    var uri = new URI("/produtos/{id}");
+
+    return ResponseEntity.ok(new DadosDetalhamentoProduto(produto));
+}
+Levando em consideração as boas práticas de retorno em uma requisição HTTP do tipo POST,
+escolha as alternativas que indicam os problemas do código anterior:
+
+r:
+O cabeçalho Location será criado de maneira incorreta.
+
+No código anterior, não foi utilizada a classe UriComponentsBuilder, do Spring, para a criação da URI; 
+em vez disso, a URI foi criada manualmente e de maneira incorreta. Além disso,
+a URI nem foi adicionada na resposta a ser devolvida pela API.
+
+
+***
+
+Nessa aula, você aprendeu como:
+Utilizar a classe ResponseEntity, do Spring, para personalizar os retornos dos métodos de uma classe Controller;
+Modificar o código HTTP devolvido nas respostas da API;
+Adicionar cabeçalhos nas respostas da API;
+Utilizar os códigos HTTP mais apropriados para cada operação realizada na API.
+
+
+...Exceptions Spring
+
+
+ Tratamento de exceptions
+
+
+Em um projeto de uma API Rest com Spring Boot, o tratamento personalizado de Erro 404 não está sendo realizado
+corretamente, apesar de existir a seguinte classe nesse projeto:
+
+
+
+@RestController
+public class ExceptionHandler {
+
+    @ExceptionHandler(EntityNotFoundException.class)
+    public void tratarErro404() {
+    }
+
+}
+
+
+Por qual motivo o método tratarErro404 dessa classe não está sendo executado?
+
+
+r:
+
+    -.Errada.
+O retorno do método foi declarado como void.
+Embora o ideal seja devolver alguma informação, deixar o método sem retorno não impede que ele seja chamado pelo spring.
+
+
+O retorno do método foi declarado como void.
+
+A classe foi anotada de maneira incorreta.
+
+    -.Correta.
+Em APIs Rest, classes de tratamento de exceptions devem ser anotadas com 
+o @RestControllerAdvice e não com o @RestController.
+
+
+... Personalização de erro
+
+
+ Para saber mais: personalizando mensagens de erro
+PRÓXIMA ATIVIDADE
+
+Você deve ter notado que o Bean Validation possui uma mensagem de erro para cada uma de suas anotações. Por exemplo, quando a validação falha em algum atributo anotado com @NotBlank, a mensagem de erro será: must not be blank.
+
+Essas mensagens de erro não foram definidas na aplicação, pois são mensagens de erro padrão do próprio Bean Validation. Entretanto, caso você queira, pode personalizar tais mensagens.
+
+Uma das maneiras de personalizar as mensagens de erro é adicionar o atributo message nas próprias anotações de validação:
+
+public record DadosCadastroMedico(
+    @NotBlank(message = "Nome é obrigatório")
+    String nome,
+
+    @NotBlank(message = "Email é obrigatório")
+    @Email(message = "Formato do email é inválido")
+    String email,
+
+    @NotBlank(message = "Telefone é obrigatório")
+    String telefone,
+
+    @NotBlank(message = "CRM é obrigatório")
+    @Pattern(regexp = "\\d{4,6}", message = "Formato do CRM é inválido")
+    String crm,
+
+    @NotNull(message = "Especialidade é obrigatória")
+    Especialidade especialidade,
+
+    @NotNull(message = "Dados do endereço são obrigatórios")
+    @Valid DadosEndereco endereco) {}COPIAR CÓDIGO
+Outra maneira é isolar as mensagens em um arquivo de propriedades, que deve possuir o nome ValidationMessages.properties e ser criado no diretório src/main/resources:
+
+nome.obrigatorio=Nome é obrigatório
+email.obrigatorio=Email é obrigatório
+email.invalido=Formato do email é inválido
+telefone.obrigatorio=Telefone é obrigatório
+crm.obrigatorio=CRM é obrigatório
+crm.invalido=Formato do CRM é inválido
+especialidade.obrigatoria=Especialidade é obrigatória
+endereco.obrigatorio=Dados do endereço são obrigatóriosCOPIAR CÓDIGO
+E, nas anotações, indicar a chave das propriedades pelo próprio atributo message, delimitando com os caracteres { e }:
+
+public record DadosCadastroMedico(
+    @NotBlank(message = "{nome.obrigatorio}")
+    String nome,
+
+    @NotBlank(message = "{email.obrigatorio}")
+    @Email(message = "{email.invalido}")
+    String email,
+
+    @NotBlank(message = "{telefone.obrigatorio}")
+    String telefone,
+
+    @NotBlank(message = "{crm.obrigatorio}")
+    @Pattern(regexp = "\\d{4,6}", message = "{crm.invalido}")
+    String crm,
+
+    @NotNull(message = "{especialidade.obrigatoria}")
+    Especialidade especialidade,
+
+    @NotNull(message = "{endereco.obrigatorio}")
+    @Valid DadosEndereco endereco) {}
+
+
+
+    ***
+
+
+Nessa aula, você aprendeu como:
+Criar uma classe para isolar o tratamento de exceptions da API, com a utilização da anotação @RestControllerAdvice;
+Utilizar a anotação @ExceptionHandler, do Spring, para indicar qual exception um determinado método da classe de tratamento de erros deve capturar;
+Tratar erros do tipo 404 (Not Found) na classe de tratamento de erros;
+Tratar erros do tipo 400 (Bad Request), para erros de validação do Bean Validation, na classe de tratamento de erros;
+Simplificar o JSON devolvido pela API em casos de erro de validação do Bean Validation.
+
+
+stateless nao fala se o usuário esta logado, nao guarda estado.
+Cada requisição tivesse que logar o usuário novamente
+
+Para nao precisar enviar usuario e senha para cada requisição, é usado o token
+para recuperar as informações
+json web token
+
+
+Existem diversas formas de se realizar o processo de autenticação e autorização em aplicações Web e APIs Rest, sendo que no curso utilizaremos Tokens JWT.
+
+Você pode conferir as principais formas de autenticação lendo este artigo: Tipos de autenticação.
+https://www.alura.com.br/artigos/tipos-de-autenticacao?_gl=1*dtwyf*_ga*MzE2NDUyMDgxLjE2OTYwMTAzMzk.*_ga_1EPWSW3PCS*MTY5NjE3NjIzNS42MC4xLjE2OTYxODI1NzAuMC4wLjA.*_fplc*amIlMkJzWWRqYSUyRmRaR0hBYjhZOU13alRNaVNlaWhNeEVSWVg5cW8ybHRNOTJzUUpIWWRCUnBpczd6ZSUyQmdGaiUyQjI1bkt4TmR4YmlHNUVQM0JIQjV6WDBXVktlNTF4VzZCbnFIREtjeG5BMnVSQ1doR2dJYWZZYUlOMGtDa014Y2clM0QlM0Q.
+
+
+Autenticação por sessão
+Este foi um dos primeiros métodos de autenticação, criado no início do desenvolvimento das aplicações web. Muito empregado até hoje, 
+neste modelo o usuário pode se autenticar com usuário e senha ou por algum outro método.
+
+O servidor, por sua vez, cria uma sessão em sua memória ou banco e devolve a informação de usuário através
+de um cookie com o identificador da sessão criada.
+
+Na próxima requisição, é passado o identificador da sessão e o servidor devolve o acesso ao recurso solicitado 
+ou realiza algum outro tipo de manipulação referente à conta autenticada.
+
+
+
+Autenticação por token
+Neste método, após ter um login e senha validados pelo servidor, será criado um token que o usuário receberá em resposta e que
+permitirá o acesso a algum recurso. O padrão adotado por grande número das aplicações web hoje é o formato
+JWT (JSON Web Token) e ele fará com que o token seja assinado da forma correta para haver a autenticação 
+da requisição a um recurso no servidor.
+
+
+
+É importante salientar que informações do usuário não ficarão salvas no servidor. Elas são gravadas no token, que tem um período
+ geralmente curto para expiração, por volta de 10 minutos. O tempo dependerá dos requisitos de segurança da aplicação.
+
+Se um token chegar a expirar, uma solução seria pedir ao servidor um novo token válido. Isso acarretaria um novo
+processo de autenticação por login e senha ou por outro método escolhido. Porém, não é prático que a 
+aplicação solicite usuário e senha novamente a cada expiração. Uma estratégia para lidar com essa
+situação seria usar refresh token.
+
+Como uma solução comum, costuma-se enviar tanto o token de acesso quanto o refresh token, assim que
+a autenticação na aplicação é realizada. No entanto, o refresh token possui um tempo maior
+para a expiração, e neste caso não armazenamos nenhuma informação de usuário.
+
+Outra característica do refresh token é que ele é de uso único, então na próxima 
+solicitação é enviado um token e um novo refresh token.
+
+Autenticando por sessão versus token JWT
+Apresentadas as características destes dois métodos vamos ver agora uma comparação entre eles.
+
+Na autenticação por sessão, o estado da sessão é mantido pelo servidor com as informações do usuário, 
+podendo ser armazenado em um banco de dados ou na memória (Stateful). Com essa estratégia, podemos
+nos deparar com problemas como limites de hardware. Um consumo excessivo de memória pode causar
+até o travamento da máquina, dada a quantidade de chamadas para o garbage collector.
+
+Quando utilizamos autenticação por Token JWT, o cenário muda um pouco, já que as informações não
+são mais mantidas no servidor (Stateless), e sim no token, na máquina do cliente. O token 
+carregará todas as informações necessárias para a autenticação, como a identificação do
+usuário, assinatura, data de expiração e até o método de autenticação utilizado.
+
+Mas de maneira prática, como diferenciar os dois modelos de autenticação? A princípio são
+bem similares. O que vai diferenciá-los de maneira mais efetiva será guardar ou não o
+estado no servidor (stateless/stateful) o que irá impactar na forma de implementar
+escalabilidade, para que nosso sistema lide com uma carga maior de trabalho.
+
+
+---escalabilidade
+
+No tempo de vida de uma aplicação de qualquer tipo é muito comum que ela comece a demandar mais recursos para sua operação.
+
+Esse crescimento deve ser ordenado e suportado de maneira a não afetar a utilização do sistema, o que chamamos de escalabilidade.
+
+A implementação de segurança através de um dos métodos de autenticação traz alguns desafios à escalabilidade da aplicação. 
+Se optarmos por usar sessões, o controle tende a ficar complexo, pois o estado pode estar espalhado por diversos 
+servidores e/ou instâncias.
+
+Neste contexto, é comum haver a figura do balanceador de carga (load balance), responsável por distribuir a carga de 
+requisições aos recursos entre os demais servidores que mantém a aplicação.
+
+No caso da autenticação por sessão, como podemos garantir que a sessão correta será devolvida para o cliente? Trabalhar 
+com o conceito de Sticky Session pode ser útil, já que em cenários com load balance, esta técnica vincula uma sessão
+ de usuário a um servidor/instância específico.
+
+Escalar uma aplicação é muito importante e devemos usar métodos de autenticação que atendam a esse requisito, garantindo
+ assim maior segurança na utilização de sistemas por nossos usuários.
+
+Conclusão
+Independentemente do método a ser adotado, o importante é que ao projetar uma solução de software o desenvolvedor “fique ligado” 
+na implementação de métodos de autenticação que possibilitem a escalabilidade da aplicação com o menor transtorno, 
+além de uma manutenção sem estresse.
+
+Para aprender mais sobre autenticação e segurança, veja:
+
+Podcast sobre Segurança
+O que é Json Web Token (JWT)?
+Curso Node.js e JWT: autenticação com tokens na Alura
+Curso Autenticação mais segura com 2 fatores na Alura
+
+------hash
+
+
+
+Hashing nada mais é do que uma função matemática que converte um texto em outro texto totalmente diferente e de difícil dedução.
+
+Por exemplo, o texto Meu nome é Rodrigo pode ser convertido para o texto 8132f7cb860e9ce4c1d9062d2a5d1848, utilizando 
+o algoritmo de hashing MD5.
+
+Um detalhe importante é que os algoritmos de hashing devem ser de mão única, ou seja, não deve ser possível obter o texto original 
+
+a partir de um hash. Dessa forma, para saber se um usuário digitou a senha correta ao tentar se autenticar em uma aplicação,
+devemos pegar a senha que foi digitada por ele e gerar o hash dela, para então realizar a comparação com o hash que está armazenado no banco de dados.
+
+Existem diversos algoritmos de hashing que podem ser utilizados para fazer essa transformação nas senhas dos usuários, sendo que
+
+alguns são mais antigos e não mais considerados seguros hoje em dia, como o MD5 e o SHA1. Os principais algoritmos recomendados
+atualmente são:
+
+Bcrypt
+Scrypt
+Argon2
+PBKDF2
+
+Ao longo do curso utilizaremos o algoritmo BCrypt, que é bastante popular atualmente. Essa opção também leva em consideração o
+
+fato de que o Spring Security já nos fornece uma classe que o implementa.
+
+...Spring Data
+
+Para saber mais: documentação Spring Data
+
+
+Conforme aprendido em vídeos anteriores, o Spring Data utiliza um padrão próprio de nomenclatura de métodos que devemos 
+seguir para que ele consiga gerar as queries SQL de maneira correta.
+
+Existem algumas palavras reservadas que devemos utilizar nos nomes dos métodos, como o findBy e o existsBy, para indicar
+ao Spring Data como ele deve montar a consulta que desejamos. Esse recurso é bastante flexível, podendo ser
+um pouco complexo devido às diversas possibilidades existentes.
+
+Para conhecer mais detalhes e entender melhor como montar consultas dinâmicas com o Spring Data, 
+acesse a sua documentação oficial.
+https://docs.spring.io/spring-data/jpa/docs/current/reference/html/
+
+...
+
+
+Mudanças na versão 3.1
+PRÓXIMA ATIVIDADE
+
+ATENÇÃO!
+
+A partir da versão 3.1 do Spring Boot algumas mudanças foram realizadas, em relação às configurações de segurança. 
+Caso você esteja utilizando o Spring Boot nessa versão, ou em versões posteriores, o código demonstrado
+ no vídeo anterior vai apresentar um aviso de deprecated, por conta de tais mudanças.
+
+A partir dessa versão, o método securityFilterChain deve ser alterado para:
+
+@Bean
+public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    return http.csrf(csrf -> csrf.disable())
+            .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+            .build();
+}
+
+
+...Bean
+
+Classe de configurações
+PRÓXIMA ATIVIDADE
+
+Um colega de trabalho pede sua ajuda para identificar um problema em seu código, referente a uma classe de configurações do Spring Security:
+
+@Configuration
+@EnableWebSecurity
+public class SecurityConfigurations {
+
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        return http.csrf().disable()
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .and().build();
+    }
+
+}
+
+
+Ele afirma que mesmo após criar essa classe, o Spring Security ainda está bloqueando todas as requisições que chegam na API, devolvendo o código HTTP 401 (Unauthorized).
+Analise o código anterior e escolha a opção que indica o que está causando esse problema.
+
+r:
+
+O método securityFilterChain deveria ter sido anotado com @Bean.
+Sem essa anotação no método, o objeto SecurityFilterChain não será exposto como um bean para o Spring.
+
+@Bean Serve para exportar uma classe para o Spring, fazendo com que ele
+consiga carregala e realize a sua injeção de dependência em outras classes.
+
+
+
+JSON Web Token, ou JWT, é um padrão utilizado para a geração de 
+tokens, que nada mais são do que Strings, representando, de maneira
+ segura, informações que serão compartilhadas entre dois sistemas. 
+ Você pode conhecer melhor sobre esse padrão em seu site oficial.
+
+Aqui na Alura temos o artigo O que é JSON Web Tokens? e o Alura+ O
+que é Json Web Token (JWT)?, que também explicam o funcionamento
+do padrão JWT.
+
+
+https://jwt.io/introduction
+
+https://www.alura.com.br/artigos/o-que-e-json-web-tokens?_gl=1*vyfmvj*_ga*MzE2NDUyMDgxLjE2OTYwMTAzMzk.*_ga_1EPWSW3PCS*MTY5NjI2NjgwMC42NS4xLjE2OTYyNjc0NjcuMC4wLjA.*_fplc*WDNLQ2doRW12UDhWRnBWZ3d6amlwcWZ4TVp4SXVtTGdNeWxyNnJWTDFJZXVpdlJLTjdTJTJCN1c3MWJSZGJKejBsa2lYZGlUQnlQTjZMQVBPdkprNCUyQlJ4RVUzVyUyQnY4Ullwekw2NWZBMmlDOGZOS21ZaGtXVXNwRzhMZWZWd2t3JTNEJTNE
+
+
+...withClaim()
+
+Para saber mais: Outras informações no token
+
+Além do Issuer, Subject e data de expiração, podemos incluir outras informações no token JWT, de acordo com as necessidades da aplicação.
+ Por exemplo, podemos incluir o id do usuário no token, para isso basta utilizar o método withClaim:
+
+return JWT.create()
+    .withIssuer("API Voll.med")
+    .withSubject(usuario.getLogin())
+
+    .withClaim("id", usuario.getId())
+
+    .withExpiresAt(dataExpiracao())
+    .sign(algoritmo);
+
+
+O método withClaim recebe dois parâmetros, sendo o primeiro uma String que identifica o nome do claim (propriedade armazenada no token),
+e o segundo a informação que se deseja armazenar.
+
+...injeção
+
+
+ Injeção de propriedades
+
+
+Vimos ao longo dessa aula que podemos injetar uma propriedade declarada no arquivo application.properties
+ em uma classe gerenciada pelo Spring, com a utilização da anotação @Value.
+
+Supondo que o arquivo application.properties tenha a seguinte propriedade declarada:
+
+app.teste=true
+
+Qual das opções a seguir indica a maneira CORRETA de injetá-la em um atributo de uma classe gerenciada pelo Spring?
+
+r:
+Alternativa correta
+@Value("${app.teste}")
+Esse é o jeito correto de utilizar a anotação @Value.
+
+***
+
+Nessa aula, você aprendeu como:
+Adicionar a biblioteca Auth0 java-jwt como dependência do projeto;
+Utilizar essa biblioteca para realizar a geração de um token na API;
+Injetar uma propriedade do arquivo application.properties em uma classe gerenciada pelo Spring, utilizando a anotação @Value;
+Devolver um token gerado na API quando um usuário se autenticar nela.
+
+
+...Para saber mais: anotação @JsonAlias
+
+JsonAlias
+
+Aprendemos que os nomes dos campos enviados no JSON para a API devem ser idênticos aos nomes dos atributos 
+das classes DTO, pois assim o Spring consegue preencher corretamente as informações recebidas.
+
+Entretanto, pode acontecer de um campo ser enviado no JSON com um nome diferente do atributo definido na
+classe DTO. Por exemplo, imagine que o seguinte JSON seja enviado para a API:
+
+
+{
+    “produto_id” : 12,
+    “data_da_compra” : “01/01/2022”
+}
+
+
+
+E a classe DTO criada para receber tais informações seja definida da seguinte maneira:
+
+public record DadosCompra(
+    Long idProduto,
+    LocalDate dataCompra
+){}
+
+
+
+Se isso ocorrer, teremos problemas, pois o Spring vai instanciar um objeto do tipo DadosCompra, mas seus atributos não serão 
+preenchidos e ficarão como null em razão de seus nomes serem diferentes dos nomes dos campos recebidos no JSON.
+
+Temos duas possíveis soluções para essa situação:
+
+1) Renomear os atributos no DTO para terem o mesmo nome dos campos no JSON;
+
+2) Solicitar que a aplicação cliente, que está disparando requisições para a API, altere os nomes dos campos no JSON enviado.
+
+A primeira alternativa citada anteriormente não é recomendada, pois os nomes dos campos no JSON não estão de acordo com 
+o padrão de nomenclatura de atributos utilizado na linguagem Java.
+
+A segunda alternativa seria a mais indicada, porém, nem sempre será possível “obrigar” os clientes da API a alterarem o 
+padrão de nomenclatura utilizado nos nomes dos campos no JSON.
+
+Para essa situação existe ainda uma terceira alternativa, na qual nenhum dos lados (cliente e API) precisam alterar os 
+nomes dos campos/atributos. Basta, para isso, utilizar a anotação @JsonAlias:
+
+
+public record DadosCompra(
+    @JsonAlias(“produto_id”) Long idProduto,
+    @JsonAlias(“data_da_compra”) LocalDate dataCompra
+){}
+
+
+A anotação @JsonAlias serve para mapear “apelidos” alternativos para os campos que serão recebidos do JSON, sendo possível atribuir múltiplos alias:
+
+public record DadosCompra(
+    @JsonAlias({“produto_id”, “id_produto”}) Long idProduto,
+    @JsonAlias({“data_da_compra”, “data_compra”}) LocalDate dataCompra
+){}
+
+
+Dessa forma resolvemos o problema, pois o Spring, ao receber o JSON na requisição, vai procurar os campos
+considerando todos os alias declarados na anotação @JsonAlias.
+
+
+...Datas
+
+Para saber mais: formatação de datas
+
+
+
+Como foi demonstrado no vídeo anterior, o Spring tem um padrão de formatação para campos do tipo data quando esses são 
+mapeados em atributos do tipo LocalDateTime. Entretanto, é possível personalizar tal padrão para utilizar outras 
+formatações de nossa preferência.
+
+Por exemplo, imagine que precisamos receber a data/hora da consulta no seguinte formato: dd/mm/yyyy hh:mm. Para que 
+isso seja possível, precisamos indicar ao Spring que esse será o formato ao qual a data/hora será recebida na API, 
+sendo que isso pode ser feito diretamente no DTO, com a utilização da anotação @JsonFormat:
+
+
+
+@NotNull
+@Future
+@JsonFormat(pattern = "dd/MM/yyyy HH:mm")
+LocalDateTime data
+
+
+
+No atributo pattern indicamos o padrão de formatação esperado, seguindo as regras definidas pelo padrão de datas do Java. 
+Você pode encontrar mais detalhes nesta página do JavaDoc.
+
+Essa anotação também pode ser utilizada nas classes DTO que representam as informações que a API devolve, para que assim o 
+JSON devolvido seja formatado de acordo com o pattern configurado. Além disso, ela não se restringe apenas à classe
+LocalDateTime, podendo também ser utilizada em atributos do tipo LocalDate e LocalTime.
+
+
+...Para saber mais: Service Pattern
+
+
+O Padrão Service é muito utilizado na programação e seu nome é muito comentado. Mas apesar de ser um nome único, 
+Service pode ser interpretado de várias maneiras: pode ser um Use Case (Application Service); um Domain Service, 
+que possui regras do seu domínio; um Infrastructure Service, que usa algum pacote externo para realizar tarefas; 
+etc.
+
+Apesar da interpretação ocorrer de várias formas, a ideia por trás do padrão é separar as regras de negócio, as 
+regras da aplicação e as regras de apresentação para que elas possam ser facilmente testadas e reutilizadas em 
+
+outras partes do sistema.
+
+Existem duas formas mais utilizadas para criar Services. Você pode criar Services mais genéricos, responsáveis por todas as atribuições de um Controller; ou ser ainda mais específico, aplicando assim o S do SOLID: Single Responsibility Principle (Princípio da Responsabilidade Única). Esse princípio nos diz que uma classe/função/arquivo deve ter apenas uma única responsabilidade.
+
+Pense em um sistema de vendas, no qual provavelmente teríamos algumas funções como: Cadastrar usuário, Efetuar login, Buscar produtos, Buscar produto por nome, etc. Logo, poderíamos criar os seguintes Services: CadastroDeUsuarioService, EfetuaLoginService, BuscaDeProdutosService, etc.
+
+Mas é importante ficarmos atentos, pois muitas vezes não é necessário criar um Service e, consequentemente, adicionar mais uma camada e complexidade desnecessária à nossa aplicação. Uma regra que podemos utilizar é a seguinte: se não houverem regras de negócio, podemos simplesmente realizar a comunicação direta entre os controllers e os repositories da aplicação.
+
+
+Cancelamento consultas
+
+
+Faça como eu fiz: cancelamento de consultas
+PRÓXIMA ATIVIDADE
+
+Agora é com você! Faça o mesmo procedimento que eu fiz na aula, porém, para a funcionalidade de cancelamento de consultas, cuja descrição encontra-se neste card do trello.
+
+VER OPINIÃO DO INSTRUTOR
+Opinião do instrutor
+
+Você precisará criar um novo método na classe ConsultaController, responsável por receber a requisição de cancelamento de consultas:
+
+@DeleteMapping
+@Transactional
+public ResponseEntity cancelar(@RequestBody @Valid DadosCancelamentoConsulta dados) {
+    agenda.cancelar(dados);
+    return ResponseEntity.noContent().build();
+}COPIAR CÓDIGO
+Além disso, você precisará criar o DTO DadosCancelamentoConsulta e o enum MotivoCancelamento:
+
+public record DadosCancelamentoConsulta(
+        @NotNull
+        Long idConsulta,
+
+        @NotNull
+        MotivoCancelamento motivo) {
+}COPIAR CÓDIGO
+public enum MotivoCancelamento {
+
+    PACIENTE_DESISTIU,
+    MEDICO_CANCELOU,
+    OUTROS;
+
+}COPIAR CÓDIGO
+Também será necessário criar o novo método cancelar na classe AgendaDeConsultas:
+
+public void cancelar(DadosCancelamentoConsulta dados) {
+    if (!consultaRepository.existsById(dados.idConsulta())) {
+        throw new ValidacaoException("Id da consulta informado não existe!");
+    }
+
+    var consulta = consultaRepository.getReferenceById(dados.idConsulta());
+    consulta.cancelar(dados.motivo());
+}
+
+
+Depois disso, será necessário alterar a entidade Consulta para incluir um atributo que representa o motivo do cancelamento, bem como o novo método cancelar:
+
+@Column(name = "motivo_cancelamento")
+@Enumerated(EnumType.STRING)
+private MotivoCancelamento motivoCancelamento;
+
+public void cancelar(MotivoCancelamento motivo) {
+    this.motivoCancelamento = motivo;
+}
+
+
+Após a mudança anterior, o método agendar, na classe AgendaDeConsultas, vai acusar um erro de compilação na seguinte linha de código:
+
+
+var consulta = new Consulta(null, medico, paciente, dados.data());
+Como um novo atributo foi adicionado na entidade, o construtor agora precisa receber um valor para ele. Altere a linha anterior para:
+
+
+var consulta = new Consulta(null, medico, paciente, dados.data(), null);
+E, por fim, você precisará criar uma nova migration (Atenção! Lembre-se de parar o projeto antes de criar a migration!):
+
+
+alter table consultas add column motivo_cancelamento varchar(100);
+
+
+Pronto! Com isso, a nova funcionalidade de cancelamento de consultas estará finalizada, faltando apenas as validações que serão vistas mais adiante no curso.
+
+
+*** Para saber mais: princípios SOLID
+
+
+
+SOLID é uma sigla que representa cinco princípios de programação:
+
+Single Responsibility Principle (Princípio da Responsabilidade Única)
+Open-Closed Principle (Princípio Aberto-Fechado)
+Liskov Substitution Principle (Princípio da Substituição de Liskov)
+Interface Segregation Principle (Princípio da Segregação de Interface)
+Dependency Inversion Principle (Princípio da Inversão de Dependência)
+Cada princípio representa uma boa prática de programação, que quando aplicadas facilita muito a sua manutenção e extensão. 
+Tais princípios foram criados por Robert Martin, conhecido como Uncle Bob, em seu artigo Design Principles and Design Patterns.
+
+Estes dois episódios do podcast Hipsters.Tech foram dedicados ao tema SOLID:
+
+Hipsters #129 - Práticas de Orientação a Objetos https://cursos.alura.com.br/extra/hipsterstech/praticas-de-orientacao-a-objetos-hipsters-129-a453
+
+Hipsters #219 - SOLID: Código bom e bonito https://cursos.alura.com.br/extra/hipsterstech/solid-codigo-bom-e-bonito-hipsters-ponto-tech-219-a649
+
+http://staff.cs.utu.fi/~jounsmed/doos_06/material/DesignPrinciplesAndPatterns.pdf
+
+***Boas práticas
+
+
+
+Boas práticas de programação
+
+
+Ao longo do curso, implementamos validações e regras de negócio utilizando padrões de projeto, bem como seguindo os 
+princípios da Orientação a Objetos.
+
+Considerando o que aprendemos, por que é importante seguir boas práticas de programação, como a utilização de Design
+ Patterns, princípios SOLID e princípios da Orientação a Objetos nos códigos da aplicação?
+
+Alternativa correta
+Para melhorar a manutenção do código da aplicação.
+
+
+Boas práticas de programação tornam o código mais fácil de entender, e, principalmente, de realizar manutenção.
+
+
+
+...Validando cancelamento de consultas
+Faça como eu fiz: validando cancelamento de consultas
+
+
+
+
+
+Agora é com você! Faça o mesmo procedimento de validação que eu fiz na aula, porém, para a funcionalidade de cancelamento de consultas, 
+cuja descrição encontra-se neste card do trello.
+
+VER OPINIÃO DO INSTRUTOR
+Opinião do instrutor
+
+Você precisará alterar a classe AgendaDeConsultas, incluindo nela um novo atributo que será a lista de validadores:
+
+
+
+@Autowired
+private List<ValidadorCancelamentoDeConsulta> validadoresCancelamento;COPIAR CÓDIGO
+Nessa mesma classe, você vai precisar alterar o método cancelar para chamar os validadores:
+
+
+public void cancelar(DadosCancelamentoConsulta dados) {
+    if (!consultaRepository.existsById(dados.idConsulta())) {
+        throw new ValidacaoException("Id da consulta informado não existe!");
+    }
+
+    validadoresCancelamento.forEach(v -> v.validar(dados));
+
+    var consulta = consultaRepository.getReferenceById(dados.idConsulta());
+    consulta.cancelar(dados.motivo());
+}
+
+
+
+Claro, será necessário criar a interface ValidadorCancelamentoDeConsulta e uma classe que a implementa para realizar a validação do horário de antecedência para cancelamento de consulta:
+
+public interface ValidadorCancelamentoDeConsulta {
+
+    void validar(DadosCancelamentoConsulta dados);
+
+
+
+}
+@Component
+public class ValidadorHorarioAntecedencia implements ValidadorCancelamentoDeConsulta {
+
+    @Autowired
+    private ConsultaRepository repository;
+
+    @Override
+    public void validar(DadosCancelamentoConsulta dados) {
+        var consulta = repository.getReferenceById(dados.idConsulta());
+        var agora = LocalDateTime.now();
+        var diferencaEmHoras = Duration.between(agora, consulta.getData()).toHours();
+
+        if (diferencaEmHoras < 24) {
+            throw new ValidacaoException("Consulta somente pode ser cancelada com antecedência mínima de 24h!");
+        }
+    }
+}
+
+
+
+Atenção! Para uma melhor organização das classes de validação, recomendamos que dentro do pacote med.voll.api.domain.consulta.validacoes sejam 
+criados dois subpacotes, sendo um chamado agendamento e o outro chamado cancelamento, separando dentro de cada um suas respectivas classes de
+validação, conforme demonstrado na imagem a seguir:
+
+alt text: Lista de diretórios do projeto Voll Med, exibindo o pacote “Validações” e destacando os subpacotes “Agendamento” e “Cancelamento” 
+com suas respectivas classes de validação.
+
+Pronto! Com isso a funcionalidade de cancelamento de consultas está finalizada, incluindo as validações de regras de negócio. Porém, ao
+tentar executar a aplicação o seguinte erro vai acontecer:
+
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'validadorHorarioAntecedencia'
+for bean class [med.voll.api.domain.consulta.validacoes.cancelamento.ValidadorHorarioAntecedencia] conflicts with existing, non-compatible bean
+definition of same name and class [med.voll.api.domain.consulta.validacoes.agendamento.ValidadorHorarioAntecedencia]COPIAR CÓDIGO
+No erro anterior, o Spring indica que existem dois componentes que ele gerencia com o mesmo nome, algo que é proibido, pois causa um conflito.
+Isso acontece porque temos duas classes com o mesmo nome, ambas chamadas de ValidadorHorarioAntecedencia, embora estejam em pacotes distintos,
+algo que para o Java é válido e não causa conflitos.
+
+Podemos resolver esse problema renomeando as classes ou configurando para o Spring que elas têm nomes distintos, via anotação @Component:
+
+
+@Component("ValidadorHorarioAntecedenciaAgendamento")
+public class ValidadorHorarioAntecedencia implements ValidadorAgendamentoDeConsulta {
+@Component("ValidadorHorarioAntecedenciaCancelamento")
+public class ValidadorHorarioAntecedencia implements ValidadorCancelamentoDeConsulta {
+
+
+Pronto! Feita a mudança anterior, o projeto será inicializado sem erros. Porém, essa nova funcionalidade de cancelamento de consultas vai 
+causar um efeito colateral na funcionalidade de agendamento de consultas, pois agora a aplicação deve permitir o agendamento de uma 
+consulta numa data na qual outra consulta foi agendada, mas cancelada posteriormente.
+
+Para permitir isso, será necessário alterar o nome do método existsByMedicoIdAndData, na interface ConsultaRepository para:
+
+boolean existsByMedicoIdAndDataAndMotivoCancelamentoIsNull(Long idMedico, LocalDateTime data);COPIAR CÓDIGO
+E atualizar a classe ValidadorMedicoComOutraConsultaNoMesmoHorario, pois ela estará utilizando o nome antigo do método.
+
+Também será necessário alterar a query do método escolherMedicoAleatorioLivreNaData, na interface MedicoRepository, para que o 
+subselect desconsidere consultas canceladas:
+
+@Query("""
+            select m from Medico m
+            where
+            m.ativo = 1
+            and
+            m.especialidade = :especialidade
+            and
+            m.id not in(
+                select c.medico.id from Consulta c
+                where
+                c.data = :data
+        and
+                c.motivoCancelamento is null
+            )
+            order by rand()
+            limit 1
+""")
+
+
+***
+
+O que aprendemos?
+
+Nesta aula, você aprendeu como:
+Isolar os códigos de validações de regras de negócio em classes separadas, utilizando nelas a anotação @Component do Spring;
+Finalizar a implementação do algoritmo de agendamento de consultas;
+Utilizar os princípios SOLID para deixar o código da funcionalidade de agendamento de consultas mais fácil de entender, evoluir e testar.
+
+
+
+
+...Para saber mais: OpenAPI Initiative
+
+
+A documentação é algo muito importante em um projeto, principalmente se ele for uma API Rest, pois nesse caso 
+podemos ter vários clientes que vão precisar se comunicar com ela, necessitando então de uma documentação
+que os ensinem como realizar essa comunicação de maneira correta.
+
+Por muito tempo não existia um formato padrão de se documentar uma API Rest, até que em 2010 surgiu um
+projeto conhecido como Swagger, cujo objetivo era ser uma especificação open source para design de
+APIs Rest. Depois de um tempo, foram desenvolvidas algumas ferramentas para auxiliar pessoas
+desenvolvedoras a implementar, visualizar e testar suas APIs, como o Swagger UI, Swagger Editor
+e Swagger Codegen, tornando-se assim muito popular e utilizado ao redor do mundo.
+
+Em 2015, o Swagger foi comprado pela empresa SmartBear Software, que doou a parte da especificação 
+para a fundação Linux. Por sua vez, a fundação renomeou o projeto para OpenAPI. Após isso, foi 
+criada a OpenAPI Initiative, uma organização focada no desenvolvimento e evolução da 
+especificação OpenAPI de maneira aberta e transparente.
+
+A OpenAPI é hoje a especificação mais utilizada, e também a principal, para documentar uma API Rest. 
+A documentação segue um padrão que pode ser descrito no formato yaml ou JSON, facilitando a criação
+de ferramentas que consigam ler tais arquivos e automatizar a criação de documentações, bem como
+a geração de códigos para consumo de uma API.
+
+Você pode obter mais detalhes no site oficial da OpenAPI Initiative.
+
+
+
+...Para saber mais: personalizando a documentação
+
+
+
+Vimos no vídeo anterior que é possível personalizar a documentação gerada pelo SpringDoc para a inclusão do token de autenticação.
+ Além do token, podemos incluir outras informações na documentação que fazem parte da especificação OpenAPI, como, por exemplo,
+  a descrição da API, informações de contato e de sua licença de uso.
+
+Tais configurações devem ser feitas no objeto OpenAPI, que foi configurado na classe SpringDocConfigurations de nosso projeto:
+
+@Bean
+public OpenAPI customOpenAPI() {
+    return new OpenAPI()
+            .components(new Components()
+                    .addSecuritySchemes("bearer-key",
+                            new SecurityScheme()
+                                    .type(SecurityScheme.Type.HTTP)
+                                    .scheme("bearer")
+                                    .bearerFormat("JWT")))
+                    .info(new Info()
+                            .title("Voll.med API")
+                            .description("API Rest da aplicação Voll.med, contendo as funcionalidades de CRUD de médicos e de pacientes, além de agendamento e cancelamento de consultas")
+                            .contact(new Contact()
+                                    .name("Time Backend")
+                                    .email("backend@voll.med"))
+                    .license(new License()
+                            .name("Apache 2.0")
+                            .url("http://voll.med/api/licenca")));
+}
+
+
+Usando os imports:
+
+import io.swagger.v3.oas.models.info.Contact;
+import io.swagger.v3.oas.models.info.Info;
+import io.swagger.v3.oas.models.Components;
+import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.info.License;
+import io.swagger.v3.oas.models.security.SecurityScheme;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;COPIAR CÓDIGO
+No código anterior, repare que após a configuração do token JWT foram adicionadas as informações da API. Ao entrar novamente 
+na página do Swagger UI, tais informações serão exibidas, conforme demonstrado na imagem a seguir:
+
+alt text: Página do Swagger Ui exibindo as informações da Voll.med API, onde se lê a mensagem “API Rest da aplicação Voll.med,
+ contendo as funcionalidades de CRUD de médicos e de pacientes, além de agendamento e cancelamento de consultas.”
+
+Para saber mais detalhes sobre quais informações podem ser configuradas na documentação da API, consulte a especificação
+ OpenAPI no site oficial da iniciativa.
+
+
+https://www.openapis.org/
+
+https://spec.openapis.org/oas/latest.html#schema
+
+***
+O que aprendemos?
+
+
+Nesta aula, você aprendeu como:
+Adicionar a biblioteca SpringDoc no projeto para que ela faça a geração automatizada da documentação da API;
+Analisar a documentação do SpringDoc para entender como realizar a sua configuração em um projeto;
+Acessar os endereços que disponibilizam a documentação da API nos formatos yaml e html;
+Utilizar o Swagger UI para visualizar e testar uma API Rest;
+Configurar o JWT na documentação gerada pelo SpringDoc.
+
+
+
+
+...Para saber mais: testes com in-memory database
+
+
+Como citado no vídeo anterior, podemos realizar os testes de interfaces repository utilizando um banco de dados em memória, como o H2, ao invés de utilizar o mesmo banco de dados da aplicação.
+
+Caso você queira utilizar essa estratégia de executar os testes com um banco de dados em memória, será necessário incluir o H2 no projeto, adicionando a seguinte dependência no arquivo pom.xml:
+
+<dependency>
+  <groupId>com.h2database</groupId>
+  <artifactId>h2</artifactId>
+  <scope>runtime</scope>
+</dependency>
+
+E também deve remover as anotações @AutoConfigureTestDatabase e @ActiveProfiles na classe de teste, deixando-a apenas com a anotação @DataJpaTest:
+
+
+
+@DataJpaTest
+class MedicoRepositoryTest {
+
+  //resto do código permanece igual
+
+}
+
+
+
+Você também pode apagar o arquivo application-test.properties, pois o Spring Boot realiza as configurações de url, username e password do 
+banco de dados H2 de maneira automática.
+
+...Códigos testáveis
+
+
+Alternativa correta
+Alguns componentes do Spring não precisam ser testados.
+Alguns componentes, como interfaces repository, que não possuem métodos de consultas, não precisam de testes automatizados.
+
+
+Alternativa correta
+Podemos mesclar testes de unidade com testes de integração.
+Para alguns componentes, como classes controller, podemos escrever testes de unidade; já para outros, como as interfaces repository, 
+testes de integração são os mais recomendados.
+
+
+...Faça como eu fiz: testes da classe MedicoController
+
+Agora é com você! Faça o mesmo procedimento que eu fiz na aula, porém, agora criando os testes automatizados para o método cadastrar da classe MedicoController.
+
+VER OPINIÃO DO INSTRUTOR
+Opinião do instrutor
+
+Você precisará criar a classe MedicoControllerTest, no source folder de testes (src/test/java), contendo a seguinte estrutura:
+
+
+
+@SpringBootTest
+@AutoConfigureMockMvc
+@AutoConfigureJsonTesters
+class MedicoControllerTest {
+
+    @Autowired
+    private MockMvc mvc;
+
+    @Autowired
+    private JacksonTester<DadosCadastroMedico> dadosCadastroMedicoJson;
+
+    @Autowired
+    private JacksonTester<DadosDetalhamentoMedico> dadosDetalhamentoMedicoJson;
+
+    @MockBean
+    private MedicoRepository repository;
+
+}
+
+
+
+
+Depois disso, você deve criar um método para testar o cenário de erro 400:
+
+@Test
+@DisplayName("Deveria devolver codigo http 400 quando informacoes estao invalidas")
+@WithMockUser
+void cadastrar_cenario1() throws Exception {
+    var response = mvc
+.perform(post("/medicos"))
+            .andReturn().getResponse();
+
+    assertThat(response.getStatus())
+.isEqualTo(HttpStatus.BAD_REQUEST.value());
+}COPIAR CÓDIGO
+Crie também um método para testar o cadastro com informações válidas:
+
+
+@Test
+@DisplayName("Deveria devolver codigo http 200 quando informacoes estao validas")
+@WithMockUser
+void cadastrar_cenario2() throws Exception {
+    var dadosCadastro = new DadosCadastroMedico(
+            "Medico",
+            "medico@voll.med",
+            "61999999999",
+            "123456",
+            Especialidade.CARDIOLOGIA,
+            dadosEndereco());
+
+    when(repository.save(any())).thenReturn(new Medico(dadosCadastro));
+
+    var response = mvc
+            .perform(post("/medicos")
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .content(dadosCadastroMedicoJson.write(dadosCadastro).getJson()))
+            .andReturn().getResponse();
+
+    var dadosDetalhamento = new DadosDetalhamentoMedico(
+            null,
+            dadosCadastro.nome(),
+            dadosCadastro.email(),
+            dadosCadastro.crm(),
+            dadosCadastro.telefone(),
+            dadosCadastro.especialidade(),
+            new Endereco(dadosCadastro.endereco())
+    );
+    var jsonEsperado = dadosDetalhamentoMedicoJson.write(dadosDetalhamento).getJson();
+
+    assertThat(response.getStatus()).isEqualTo(HttpStatus.CREATED.value());
+    assertThat(response.getContentAsString()).isEqualTo(jsonEsperado);
+}
+
+
+
+Também será necessário criar um método privado chamado dadosEndereco:
+
+private DadosEndereco dadosEndereco() {
+    return new DadosEndereco(
+            "rua xpto",
+            "bairro",
+            "00000000",
+            "Brasilia",
+            "DF",
+            null,
+            null
+    );
+}
+
+
+***
+
+O que aprendemos?
+PRÓXIMA ATIVIDADE
+
+Nesta aula, você aprendeu como:
+Escrever testes automatizados em uma aplicação com Spring Boot;
+Escrever testes automatizados de uma interface Repository, seguindo a estratégia de usar o mesmo banco de dados que a aplicação utiliza;
+Sobrescrever propriedades do arquivo application.properties, criando outro arquivo chamado application-test.properties que seja 
+carregado apenas ao executar os testes, utilizando para isso a anotação @ActiveProfiles;
+Escrever testes automatizados de uma classe Controller, utilizando a classe MockMvc para simular requisições na API;
+Testar cenários de erro 400 e código 200 no teste de uma classe controller.
+
+
+
+
+...Para saber mais: build com arquivo .war
+
+
+
+Projetos que utilizam o Spring Boot geralmente utilizam o formato jar para o empacotamento da aplicação, conforme foi demonstrado ao longo desta aula. Entretanto, o Spring Boot fornece suporte para o empacotamento da aplicação via formato war, que era bastante utilizado em aplicações Java antigamente.
+
+Caso você queira que o build do projeto empacote a aplicação em um arquivo no formato war, vai precisar realizar as seguintes alterações:
+
+1) Adicionar a tag <packaging>war</packaging> no arquivo pom.xml do projeto, devendo essa tag ser filha da tag raiz <project>:
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>3.0.0</version>
+    <relativePath/> <!-- lookup parent from repository -->
+  </parent>
+  <groupId>med.voll</groupId>
+  <artifactId>api</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>api</name>
+
+  <packaging>war</packaging>COPIAR CÓDIGO
+2) Ainda no arquivo pom.xml, adicionar a seguinte dependência:
+
+<dependency>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-starter-tomcat</artifactId>
+  <scope>provided</scope>
+</dependency>COPIAR CÓDIGO
+3) Alterar a classe main do projeto (ApiApplication) para herdar da classe SpringBootServletInitializer, bem como sobrescrever o método configure:
+
+@SpringBootApplication
+public class ApiApplication extends SpringBootServletInitializer {
+
+  @Override
+  protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+    return application.sources(ApiApplication.class);
+  }
+
+  public static void main(String[] args) {
+    SpringApplication.run(ApiApplication.class, args);
+  }
+
+}
+
+
+
+Pronto! Agora, ao realizar o build do projeto, será gerado um arquivo com a extensão .war dentro do
+diretório target, ao invés do arquivo com a extensão .jar.
+
+
+
+...Para saber mais: GraalVM Native Image
+
+
+Uma das novidades de mais destaque da versão 3 do Spring Boot é o suporte a imagens nativas, algo que reduz, de maneira 
+muito significativa, o consumo de memória e o tempo de inicialização de uma aplicação, sendo que alguns outros frameworks 
+concorrentes do Spring Boot, como Micronaut e Quarkus, já forneciam suporte a esse recurso.
+
+Na realidade até era possível gerar imagens nativas em aplicações com Spring Boot antes da versão 3, mas para isso se fazia
+ necessário a utilização de um projeto chamado Spring Native, que adicionava suporte a isso. Com a chegada da versão 3 do 
+ Spring Boot, tal projeto não é mais necessário.
+
+Native Image
+Imagem nativa é uma tecnologia utilizada para compilar uma aplicação Java, incluindo todas as suas dependências, gerando um 
+arquivo binário executável que pode ser executado diretamente no sistema operacional, sem a necessidade de se utilizar a JVM. 
+Mesmo sem executar numa JVM, a aplicação também contará com os recursos dela, como gerenciamento de memória, garbage collector
+ e controle de execução de threads.
+
+Para saber mais detalhes sobre a tecnologia de imagens nativas acesse a documentação no site: https://www.graalvm.org/native-image
+
+Native Image com Spring Boot 3
+Uma maneira bem simples de gerar uma imagem nativa da aplicação é utilizando um plugin do Maven, que deve ser incluído no arquivo pom.xml:
+
+<plugin>
+  <groupId>org.graalvm.buildtools</groupId>
+  <artifactId>native-maven-plugin</artifactId>
+</plugin>COPIAR CÓDIGO
+Pronto! Essa é a única alteração necessária no projeto. Após isso, a geração da imagem deve ser feita via terminal, com o 
+seguinte comando Maven sendo executado no diretório raiz do projeto:
+
+./mvnw -Pnative native:compileCOPIAR CÓDIGO
+O comando anterior pode levar vários minutos para finalizar sua execução, sendo totalmente normal essa demora.
+
+Atenção! Para executar o comando anterior e gerar a imagem nativa do projeto, é necessário que você tenha instalado em seu
+computador o GraalVM (máquina virtual Java com suporte ao recurso de Native Image) em uma versão igual ou superior a 22.3.
+
+Após o comando anterior finalizar, será gerado no terminal um log como o seguinte:
+
+Top 10 packages in code area:           Top 10 object types in image heap:
+   3,32MB jdk.proxy4                      19,44MB byte[] for embedded resources
+   1,70MB sun.security.ssl                16,01MB byte[] for code metadata
+   1,18MB java.util                        8,91MB java.lang.Class
+ 936,28KB java.lang.invoke                 6,74MB java.lang.String
+ 794,65KB com.mysql.cj.jdbc                6,51MB byte[] for java.lang.String
+ 724,02KB com.sun.crypto.provider          4,89MB byte[] for general heap data
+ 650,46KB org.hibernate.dialect            3,07MB c.o.s.c.h.DynamicHubCompanion
+ 566,00KB org.hibernate.dialect.function   2,40MB byte[] for reflection metadata
+ 563,59KB com.oracle.svm.core.code         1,30MB java.lang.String[]
+ 544,48KB org.apache.catalina.core         1,25MB c.o.s.c.h.DynamicHu~onMetadata
+  61,46MB for 1482 more packages           9,74MB for 6281 more object types
+--------------------------------------------------------------------------------
+    9,7s (5,7% of total time) in 77 GCs | Peak RSS: 8,03GB | CPU load: 7,27
+--------------------------------------------------------------------------------
+Produced artifacts:
+ /home/rodrigo/Desktop/api/target/api (executable)
+ /home/rodrigo/Desktop/api/target/api.build_artifacts.txt (txt)
+================================================================================
+Finished generating 'api' in 2m 50s.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  03:03 min
+[INFO] Finished at: 2023-01-17T12:13:04-03:00
+[INFO] ------------------------------------------------------------------------
+A imagem nativa é gerada no diretório target, juntamente com o arquivo .jar da aplicação, como um arquivo executável de nome api,
+ conforme demonstrado na imagem a seguir:
+
+alt text: Lista de arquivos e diretórios localizados dentro do diretório target do projeto, estando entre eles o arquivo da imagem 
+nativa, cujo nome é **api**
+
+Diferente do arquivo .jar, que é executado pela JVM via comando java -jar, a imagem nativa é um arquivo binário e deve ser executada
+ diretamente pelo terminal:
+
+target/apiCOPIAR CÓDIGO
+Ao rodar o comando anterior será gerado o log de inicialização da aplicação, que ao final exibe o tempo que levou para a aplicação
+ inicializar:
+
+
+INFO 127815 --- [restartedMain] med.voll.api.ApiApplication : Started ApiApplication in 0.3 seconds (process running for 0.304)
+
+Repare que a aplicação levou menos de meio segundo para inicializar, algo realmente impressionante, pois quando a executamos pela 
+JVM, via arquivo .jar, esse tempo sobe para algo em torno de 5 segundos.
+
+Para saber mais detalhes sobre a geração de uma imagem nativa com Spring Boot 3 acesse a documentação no site:
+
+GraalVM Native Image Support
+
+
+...Variáveis de ambiente
+
+
+
+Aprendemos ao longo desta aula como utilizar variáveis de ambiente nos arquivos properties da aplicação.
+
+Escolha as alternativas que representam vantagens de se utilizar variáveis de ambiente nas configurações de uma aplicação.
+
+Alternativa correta
+Flexibilizar as configurações da aplicação.
+
+
+Com variáveis de ambiente, é possível modificar configurações na aplicação sem ter que realizar alterações no código dela.
+
+Alternativa correta
+Evitar vulnerabilidades na aplicação.
+
+
+
+Com variáveis de ambiente, evitamos deixar exposto no código da aplicação informações sensíveis, como login e senha do banco de dados.
+

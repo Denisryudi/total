@@ -1,0 +1,425 @@
+tipagem Dinâmica reconhece o tipo automaticamente
+!= estática
+
+Inteiro
+Real ou float
+lógico boolean
+caractere
+
+Expressões aritmeticas +-*
+relacionais  <>=
+lógicas and, or ~!    -- p = true  -> ~p = não true
+
+parênteses> potenciação e radiciação> multi e divisao > soma e subtração
+
+relacionais
+boolean > parênteses>inversão naos>conjunção es> disjunção ous []
+
+funcionalidades pre prontas:
+SQRT = raiz quadrada
+POW ou EXP = exponenciação
+ABS = numero absoluto
+COS = cos
+SIN = seno
+
+Atribuição = alterar o conteúdo de uma variável
+
+Class MaiorQueDez {
+    var numero, resto : Int
+    
+
+    valor1 = input("Digite um número: ")
+    resto = numero DIV 2
+    resto = numero - (resto *2)
+
+    if(resto == 0) {
+        println("O numero é par")
+    }else {
+        println("O número é impar")
+    }
+    
+}
+
+
+matriz vetor
+vetor[1..8, 1..3]
+i x j
+linha x coluna
+| | |
+| 
+| 
+|
+|
+|
+|
+|
+
+
+
+Com base nos conceitos de matrizes, escreveremos um algoritmo para o seguinte
+problema: efetuar a leitura de quatro notas de 20 alunos, calcular a média de
+cada aluno e a média da turma. Desse modo, sistematizando o problema, temos que:
+
+■ Objetivo do algoritmo: calcular a média de cada aluno e a média
+da turma.
+■ Entrada: ler quatro notas de 20 alunos.
+■ Processamento: calcular a média das quatro notas dos alunos e a média
+da turma.
+■ Saída: imprimir a média de cada aluno e a média da turma.
+
+1..20, 1..4
+
+soma = 1..1, 1..4 
+
+
+import java.util.Scanner;
+
+public class ExemploFor {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double[] notas = new double[4];
+
+        for (int i = 0; i < 4; i++) {
+            System.out.print("Digite a nota " + (i + 1) + ": ");
+            notas[i] = scanner.nextDouble();
+        }
+    }
+}
+
+técnicas de recuperação de informações, mantidas dentro de um vetor de dados
+
+bidimensionais um í ndice para as linhas e outro índice para as colunas
+multidimensionais 2,3 ... K índices
+
+structs (C)
+estruturas de dados heterogêneas, tipos de dados compostos
+
+
+	cont: inteiro
+
+	for(cont = 1; cont <= 10; ++ 
+
+Var val, soma: inteiro
+soma = 0
+
+while (soma < 100) {
+	input(val)
+	soma += val
+
+var mat: vetor[1..3, 1..3] de inteiro
+i, j, soma: inteiro
+
+soma = 0;
+i=0
+j=0
+
+while (i <= 3) {
+	while(j<=3) {
+		soma = soma + mat[i, j]
+		i += 1
+	}
+}
+println("O resultado da soma é: ", soma)
+
+
+
+
+
+
+
+
+
+
+var mat: vetor[1..3, 1..3] de inteiro
+i, j, soma: inteiro
+
+soma = 0;
+i=0
+j=0
+
+for(i =1; i<=3, i ++) {
+	for(j = 1; j <=3, j++) {
+	soma = soma + mat[i, j]
+
+
+1 - Algoritmo MatrizRetangular
+2 -      Var mat: vetor[1..2, 1..3] de inteiro
+3 -      i, j: inteiro
+4 -
+5 -      i ← 0
+6 -      Enquanto i <= 2 faça
+7 -            j ← 0
+8 -            Enquanto j <= 3 faça
+9 -                 mat[i,j] ← 1
+10 -                j ← j + 1
+11 -           Fim_enquanto
+12 -     i ← i + 1
+13 -     Fim_enquanto
+14 - Fim_algoritmo
+
+
+Sim, você pode dizer que a estrutura de repetição "while" é normalmente 
+utilizada quando você deseja repetir um bloco de código um número 
+indefinido de vezes, com base em uma condição que precisa ser 
+verdadeira para continuar a repetição. A quantidade de repetições
+não é fixa e depende da condição especificada.
+
+Fluxograma
+Inicio = redondo
+retangulo inclinado = representa algo que o programa lê, alguma informação vinda,
+normalmente do usuário, que está sendo inserida no programa. Representa a entrada de dados.
+retangulo = processamento Indica a realização de cálculos e operações de atribuição.
+retangulo quebrado = saida de dados
+losangulo = decisão
+
+init redondo
+
+>entrada de dados > retangulo inclinado
+
+atribuição > retangulo normal
+
+saida > retângulo quebrado
+
+fim> redondo
+
+redondo>retangulo inclinado>retangulo normal> retangulo quebrado>redondo
+
+
+redondo inicio > retangulo inclinado > 
+
+pseudo
+
+Class redondo  
+int init =0; retangulo inclinado
+multi = init *2 retangulo 
+mult retangulo quebrado
+redondo 
+
+losangulo if else 
+
+
+Um algoritmo escrito em pseudocódigo tem como objetivo descrever uma solução por meio 
+de representações textuais e próximas da linguagem humana, não por meio de 
+diagramas visuais
+
+Os fluxogramas permitem que um(a) desenvolvedor(a) desenvolva algoritmos por meio 
+de blocos lógicos visuais.
+
+>do while = teste condicional verificado somente ao final do laço.
+>ou seja, obrigatóriamente vai ser executado pelo menos uma vez.
+>invertida comparada ao while
+>iterado até que a condição seja atendida
+
+As linhas de código 08 e 09 são exemplos de situações nas quais valores
+textuais literais e o conteúdo de variáveis são exibidos na tela,
+utilizando a função Escreva().
+
+Aqui estão alguns exemplos de expressões relacionais comuns:
+
+Igualdade (==): Verifica se dois valores são iguais. Por exemplo, a == b verifica 
+se "a" é igual a "b".
+
+Desigualdade (!=): Verifica se dois valores são diferentes. Por exemplo,
+x != y verifica se "x" é diferente de "y".
+
+Maior que (>): Verifica se o valor da esquerda é maior que o valor da
+direita. Por exemplo, n > 10 verifica se "n" é maior que 10.,
+
+
+10
+
+||
+||
+||
+v = []
+for( i = 1; i <= 2; i ++) {
+    for(j = 1; i <= 3; i ++) {
+        input(v[j,i])
+
+    }
+}
+
+
+
+alg tabuada {
+
+    var N, soma, i: inteiro
+
+    println("escreva um número: ")
+    input(N)
+
+    i = 1
+
+    while(i <= 10) {
+        soma = N * i
+        i ++
+    }
+
+
+}
+
+
+i, x: inteiro
+
+vetP = [1..5] de inteiro
+
+println("buscar")
+input(X)
+
+for(i = 1; i <= 5; i ++) {
+    if(vetP[i] == X) {
+        println("Posição: " + P)
+    }
+}
+
+    nome : caractere
+    i :inteiro
+    notas, soma : real
+    vetorN : 1..4 inteiro
+
+    println("digite o nome")
+    input(nome)
+
+    soma = 0
+    for(i = 0; i <=4; i++) {
+        
+        input(notas)
+
+        soma = soma + notas
+
+    }
+    println("a média é:" + soma/4)
+
+
+nome : caractere
+i, notas : inteiro
+soma, media : real
+
+println("Digite o nome")
+input(nome)
+
+soma = 0
+for (i = 1; i <= 4; i++) {
+    input(notas)
+    soma = soma + notas
+}
+
+media = soma / 4
+println("A média é: " + media)
+
+
+fatorial de 7 em pseudocódigo
+
+Class fatorial
+
+num, cont, fat : inteiro
+
+println("escreva um numero: ")
+input(num)
+
+fat = 1
+
+for(cont = num; cont >= 1; cont --) {
+    fat = fat * cont
+}
+
+Algoritmo conversaoDeEurosEmReais
+
+function converte(qtde: real, cot: real) : real
+var conv: real
+
+conv = qtde * cot
+
+return conv
+
+
+
+coin(r : real, e: real) : real
+
+    println("Qual moeda?")
+    if(r) {
+        return input(r)
+    }else{
+        input(e)
+    }
+
+
+
+testeConvReal
+
+r, e, , result, cot : real
+
+
+input(cot)
+
+result = converte(coin, cot)
+
+
+
+Algoritmo conversaoDeEurosEmReais
+
+Função converte(qtde: real, cot: real) : real
+    var conv: real
+    conv = qtde * cot
+    retorne conv
+
+Função coin(r : real, e: real) : real
+    println("Qual moeda?")
+    se r então
+        retorne input(r)
+    senão
+        retorne input(e)
+
+Algoritmo testeConvReal
+    var r, e, result, cot : real
+
+    input(cot)
+    r = 0
+    e = 0
+
+    result = converte(coin(r, e), cot)
+
+    println("O resultado da conversão é: ", result)
+
+
+01 - Algoritmo fatRec
+02 -        Funcao fat(x: inteiro): inteiro
+03 -        Início
+04 -                      Se (x == 0) então
+05 -                                     retorne 1
+06 -                      Senão
+07 -                                     retorne x * fat(x - 1)
+08 -                      Fim_se
+09 -        Fim_funcao
+10 -        Var n, resultado: inteiro
+11 - Início
+12 -        n <- 5
+13 -        resultado <- fat(n)
+14 -        escreva(resultad0)
+15 - Fim,
+
+
+function Fib(n: inteiro) : inteiro
+
+if(n < 2)
+    return N
+else {
+    return fib(n - 2) + fib(n - 1)
+}
+
+
+Nesta aula, estudamos a estrutura de repetição por contagem, que utiliza uma
+variável contadora para controlar o laço. Essa estrutura é recomendada em situações
+nas quais sabemos, previamente, quantas vezes o comando deve ser repetido.
+for
+
+
+x MOD 2 = 0
+
+a expressão "numero MOD 2 = 0" é outra maneira válida de verificar se um número é par. Se o resultado dessa expressão for igual 
+a zero, isso significa que o número não deixa um resto quando dividido por 2, o que é uma característica de números pares. 
+Portanto, essa expressão é apropriada para verificar se um número é par e é comumente usada para esse fim em muitas 
+linguagens de programação.
+
+i verti
+j horiq a

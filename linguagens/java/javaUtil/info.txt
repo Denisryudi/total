@@ -1,0 +1,1680 @@
+Os executáveis Java precisam da máquina virtual Java.
+
+Os executáveis do mundo Java são portáveis, os do mundo Windows não.
+Lembrando portável significa que podem ser executados em vários sistemas operacionais diferentes (Windows, Linux, Mac, etc).
+
+Bytecode:
+
+Já falamos um pouco sobre o Bytecode que é um código de máquina parecido com o Assembly. Talvez você (como eu!) estranhou o nome Bytecode, no entanto, tem uma explicação bem simples para tal. Existe um conjunto de comandos que a máquina virtual Java entende. Esses comandos também são chamados de opcodes (operation code), e cada opcode possui o tamanho de exatamente 1 Byte! E aí temos um opcode de 1 Byte ou, mais simples, Bytecode. :)
+
+O Bytecode é independente do sistema operacional.
+ 
+O Bytecode é executado (interpretado) pela JVM.
+
+sync eclipse
+JRE = JVM + bibliotecas
+
+JDK = JRE + ferramentas de desenvolvimento
+
+
+sobre a compilação e execução de código Java:
+
+*1 - * Durante a compilação acontece uma verificação sintática do código fonte.
+
+*2 - * Na compilação e execução podem aparecer erros.
+
+*3 - * A JVM lê e executa o Bytecode.
+
+*4 - * O compilador gera o Bytecode caso não tenha nenhum erro sintático no código fonte.
+
+todas certas
+
+----
+
+O Pedro está trabalhando pela primeira vez com o sistema operacional Linux, mas está estranhando, pois, o computador não possui uma interface gráfica (só funciona na linha de comando!).
+
+Ou seja, ele precisa compilar e executar um código Java abaixo na linha de comando, no entanto esqueceu os comandos :(
+
+Arquivo Programa.java:
+
+class Programa {
+
+    public static void main(String[] args) {
+        System.out.println("Funcionou!!");
+    }
+}
+Quais comandos ele deve usar para compilar e rodar esse código Java?
+
+javac Programa.java
+java Programa
+
+Correto! Repare que passamos a extensão do arquivo (.java) para o comando javac:
+
+javac Programa.java
+E para chamar a JVM usamos apenas o nome da classe (sem extensão):
+
+usar for somente dentro do laço
+ja o while é capaz de ter um sysout fora do laço
+
+
+Clarice está em dúvida sobre o modo como o break funciona quando utilizado dentro de laços de repetição alinhados.
+Escolha a opção que descreve exatamente o funcionamento desse comando nessas situações.
+
+O break irá interromper apenas o laço de repetição mais interno que o contém.
+
+----atributos
+
+Como chamamos, em orientação a objetos, as características de uma classe?
+
+Atributo
+
+Correto, os atributos são as características que especificam uma classe.
+
+
+--class
+
+A partir do conhecimento adquirido de classes, leia as frases abaixo e responda a opção correta.
+
+V Uma classe é uma especificação de um tipo, definindo atributos e comportamentos.
+
+V Um objeto é uma instância de uma classe onde podemos definir valores para seus atributos.
+
+F Para criar uma instância é obrigatório preencher os valores de todos os atributos.
+
+V Para criar uma instância precisamos usar a palavra chave new
+
+
+
+. -----static 
+
+
+public class Jogador {
+    //Código omitido
+    private int total = 0;
+
+    public Jogador(//atributos){
+       total++;
+    }
+}
+Porém o contador sempre apresenta 1 após inserir um novo jogador. Qual dos motivos abaixo explica a razão desse acontecimento?
+
+
+Alternativa correta
+O total deveria estar como estático, assim sempre que fosse criado um novo objeto do tipo Jogador não seria criado um novo total, 
+mantendo o valor correto.
+
+
+reuso de código
+uma vez criado o mesmo tipo não muda.
+o que muda é o tipo de referência
+polimorfia = mesmo objeto com 2 formas de chegar nele.
+Utilizando hierarquias
+utilizar um método genérico que chama o método específico
+Referências de tipos de classes mais genéricas referenciem objetos mais específicos.
+
+classe abstrata:
+Não podem ser instanciadas. Para instanciar, devemos criar primeiro uma classe filha não abstrata.
+
+Uma classe abstrata representa um conceito, algo abstrato, e o compilador não permite instanciar um objeto dessa classe. 
+Para instanciar é preciso criar primeiro uma classe filha não abstrata.
+
+
+Exerc
+métodos abstratos
+
+Não possuem corpo (implementação), apenas definem a assinatura.
+Correto, um método abstrato define apenas a assinatura (visibilidade, retorno, nome do método e parâmetros).
+
+
+A herança captura o que é comum e isola aquilo que é diferente entre classes.
+
+
+O que é verdade sobre classes abstratas? Selecione todas as afirmações verdadeiras:
+
+Alternativa correta
+Podem ter métodos concretos (com implementação)
+Correto, como podem ter atributos também podem ter métodos concretos!
+
+Alternativa correta
+Não podem ser instanciadas
+Correto, pois o que é abstrato (a classe) não pode se tornar concreto (objeto). Por isso não podemos instanciar objetos de uma classe abstrata.
+
+Alternativa correta
+Podem ter atributos
+Correto, podemos sim ter atributos! Uma classes abstrata é uma classe normal, só não pode instanciar (Conta c1 = new Conta();)e pode ter métodos abstratos. O resto continua valendo!
+
+Alternativa correta
+Podem ter métodos abstratos (sem implementação)
+Correto, como vimos uma classe abstrata pode ter métodos sem implementação. Dessa forma obrigamos um filho implementar o método.
+
+
+Não podem ter construtores
+Errado, pois podem sim ter construtores! Uma classes abstrata é uma classe normal, só não pode instanciar e pode ter métodos abstratos. O resto continua valendo!
+
+
+----interfaces
+
+Sobre interfaces, qual das alternativas abaixo é VERDADEIRA?
+
+Alternativa correta
+Ela é um contrato onde quem assina se responsabiliza por implementar esses métodos (cumprir o contrato)
+
+
+...
+
+
+Sobre classes abstratas e interfaces, selecione todas as afirmativas verdadeiras:
+
+
+Podemos estender apenas uma classe abstrata, mas podemos implementar várias interfaces.
+
+Correto! Existe apenas herança simples em Java, mas podemos implementar quantas interfaces que quisermos..
+Todos os métodos de uma interface são abstratos, os de uma classe abstrata podem não ser.
+
+
+Correto, todos os métodos na interface são sempre abstratos e sempre públicos.
+Em uma classe abstratos podemos ter métodos concretos e abstratos.
+
+...
+
+
+Quanto ao conceito do Polimorfismo marque as alternativas corretas:
+
+
+É a capacidade de um objeto ser referenciado por vários tipos.
+Correta, podemos comunicar com um objeto através de tipos de variáveis diferentes.
+Por exemplo, se existir uma classe Gerente que seja filha de Funcionario, um objeto do tipo Gerente pode ser referenciado com o tipo Funcionario também.
+
+
+
+É a capacidade de um objeto chamar métodos do seu pai usando super.
+Errado, através super deixamos claro que queremos acessar um membro da classe mãe.
+
+
+Só temos polimorfismo quando uma classe extende de outra, ou seja, apenas via herança.
+Errado, vimos que as interfaces são uma alternativa também para ter polimorfismo.
+
+
+Temos polimorfismo quando uma classe extende de outra ou também quando uma classe implementa uma interface.
+Correta, temos polimorfismo via herança ou interface.
+
+
+
+......
+sobre interfaces
+
+Criar a interface -> método public sempre abstrato -> como: double getValorImposto(); (public e abstract implícito) -> 
+
+
+
+Como vimos durante o curso e revisamos durante este capítulo, quais das afirmativas abaixo descreve uma vantagem do uso de interfaces?
+
+Garante que todos os métodos de classes que implementam uma interface possam ser chamados com segurança.
+Correto! Isso é a ideia do contrato, garantindo que a classe tenha um comportamento, basta assinar o contrato (implementar a inteface).
+
+...
+
+
+Qual das afirmativas a seguir representa uma vantagem do uso de composição e interfaces sobre o uso de herança?
+
+
+A herança é limitada ao polimorfismo, enquanto o uso de interfaces com composição possibilita polimorfismo E reutilização de código.
+Errado pois Herança possibilita sim polimorfismo E reutilização.
+
+
+Com interfaces temos uma alternativa ao polimorfismo, com a composição temos uma alternativa a reutilização de código.
+Não há vantagem alguma pode escolher o que você julga melhor.
+Errado! Na verdade existem algumas vantagens. Normalmente o uso de interfaces (para definir o contrato e ter polimorfismo) e composição (para ter reutilização de código) 
+é mais flexível comparado a herança.
+
+
+Com composições e interfaces teremos mais flexibilidade com nosso código, já que não nos prenderemos ao acoplamento que a herança propõe.
+Correto!
+
+.....
+exceções
+
+
+Marque as alternativas verdadeiras sobre exceções em Java:
+
+
+Exceções em Java podem ou não ter um nome que a identifique.
+Exceções sempre possuem um nome.
+
+
+
+Exceções não tratadas caem na pilha de execução procurando por alguém que saiba lidar com ela.
+Correto!
+
+
+
+Um programa Java sintaticamente correto jamais apresentará erros durante sua execução. Aliás, essa é uma das vantagens da linguagem Java.
+Errado, o compilador fará apenas uma verificação sintática. Mesmo assim pode acontecer exceções.
+
+
+
+Toda exceção em Java possui um nome que a identifica. Essa abordagem torna seu entendimento mais fácil do que o uso de números mágicos (códigos de erros) como 15, 7012 ou 16.
+Correto!
+
+...
+uma exceção
+Caso não seja tratada, a exceção muda o fluxo de execução do programa.
+Alternativa correta! Caso não seja tratada, a exceção muda o fluxo de execução do programa, encerrando-o abruptamente.
+
+--- usa a referencia para chamar um método
+
+
+... throw
+
+Existe uma hierarquia grande de classes que representam exceções. Por exemplo, ArithmeticException é filha de RuntimeException, que herda de Exception, 
+que por sua vez é filha da classe mais ancestral das exceções, Throwable. Conhecer bem essa hierarquia significa saber utilizar exceções em sua aplicação.
+
+Throwable é a classe que precisa ser extendida para que seja possível jogar um objeto na pilha (através da palavra reservada throw)
+
+A hierarquia iniciada com a classe Throwable é dividida em exceções e erros. Exceções são usadas em códigos de aplicação. Erros são usados exclusivamente pela máquina virtual. 
+Classes que herdam de ExceptionError são usadas para comunicar erros na máquina virtual.
+
+Desenvolvedores de aplicação não devem criar erros que herdam de ErrorStackOverflowError é um erro da máquina virtual para informar que a pilha de execução não tem mais memória.
+
+Exceções são separadas em duas grandes categorias: aquelas que são obrigatoriamente verificadas pelo compilador e as que não são verificadas. 
+As primeiras são denominadas checked e são criadas através do pertencimento a uma hieraquia que não passe por RuntimeException. As segundas são
+as unchecked, e são criadas como descendentes de RuntimeException.
+
+r: Isso aí! A primeira frase da afirmação 3 está correta. Contudo, classes que comunicam erros da máquina virtual herdam de Error. 
+Fala pro Miguel assistir os vídeos novamente!
+
+checked obrigatorio tratar
+unchecked o desenvolvedor escolher
+
+a - throw
+
+b - finally
+
+c - catch
+
+d - throws
+
+e - try
+
+todas
+
+
+...finally
+
+Veja as afirmações sobre o bloco finally:
+
+a - O bloco finally é opcional quando há bloco catch.
+
+b - O bloco finally sempre será executado (sem ou com exceção).
+
+c - O bloco finally só será executado sem exceção.
+
+d - O bloco finally é tipicamente utilizado para fechar um recurso como conexão ou transação.
+
+Quais são corretas?
+
+a, b, d
+
+
+Correto, é opcional, executa sempre (sem ou com exceção) e é tipicamente utilizado para fechar um recurso.
+
+
+...try catch finally
+
+
+try {}
+finally {}
+
+Correto, no tratamento o bloco catch é opcional quando tem o bloco finally.
+
+try {}
+catch(SacaException | DepositaException  ex) {}
+
+Correto, um tratamento com try e multi-catch.
+
+
+
+Alternativa correta
+try {}
+finally {}
+
+Correto, no tratamento o bloco catch é opcional quando tem o bloco finally.
+
+
+
+try {}
+catch(SacaException ex) {}
+catch(DepositaException ex) {}
+finally {}
+
+Correto, temos um try com dois blocos catch (clássicos) e o bloco finally.
+
+...try-with-resources
+
+O que está garantido quando usamos o try-with-resources?
+
+try(Conexao con = new Conexao()) {
+     con.leDados();
+}
+
+
+O bloco finally é criado automaticamente.
+Correto, automaticamente é criado um bloco finally. Nele é chamado o método close() do recurso.
+
+O recurso precisa implementar o método close().
+Correto, automaticamente é criado um bloco finally. Nele é chamado o método close() do recurso.
+
+***
+Nessa aula, aprendemos:
+
+que existe um bloco finally, útil para o fechamento de recursos (como conexão);
+quando há um bloco finally o bloco catch é opcional;
+que o bloco finally é sempre executado, sem ou com exceção;
+como usar o try-with-resources.
+
+
+...FQN full
+
+O que é o FQN mesmo?
+
+
+
+Alternativa correta
+É o nome completo da classe composto pelo nome do pacote e o nome da classe.
+
+
+Correto, o FQN (Full Qualified Name) é nome completo da classe, composto pelo nome do pacote e o nome da classe.
+FQN = Nome Pacote . Nome Simples da Classe
+
+...package
+
+packages são diretórios que tem significado especial dentro do código fonte Java (b), a palavra chave package deve ser 
+a primeira declaração(c) e packages servem para organização e agrupar as classes e interfaces (d).
+
+...FQN
+
+O seu amigo Pedro trabalha na empresa Uberdist no projeto com o apelido udnotas. O Pedro também mencionou que a empresa possui um site com o endereço uberdist.com.br.
+
+O Pedro está com dúvida sobre a nomenclatura do package. Qual nome faria mais sentido e é considerado boa prática?
+
+
+
+br.com.uberdist.udnotas
+
+
+Correto, sempre seguindo a regra:
+NOME_DO_SITE_AO_CONTRARIO.NOME_DO_PROJETO
+
+...estrutura FQN
+
+
+Veja a estrutura seguinte:
+
+src
+  br
+    gov
+      rio
+        sicis
+          Usuario.javaCOPIAR CÓDIGO
+E o código fonte da classe Usuario:
+
+//AQUI
+
+public class Usuario {
+
+  //atributos e métodos omitidos
+}COPIAR CÓDIGO
+Assumindo que a pasta src é a raiz do nosso código fonte. O que devemos colocar no lugar de //AQUI para compilar a classe Usuario com sucesso?
+
+r: 
+
+package br.gov.rio.sicis;
+
+Correto, o package possui todos os nomes dos diretórios separado pelo caracter . (ponto).
+
+......* package
+
+
+Vimos agora que em um arquivo de classe ou interface existe a declaração do package, a declaração do import e a definição da classe.
+
+a) Só pode ter uma declaração package por arquivo
+
+b) A declaração do import é opcional
+
+c) É possível repetir a declaração import para importações de packages diferentes
+
+d) A definição da classe sempre deve vir por último (após package e import)
+
+Quais afirmações estão corretas?
+
+
+b, c, d
+Errado, pois falta a opção a:
+
+
+Só pode ter uma declaração package no código fonte e, além disso, a declaração deve ser a primeira clausula no código fonte (só comentários pode ter antes do package).
+Alternativa correta
+Todas
+
+
+
+a, c e d
+Errado, pois falta a opção b:
+A declaração do import é opcional
+Não é preciso usar o import (porém útil). Sempre podemos usar o FQN da classe.
+
+
+a e d
+Errado, pois faltam as opções b e c:
+A declaração do import é opcional (b) e é possível repetir a declaração import para importações de packages diferentes (c).
+
+...package
+
+No desenvolvimento em Java, organizamos nossas classes em pacotes. Sobre esse tema é correto afirmar que:
+
+O modificador default do Java restringe acesso a nível de pacote. Logo, se não for definido algum modificador, seja na classe, método, ou atributo,
+apenas classes do mesmo pacote podem acessar essas informações.
+Correto, com default apenas classes do mesmo pacote podem acessar essas informações.
+
+
+Quando um projeto utiliza pacotes, podemos usar o import de outras classes para sua utilização.
+Correto! O import facilita o uso da classe pois não precisamos do Full Qualified Name.
+
+
+Por organização e pela convenção adotada, precisamos seguir o domínio da empresa. Ou seja, se a empresa tem como domínio alura.com.br, os pacotes devem ser subpacotes de br.com.alura.
+Correto, mas existem exceções (poucas).
+
+***
+
+O que aprendemos?
+
+packages servem para organizar o nosso código
+packages fazem parte do FQN (Full Qualified Name) da classe
+o nome completo da classe (FQN) é composto de: PACKAGE.NOME_SIMPLES_CLASSE
+a definição do package deve ser a primeira declaração no código fonte
+para facilitar o uso de classes de outros packages podemos importá-los
+os imports ficam logo após da declaração do package
+a nomenclatura padrão é usar o nome do domínio na web ao contrário junto com o nome do projeto, por exemplo:
+br.com.caelum.geradornotas
+br.com.alura.gnarus
+br.gov.rj.notas
+de.adidas.lagerCOPIAR CÓDIGO
+Uma vez organizado as nossas classes podemos revisar os modificadores de visibilidades que dependem dos pacotes. Vamos continuar?
+
+protected = publico para os filhos
+
+...modificadores
+
+Sobre os modificadores de acesso do Java é correto afirmar que:
+
+Alternativa correta
+Temos quatro modificadores: private, protected, default e public. Onde a ordem do MAIS restritivo para o MENOS restritivo é: private, default, protected e public.
+
+...modificador1
+
+Qual modificador é visível nos seguintes lugares?
+
+Classe   Package   Classe Filho   Qualquer Package
+────────────────────────────────────────────
+ ✔        ✔         ✔             ✘
+───────────────────────────────────────────
+
+protected
+
+
+Correto! 
+O modificador protected funciona igual ao *<<package private>> mas adiciona a visibilidade para os filhos (chamado de "publico para os filhos").
+
+
+...modificador2
+
+E agora, qual modificador é visível nos seguintes lugares?
+
+Classe   Package   Classe Filho   Qq Package
+────────────────────────────────────────────
+ ✔        ✔         ✘             ✘
+────────────────────────────────────────────
+
+
+<<package private>> (ausência do modificador)
+
+A ausência do modificador, também chamado de package private ou default, o membro fica visível na classe e no package, mas é invisível fora do pacote (nem para filhos).
+
+***
+
+Nessa aula falamos novamente sobre visibilidade e aprendemos:
+
+existem 3 palavras chaves relacionado com a visibilidade: private, protected, public
+existem 4 níveis de visibilidade (de menor para maior):
+private (visível apenas na classe)
+<<package private>> (visível na classe E em qualquer outro membro do mesmo pacote, podendo ser chamado de default)
+protected (visível na classe E em qualquer outro membro do mesmo pacote E para qualquer filho)
+public (visível em qualquer pacote)
+os modificadores podem ser usados na definição da classe, atributo, construtor e método
+
+
+...javadoc
+
+Leia as afirmações com atenção:
+
+a) É preciso ter instalado o JDK para poder gerar a documentação javadoc.
+
+b) O javadoc é uma documentação escrita pelo desenvolvedor para desenvolvedores.
+
+c) Todos os membros da classe são contemplados no javadoc. ---
+
+d) Existem tags especias para marcar o autor ou a versão da classe.
+
+Todas são verdadeiras exceto:
+
+
+c.
+Não é verdadeira pois apenas os membros "públicos" são contemplados no javadoc. Outros membros (não públicos) são considerados detalhes da implementação
+ e não podem ser utilizados por outras classes.
+
+ ***
+
+ Já vimos nessa aula algumas tags (ou anotações) do javadoc como @version ou @author. Segue a lista completa:
+
+@author (usado na classe ou interface)
+@version (usado na classe ou interface)
+@param (usado no método e construtor)
+@return (usado apenas no método)
+@exception ou @throws (no método ou construtor)
+@see
+@since
+@serial
+@deprecated
+Importante é que as tags do javadoc existem apenas para padronizar alguns dados fundamentais do seu código fonte como o autor e a versão.
+
+Outras anotações
+Nos cursos você também já viu uma anotação fora do javadoc, a anotação @Override. Essa anotação é considerada uma configuração, nesse caso interpretado pelo compilador.
+
+As anotações vão muito além das tags javadoc e são muito mais sofisticadas e poderosas. Elas só entraram na plataforma Java a partir da versão 1.5 enquanto o javadoc está presente desde o nascimento da plataforma Java. O interessante é que as anotações foram inspirados pelas tags do javadoc.
+
+Se você ainda não está seguro sobre o uso das anotações, fique tranquilo pois você verá ainda muitas usadas pelas bibliotecas por ai para definir dados e configurações. Aguarde!
+
+
+
+...toString()
+
+Qual é o objetivo do método toString() da classe Object?
+
+Alternativa correta
+O método toString() existe para ser sobrescrito.
+Correto, é boa prática sobrescrever o método para dar um significado maior do que a saída padrão desse método.
+
+
+O método toString() existe para devolver uma informação sobre o estado do objeto.
+Correto, o método toString deve devolver informações sobre o estado do objeto. É útil para a depuração no desenvolvimento.
+
+
+
+---array
+
+heap (memoria objeto)
+array é um objeto
+
+
+...ref. array
+
+4.
+
+
+Você está se preparando para a certificação Java e passou pelo código seguinte:
+
+ContaPoupanca[] contas = new ContaPoupanca[10];
+ContaPoupanca cp1 = new ContaPoupanca(11,22);
+ContaPoupanca cp2 = new ContaPoupanca(33,44);
+
+contas[0] = cp1;
+contas[1] = cp1;
+contas[4] = cp2;
+contas[5] = cp2;
+
+ContaPoupanca ref1 = contas[1];
+ContaPoupanca ref2 = contas[4];COPIAR CÓDIGO
+Quantas referências apontam para a ContaPoupanca com a agencia 33 e número 44?
+
+Bingo! Vamos contar?
+r: 
+
+1) ContaPoupanca cp2 = new ContaPoupanca(33, 44);
+2) contas[4] = cp2;
+3) contas[5] = cp2;
+4) ContaPoupanca ref2 = contas[4];
+
+*
+Até agora vimos a forma "classica" de criar um objeto array usando a palavra chave new, por exemplo:
+
+int[] numeros = new int[5];
+numeros[0] = 1;
+numeros[1] = 2;
+numeros[2] = 3;
+numeros[3] = 4;
+numeros[4] = 5;
+COPIAR CÓDIGO
+No entanto também há uma forma literal. Literal, nesse contexto, significa usar valores diretamente, menos burocrático, mais direito. Veja a diferença:
+
+int[] refs = {1,2,3,4,5};
+COPIAR CÓDIGO
+Usamos as chaves {} para indicar que se trata de um array e os valores já ficam declarados dentro das chaves.
+
+***
+
+Nessa aula sobre Arrays aprendemos:
+
+Um array é uma estrutura de dados e serve para guardar elementos (valores primitivos ou referências)
+Arrays usam colchetes ([]) sintaticamente
+Arrays têm um tamanho fixo!
+Um array também é um objeto!
+Arrays são zero-based (o primeiro elemento se encontra na posição 0)
+Um array é sempre inicializado com os valores padrões.
+Ao acessar uma posição inválida recebemos a exceção ArrayIndexOutOfBoundException
+Arrays possuem um atributo length para saber o tamanho
+A forma literal de criar uma Array, com o uso de chaves {}.
+No próximo capítulo falaremos mais um pouco sobre arrays (do tipo Object) e veremos como funciona esse parâmetro do método main.
+
+
+***typecast
+
+Cast explícito e implícito
+Já falamos bastante sobre o Type Cast que é nada mais do que a conversão de um tipo para outro.
+
+Cast implícito e explícito de primitivos
+Para ser correto, já vimos o cast acontecendo antes mesmo de defini-lo. Temos dois exemplos, o primeiro do mundo de primitivos:
+
+int numero = 3;
+double valor = numero; //cast implícito
+Repare que colocamos um valor da variável numero (tipo int) na variável valor (tipo double), sem usar um cast explícito. Isso funciona? A resposta é sim, 
+pois qualquer inteiro cabe dentro de um double. Por isso o compilador fica quieto e não exige um cast explicito, mas nada impede de escrever:
+
+int numero = 3;
+double valor = (double) numero; //cast explícito
+Agora, o contrário não funciona sem cast, uma vez que um double não cabe em um int:
+
+double valor = 3.56;
+int numero = (int) valor; //cast explicito é exigido pelo compiladorCOPIAR CÓDIGO
+Nesse caso o compilador joga todo valor fracional fora e guarda apenas o valor inteiro.
+
+Cast implícito e explícito de referências
+Nas referências, o mesmo princípio se aplica. Se o cast sempre funciona não é necessário deixá-lo explícito, por exemplo:
+
+ContaCorrente cc1 = new ContaCorrente(22, 33);
+Conta conta = cc1; //cast implicito
+Aqui também poderia ser explícito, mas novamente, o compilador não exige pois qualquer ContaCorrente é uma Conta:
+
+ContaCorrente cc1 = new ContaCorrente(22, 33);
+Conta conta = (Conta) cc1; //cast explícito mas desnecessário 
+
+
+...cast explícito
+
+int numero = 3;
+double valor = (double) numero; //cast explícito
+Agora, o contrário não funciona sem cast, uma vez que um double não cabe em um int:
+
+
+...implícito
+
+int numero = 3;
+double valor = numero; //cast implícito
+
+
+ex:
+
+Type cast explícito sempre funciona?
+A resposta é não. O cast explicito só funciona se ele for possível, mas há casos em que o compilador sabe que um cast é impossível e aí nem compila, 
+nem com type cast. Por exemplo:
+
+Cliente cliente = new Cliente();
+Conta conta = (Conta) cliente; //impossível, não compilaCOPIAR CÓDIGO
+Como o cliente não estende a classe Conta ou implementa uma interface do tipo Conta, é impossível esse cast funcionar, pois uma referência 
+do tipo Conta jamais pode apontar para um objeto do tipo Cliente.
+
+A certificação Java tem muitas dessas perguntas sobre cast possível, impossível, explícito e implícito. Se você pretende tirar essa certificação,
+ vale a pena estudar esse assunto com muita calma.
+
+
+...review unchecked
+
+Leia as afirmações com atenção sobre a ClassCastException:
+
+a) é do pacote java.lang
+b) é uma exceção checked
+c) É lançada quando o type cast falha
+Todas são verdadeiras exceto:
+
+Alternativa correta
+a)
+É verdadeira. A ClassCastException é do pacote java.lang.
+Alternativa correta
+
+c)
+É verdadeira. A ClassCastException é lançada quando o cast falha.
+Alternativa correta
+
+b)
+Errado, justamente contrário. A ClassCastException é unchecked pois estende RuntimeException.
+
+***
+
+Nessa aula aprendemos:
+
+uma array do tipo Object pode guardar qualquer tipo de referência
+quando convertemos uma referência genérica para uma referência mais específica é preciso usar um type cast
+o cast só compila quando é possível, mesmo assim pode falhar na hora de rodar
+quando o type cast falha podemos receber uma ClassCastException
+para receber valores ao chamar o programa Java na linha de comando podemos usar o array String[] no método main
+
+...ref ArrayList
+
+
+O que acontece se você adiciona uma referência em uma lista do tipo ArrayList sem definir a posição?
+
+Alternativa correta
+O elemento é adicionado no fim da lista
+
+
+Correto, ao adicionar o elemento sempre fica no fim da lista.
+
+
+...limite array
+
+Quantos elementos um objeto do tipo java.util.ArrayList pode guardar?
+
+O limite é a memória da JVM.
+Correto, o único limite é a memória da JVM.
+
+...generics
+
+
+Você encontrou um código legado que ainda não usa generics:
++
+ArrayList lista = new ArrayList();
+Cliente cliente = new Cliente();
+lista.add(cliente);
++
+Como você pode melhorar o código e aplicar os generics?
+
+
+ArrayList<Cliente> lista = new ArrayList<Cliente>();
+Correto, parametrizamos a ArrayList usando <>. Há uma variação/simplificação que entrou no Java 1.7. O código abaixo é equivalente a alternativa:
+
+ArrayList<Cliente> lista = new ArrayList<>();
+
+
+...generics
+
+Os generics entraram na versão 1.5 na plataforma Java e foram levemente melhorados no Java 1.7. Quais são os principais benefícios?
+
++-
+Antecipar problemas de casts no momento de compilação.
+Correto, o compilador avisa se erramos no tipo, por exemplo:
+
+ArrayList<String> lista = new ArrayList<String>(); 
+lista.add("Nico");
+Conta c = lista.get(0); //nao compila
++-
+
++-
+Evitar casts excessivos
+Correto, uma vez parametrizada a lista, não precisamos mais o cast, por exemplo:
+
+Cliente ref = (Cliente) lista.get(0); // desnecessário com generics
++-
+
+
+-+
+O compilador consegue otimizar o código para deixar a execução mais performática.
+Errado, em geral, o compilador Java não otimiza o código. Isso é a tarefa da JVM. Os generics ajudam na hora de escrever o código, na hora de rodar não há impacto.
+-+
+
++-
+O código mais legível, já que fica explícito o tipo dos elementos.
+Correto, na criação da lista fica claro qual a intenção. Por exemplo, na declaração abaixo está bem claro que a lista guarda Strings:
+
+ArrayList<String> nomes = new ArrayList<String>(); 
++-
+
+***
+
+Lista com capacidade predefinida
+Falamos que o ArrayList é um array dinâmico, ou seja, por baixo dos panos é usado um array, mas sem se preocupar com os detalhes e limitações.
+
+Agora pense que você precisa criar uma lista representando todos os 26 estados do Brasil. Você gostaria de usar um ArrayList para "fugir" do array, 
+mas sabe que o ArrayList cria um array automaticamente, do tamanho que a classe acha conveniente.
+
+Será que não há uma forma de criar essa lista já definindo o tamanho do array? Claro que tem e é muito simples. O construtor da classe ArrayList é 
+sobrecarregado e possui um parâmetro que recebe a capacidade:
+
+ArrayList lista = new ArrayList(26); //capacidade inicial
+A lista continua dinâmica, mas o tamanho do array inicial é de 26!
+
+Lista a partir de outra
+Outra forma de inicializar uma lista é baseado na outra que é muito comum no dia a dia. Para tal a ArrayList possui mais um construtor que recebe a lista base:
+
++-
+ArrayList lista = new ArrayList(26); //capacidade inicial
+lista.add("RJ");
+lista.add("SP");
+//outros estados
+ArrayList nova = new ArrayList(lista); //criando baseado na primeira lista
+Quanto mais sabemos sobre as classes Java padrão mais fácil fica o nosso código.
++-
+
+***
+
+O que aprendemos?
+
+Nessa aula começamos a falar sobre lista e conhecemos a classe java.util.ArrayList. Aprendemos:
+
+que a classe java.util.ArrayList encapsula o uso do array e oferece vários métodos de mais alto nível
+que uma lista guarda referencias
+como usar métodos size, get, remove
+como usar a sintaxe foreach para iterar a ArrayList
+que os generics parametrizam classes
+que no caso da ArrayList podemos definir o tipo dos elementos através de generics
+Isso é apenas o início sobre esse poderoso pacote java.util. Na próxima aula vamos mergulhar mais!
+
+
+...equals 
+
+O método equals, junto aos métodos toString e hashCode, é um dos métodos fundamentais da classe Object.
+
+Qual é a assinatura correta desse método?
+
+
+public boolean equals(Object ref)
+Correto, é publico, devolve boolean e recebe um Object.
+
+
+...equals 
+
+
+O que é verdade sobre o método equals?
+
++-
+É definido na classe Object.
+Correto, mas isso você já sabia :)
++-
+
++-
+A implementação padrão compara as referências.
+Correto, a implementação do método equals da classe Object compara apenas as referências.
++-
+
+-+
+Se os objetos não forem iguais devemos lançar uma exceção.
+Errado, devemos devolver false apenas.
+-+
+
++-
+Devemos sobrescrever para definir o critério de igualdade.
+Correto, devemos sobrescrever o método equals para definir a igualdade do objeto.
++-
+
++Em geral, os métodos equals, toString e hashCode existem para sobrescrita.
+
+
+
+linkedList
+
+apagar elementos tranquilamente != do ArrayList
+menor velocidade, iterar um por um para acessar
+
+...linkedList
+
+O pacote java.util é de extrema importância no desenvolvimento Java. Sobre ele podemos afirmar que:
+
++-
+Alternativa correta
+Todas as listas garantem a ordem de inserção.
++-
+
++-
+Correto, as listas garantem a ordem de inserção. Isso significa que ao iterar recebemos os elementos na mesma ordem que eles foram inseridos.
+List é uma interface, a ArrayList e a LinkedList são implementações
++-
+
++-
+Alternativa correta
+Todas as listas possuem um índice.
++-
+
++-
+Correto, as listas sempre possuem um índice (podemos acessar o elemento através da posição).
+Além disso, existe mais uma característica: lista aceitam elementos duplicados, mas sobre isso falaremos um pouco mais na frente.
++-
+
+-+                               ex:
+Não é possível definir um tipo (Conta) em uma lista, ela sempre aceita qualquer objeto.
+Errado, para tal existem os Generics ().
+-+
+
+... ArrayList e LinkedList
+
+LinkedList e ArrayList são duas implementações diferentes da interface List. A LinkedList é uma lista duplamente "linkada" e a ArrayList representa um array com redimensionamento dinâmico.
+
+Cada uma das implementações tem as suas vantagens e desvantagens (na dúvida escolha ArrayList). Relacione as características as implementações:
+
+A) acesso fácil e performático pelo índice
+B) inserção e remoção performática em qualquer posição, também no início
+C) elementos precisam ser copiados quando não há mais capacidade
+D) acesso mais demorado pelo índice, é preciso pesquisar os elementos
+
++-
+ArrayList: A e C   
+A) acesso fácil e performático pelo índice  
+C) elementos precisam ser copiados quando não há mais capacidade
+
+LinkedList: B e D  
+B) inserção e remoção performática em qualquer posição, também no início 
+D) acesso mais demorado pelo índice, é preciso pesquisar os elementos
++-
+
++
+ArrayList: A e C
+LinkedList: B e D
+Correto!
++
+
+**Array para List
+
+A partir de agora vamos usar as listas para fugir das desvantagens do array. No entanto, se lembra do nosso array String[] do método main? Com certeza, 
+e não podemos mudar a assinatura do método main pois a JVM não aceita isso. Bom, já que não podemos alterar a assinatura será que não tem uma forma de 
+transformar uma array em uma lista? Claro que existe, e para tal, existe já uma classe que ajuda nessa tarefa: java.util.Arrays
+
+A classe java.util.Arrays possui vários métodos estáticos auxiliares para trabalhar com arrays. Veja como fica simples de transformar um array para uma lista:
+
++-
+public class Teste {
+
+  public static void main(String[] args) {
+    List<String> argumentos = Arrays.asList(args);
+  }
+}
+
++-
++
+Vamos ver ainda outras funcionalidades da classe java.util.Arrays
++
+
+***
+O que aprendemos?
+
+Nessa aula aprendemos:
+
+como implementar o método equals para definir a igualdade
+que o método equals é utilizado pelas listas
+que existe mais uma lista, a java.util.LinkedList
+a diferença entre ArrayList e LinkedList
+a interface java.util.List que define os métodos da lista
+No próximo capítulo veremos mais uma implementação da interface List
+
+...Vector
+
+O que aprendemos sobre o Vector?
+
+Marque todas as alternativas corretas:
+
+-+
+Não devemos mais usar Vector pois é ArrayList legado.
+Errado, podemos usá-lo quando for preciso e fizer sentido.
+-+
+
+-+
+Vector é um LinkedList threadsafe.
+Errado, o Vector é um ArrayList threadsafe.
+-+
+
++-
+Vector é threadsafe.
+Correto, esta é a grande diferença entre ArrayList e Vector
++-
+
++-
+Vector também usa um array.
+Correto, como o ArrayList, o Vector também usa um array por baixo.
++-
+
++-
+Vector é uma lista.
+Correto, o Vector implementa a interface List!
++-
+curso paralelo
+
+https://cursos.alura.com.br/course/threads-java-1
+
+https://cursos.alura.com.br/course/threads-java-2
+
+índices List 
+
+
+...List
+
+
+Sobre as listas, marque todas as alternativas corretas:
+
+-+
+As listas não aceitam elementos duplicados.
+Errado, é justamente contrário. As listas aceitam duplicados.
+-+
+
++-
+As listas garantem a ordem de inserção.
+Correto, na iteração os elementos aparecem na ordem de inserção.
++-
+
++-
+As listas são sequências (têm índice).
+Correto, todas as listas possuem um índice, ou seja são sequências.
++-
+
++-
+As listas são coleções.
+Correto, qualquer lista também é uma coleção (java.util.Collection).
++-
+
+...Vector
+
+Veja o esboço de código abaixo:
+
++
+????<String> vector = new Vector<String>();
+O que podemos colocar no lugar de ?????
++
+
+Obs: Todas as classes e interfaces abaixos são do pacote java.util.
+
++-
+Collection
+Correto, java.util.Collection é a interface mãe de todas as coleções.
++-
+
++-
+List
+Correto, java.util.List é a interface mãe de todas as listas.
+Alternativa correta
++-
+
+-+
+ArrayList
+Errado. O Vector não é um ArrayList. É verdade que ambas as classes usam um array como implementação mas elas não tem um relacionamento na hierarquia de classes.
+-+
+
+-+
+LinkedList
+Errado. O Vector não é um LinkedList.
+-+
+
++-
+Vector
+Correto, aqui não temos dúvidas, pois um Vector é um Vector :)
++-
+
+
+**
+
+Vamos praticar rapidamente o que vimos nessa aula mais conceitual. Para isso, siga os passos abaixo.
+
+1) Abra a classe TesteArrayList para testar as outras implementações de listas. Para tal, instancie um java.util.Vector,
+ mas também teste ArrayList e LinkedList:
+
+public class TesteArrayList {
+
+    public static void main(String[] args) {
+
+        //List<Conta> lista = new ArrayList<Conta>(); //usa array por baixo
+        //List<Conta> lista = new LinkedList<Conta>(); //lista linkada
+        List<Conta> lista = new Vector<Conta>(); //usa array por baixo, mas tbm é threadsafe
+
+        //outro código omitido
+        //...
+    }
+}
+Repare que todo o resto do código continua funcionando, independente da lista utilizada. Isto ocorre pois todas as implementações são listas.
+
+
+2) Teste uma vez a interface java.util.Collection na mesma classe TesteArrayList:
+
+public class TesteArrayList {
+
+    public static void main(String[] args) {
+
+        //List<Conta> lista = new ArrayList<Conta>(); //usa array por baixo
+        //List<Conta> lista = new LinkedList<Conta>(); //lista linkada
+        Collection<Conta> lista = new Vector<Conta>(); 
+
+        //outro código omitido
+        //...
+        Conta ref = lista.get(0); //não compila
+        //...
+
+    }
+}
+Repare que algumas linhas de código param de compilar, justamente os métodos que usam a posição, como remove(int pos) ou get(int pos). 
+Isto ocorre pois apenas listas são sequências e possuem um índice, mas há outras coleções que funcionam sem índice e consequentemente
+não possuem esses métodos.
+
+**
+
+Nesse curso, você já aprendeu bastante sobre as coleções, para se dar bem nos próximos cursos. No entanto,
+o pacote java.util (ou a API de Collections) é tão importante, que criamos um curso dedicado para tal. 
+Nele você não só aprenderá mais sobre listas como também mergulhará a fundo nos 
+conjuntos (java.util.Set) e mapas (java.util.Map). Vale a pena conferir:
+
+https://cursos.alura.com.br/course/java-collections
+
+***
+
+Nessa aula vimos:
+
+o java.util.Vector, que é uma ArrayList thread safe
+a interface java.util.Collection que é a interface de todas as coleções
+as listas são sequencias que aceitam elementos duplicados
+os conjuntos (java.util.Set) também são coleções, mas não aceitam duplicados nem são listas
+Na próxima aula vamos resolver o problema de guardar primitivos nas listas!
+
+
+...autoboxing
+//autoboxing = transformação automática de primitivo para objeto e vice versa
+
+Integer = transforma em lista de referência/
+/pars = transformar string em inteiro
+
+...unboxing
+
+Integer idadeRef = Integer.valueOf(29); //autoboxing
+int valor = idadeRef.intValue(); //unboxing
+System.out.println(idadeRef.doubleValue());
+
+System.out.println(valor);
+
+
+...Wrappers
+
+No último vídeo vimos o primeiro Wrapper: java.lang.Integer
+
+Nesse contexto, o que são Wrappers?
+
++-
+São classes que contém funcionalidades e encapsulam a variável de tipo primitivo!
+Correto, criamos objetos dessas classes para envolver ou embrulhar uma valor primitivo.
+Há várias funcionalidades nessas classes que ajudam no dia a dia que veremos no próximo video.
++-
+
+...Wrapper
+
+O Autoboxing / unboxing pode ser confuso. Será que você desmistifica o código abaixo?
++-
+public class TesteWrapper {
+
+    public static void main(String[] args){
+        Integer ref = Integer.valueOf("3");
+        ref++;
+        System.out.println(ref);
+    }
+}
++-
+
+O código compila e roda? Qual seria resultado?
+
+
+Correto, realmente incrementa o valor inteiro, mesmo sendo uma referência. O que acontece por 
+baixo dos panos é um autoboxing / unboxing na linha que incrementa a variável (ref++). 
+Você pode imaginar que essa linha será substituída por três novas:
+
++-
+int valor = ref.intValue();
+valor = valor + 1;
+ref = Integer.valueOf(valor);
++-
+O valor é desembrulhado, depois incrementado e depois embrulhado de novo!
+
+
+...Wrapper
+
+Você está fazendo a leitura de um arquivo de texto com vários números. O problema é que os dados vêm como String, por exemplo:
+
++-
+String diaComoTexto = "29";
+int dia = ????;
++-
+
+O que você pode colocar no lugar de ???? para converter o texto?
+
++-
+Integer.valueOf(diaComoTexto)
+
+Correto, mas não seria a melhor opção pois devolve uma referência (e ai é feito um unboxing).
++-
+
++-
+Integer.parseInt(diaComoTexto)
+
+Correto e seria a opção mais adequada pois devolve um primitivo.
++-
+
+Na tabela abaixo, temos alguns tipos primitivos e as classes às quais estão associados:
+
+Tamanho	Tipo primitivo	Wrappers
+8 bytes	double	      java.lang.Double
+4 bytes	float	        java.lang.Float
+8 bytes	long	        java.lang.Long
+4 bytes	int	          java.lang.Integer
+2 bytes	short	        java.lang.Short
+1 bytes	byte	        java.lang.Byte
+2 bytes	char	        java.lang.Character
+boolean	              java.lang.Boolean
+
+
+...primitivo Wrapper
+
+Veja o código a seguir.
+
++-
+Character cRef = new Character('A');
++-
+
+Qual é o tipo primitivo desse wrapper?
+
+Correto! O interessante é que o char é quase um tipo numérico. Ele tem dois bytes, 
+igual o tipo short mas não usa o primeiro bit para guardar o sinal.
+Em outras palavras, o char só guarda números positivos. Isso 
+significa que o char consegue guardar 
+valores entre 0 e 65535 (2^16).
+
+...Generics
+
+Você está querendo ajudar o Pedro que está trabalhando com Java mas nunca aprendeu os generics. Ele te mostrou o código abaixo:
+
++-
+List referencias = new ArrayList(); //AQUI
+referencias.add(Double.valueOf(30.9));
+referencias.add(Integer.valueOf(10));
+referencias.add(Float.valueOf(13.4f));
++-
+
+Com qual código você pode substituir a linha com o comentário //AQUI para usar generics?
+
++-
+List<Number> referencias = new ArrayList<>();
+Correto, todos os elementos dessa lista são números.
++-
+
++-
+
+List<Object> referencias = new ArrayList<>();
+Correto, todas as referências também são Objects.
++-
+
+-+
+List<Double> referencias = new ArrayList<>();
+Errado, pois o tipo Integer não é um Double (Todos são Number e Object apenas). Igualmente o tipo Float não é um Double.
+-+
+
+-+
+List<double> referencias = new ArrayList<>();
+Errado, pois estamos usando o tipo primitivo na declaração da lista. Isso jamais funcionaria.
+-+
+
+***
+
+O que aprendemos?
+
+Nessa aula focamos nas classes WRAPPERS e aprendemos que
+
+para cada primitivo existe uma classe chamada Wrapper
+para guardar um primitivo numa coleção é preciso criar um objeto que embrulha o valor
+a criação do objeto Wrapper é chamada de autoboxing
+a retirada do valor primitivo do objeto Wrapper é chamada de unboxing
+autoboxing e unboxing acontecem automaticamente.
+as classes wrapper possuem vários métodos auxiliares, por exemplo para o parsing
+todas as classes wrappers que representam um valor numérico possuem a classe java.lang.Number como mãe
+Na próxima aula vamos aprender como ordenar as listas!
+
+
+... duas interfaces para definir critério de ordenação dos elementos de uma lista
+
+
+No mundo Java existem duas interfaces para definir o critério de ordenação dos elementos de uma lista.
+
+As interfaces são:
+
++-
+java.util.Comparator
+Correto, o comparator é um parâmetro do método sort da lista e da classe Collections.
++-
+
++-
+java.lang.Comparable
+Correto, para definir a ordem natural dos elementos!
++-
+
+...ordem natural
+
+No contexto da aula, o que significa ordem natural?
+
++-
+É a ordem definida pelo próprio elemento da lista.
+Correto, no nosso exemplo a classe Conta define o seu próprio critério de ordenação implementando a interface java.lang.Comparable.
+Nesse caso não é utilizado nenhum Comparator.
++-
+
+
+-+
+É a ordem usada sem a definição de nenhum critério de ordenação
+Errado, sempre tem que ter algum criterio de ordenação. Ou é utilizado um a interface java.lang.Comparable (ordem natural) ou java.util.Comparator.
+-+
+
+-+
+É a ordem alfabética ou numérica
+Errado, a ordem natural é definida pelo próprio elemento da lista através da interface java.lang.Comparable.
+-+
+
+-+
+É a ordem definida pelo primeiro atributo do elemento da lista
+Errado, a ordem natural é definida pelo próprio elemento da lista através da interface java.lang.Comparable.
+-+
+
+
+... compareTo 
+
+
+O seu amigo está aprendendo Java mas por um motivo o código abaixo não está funcionando. Primeiro, analise as duas classes (assuma que os imports estão corretos):
+
+class Programa {
+    public static void main(String[] args) {
+        Aula aulaIntro = new Aula("Introdução às Coleções", 20);
+        Aula aulaModelando = new Aula("Modelando a Classe Aula", 18);
+        Aula aulaSets = new Aula("Trabalhando com Conjuntos", 16);
+
+        List<Aula> aulas = new ArrayList<Aula>();
+        aulas.add(aulaIntro);
+        aulas.add(aulaModelando);
+        aulas.add(aulaSets);
+
+        Collections.sort(aulas);
+
+        for (Aula aula : aulas) {
+            System.out.println(aula);
+        }
+    }
+}
+
+class Aula {
+
+    private String titulo;
+    private int tempo;
+
+    public Aula(String titulo, int tempo) {
+        this.titulo = titulo;
+        this.tempo = tempo;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public int getTempo() {
+        return tempo;
+    }
+
+    public void setTempo(int tempo) {
+        this.tempo = tempo;
+    }
+
+    public String toString() {
+        return "[título: " + titulo + ", tempo: " + tempo + " minutos]";
+    }
+}
+
+O problema é que o código nem compila. Você sabe por quê?
+
+Obs: Em duvida, sempre teste, experimente e verifique o resultado, não há problema nenhum, pois estamos aprendendo!
+
+
+-+
+O método sort da classe Collections sempre deve receber um segundo parâmetro do tipo Comparator para definir o critério de comparação. Por isso o código nem compila.
+Errado, o método sort é sobrecarregado. Existe uma versão do sort que recebe apenas a lista e outra que recebe a lista e o comparator.
+-+
+
+-+
+A classe Aula não implementa o método equals. Consequentemente não há critério de comparação e o código nem compila.
+Errado, o método equals define o critério de igualdade que não é suficiente para a comparação.
+-+
+
+++
+A classe Aula não implementa a interface Comparable e, por consequência, não implementa o método compareTo. Por isso o código nem compila.
+Isso mesmo! A interface Comparable exige uma implementação do método compareTo, que precisa ser chamado pelo algoritmo interno do método sort() da lista.
+++
+
+
+...collections java.util
+
+Vou te passar um desafio e fazer algumas perguntas relacionadas com listas. Para responder, investigue a documentação oficial da classe Collections dentro do pacote java.util:
+
+Como podemos inverter a ordem de uma lista?
+Como podemos embaralhar todos os elementos de uma lista?
+Como podemos rotacionar os elementos de uma lista?
+Você consegue descobrir os métodos?
+
+
+
+Para inverter a ordem de lista você pode usar o método reverse da classe Collections:
+
+Collections.reverse(lista);
+Para embaralhar existe o método shuffle e para rotacionar tem o método rotate:
+
+Collections.shuffle(lista);
+
+Collections.rotate(lista, 5); //rotacionar 5 posicoes
+
+
+***
+Nessa aula fundamental e importante aprendemos que:
+
+para ordenar uma lista é preciso definir um critério de ordenação
+há duas formas de definir esse critério
+pela interface Comparator
+pela interface Comparable (ordem natural)
+o algoritmo de ordenação já foi implementado
+na lista no método sort
+na classe Collections pelo método sort
+a classe Collections é uma fachada com vários métodos auxiliares para trabalhar com as coleções, principalmente listas
+Respira fundo, pois estamos quase no fim desse curso, no entanto falta ainda aprender (finalmente!) as famosas lambda expressions. Tá pronto para continuar?
+
+
+...Function Objetic , classe anônima
+
+
+Como chamamos esse objeto que só encapsula uma função/método/procedimento?
+
+Perfeito, um objeto que criamos para encapsular uma função ou método. As classes anônimas facilitam um pouco a criação desses objetos.
+
+
+...Comparator
+
++
+Veja o código abaixo:
+
+Comparator<String> comp = new Comparator<String>() {
+
+  @Override
+  public int compare(String s1, String s2) {
+    return s1.compareTo(s2);
+  }
+};
++
+
+E as declarações
+
+A) É gerada uma classe anônima.
+B) É criado um objeto do tipo Comparator.
+C) É instanciada a interface Comparator.
+D) É gerada uma classe com o nome o ComparatorString.
+Quais afirmações são corretas?
+
+Correto, é gerada uma classe anônima (A) e é criado um objeto do tipo Comparator (B).
+
+
+...jar 
+
+Falamos no vídeo que JAR significa nada mais do que J*ava *ARchive.
+
+Que mais podemos dizer sobre o arquivo JAR? Assinale todas as afirmações corretas:
+
+Correto, qualquer biblioteca ou projeto vai usar JAR(s) para distribuir o código.
+
+Correto, é nada mais do que um arquivo ZIP, mas como a extensão .jar
+
+...lambdas sort
+
+Veja o código abaixo legado escrito com uma versão de Java pre 1.8. Repare que esse código usa ainda uma classe anônima no método sort:
+
++
+List<String> nomes = new ArrayList<>();
+nomes.add("Super Mario");
+nomes.add("Yoshi"); 
+nomes.add("Donkey Kong"); 
+
+Collections.sort(nomes, new Comparator<String>() {
+
+    @Override
+    public int compare(String s1, String s2) {
+        return s1.length() - s2.length();
+    }
+});
+
+System.out.println(nomes);
++
+
+Como seria a implementação da chamada do método sort com lambda? Marque as implementações corretas:
+
++-
+nomes.sort((s1, s2) ->  {return s1.length() - s2.length();} );
+>
+Também é possível usar o método sort da lista. Repare também que o return é opcional (desde que tiremos também o {} ):
+nomes.sort((s1, s2) ->  s1.length() - s2.length());
++-
+
++-
+Collections.sort(nomes, (s1, s2) ->  s1.length() - s2.length());
+>
+Perfeito, repare que nem o return é preciso! Muito mais enxuto e conciso.
++-
+
+... foreach lambdas
+
+Veja o código usando um for "tradicional":
+
++
+
+List<String> nomes = new ArrayList<>();
+nomes.add("Super Mario");
+nomes.add("Yoshi"); 
+nomes.add("Donkey Kong"); 
+
+for(int i = 0; i < nomes.size(); i++) {
+    System.out.println(nomes.get(i));
+}
+
++
+
+Você gostou das lambdas e gostaria de usá-las também na hora do laço. Qual alternativa usa corretamente a expressão lambda para iterar os elementos da lista?
+
+Obs: Todas as alternativas abaixo realmente funcionam mas apenas uma usa lambdas.
+
+
+
+				List<String> nomes = new ArrayList<>();
+				nomes.add("Super Mario");
+				nomes.add("Yoshi"); 
+				nomes.add("Donkey Kong"); 
+				
+				for(int i = 0; i < nomes.size(); i++) {
+				    System.out.println(nomes.get(i));
+				}
+				              
+				nomes.forEach((string) -> System.out.println());
+
+				nomes.forEach((string) -> System.out.println());
+				
+//				exemplo sem lambda abaixo:
+				
+//				nomes.forEach(new Consumer<String>() {
+//
+//					@Override
+//					public void accept(String string) {
+//						System.out.println();
+//						
+//					}
+//					
+//				});
+//				
+
+
+
+
+
+
+
+r: nomes.forEach((nome) -> System.out.println(nome));
+
+Corretíssima! A linguagem evoluiu muito como esse exercício mostra. Nas primeiras versões realmente era burocrático iterar a
+s listas. Com as lambdas, o laço (for) se tornou uma simples chamada de um método. Muito legal!
+
+
+
+...iterator
+
+Você já sabe agora que existem muitas coleções. Só nesse treinamento vimos ArrayList, LinkedList e Vector. Se você assistir ainda o curso dedicado as 
+coleções você aprenderá as interfaces para fila (Queue), conjunto (Set) e mapa (Map) cada uma com várias implementações.
+
+Aí vem uma pergunta: Como posso acessar (iterar) todas essas implementações de maneira uniforme sem saber os detalhes de 
+cada implementação? A resposta está na "caixa de padrões de projeto" e se chama Iterator.
+
+Uma Iterator é um objeto que possui no mínimo dois métodos: hasNext()e next(). Ou seja, você pode usá-lo para perguntar se existe um próximo
+elemento e pedir o próximo elemento. A notícia boa é que isso funciona com TODAS as implementações e aí a grande vantagem.
+
+Veja o código para usar o Iterator de uma lista:
+
+List<String> nomes = new ArrayList<>();
+nomes.add("Super Mario");
+nomes.add("Yoshi"); 
+nomes.add("Donkey Kong"); 
+
+Iterator<String> it = nomes.iterator();
+
+while(it.hasNext()) {
+  System.out.println(it.next());
+}
++
+
+Se você entendeu esse código, você já aprendeu como iterar com filas, conjuntos ou mapas.
+ Veja o uso do Iterator através de um conjunto:
+
++
+Set<String> nomes = new HashSet<>();
+nomes.add("Super Mario");
+nomes.add("Yoshi"); 
+nomes.add("Donkey Kong"); 
+
+Iterator<String> it = nomes.iterator();
+
+while(it.hasNext()) {
+  System.out.println(it.next());
+}
++
+
+https://cursos.alura.com.br/course/java-collections
+
+
+
+
+

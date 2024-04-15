@@ -1,0 +1,10 @@
+Verificar colunas e linhas em branco> Deletar colunas, 
+deletar linhas em branco> ReduceRows> remove blank rows> View> Column QUality
+Verificar se os tipos batem(str, int, etc)
+use first row as headers
+
+editar> dividir/multiplicar> transform> +-:*
+>transform> Replace values = alterar M = MASCU
+
+M510 Mouse sem fio - Vermelho
+dividir = split column > by delimiter

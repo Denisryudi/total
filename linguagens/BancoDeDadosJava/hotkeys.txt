@@ -1,0 +1,323 @@
+
+Para alterar uma tabela no MySQL, você pode usar a declaração SQL ALTER TABLE. Esta declaração permite adicionar, 
+modificar ou excluir colunas, definir chaves primárias, alterar o tipo de dados das colunas e fazer outras 
+alterações na estrutura da tabela. Abaixo estão alguns exemplos comuns de como usar a declaração ALTER TABLE:
+
+Adicionar uma coluna a uma tabela:
+
+ALTER TABLE nome_da_tabela
+
+mysql -u -root -p
+
+show databases
+
+
+ADD nome_da_coluna tipo_de_dado;
+Por exemplo, para adicionar uma coluna chamada "email" à tabela "usuarios" com o tipo de dados VARCHAR(255):
+
+
+ALTER TABLE usuarios
+ADD email VARCHAR(255);
+Modificar uma coluna existente:
+Você pode usar a declaração MODIFY COLUMN para alterar o tipo de dados de uma coluna ou fazer outras modificações. Por exemplo, 
+para alterar o tipo de dados da coluna "idade" na tabela "usuarios" para INT:
+
+ALTER TABLE usuarios
+MODIFY COLUMN idade INT;
+Renomear uma coluna:
+Use a declaração CHANGE COLUMN para renomear uma coluna existente:
++-
+ALTER TABLE nome_da_tabela
+CHANGE COLUMN nome_antigo nome_novo tipo_de_dado;
++-
+ex: 
+ALTER TABLE tbproduto
+CHANGE COLUMN PREÇO_LISTA PRECO_LISTA FLOAT;
+ALTER TABLE usuarios
+CHANGE COLUMN nome nome_completo VARCHAR(255);
+
+
+Excluir uma coluna:
+Para excluir uma coluna de uma tabela, use a declaração DROP COLUMN:
+ALTER TABLE nome_da_tabela
+DROP COLUMN nome_da_coluna;
+Por exemplo, para excluir a coluna "email" da tabela "usuarios":
+
+
+ALTER TABLE usuarios
+DROP COLUMN email;
+Adicionar ou remover uma chave primária:
+Para adicionar uma chave primária a uma tabela:
+
+
+ALTER TABLE nome_da_tabela
+ADD PRIMARY KEY (nome_da_coluna);
+Para remover uma chave primária existente:
+ALTER TABLE nome_da_tabela
+DROP PRIMARY KEY;
+
+Lembre-se sempre de fazer backup dos dados antes de fazer alterações em uma tabela, especialmente se a tabela contiver dados importantes.
+ As alterações na estrutura da tabela podem afetar os dados existentes.
+
+
+
+ ----INSERT E SELECT * FROM
+
+USE SUCOS;
+INSERT INTO tbproduto (
+PRODUTO,
+NOME,
+EMBALAGEM,
+TAMANHO,
+SABOR,
+PRECO_LISTA) VALUES (
+'1040107', 'Light - 350mil - Melânca', 
+'Lata', '350 ml', 'melância', 4.56);
+
+SELECT * FROM tbproduto;
+
+---------------
+
+INSERT INTO tabela_de_vendedores (
+MATRICULA,
+NOME,
+PERCENTUAL_COMISSAO) VALUES (
+'00233', 'João Geraldo da Fonseca',
+10);
+
+SELECT * FROM tabela_de_vendedores;
+
+--- ALTERAR CAMPOS
+
+update tbproduto SET EMBALAGEM = 'LATA', PRECO_LISTA = 2.46
+WHERE PRODUTO = '544931';
+
+update tbproduto SET EMBALAGEM = 'GARRAFA'
+WHERE PRODUTO = '1078680';
+
+
+----
+
+UPDATE tabela_de_vendedores SET PERCENTUAL_COMISSAO = 0.11
+WHERE MATRICULA = '00236';
+
+UPDATE tabela_de_vendedores SET NOME = 'José Geraldo da Fonseca Junior'
+WHERE MATRICULA = '00233';
+
+SELECT * FROM tabela_de_vendedores;
+
+DROP = apagar tabelas, banco de dados, índices, chaves primárias
+
+DELETE = dados, informações dentro da tabela
+
+
+DELETE FROM tbproduto WHERE PRODUTO = '1078680';
+
+---chave primária
+
+
+ALTER TABLE tbproduto ADD PRIMARY KEY (PRODUTO);
+
+INSERT INTO tbproduto (
+PRODUTO,  NOME, EMBALAGEM, TAMANHO, SABOR,
+PRECO_LISTA) VALUES
+('1078680', 'Frescor do Verão - 470 ml - Manga', 'Lata', '470 ml','Manga',5.18);
+
+update tbproduto SET EMBALAGEM = 'GARRAFA'
+WHERE PRODUTO = '1078680';
+
+SELECT * FROM tbproduto;
+
+PRIMARY KEY
+Esse é o tipo de CONSTRAINT que devemos utilizar para a criação de chaves primárias.
+
+
+ALTER TABLE tbproduto ADD PRIMARY KEY (PRODUTO);
+
+
+SELECT * FROM tbcliente;
+
+SELECT CPF, NOME, ENDERECO1 FROM tbcliente;
+
+* = tudo
+
+
+SELECT CPF, NOME FROM tbcliente LIMIT 3;
+
+---aliases - alias
+
+Um alias (ALIASES) só existe durante a consulta e serve para substituir
+nomes de colunas ou tabelas temporariamente.
+
+SELECT CPF AS CPF_CLIENTE, NOME AS NOME_CLIENTE FROM tbcliente;
+
+SELECT ESPECÍFICO 
+
+SELECT * FROM tbproduto WHERE PRODUTO = '544931';
+
+SELECT * FROM tbcliente WHERE CIDADE = 'Rio de Janeiro';
+
+UPDATE tbproduto SET SABOR = 'Cítricos' WHERE SABOR = 'LIMÃO';
+FILTROS Simples
+
+
+
+SELECT * FROM tbCliente WHERE IDADE < 22;
+SELECT * FROM tbcliente WHERE IDADE > 22;
+SELECT * FROM tbcliente WHERE IDADE = 22;
+SELECT * FROM tbCliente WHERE IDADE <= 22;
+SELECT * FROM tbCliente WHERE IDADE <> 22; /* <> = DIFERENTE */
+
+SELECT * FROM tbcliente WHERE NOME >= 'Fernando Cavalcante';
+
+SELECT * FROM tbcliente WHERE NOME <> 'Fernando Cavalcante';
+
+SELECT * FROM tbproduto;
+
+SELECT * FROM tbproduto WHERE PRECO_LISTA > 16.008;
+
+SELECT * FROM tbproduto WHERE PRECO_LISTA < 16.008;
+
+SELECT * FROM tbproduto WHERE PRECO_LISTA <> 16.008;
+
+SELECT * FROM tbproduto WHERE PRECO_LISTA BETWEEN 16.007 AND 16.009;
+
+
+SELECT * FROM tbproduto WHERE PRECO_LISTA = 16.008; = não compila 
+float não consegue achar exatamente o resultado
+somente usando o BETWEEN
+
+SELECT * FROM tbproduto WHERE PRECO_LISTA BETWEEN 16.007 AND 16.009;
+
+
+
+
+
+
+
+
+
+---- INCLUSAO NOVOS
+
+/*Vamos incluir novos campos na tabela de vendedores. Eles serão a data de admissão
+para isso vai ser necessário usar o drop 
+*/
+USE SUCOS;
+DROP TABLE TABELA_DE_VENDEDORES;
+
+
+USE SUCOS;
+CREATE TABLE TABELA_DE_VENDEDORES
+( MATRICULA varchar(5),
+NOME varchar(100),
+PERCENTUAL_COMISSAO float,
+DATA_ADMISSAO date,
+DE_FERIAS bit);
+
+/*
+add
+ALTER TABLE TABELA_DE_VENDEDORES ADD PRIMARY KEY (MATRICULA);
+ALTER TABLE tabela_de_vendedores ADD COLUMN (DATA_ADMISSÃO DATE);
+ALTER TABLE tabela_de_vendedores ADD COLUMN DE_FERIAS BIT(1);
+ALTER TABLE tabela_de_vendedores ADD PRIMARY KEY (MATRICULA);
+*/
+USE SUCOS;
+
+INSERT INTO TABELA_DE_VENDEDORES
+(MATRICULA, NOME, DATA_ADMISSAO, PERCENTUAL_COMISSAO, DE_FERIAS)
+VALUES
+('00235','Márcio Almeida Silva','2014-08-15',0.08,0);
+
+
+INSERT INTO TABELA_DE_VENDEDORES
+(MATRICULA, NOME, DATA_ADMISSAO, PERCENTUAL_COMISSAO, DE_FERIAS)
+VALUES
+('00236','Cláudia Morais','2013-09-17',0.08,1);
+
+
+INSERT INTO TABELA_DE_VENDEDORES
+(MATRICULA, NOME, DATA_ADMISSAO, PERCENTUAL_COMISSAO, DE_FERIAS)
+VALUES
+('00237','Roberta Martins','2017-03-18',0.11,1);
+
+
+INSERT INTO TABELA_DE_VENDEDORES
+(MATRICULA, NOME, DATA_ADMISSAO, PERCENTUAL_COMISSAO, DE_FERIAS)
+VALUES
+('00238','Pericles Alves','2016-08-21',0.11,0);
+
+
+SELECT * FROM tabela_de_vendedores;
+
+
+***
+Nesta aula, aprendemos:
+
+Aprendemos a incluir dados em uma tabela, de diversas formas;
+Vimos como alterar um dado já existente na tabela;
+Vimos como apagar uma linha da tabela;
+Conhecemos a importância das chaves primárias e o cuidado que devemos ter ao criá-las;
+Aprendemos a manipular campos do tipo lógicos e do tipo date.
+
+
+SELECT * FROM tbcliente;
+
+SELECT CPF, NOME, ENDERECO1 FROM tbcliente;
+
+
+SELECT CPF, NOME FROM tbcliente LIMIT 3;
+
+SELECT CPF AS CPF_CLIENTE, NOME AS NOME_CLIENTE FROM tbcliente;
+
+SELECT * FROM tbproduto WHERE PRODUTO = '544931';
+
+
+SELECT * FROM tbcliente WHERE CIDADE = 'Rio de Janeiro';
+
+UPDATE tbproduto SET SABOR = 'Cítricos' WHERE SABOR = 'LIMÃO';
+
+
+
+
+SELECT * FROM tbCliente WHERE IDADE < 22;
+SELECT * FROM tbcliente WHERE IDADE > 22;
+SELECT * FROM tbcliente WHERE IDADE = 22;
+SELECT * FROM tbCliente WHERE IDADE <= 22;
+SELECT * FROM tbCliente WHERE IDADE <> 22; /* <> = DIFERENTE */
+
+SELECT * FROM tbcliente WHERE NOME >= 'Fernando Cavalcante';
+
+SELECT * FROM tbcliente WHERE NOME <> 'Fernando Cavalcante';
+
+SELECT * FROM tbproduto;
+
+SELECT * FROM tbproduto WHERE PRECO_LISTA > 16.008;
+
+SELECT * FROM tbproduto WHERE PRECO_LISTA < 16.008;
+
+SELECT * FROM tbproduto WHERE PRECO_LISTA <> 16.008;
+
+SELECT * FROM tbproduto WHERE PRECO_LISTA BETWEEN 16.007 AND 16.009;
+
+use sucos;
+SELECT * FROM tbcliente WHERE DATA_NASCIMENTO = '1995-01-13';
+
+SELECT * FROM tbcliente WHERE YEAR(DATA_NASCIMENTO) = 1995;
+SELECT * FROM tbcliente WHERE MONTH(DATA_NASCIMENTO) = 10;
+
+SELECT * FROM tbcliente WHERE MONTH(DATA_NASCIMENTO) = 10;
+
+
+SELECT * FROM tbcliente WHERE (IDADE >= 18 AND IDADE <= 22 AND SEXO = 'M') 
+OR (cidade = 'Rio de Janeiro' OR BAIRRO = 'Jardins');
+
+
+SELECT * FROM tbcliente WHERE (cidade = 'Rio de Janeiro' OR BAIRRO = 'Jardins');
+
+*** Nesta aula, aprendemos:
+
+Como visualizar os dados de uma tabela;
+Como segregar a seleção de dados;
+A usar as condições de maior e menor na seleção de dados da tabela;
+Como filtrar dados através de datas.
+Como implementamos filtros compostos.

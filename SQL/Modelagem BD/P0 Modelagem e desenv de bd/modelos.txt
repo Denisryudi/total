@@ -1,0 +1,21 @@
+Modelo conceitual
+
+Entidade: PESSOA tem atributos: nome, cpf(identificador (chave primária)), sexo
+Entidade2:CARRO tem atributos: placa, modelo, ano
+
+       n=várias obs>várias pessoas podem dirigir um carro e vice versa
+PESSOA n<DIRIGE>n CARRO
+
+
+Modelo lógico
+
+transformar as entidades e relacionamento em tabelas
+
+        PESSOA          DIRIGE                  CARRO
+   -CPF-  NOME SEXO     -P_CPF- -C_PLACA-      -PLACA- MODELO ANO
+     |>>>>>>>>>>>>>>>>>>>> <<<<<<<<<<<<<<<<<<< |
+
+
+modelo físico
+
+definir código para criação das tabelas dentro do software

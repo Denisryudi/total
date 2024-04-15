@@ -1,0 +1,4 @@
+formatar código = alt + shift +facilitar
+shift + alt = copia e cola 
+
+NaN = não é um número

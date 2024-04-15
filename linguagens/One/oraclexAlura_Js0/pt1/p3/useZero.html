@@ -1,0 +1,26 @@
+É comum usarmos o zero para iniciar um laço de repetição. Isso nos trará vantagens quando, nas próximas atividades, formos trabalhar com arrays. 
+Mas preste atenção, quando usamos o zero para iniciar uma repetição, precisamos substituir o sinal do limitador (espaco2), de <= (menor igual) 
+para apenas < (menor), pois o zero conta como primeiro elemento dentro do laço.
+
+A ideia é que o laço deve se repetir 10 vezes, se trocarmos o valor de i* por *zero e mantivermos o <=, o laço irá se repetir 11 vezes!
+
+Dito isso, temos o seguinte código:
+
+for( var i = 0; i < 10; i++ ) {
+    alert( "O resultado é " + (2 * i) );
+}
+
+
+
+Converta-o para usar a instrução while. Lembre-se: o resultado do programa tem que ser o mesmo!
+
+r: 
+
+
+<script>
+    var i = 0;
+    while( i < 10) {
+        alert( "O resultado é " + (2 * i) );
+        i++;    
+    }
+    </script>
