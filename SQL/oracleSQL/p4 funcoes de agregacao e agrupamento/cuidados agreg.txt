@@ -1,0 +1,41 @@
+8. Cuidado com valores nulos no cálculo das funções de agregação.
+
+
+valores nulos podem alterar o resultado nas funções AVG E COUNT
+
+----------------------------------------
+SELECT
+    AVG(commission_pct)
+FROM employees;
+R:0,2228571428571428571428571428571428571429
+NULOS não estão sendo considerados como 0
+
+função para verificar se o valor é nulo, se ele não for nulo mantem o valor
+e se for nulo substitui por outro valor.
+
+SELECT
+    AVG(NVL(commission_pct, 0))
+FROM employees;
+r: 0,072897196261682242990654205607476635514
+
+considerando valores nulos e como se fossem 0.
+
+----------------------------------------
+interessante usar NVL para não precisar se preocupar com valores nulos
+
+SELECT
+    COUNT(commission_pct)
+FROM employees;
+
+35
+
+SELECT
+    COUNT(NVL(commission_pct, 0))
+FROM employees;
+
+107
+
+
+
+---
+

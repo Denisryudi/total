@@ -1,0 +1,42 @@
+SUM: Faz a soma de valores de uma coluna.
+
+SELECT
+    SUM(salary) total_salario
+FROM employees;
+
+691400
+
+
+-- 5. AVG: Faz a média de valores de uma coluna.
+
+SELECT
+    AVG(salary) total_salario
+FROM employees;
+
+6461,682242990654205607476635514018691589
+
+
+Arredondar
+SELECT
+    ROUND(AVG(salary), 2) media_salarial
+FROM employees;
+
+6461,68
+
+ MAX: Retorna o maior dos valores de uma coluna.
+
+ SELECT
+     MAX(salary) total_salario
+ FROM employees;
+24000
+
+
+MIN: Retorna o menor dos valores de uma coluna.
+
+SELECT
+    MIN(salary) total_salario
+FROM employees;
+2100
+
+
+

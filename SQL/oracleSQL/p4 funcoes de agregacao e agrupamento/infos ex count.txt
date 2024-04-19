@@ -1,0 +1,41 @@
+SELECT
+    COUNT(employee_id) total_funcionarios
+FROM employees;
+    total
+1   107
+
+COUNT desconsidera valores nulos
+
+COUNT(*): Faz a contagem de valores de uma coluna, sejam eles nulos ou não.
+SELECT
+    COUNT(*)
+FROM employees;
+
+107
+COUNT DISTINCT: Conta os valores distintos de uma coluna.
+
+
+
+COUNT DISTINCT
+
+
+SELECT
+    DISTINCT job_id
+FROM employees;
+
+Não se repetem
+
+
+SELECT
+    job_id
+FROM employees;
+
+107
+
+
+SELECT
+    COUNT(DISTINCT job_id)
+FROM employees;
+
+19
+

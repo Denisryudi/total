@@ -1,0 +1,14 @@
+SELECT
+    coluna,
+    funcao_agregacao()      <------------------------
+FROM tabela
+[WHERE condicao]         -- Condição para selecionar as linhas desejadas da tabela
+GROUP BY coluna          -- Comando para criar o agrupamento
+[HAVING condicao]        -- Condição para selecionar os agrupamentos desejados
+[ORDER BY coluna];        -- Comando para ordenar a consulta final
+
+
+-- 1. GROUP BY: Agrupa os dados a partir de uma ou mais colunas da tabela.
+-- a) Faça um agrupamento da quantidade total de funcionários por JOB_ID.
+
+
