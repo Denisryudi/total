@@ -1,0 +1,84 @@
+a análise é a solução conceitual dada ao problema. Marca o início
+da definição informática, mas sem levar em conta detalhes da implementação
+
+
+
+O diagrama de sequência:  Tempo de atividade, timeline, objeto e mensagens
+
+
+
+
+
+Em um diagrama de casos de uso, os elementos principais são atores, casos de uso, e
+relacionamentos entre casos de uso. Os atores representam os usuários ou outros
+ sistemas que interagem com o sistema em estudo. Os casos de uso descrevem as
+  funções ou serviços que o sistema oferece. Os relacionamentos entre casos de
+  uso podem incluir generalizações (heranças), inclusões (uses), e extensões (extends).
+
+As classes não são normalmente incluídas em um diagrama de casos de uso, pois são mais
+apropriadas em diagramas de classes, que são usados para modelar a estrutura interna e
+ o comportamento do sistema.
+
+Vamos analisar as opções dadas com base nessa explicação:
+
+I. Ator e classe. (Incorreto, pois inclui "classe")
+II. Ator, casos de uso e relacionamentos entre atores. (Parcialmente correto, mas geralmente
+os relacionamentos são entre casos de uso, não entre atores)
+III. Ator, casos de uso e classe. (Incorreto, pois inclui "classe")
+IV. Ator, casos de uso e relacionamentos entre casos de uso. (Correto, reflete os elementos
+ essenciais de um diagrama de casos de uso)
+V. Casos de uso, classes e relacionamentos. (Incorreto, pois inclui "classe")
+
+
+
+A UML define dois tipos principais de diagramas: estruturais e comportamentais.
+
+Diagramas estruturais incluem:
+
+Diagrama de Classes
+Diagrama de Objetos
+Diagrama de Componentes
+Diagrama de Pacotes
+Diagrama de Implantação
+Diagrama de Composição
+Diagramas comportamentais incluem:
+
+Diagrama de Casos de Uso
+Diagrama de Sequência
+Diagrama de Atividades
+Diagrama de Estados
+Diagrama de Comunicação
+Diagrama de Temporização
+Diagrama de Interação (geralmente inclui Sequência, Comunicação, e outros relacionados à interação)
+
+
+
+
+
+
+
+Java é uma linguagem de programação que suporta vários paradigmas, mas é mais conhecida por
+sua forte ênfase na programação orientada a objetos (OOP). No entanto, Java também suporta
+características de programação imperativa, o que significa que você pode escrever programas
+em Java que seguem uma abordagem imperativa de sequências de comandos e mudanças de estado.
+
+Programação Orientada a Objetos (OOP)
+Java foi projetada para ser uma linguagem orientada a objetos desde o início. Os conceitos
+fundamentais de OOP em Java incluem:
+
+Encapsulamento: Agrupar os dados (variáveis) e os códigos (métodos) em um único local
+ denominado "classe", protegendo o estado interno do objeto de acessos não autorizados.
+Herança: Permitir que uma classe herde comportamento (métodos) e estado (variáveis) de outra classe.
+Polimorfismo: Permitir que objetos de diferentes classes sejam tratados como objetos de uma classe comum.
+Abstração: Permitir que complexidades reais sejam escondidas, expondo apenas as partes necessárias
+de um objeto para o mundo exterior.
+
+Programação Imperativa
+Embora Java seja predominantemente orientada a objetos, ela permite a programação imperativa
+dentro dos métodos de uma classe. Isso significa que você pode escrever códigos que
+especificam comandos sequenciais, como loops, condicionais e atribuições, que são
+características da programação imperativa. Por exemplo, a manipulação de variáveis,
+ o controle de fluxo usando estruturas como if, else, while, for, são todos realizados
+ de maneira imperativa.
+
+
